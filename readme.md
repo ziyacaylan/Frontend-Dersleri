@@ -15,4 +15,3 @@ iskelet yapısını oluşturmak için kullanılan metin işaretleme dilidir. Htm
 Html CERN de araştırmacıların dokümanlarını birbirleriyle paylaşabilmeleri için bir sistem kullanmak amaıyla çıkartılmış
 1990 yılında da metin işaretleme dili olarak geliştirilmiştir.
 Geliştirici : W3C ve WHATWG (Kaynak: wikipedia)
-![html nasıldır] https://raw.githubusercontent.com/ziyacaylan/Html-Css-Dersleri/main/assets/img/html-nedir.jpg?token=GHSAT0AAAAAABPUBL2DXNNXVXL2JRLTQKG4YUMVYXA
