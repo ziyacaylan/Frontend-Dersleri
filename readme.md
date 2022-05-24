@@ -185,3 +185,17 @@ Mete, genelde bilgisayar bilimleri dünyasında verilerin verisi olarak tanımla
 
 Sayfamızızn head kısmında tanımladığımız sayfamızın başlığıdır ve kullandığımız browser sekmesini isimlendirir.
 ![Sayfanın başlığını inceleyiniz.](/forms%26inputs.html)
+
+### Listeleme Etiketleri
+
+Bu etiketler iki çeşittir.
+
+- Sıralı Listeler (ol)
+- Sırasız Listeler (ul)
+
+#### Sıralı Listeler
+
+Sıralı listelerde sıra numarası vermek içi ardışık liste numaraları kullanılır. Yapısı aşağıdaki gibidir.
+![Sıralı Liste](/assets/img/sirali-liste.jpg)
+![Sırasız Liste](/assets/img/sirasiz-liste.jpg)
+Ayrıca ![Linkteki sayfada örneklenmiştir.](/lists.html)
