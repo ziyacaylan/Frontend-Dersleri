@@ -37,6 +37,12 @@ mutlaka head ve body etiketlerinin olması gerekir
 - &#60;html&#62;
 - &#60;head&#62;
 - &#60;body&#62;
+
+### HEAD Etiketi
+
+&#60;head&#62; etiketi site ziyaretçieri tarafından görülmesi gerekmekyen kodları içerir. Bu etiket altına yazılan kodlar genelde arama motorları
+içindir. Bütün etiketleri bu etiket altında kullanamayız.Bu etiket altına aşağıdaki etiketleri kullanabiliriz.
+
 - &#60;title&#62;
 - &#60;meta&#62;
 - &#60;style&#62;
@@ -44,3 +50,11 @@ mutlaka head ve body etiketlerinin olması gerekir
 - &#60;noscript&#62;
 - &#60;link&#62;
 - &#60;base&#62;
+
+### BODY Etiketi
+
+Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında yazarız.
+
+### H Etiketleri
+
+Bu etiketler başlık etiketleridir. - &#60;h1&#62; - &#60;h2&#62; - &#60;h3&#62; - &#60;h4&#62; - &#60;h5&#62; - &#60;h6&#62;
