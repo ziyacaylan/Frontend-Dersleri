@@ -19,3 +19,10 @@ Geliştirici : W3C ve WHATWG (Kaynak: wikipedia)
 #### Html Yapısı
 
 ![html nasıldır](https://raw.githubusercontent.com/ziyacaylan/Html-Css-Dersleri/main/assets/img/html-nedir.jpg?token=GHSAT0AAAAAABPUBL2DXNNXVXL2JRLTQKG4YUMVYXA)
+
+### HTML Etiketi Nedir?
+
+Html etiketi, dosya içeriğinin HTML dilinde yazıldığını tarayıcımıza bildirir. Etiket yapısı aşağıdaki gibidir
+&#60; etiket &#62;
+
+Yazı yazarken belirli kulrallara ve standartlara uyarak yazılarımızı hazırlamamız gerekir.
