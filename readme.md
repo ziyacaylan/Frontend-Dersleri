@@ -57,7 +57,7 @@ Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında 
 
 ### H Etiketleri
 
-Bu etiketler başlık etiketleridir. Linkteki örnekte başlık etiketlerini inceleyebilirsiniz.
+Bu etiketler başlık etiketleridir. Linkteki ![Başlık](/basliklar.html) örnekte başlık etiketlerini inceleyebilirsiniz.
 
 - &#60;h1&#62;
 - &#60;h2&#62;
