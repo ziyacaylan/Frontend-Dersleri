@@ -57,7 +57,7 @@ Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında 
 
 ### H Etiketleri
 
-Bu etiketler başlık etiketleridir.
+Bu etiketler başlık etiketleridir. Linkteki örnekte başlık etiketlerini inceleyebilirsiniz.
 
 - &#60;h1&#62;
 - &#60;h2&#62;
@@ -65,3 +65,7 @@ Bu etiketler başlık etiketleridir.
 - &#60;h4&#62;
 - &#60;h5&#62;
 - &#60;h6&#62;
+
+### P Etiketi
+
+&#60;p&#62; paragraf etiketidir. Linkleti örnekte p etiketi
