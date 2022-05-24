@@ -18,7 +18,7 @@ Geliştirici : W3C ve WHATWG (Kaynak: wikipedia)
 
 #### Html Yapısı
 
-![Html sayfa yapısı](https://raw.githubusercontent.com/ziyacaylan/Html-Css-Dersleri/main/assets/img/html-nedir.jpg?token=GHSAT0AAAAAABPUBL2CKI7YHRAKIOWWAX32YUMXNOQ)
+![Html sayfa yapısı](/assets/img/html-nedir.jpg)
 
 ### HTML Etiketi Nedir?
 
