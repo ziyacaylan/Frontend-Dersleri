@@ -27,3 +27,27 @@ Html etiketi, dosya içeriğinin HTML dilinde yazıldığını tarayıcımıza b
 &#60; etiket &#62;
 
 Yazı yazarken belirli kulrallara ve standartlara uyarak yazılarımızı hazırlamamız gerekir.
+
+### En Çok Kullanılan Html Etiketleri Nelerdir?
+
+- &#60;html&#62;
+- &#60;head&#62;
+- &#60;body&#62;
+
+Html etiketi, dosya içeriğinin html dilinde yazıldığını tarayıcımıza bildirir ve bu etiket altına mutlaka head ve body
+etiketlerinin olması gerekir.
+
+&#60;html&#62;
+&#60;head&#62;
+&#60;&#47;head&#62;
+&#60;body&#62;
+&#60;&#47;body&#62;
+&#60;&#47;html&#62;
+
+- &#60;title&#62;
+- &#60;meta&#62;
+- &#60;style&#62;
+- &#60;script&#62;
+- &#60;noscript&#62;
+- &#60;link&#62;
+- &#60;base&#62;
