@@ -38,10 +38,15 @@ Html etiketi, dosya içeriğinin html dilinde yazıldığını tarayıcımıza b
 etiketlerinin olması gerekir.
 
 &#60;html&#62;
+
 &#60;head&#62;
+
 &#60;&#47;head&#62;
+
 &#60;body&#62;
+
 &#60;&#47;body&#62;
+
 &#60;&#47;html&#62;
 
 - &#60;title&#62;
