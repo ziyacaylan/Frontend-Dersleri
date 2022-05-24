@@ -18,7 +18,7 @@ Geliştirici : W3C ve WHATWG (Kaynak: wikipedia)
 
 #### Html Yapısı
 
-![html nasıldır](https://raw.githubusercontent.com/ziyacaylan/Html-Css-Dersleri/main/assets/img/html-nedir.jpg?token=GHSAT0AAAAAABPUBL2DXNNXVXL2JRLTQKG4YUMVYXA)
+![Html sayfa yapısı](https://raw.githubusercontent.com/ziyacaylan/Html-Css-Dersleri/main/assets/img/html-nedir.jpg?token=GHSAT0AAAAAABPUBL2DXNNXVXL2JRLTQKG4YUMVYXA)
 
 ### HTML Etiketi Nedir?
 
@@ -30,25 +30,13 @@ Yazı yazarken belirli kulrallara ve standartlara uyarak yazılarımızı hazır
 
 ### En Çok Kullanılan Html Etiketleri Nelerdir?
 
+Html etiketi, dosya içeriğinin html dilinde yazıldığını tarayıcımıza bildirir. Etiketler küçüktür ve büyüktür işaretlerinin
+arasına yazılarak başlar ve içeriği yazdıktan sonra etiketi kapatmamız gerekir.(&#60;html&#62; &#60;&#47;html&#62; ) bu etiket altına
+mutlaka head ve body etiketlerinin olması gerekir
+
 - &#60;html&#62;
 - &#60;head&#62;
 - &#60;body&#62;
-
-Html etiketi, dosya içeriğinin html dilinde yazıldığını tarayıcımıza bildirir ve bu etiket altına mutlaka head ve body
-etiketlerinin olması gerekir.
-
-&#60;html&#62;
-
-&#60;head&#62;
-
-&#60;&#47;head&#62;
-
-&#60;body&#62;
-
-&#60;&#47;body&#62;
-
-&#60;&#47;html&#62;
-
 - &#60;title&#62;
 - &#60;meta&#62;
 - &#60;style&#62;
