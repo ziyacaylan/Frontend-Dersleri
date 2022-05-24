@@ -57,4 +57,11 @@ Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında 
 
 ### H Etiketleri
 
-Bu etiketler başlık etiketleridir. - &#60;h1&#62; - &#60;h2&#62; - &#60;h3&#62; - &#60;h4&#62; - &#60;h5&#62; - &#60;h6&#62;
+Bu etiketler başlık etiketleridir.
+
+- &#60;h1&#62;
+- &#60;h2&#62;
+- &#60;h3&#62;
+- &#60;h4&#62;
+- &#60;h5&#62;
+- &#60;h6&#62;
