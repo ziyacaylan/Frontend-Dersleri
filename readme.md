@@ -199,3 +199,32 @@ Sıralı listelerde sıra numarası vermek içi ardışık liste numaraları kul
 ![Sıralı Liste](/assets/img/sirali-liste.jpg)
 ![Sırasız Liste](/assets/img/sirasiz-liste.jpg)
 Ayrıca [Linkteki sayfada örneklenmiştir.](/lists.html)
+
+### Blog Elementler ve Inline Elementler
+
+Html kodlarımızı incelediğimizde kullandığımız etiketlerin bazıları kullandığı satırın tamamını kapladığını bazılarının da sadece kapladığı alan kadar yer kapladığını görürüz. Kullanıldığı satırın tamamını kaplayan elementlere **blog element** sadece kullanıldığı satırda işal ettiği alan kadar yer kaplayan etiketlere ise **inline element** denir.
+Hangi etiketler inline hangileri blog etiket olduğunu [bu linkten inceleyebilirsiniz.](https://htmlreference.io)
+
+## Semantic (Anlamlandırılmış) Html Etiketleri
+
+Semantic kelimesi anlamlandırma olarak tanımlanabilir. Semantic etikeler, herhangi bir anlamı olan etiketler olarak ifade edilir. Yani hem tarayıcı hem de geliştirici için ne anlama geldiği açıkça bilinir. &#60;div&#62; ve &#60;span&#62; semantik etiketler değildir ve bir anlam ifade etmezler. Ancak aşağıdaki etiketler en çok kullanılan semantic etiketlerdir.
+[Semantic Etiket Kullanım Örnek Sayfayı İnceleyiniz](/HTML-Dersleri/semantic.html)
+
+- &#60;article&#62;
+- &#60;aside&#62;
+- &#60;details&#62;
+- &#60;figcaption&#62;
+- &#60;figure&#62;
+- &#60;footer&#62;
+- &#60;header&#62;
+- &#60;main&#62;
+- &#60;mark&#62;
+- &#60;nav&#62;
+- &#60;section&#62;
+- &#60;summary&#62;
+- &#60;time&#62;
+
+## Kaynaklar
+
+[https://www.w3schools.com](https://www.w3schools.com)
+[www.patika.dev](www.patika.dev)
