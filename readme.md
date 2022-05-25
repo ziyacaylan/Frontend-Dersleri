@@ -18,7 +18,7 @@ Geliştirici : W3C ve WHATWG (Kaynak: wikipedia)
 
 #### Html Yapısı
 
-![Html sayfa yapısı](/assets/img/html-nedir.jpg)
+![Html sayfa yapısı](/HTML-Dersleri/assets/img/html-nedir.jpg)
 
 ### HTML Etiketi Nedir?
 
@@ -57,7 +57,7 @@ Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında 
 
 ### H Etiketleri
 
-Bu etiketler başlık etiketleridir. [Linkteki](/basliklar.html) örnekte başlık etiketlerini inceleyebilirsiniz.
+Bu etiketler başlık etiketleridir. [Linkteki](/HTML-Dersleri/basliklar.html) örnekte başlık etiketlerini inceleyebilirsiniz.
 H etiketleri blok etiketlerdir ve satırı tamamen kaplar. (İleride ele alınacaktır.)
 
 - &#60;h1&#62;
@@ -69,13 +69,13 @@ H etiketleri blok etiketlerdir ve satırı tamamen kaplar. (İleride ele alınac
 
 ### P Etiketi
 
-&#60;p&#62; paragraf etiketidir. [Linkteki](/html-etiketler.html) örnekte p etiket örneğini inceleyebilirsiniz. P etiketleri blok etiketlerdir ve satırı
+&#60;p&#62; paragraf etiketidir. [Linkteki](/HTML-Dersleri/html-etiketler.html) örnekte p etiket örneğini inceleyebilirsiniz. P etiketleri blok etiketlerdir ve satırı
 tamamen kaplar. (İleride ele alınacaktır.) HTML otomatik olarak Paragraf etiketinin öncesine ve sonrasına satır atlatır.
 
 ### BR Etiketi
 
 &#60;br &#47;&#62; etiketi satır atlatma etiketidir. Atlamakistediğimiz satır sayısı kadar bu etiketi kullanabiliriz.
-[Linkteki](/html-etiketler.html) örnekten incelenebilir.
+[Linkteki](/HTML-Dersleri/html-etiketler.html) örnekten incelenebilir.
 
 ## HTML attribute Nedir?
 
@@ -84,13 +84,13 @@ HTML özellikleri, öğenin davranışını kontrol etmek için açılış etike
 ### A Etiketi
 
 &#60;a&#62; etiket ile sayfalar linklenebilir. En önemli attribute ü (özelliği) **href** özelliğidir. Etiket içerisindeki yazılan yazı
-sayfamızda görünecek href içerisine ise tıklandığında gidilecek olan URL adresi yazılmaktadır.[Linkteki](/html-etiketler.html) örnekte a
+sayfamızda görünecek href içerisine ise tıklandığında gidilecek olan URL adresi yazılmaktadır.[Linkteki](/HTML-Dersleri/html-etiketler.html) örnekte a
 etiket örneğini inceleyebilirsiniz.
 
 ### STRONG ve B Etiketi Etiketleri
 
 &#60;strong&#62; etiketi arama motorlarına metinin önemli olduğunu bildirmek için kullanılır.Kullanıldığında metini kalın yapar. B etiketi ise
-sadece metini kalın yapar. [Linkteki](/html-etiketler.html) örnekte etiketler kullanılmıştır.
+sadece metini kalın yapar. [Linkteki](/HTML-Dersleri/html-etiketler.html) örnekte etiketler kullanılmıştır.
 
 ### Button Etiketi
 
@@ -103,18 +103,18 @@ sadece metini kalın yapar. [Linkteki](/html-etiketler.html) örnekte etiketler 
 ### img Etiketi
 
 Sayfamıza resim eklemek için &#60;img&#62; etiketini kullanırız. &#60;img src="resim_adi.jpg" alt="açıklama yazısı" &#47; &#62;
-([Bakızın örnek](/html-etiketler.html)) örnekte etiketler kullanılmıştır.
+([Bakızın örnek](/HTML-Dersleri/html-etiketler.html)) örnekte etiketler kullanılmıştır.
 
 ### iframe Etiketi
 
 Bu etiket genelde başka sayfa içerisindeki belge/video v.s. kendi sayfamızda göstermek için kullanırız. Örneğin youtube dan sayfamıza
-bir video eklemek istediğimizde bu etiketi kullanarak yapabiliriz. ([Bakızın örnek](/html-etiketler.html)) örnekte etiketler kullanılmıştır.
+bir video eklemek istediğimizde bu etiketi kullanarak yapabiliriz. ([Bakızın örnek](/HTML-Dersleri/html-etiketler.html)) örnekte etiketler kullanılmıştır.
 
 ### Yorum Satırı
 
 Html sayfası içerisinde yorum satırı aşağıdaki gibi oluşturulur.
 &#60;&#33;&#45;&#45; (Buraya yorumu yazınız) &#45;&#45;&#62;
-[Linkte bolca yorum satırı kullanılmıştır.](/html-etiketler.html)
+[Linkte bolca yorum satırı kullanılmıştır.](/HTML-Dersleri/html-etiketler.html)
 
 ### Form Etiketi
 
@@ -160,7 +160,7 @@ Inputlar aşağıdaki gibidir.
 - &#60;input type="week"&#62;
 
 Aşağıdaki resimde input tipleri gösterilmiştir. İnceleyiniz.
-![Inputs](/assets/img/html-inputs.jpg)
+![Inputs](/HTML-Dersleri/assets/img/html-inputs.jpg)
 
 ### Link Etiketi
 
@@ -179,12 +179,12 @@ Bu etikette sayfamızın head kısmında tanımlanır. Css kodlarının sayfamı
 Mete, genelde bilgisayar bilimleri dünyasında verilerin verisi olarak tanımlanır. Yanı bir veri ile ilgili verileri içermektedir.
 Örneğin:
 &#60;meta charset="UTF-8"&#62;
-[Buradaki sayfa yapısını inceleyiniz.](/forms%26inputs.html)
+[Buradaki sayfa yapısını inceleyiniz.](/HTML-Dersleri/forms%26inputs.html)
 
 ### Title Etiketi
 
 Sayfamızızn head kısmında tanımladığımız sayfamızın başlığıdır ve kullandığımız browser sekmesini isimlendirir.
-[Sayfanın başlığını inceleyiniz.](/forms%26inputs.html)
+[Sayfanın başlığını inceleyiniz.](/HTML-Dersleri/forms%26inputs.html)
 
 ### Listeleme Etiketleri
 
@@ -196,9 +196,9 @@ Bu etiketler iki çeşittir.
 #### Sıralı Listeler
 
 Sıralı listelerde sıra numarası vermek içi ardışık liste numaraları kullanılır. Yapısı aşağıdaki gibidir.
-![Sıralı Liste](/assets/img/sirali-liste.jpg)
-![Sırasız Liste](/assets/img/sirasiz-liste.jpg)
-Ayrıca [Linkteki sayfada örneklenmiştir.](/lists.html)
+![Sıralı Liste](/HTML-Dersleri/assets/img/sirali-liste.jpg)
+![Sırasız Liste](/HTML-Dersleri/assets/img/sirasiz-liste.jpg)
+Ayrıca [Linkteki sayfada örneklenmiştir.](/HTML-Dersleri/lists.html)
 
 ### Blog Elementler ve Inline Elementler
 
@@ -227,4 +227,5 @@ Semantic kelimesi anlamlandırma olarak tanımlanabilir. Semantic etikeler, herh
 ## Kaynaklar
 
 [https://www.w3schools.com](https://www.w3schools.com)
+
 [www.patika.dev](www.patika.dev)
