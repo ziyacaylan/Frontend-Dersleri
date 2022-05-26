@@ -280,6 +280,63 @@ ID seçici HTML elemanları içerisinde ayni id ye sahip olan elemana ulaşmamı
 - Bir id sadece bir HTML etiketine verilebilir. Yani sayfada aynı id ye sahip sadece bir etiket bulunur.
   ![class selekttör](/CSS-Dersleri/assets/img/id-selector.jpg)
 
+  ### Özellik Seçiciler (Attribute Selectors)
+
+  - Bu seçiciler ile özelliğini belirttiğimiz elementlere CSS uygulayabiliriz.
+  - Özelliğin içi boş olsa da element bundan etkilenecektir.
+  - Özelliğe erişmek için yapmamız gereken &#91;attribute&#93; şeklinde yazmalıyız.
+
+  * - Örnek : &#91;name&#93; özelliği name olan bütün elementler etkilenir.
+  * - Örnek : .btn&#91;disabled&#93; classı btn olan ve niteliği(attribute) disabled olan butona CSS uygulanır.
+
+  ![class selekttör](/CSS-Dersleri/assets/img/attribute-selectors-1.jpg)
+  ![class selekttör](/CSS-Dersleri/assets/img/attribute-selectors-2.jpg)
+  ![class selekttör](/CSS-Dersleri/assets/img/attribute-selectors-3.jpg)
+
+### Grup Seçiciler (Group Selectors)
+
+- Çoğunlukla etiketlere verilen Css özellikleri aynı yada benzer özellikleri bir arada toplamak ve kod tekrarını engellemek için kullanılır.
+  Örnek : h1, h1,h3 &#123;color=red&#125; Burada sayfadaki bütün h1,h2 ve h3 lere parantez içerisindeki css özelliği uygulanmaktadır.
+
+### Çocuk Seçiciler (Child Selectors)
+
+- HTML kodlarını yazarken çoğu zaman elementleri iç içe yazarız. Böyle durumlarda bir element kendisini sarmalayan bir üst elementin çocuk (child)
+  elementi olarak adlandırılır ve &#62; işareti ile gösterilir.
+  Örnek : p &#62; span p altındaki span etiketi seçilir ve burada span etiketi child element olarak adlandırılır.
+  div &#62; ul &#62;li&#35;first div altındaki ul listesi altındaki li child elementlerinden id si first olan li etiketine ulaştık.
+
+### :hover
+
+- Seçici ile işaretlenen etiketin üzerine mouse ile gelindiğinde CSS uygalanır ve mouse üzerinde değilken etki kaybolur.
+
+### :active
+
+- Mouse ile tıklandığında CSS uygulanır. Tıklama kaldırıldığında etki kaybolur
+
+### :first-child
+
+- İlk child etikete CSS uygulanır.
+
+### :last-child
+
+- Son child etikete CSS uygular.
+
+### ::before
+
+- Belirtilen etiketin önüne CSS uygular.
+
+### ::after
+
+- Belirtilen etiketin sonuna CSS uygular. Kullanımı ::before ile aynıdır.
+
+### :: first-letter
+
+- Blok seviyesinde bir etiketteki ilk harfe CSS uygular. <span> blok seviyesinde bir etiket olmadığından bu pseudo class uygulanamaz.
+
+### :: first-line
+
+- Blok seviyesinde bir etiketin ilk satırına CSS uygular.
+
 ### Css Hangi yöntemler ile yazabiliriz ?
 
 - Inline (Etikete Özel) Css
@@ -323,4 +380,10 @@ bulunan metin font türlerini kullanabiliriz. En çok kullanılan Google Fonts �
 Css de metin boyutunu ayarlar. Bir metin boyutu belirtilmez ise metinin normal boyutu tarayıcı default değerlerinde görüntülenir. Bu değer genelde tarayıcılarda 16 pikseldir. Css te bir çok geliştirici piksel yerine "px" yerine "em" kullanmaktadır. 1em, mevcut yazı tipi boyutuna eşittir. Tarayıcılarda varsayılan metin boyutu 16 pikseldir. Yani, 1em'in varsayılan boyutu 16 pikseldir.
 [Örnek sayfayı inceleyiniz](/CSS-Dersleri/style.css)
 
-## Css Ezme Durumları :
+## CSS Kutu Özellikleri (Margin, Padding, Widht, Height) :
+
+Öncelikle kutu modelin ne anlama geldiğini çözmemiz ve bilmemiz gerekir. Bir HTML elementinin kutu modeli resim ile aşağıdaki gibi gösterilir.
+
+![kutu-model](/CSS-Dersleri/assets/img/kutu-model.jpg)
+
+- İçerik(Content) :
