@@ -386,4 +386,16 @@ Css de metin boyutunu ayarlar. Bir metin boyutu belirtilmez ise metinin normal b
 
 ![kutu-model](/CSS-Dersleri/assets/img/kutu-model.jpg)
 
-- İçerik(Content) :
+- İçerik(Content) : Elentin içerdiği veridir. Örneğin yazı, resim...
+- Padding : İçerik ile border arasındaki boşluktur.
+- Border : Padding ile margin i ayıran sınırdır.
+- Margin : Kutunun diğer kutularla arasındaki mesafeyi ayarlayan boşluktur.
+
+Yukarıdaki kutu özellikleri dışında kutunun boy ve uzunluğunu ayarlayan widht ve height özellijkleri de vardır.
+
+- width : Kutu modelimizin genişliğini ayarlar
+- height : Kutu modelimizin yüksekliğini ayarlar
+
+Yükseklik ve genişlik değerleri px, em veya % ile belirtilir. Örneğin : width : 50px; yada width : 1.25em; yada 50%
+
+![padding-margin](/CSS-Dersleri/assets/img/margin-padding.jpg)
