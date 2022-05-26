@@ -1,0 +1,51 @@
+/*Css Reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 16px;
+  width: 100%;
+}
+.container table {
+  border: 0;
+  width: 90%;
+  margin: auto;
+}
+.google-image {
+  text-align: center;
+}
+.roww-1 {
+  width: 90%;
+  margin: auto;
+}
+.row-col-1-1 {
+  background-color: #eeeeee;
+  text-align: center;
+}
+.row-col-1-1 p,
+.row-col-1-1 input {
+  padding: 2px;
+  margin: 2px;
+}
+.row-2 {
+  background-color: #7ee5da;
+  width: auto;
+  margin: auto;
+  text-align: center;
+}
+.row-col-1-1 a {
+  padding: 2px;
+  margin: 2px;
+}
+.row-col-2-3 > p,
+.row-col-2-3 > input,
+.row-col-2-3 > a {
+  padding: 2px;
+  margin: 2px;
+}
+.footer {
+  margin-top: 10px;
+  text-align: center;
+}
