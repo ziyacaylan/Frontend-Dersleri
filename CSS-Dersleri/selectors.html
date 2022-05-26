@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Selektörler</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+      }
+
+      .header-1 {
+        font-weight: bold;
+      }
+      .page-text {
+        text-align: center;
+      }
+      #header-1 {
+        color: blue;
+      }
+
+      #header-2 {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header-1">Sayfa Başlığı 1</h1>
+
+    <h1 id="header-2">Sayfa Başlığı 2</h1>
+
+    <h1 class="header-1">Sayfa Başlığı 1</h1>
+
+    <h1 class="header-1 page-text">Sayfa Başlığı 2</h1>
+  </body>
+</html>

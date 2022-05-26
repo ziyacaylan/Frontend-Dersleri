@@ -249,6 +249,37 @@ Css e html öğesini nasıl bulacağımızı söylememiz gerekmektedir. Bunu **s
 Resimde &#60;h1&#62; etiketine uygulanmış bir css syntax görülmektedir.
 ![h1 Css Uygulama](/CSS-Dersleri/assets/img/css-syntax.jpg)
 
+## Css Selektörler :
+
+Web sayfalarını oluştururken HTML elementlerine bazı stil özellikleri eklemek isteriz. Yazıların renklerini, font tiplerini, resimlerin büyüklük/küçüklük ayarlarını v.s. farklı şekillerde olmasını isteriz. Bunun için ise css kullanırız. Css yani stil özelliklerini HTML etiketlerine uygulayabilmek için önce bu etiketlere ulaşmamız (yani HTML sayfası içerisinde onu bulup seçmemiz) gerekir. İşte sayfa içerisinde istediğimiz etikete ulaşmak için **selektör**leri kullanırız. Şimdi bunları kısaca inceleyelim.
+
+### Genel Seçici
+
+Bu seçiciyi kullanarak bitin etiletlere CSS uygula demiş oluyoruz. Örneğin p seçicisini kullandığımızda sayfadaki bütün p leri seçmiş oluyoruz ve yazacağımız css kodu bütün p lere uygulanacaktır.
+
+- Genel seçicilerde etiket ismi yazılır. Örneğin: h1,p,body, footer gibi
+- - seçicisini kullanırsak bütün sayfaya ve herşeye css kodlarını uygulamış oluruz.
+    ![class selekttör](/CSS-Dersleri/assets/img//general-selector.jpg)
+
+### Class Kullanımı
+
+Class seçicisi, HTML üzerinde aynı class’a sahip elemana ulaşmamızı sağlar.
+
+- Class seçici CSS'de . ile belirtilir.
+- Bir class’ı birden fazla HTML elementi için kullanabiliriz.
+- Bir element birden fazla class a da sahip olabilir.
+- Bir element kendini kapsayan (yani parent elementin/etiketin) stil özelliklerine sahip olur.  
+  ![class selekttör](/CSS-Dersleri/assets/img/class-selector.jpg)
+
+### id Kullanımı
+
+ID seçici HTML elemanları içerisinde ayni id ye sahip olan elemana ulaşmamızı sağlar.
+
+- CSS'de # işareti ile belirtilir.
+- id seçicinin kullanım amacı olarak class lardan herhangi bir farkı yoktur denilerbilir. Ancak id seçicinin class seçiciden bazı farklılıkları vardır.
+- Bir id sadece bir HTML etiketine verilebilir. Yani sayfada aynı id ye sahip sadece bir etiket bulunur.
+  ![class selekttör](/CSS-Dersleri/assets/img/id-selector.jpg)
+
 ### Css Hangi yöntemler ile yazabiliriz ?
 
 - Inline (Etikete Özel) Css
@@ -291,3 +322,5 @@ bulunan metin font türlerini kullanabiliriz. En çok kullanılan Google Fonts �
 
 Css de metin boyutunu ayarlar. Bir metin boyutu belirtilmez ise metinin normal boyutu tarayıcı default değerlerinde görüntülenir. Bu değer genelde tarayıcılarda 16 pikseldir. Css te bir çok geliştirici piksel yerine "px" yerine "em" kullanmaktadır. 1em, mevcut yazı tipi boyutuna eşittir. Tarayıcılarda varsayılan metin boyutu 16 pikseldir. Yani, 1em'in varsayılan boyutu 16 pikseldir.
 [Örnek sayfayı inceleyiniz](/CSS-Dersleri/style.css)
+
+## Css Ezme Durumları :
