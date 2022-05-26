@@ -1,4 +1,4 @@
-# HTML ve CSS Dersleri
+# HTML Dersleri
 
 ## Html Nedir?
 
@@ -229,3 +229,65 @@ Semantic kelimesi anlamlandırma olarak tanımlanabilir. Semantic etikeler, herh
 [https://www.w3schools.com](https://www.w3schools.com)
 
 [www.patika.dev](www.patika.dev)
+
+# CSS Dersleri
+
+## Css Nedir ?
+
+Cascading Style Sheets (Basamaklanmış Stil Katmanları) web sayfaları şekillendirmek için kullanılan bir kodlama türüdür.
+Css Kullanılarak html sayfalarının görünümlerini ve düzenlerini değiştirebiliriz. Bir web sitesinin bilgisayarda , telefonda
+ya da tablet gibi mobil cihazlarda nasıl görüneceğini düzenleyebiliriz. **Css bir programlama dili değildir.**
+
+### Css Nezaman Çıkmıştır?
+
+Css 17-Aralık-1996 da World Wide Web Consortium tarafından geliştirilmiştir.
+
+### CSS Syntax | Css Nasıl Kullanılır?
+
+Html etiketlerinden herhangi birine bir css kodu uygulayacağımız zaman öncelikle o css kodunu seçiyor olmamız gerekmektedir. Yani
+Css e html öğesini nasıl bulacağımızı söylememiz gerekmektedir. Bunu **selector** denen bir özellik ile yapabiliriz.
+Resimde &#60;h1&#62; etiketine uygulanmış bir css syntax görülmektedir.
+![h1 Css Uygulama](/CSS-Dersleri/assets/img/css-syntax.jpg)
+
+### Css Hangi yöntemler ile yazabiliriz ?
+
+- Inline (Etikete Özel) Css
+- Internal (Aynı dosyada) Css
+- External (css dosyasında) Css
+
+### Inline Css :
+
+Inline css kodu etikete özel css kodu olarak da tanımlayabiliriz.
+Aşağıdaki örnek bir inline css kodu kullanılmıştır.
+![Inline css](/CSS-Dersleri/assets/img/inline-css.jpg)
+
+### Internal Css :
+
+Internal CSS, stil kodlarının direk HTML dosyasının içinde &#60;head&#62; bölümünde kullanıldığı bir yöntemdir. &#60;head&#62; bölümünün içinde bir &#60;style&#62; etiketi açtıktan sonra içine gerekli CSS kodlarını yazabilirsiniz.
+Aşağıdaki örnek bir internal css kodu kullanılmıştır.
+![Internal css](/CSS-Dersleri/assets/img/internal-css.jpg)
+
+### External Css :
+
+External css ise html sayfamızdan bağımsız olarak bir css dosyası olarak bulunur ve html sayfamız içerisinde &#60;head&#62; kısmında bir link ile sayfamıza aşağıdaki resimde görüldiği gibi eklenir.
+![External css](/CSS-Dersleri/assets/img/external-css.jpg)
+
+## Bazı Css Komutlarını İnceleyelim:
+
+### color
+
+Metinimizin rengini değiştirmek için kullanırız.
+
+### backgroung-color
+
+Arka plan rengini değiştirmek için kullanılır.
+
+### Font-family
+
+Yazı fontumuzu belirleriz. Değişik yazı fontlarını kullanmak için internet üzerinde
+bulunan metin font türlerini kullanabiliriz. En çok kullanılan Google Fonts örnek olarak verilebilir. ([Google Fonts: Browse Fonts](https://fonts.google.com))
+
+### Font-size
+
+Css de metin boyutunu ayarlar. Bir metin boyutu belirtilmez ise metinin normal boyutu tarayıcı default değerlerinde görüntülenir. Bu değer genelde tarayıcılarda 16 pikseldir. Css te bir çok geliştirici piksel yerine "px" yerine "em" kullanmaktadır. 1em, mevcut yazı tipi boyutuna eşittir. Tarayıcılarda varsayılan metin boyutu 16 pikseldir. Yani, 1em'in varsayılan boyutu 16 pikseldir.
+[Örnek sayfayı inceleyiniz](/CSS-Dersleri/style.css)

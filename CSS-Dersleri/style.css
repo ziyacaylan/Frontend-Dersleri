@@ -1,0 +1,28 @@
+/*Css Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(185, 164, 150);
+}
+#page-title {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#paragraph-1 {
+  font-style: italic;
+}
+#paragraph-2 {
+  background-color: rgb(164, 208, 98);
+  font-style: normal;
+}
+#paragraph-3 {
+  color: rgb(108, 008, 108);
+  font-style: oblique;
+}
+#paragraph-4 {
+  color: #525050;
+  font-size: 2epx;
+}
