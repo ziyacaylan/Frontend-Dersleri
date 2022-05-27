@@ -399,3 +399,45 @@ Yukarıdaki kutu özellikleri dışında kutunun boy ve uzunluğunu ayarlayan wi
 Yükseklik ve genişlik değerleri px, em veya % ile belirtilir. Örneğin : width : 50px; yada width : 1.25em; yada 50%
 
 ![padding-margin](/CSS-Dersleri/assets/img/margin-padding.jpg)
+
+### Borders (Kenarlar):
+
+- Bu css komutu ile elementimize bir kenarlık uygularız.
+- [Örneği inceleyiniz](/CSS-Dersleri/borders.html). Border yani kenarlık vermeyi istersek kenar kenar istersek sadece istediğimiz kenarlara verebiliriz.
+
+### Box-sizing:
+
+- iç içe etiketlerde örneğin bir adet div içerisine bir h1 etiketi yada bir p etiketi yerleştirdiğimizde içetike etiketimiz yani child element parent elementin kapladığı alan kadar yer kaplamaktadır. Default olarak belirtmediğimizde box-sizing özelliği content-box olarak gelmektedir.
+- Child elementimize box-sizing : content-box verdiğimizde ve ve width:100% yaptığımızda üzerine birde padding yada margin verir isek panrent element dışına taşacaktır.
+  [Örneği inceleyiniz](/CSS-Dersleri/box-sizing.html)
+
+### Display:
+
+- display : none | inline | inline-blok | blok olarak özellikler alacaktır. Flex özelliği ise daha sonra ele alınacaktır.
+- inline olarak bir elementi işaretlediğimizde element inline elemanın özelliklerine sahip olacaktır.
+- inline elemanlara yüksekli ve genişlik değerleri etki etmemektedir. Yani vereceğimiz width ve height değerlerinin elemana uygalanmadığını gözlemleyebiliriz. padding verdiğimizde ise sadece sağdan ve soldan etki edeceğini gözlemleyebiliriz
+- display: box olan bir elemanın bu özelliğini değiştirip display : inline yaptığımızda artık bu element de bir inline eleman gibi darvaranacaktır.
+- Display:inline-blok Bu kod ile elemente verdiğimiz width ve height değerlerinin geçerli olduğunu dözlemleyebiliriz. Yani içerik kadar yer kaplamayacak bizim verdiğimiz width ve height değerleri geçerli olacaktır.
+- display:block özelliği ise eleman bir blok eleman özelliklerine sahip olacaktır. Width ve height değerleri verilebilmektedir. Ancak genişlik satırın tamamını kaplayacak şekilde (100%) verilmemiş ise satırın geri kalanı boş kalacaktır. Diğer elementler yanyana gelmeyecektir.
+- display:none özelliği ile eleman sayfa üzerinden kaybedilecek; görünmeyecektir. ve kapladığı alanda silinecektir. Yanındaki ya da alt altalar ise şayet kaybedilen elementin yeri kaydırılarak doldurulacaktır.
+
+- [Örnekteteki kodları inceleyiniz.](/CSS-Dersleri/display.html)
+
+### Visibility :
+
+- visibility: hidden dersek element sayfa üerinden kaybolacak (gizlenecek) ancak sayfa üzerinde kapladığı alan kalacaktır.
+- [Örnekteteki kodları inceleyiniz.](/CSS-Dersleri/visibility.html)
+
+### Navbar :
+
+- navbar sayfa üzerinde birçok yerde bulunabilir ve değişik elementler kullanılarak hazırlanabilir.
+- [İnceleyiniz](/CSS-Dersleri/navbar.html) Örnekte sayfa üstünde kullanılmış ve düzenlenmiştir.
+- İlerleyen konularda dahada farklı şekillerde düzenlemeler yapıalacaktır. Bo düzenleme öğrendiğimiz konular kadarıyla ele alınmıştır.
+
+### Styling List :
+
+- Listelere nasıl css uygulandığına ilişkin örneği inceleyiniz. [Bakınız örnek](/CSS-Dersleri/styling-list.html)
+
+### Styling Links :
+
+-

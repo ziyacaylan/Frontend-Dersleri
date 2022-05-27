@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Examples</title>
+    <style>
+      .box {
+        height: 60px;
+        width: 60px;
+        display: block; /*blok eleman tüm satırı kaplar ancak width ve height değerleri verildiğinde değerler uygulanır ancak satırın geri kalanı boş kalacak tır.*/
+        /* display: inline; Bu özellik ile sadece bir inline eleman kadar yer kaplayacaktır. */
+        /*display: inline-block;*/ /*Bu kod ile elemente verdiğimiz width ve height değerlerinin geçerli olduğunu dözlemleyebiliriz. Yani içerik kadar yer kaplamayacak bizim verdiğimiz width ve height değerleri geçerli olacaktır.*/
+      }
+      #first {
+        background-color: red;
+      }
+      #second {
+        background-color: green;
+        display: none; /*Bu üzellikuygulandığında second id li element kaybolacak ayrıca sayfada kapladığı alanda yok olacaktır. Bir attaki element ise bu elementin yerine kayacaktır.*/
+      }
+      #third {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ÖNEMLİ NOT: inline elemanlara yüksekli ve genişlik değerleri etki etmemektedir. Yani vereceğimiz width ve height değerlerinin elemana uygalanmadığını gözlemleyebiliriz. padding verdiğimizde ise sadece sağdan ve soldan etki edeceğini gözlemleyebiliriz  -->
+
+    <!-- display : none | inline | inline-blok | blok -->
+    <div id="container">
+      <div class="box" id="first">Fisrt</div>
+      <div class="box" id="second">Second</div>
+      <div class="box" id="third">Third</div>
+    </div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Movie</a>
+      <a href="#">Contact</a>
+    </div>
+  </body>
+</html>

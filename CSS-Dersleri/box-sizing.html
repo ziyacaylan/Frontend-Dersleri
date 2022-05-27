@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box-Sizing Examples</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        padding: 30px 30px;
+        background-color: rgb(34, 36, 131);
+      }
+      .container {
+        border: 2px solid white;
+      }
+      /*Aşağıda ki örnekte parent element dışına taşma gözlenlenebilir*/
+      /* h1 {
+        box-sizing: content-box;
+        width: 100%;
+        border: solid #5b6dcd 10px;
+      } */
+
+      /*Aşağıdaki örnek kodda ise child element parent element içerisine sığacak şekilde ayarlanır. yani child element içerik kapladığı alan ile padding ve border değerleri toplamı parent elemente sığacak şekilde konumlanır.*/
+      h1 {
+        box-sizing: border-box;
+        width: 100%;
+        border: solid #5b6dcd 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to box-sizing exaples</h1>
+    </div>
+  </body>
+</html>
