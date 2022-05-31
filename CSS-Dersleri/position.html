@@ -15,30 +15,41 @@
       .container {
         /* margin: 20px; */
         width: 500px;
-        height: 900px;
+        height: 650px;
         border: 2px solid rebeccapurple;
         position: relative; /* Burada kutularımızı içeren parent element olan divimize postion: relative özelliğini verdik.*/
         top: 20px;
         left: 20px;
+        border-radius: 10px;
       }
       .box {
         width: 150px;
         height: 150px;
         border: 2px solid #3f3f3f;
-        /* margin: 20px;*/
-        padding: 20px;
+        border-radius: 8px;
+      }
+      .box span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /*Tam orta noktaya getirmek için*/
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
       }
       #box-1 {
         background-color: #162e84;
         position: absolute;
-        top: 15%;
-        left: 15%;
+        top: 10%;
+        left: 10%;
       }
+
       #box-2 {
         background-color: #954f13;
         position: absolute;
-        top: 45%;
-        left: 30%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /*Tam orta noktaya getirmek için*/
       }
       #box-3 {
         background-color: #5e5e60;
@@ -50,9 +61,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="box" id="box-1">Box 1</div>
-      <div class="box" id="box-2">Box 2</div>
-      <div class="box" id="box-3">Box 3</div>
+      <div class="box" id="box-1"><span>Box 1</span></div>
+      <div class="box" id="box-2"><span>Box 2</span></div>
+      <div class="box" id="box-3"><span>Box 3</span></div>
     </div>
   </body>
 </html>

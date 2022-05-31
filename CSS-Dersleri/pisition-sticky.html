@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position: Fixed</title>
+    <style>
+      /*Css Reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        height: 1200px;
+      }
+
+      .navbar {
+        width: 100%;
+        height: 60px;
+        position: sticky;
+        top: 0; /*Scroll top 0 değerine geldiğinde navbar üst kısıma sabitlenecektir.*/
+        background-color: #435685;
+      }
+      .navbar h3,
+      .content h3,
+      .footer-side h3 {
+        padding: 20px;
+        color: #fff;
+      }
+      .content {
+        width: 100%;
+        height: 200px;
+        background-color: #795ded;
+      }
+
+      .footer-side {
+        width: 100%;
+        height: 60px;
+        background-color: #435685;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis qui
+        atque nisi unde labore sint corporis reprehenderit consequuntur
+        explicabo nobis, quo alias, iste voluptatum ipsum tenetur recusandae
+        voluptatem? Aliquam, ab. Voluptatem dicta, porro odio ea recusandae quia
+        vero similique eligendi animi deleniti doloremque illo quam quos facilis
+        laboriosam cupiditate, velit laudantium iusto sit! Necessitatibus quia
+        nihil fugit asperiores inventore doloribus. Odio aut velit sunt, tenetur
+        quis minus natus corporis corrupti dicta, voluptas atque magni pariatur
+        nemo numquam officia cum et at voluptate ut eius. Omnis nisi veritatis
+        debitis deleniti praesentium!
+      </p>
+      <div class="navbar"><h3>Navbar</h3></div>
+      <div class="content"><h3>Content</h3></div>
+      <div class="footer-side"><h3>Footer Here</h3></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis qui
+        atque nisi unde labore sint corporis reprehenderit consequuntur
+        explicabo nobis, quo alias, iste voluptatum ipsum tenetur recusandae
+        voluptatem? Aliquam, ab. Voluptatem dicta, porro odio ea recusandae quia
+        vero similique eligendi animi deleniti doloremque illo quam quos facilis
+        laboriosam cupiditate, velit laudantium iusto sit! Necessitatibus quia
+        nihil fugit asperiores inventore doloribus. Odio aut velit sunt, tenetur
+        quis minus natus corporis corrupti dicta, voluptas atque magni pariatur
+        nemo numquam officia cum et at voluptate ut eius. Omnis nisi veritatis
+        debitis deleniti praesentium!
+      </p>
+    </div>
+  </body>
+</html>

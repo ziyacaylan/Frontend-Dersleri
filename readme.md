@@ -467,10 +467,9 @@ Position: static | relative | absolute | fixed | sticky
 
 Sayfa içerisinde bir elementin position değerini belirtmediğimizde default static olarak gelir. Bu özellik ile bir elementin pozisyonunu belirleyebiliriz.
 
-- position: relative olarak verdiğimizde elementin bulunduğu konuma gore top | bottom | left | right değerleri vererek elementi haraket ettiririz. Yani o anki konumuna göre normal akışı bozmadan haraket etirebiliriz. örneğin top:50px verdiğimizde tepeden 50px aşağı doğru haraket ettirilecektir. Eksi değer verdiğimizde ise ters yönde haraket edecektir.
-- position: absolute olarak verdiğimizde ise verdiğimiz element normal akış içerisinden çıkacak ve parent elenti relative olan var ise o elente göre şayet parenti relative olan yok ise body e göre konum alacaktır.Bu durumda top | bottom | left | right değerleri verdiğimizde parent elementi yada body ye göre konum alacaktır.
-- position:fixed
+- position: relative olarak verdiğimizde elementin bulunduğu konuma gore top | bottom | left | right değerleri vererek elementi haraket ettiririz. Yani o anki konumuna göre normal akışı bozmadan haraket etirebiliriz. örneğin top:50px verdiğimizde tepeden 50px aşağı doğru haraket ettirilecektir. Eksi değer verdiğimizde ise ters yönde haraket edecektir. [Örneği inceleyiniz](/CSS-Dersleri/position.html)
+- position: absolute olarak verdiğimizde ise verdiğimiz element normal akış içerisinden çıkacak ve parent elenti relative olan var ise o elente göre şayet parenti relative olan yok ise body e göre konum alacaktır.Bu durumda top | bottom | left | right değerleri verdiğimizde parent elementi yada body ye göre konum alacaktır. [Örneği inceleyiniz](/CSS-Dersleri/position.html)
+- position:fixed özelliği vererek sayfa üzerinde istediğimiz bir elementi sabitleyebiliyoruz. Aynı zamanda z-index özelliği de verebiliyoruz. Örneğin navar kısmını sitemizin tepesinde sabit kalmasını, sayfamızı aşağı doğru kaydırsak bile navbar bölümümüzün sabit kalmasını sağlamak için position:fixed özelliğini kullanırız. [Örneği inceleyiniz.](/CSS-Dersleri/pisition-fixed.html)
+- position:sticky özelliğini vererek absolute gibi elementin davranmasını sağlayabiliriz ancak absolute den farkı ise scroll için belirlediğimiz değere kaydırma ulaştığında fixed olacaktır. [Detayları görmek için örneği inceleyiniz](/CSS-Dersleri/pisition-sticky.html)
 
 ### Flexbox
-
-### Grid

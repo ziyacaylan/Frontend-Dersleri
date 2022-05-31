@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position: Fixed</title>
+    <style>
+      /*Css Reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        height: 950px;
+      }
+
+      .navbar {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #435685;
+      }
+      .navbar h3,
+      .content h3,
+      .footer-side h3 {
+        padding: 20px;
+        color: #fff;
+      }
+      .content h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /*Tam orta noktaya getirmek için*/
+      }
+      .content {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 850px;
+        background-color: #795ded;
+      }
+
+      .footer-side {
+        position: fixed; /* footer burada alta sabitlenmiştir. container yüksekliğini arttırarak footerın alta yapışık sabit kaldığını gözlemleyebilirsiniz.*/
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        height: 60px;
+        background-color: #435685;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar"><h3>Navbar</h3></div>
+      <div class="content"><h3>Content</h3></div>
+      <div class="footer-side"><h3>Footer Here</h3></div>
+    </div>
+  </body>
+</html>
