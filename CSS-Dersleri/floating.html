@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating</title>
+    <style>
+      /*Css Reset*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #container {
+        width: 100%;
+        height: auto;
+        margin: 20px;
+        /*text-align: center;*/ /*Bu komutun çalışmadığını gözlemleyebilirsiniz. Blok elemanlara text-align UYGULANAMAMAKTADIR*/
+      }
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: blueviolet;
+        margin: 10px;
+        padding: 10px;
+        color: #fff;
+        /*display: inline-block;*/ /*Blok olan elemanları inline-blok olarak belirlersek blok olan parent elementimiz içerisinde width ve height değerlerini kaybetmeden text-align özelliği uygulanabilmektedir.*/
+        text-align: center;
+        float: right; /*Float:right uyguladığımızda elemanların sağdan başlayarak sola doğru sıra ile dizildiklerini gözlemleyebilirsiniz.*/
+      }
+      #box-1 {
+        float: left; /*Bu elemana float uyguladığımızda bu elemanın sola yanaştığını gözlemleyiniz.*/
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box" id="box-1">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+  </body>
+</html>

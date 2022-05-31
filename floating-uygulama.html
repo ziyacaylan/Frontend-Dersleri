@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Uygulama</title>
+  </head>
+  <style>
+    /*Css Reset*/
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      width: 100%;
+      height: 100px;
+      background-color: #5a52c9;
+      margin-bottom: 10px;
+    }
+    header h2 {
+      padding: 30px 10px;
+    }
+    .main-content {
+      float: left;
+    }
+    .navbar-items {
+      list-style: none;
+      margin: 10px;
+    }
+    .navbar-items li {
+      background-color: #3f1873;
+      padding: 10px;
+      margin: 5px;
+      width: 150px;
+    }
+    .container {
+      float: right;
+    }
+  </style>
+  <body>
+    <!-- Header start -->
+    <header>
+      <h2>Header</h2>
+    </header>
+    <!-- Header end -->
+    <!-- main content start -->
+
+    <div id="main-content" class="clearfix">
+      <div class="navbar">
+        <ul class="navbar-items">
+          <li>Html</li>
+          <li>Css</li>
+          <li>Javascript</li>
+        </ul>
+      </div>
+      <div class="container">
+        <h2>Front-End Ders Uygulamaları</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
+          necessitatibus laboriosam excepturi nobis sunt quae porro magni
+          repellendus eveniet quis exercitationem ea, fuga voluptatibus ducimus,
+          a reprehenderit eos quisquam tempore!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
+          saepe eos voluptatum minima est quia autem et, laudantium tenetur odit
+          repudiandae sunt nobis consequatur quae qui ducimus voluptatibus!
+          Tempora, itaque?
+        </p>
+      </div>
+    </div>
+
+    <!-- main content end -->
+    <!-- Footer start -->
+    <footer>
+      <h3>Footer</h3>
+    </footer>
+    <!-- Footer End -->
+  </body>
+</html>

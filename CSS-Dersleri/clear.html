@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating</title>
+    <style>
+      /*Css Reset*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #container {
+        width: 100%;
+        height: auto;
+        margin: 20px;
+        /*text-align: center;*/ /*Bu komutun çalışmadığını gözlemleyebilirsiniz. Blok elemanlara text-align UYGULANAMAMAKTADIR*/
+
+        background-color: aquamarine; /*Float uygulandığından normal akıştan çıkacak ve bu özelliğin uygulanamadığını gözlemleyebilirsiniz. Bunu gidermek için clear uygulanması gerekir.*/
+      }
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: blueviolet;
+        margin: 10px;
+        padding: 10px;
+        color: #fff;
+        /*display: inline-block;*/ /*Blok olan elemanları inline-blok olarak belirlersek blok olan parent elementimiz içerisinde width ve height değerlerini kaybetmeden text-align özelliği uygulanabilmektedir.*/
+        text-align: center;
+        float: right; /*Float:right uyguladığımızda elemanların sağdan başlayarak sola doğru sıra ile dizildiklerini gözlemleyebilirsiniz.*/
+      }
+      #box-1 {
+        float: left; /*Bu elemana float uyguladığımızda bu elemanın sola yanaştığını gözlemleyiniz.*/
+      }
+      .clr {
+        clear: both; /*Bu özellik ile sayfada akış floattan kaynaklanan sorun gidecek ve saya normal akışına geri dönecektir.*/
+      }
+
+      /*Aşağıdaki kodlar ilede floattan sonra clear uygulamak için parent elementimize vereceğimiz bir class ile kendisinden sonra sanki bir eleman varmış gibi davranacak ve uyguladığımız clear ile floattan kaynaklanan bozulma giderilecek ve sayfa normal akışına dönecektir.*/
+      /*.clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }*/
+    </style>
+  </head>
+  <body>
+    <div id="container" class="clearfix">
+      <div class="box" id="box-1">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="clr"></div>
+      <!-- Float özelliğinden kaynaklanan bozulmayı gidermek için bu divi ekleyebiliriz. -->
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet hic
+      voluptates, corrupti deleniti illo esse molestias aspernatur eum! Quis
+      magni aperiam consequatur ducimus repellendus maxime sit? Accusamus
+      nostrum tempora earum?
+    </p>
+  </body>
+</html>

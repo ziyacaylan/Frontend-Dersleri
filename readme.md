@@ -375,6 +375,8 @@ Arka plan rengini değiştirmek için kullanılır.
 Yazı fontumuzu belirleriz. Değişik yazı fontlarını kullanmak için internet üzerinde
 bulunan metin font türlerini kullanabiliriz. En çok kullanılan Google Fonts örnek olarak verilebilir. ([Google Fonts: Browse Fonts](https://fonts.google.com))
 
+- Sayfamızda tasarlarken herhangi bir font belirtmez isek tarayıcı varsayılanı ne ise onunla yazı fontları görüntülenir
+
 ### Font-size
 
 Css de metin boyutunu ayarlar. Bir metin boyutu belirtilmez ise metinin normal boyutu tarayıcı default değerlerinde görüntülenir. Bu değer genelde tarayıcılarda 16 pikseldir. Css te bir çok geliştirici piksel yerine "px" yerine "em" kullanmaktadır. 1em, mevcut yazı tipi boyutuna eşittir. Tarayıcılarda varsayılan metin boyutu 16 pikseldir. Yani, 1em'in varsayılan boyutu 16 pikseldir.
@@ -441,3 +443,18 @@ Yükseklik ve genişlik değerleri px, em veya % ile belirtilir. Örneğin : wid
 ### Background Image :
 
 -[Örneği inceleyininiz.](/CSS-Dersleri/background-image.html) Bu örnekte body içerisinde içeriğin sunulacağı kısıma arka plan resimi uygulanmıştır.
+
+### Floating
+
+Nesneleri sayfa üzerinde konumlandırmak için kullanılan bu komuta başlamadan önce blok eleman, inline ve inline-block elemanları ve özelliklerini kavramamız gerekir.
+
+- Bir elemanı blok eleman olarak tanımladığımızda satırı olduğu gibi kaplamamktadır.
+- İnline eleman ise içeriği kadar yer kaplayacaktır. İnline bir elemana genişlik yada yükseklin değeri uygulayamayız.
+- İnline-block eleman ise inline eleman olup bir blok elemanmış gibi davranacak ve bir genişlik yada yükseklik değeri atayabiliriz.
+- Blok elemanlara bir genişlik ve yükseklik değeri verdiğimizde alt alta geldiğini gözlemleriz.
+- İnline ve inline-blok elemanlar ise içerikleri kadar yer kaplayacaklar ve satıra sığdıkları sürece yan yana geleceklerdir.
+- Blok elemanlara ise text-align özelliği uygulanamamaktadır. Bu özellik inline yada inline-blok elemanlara uygulanabilir ve satır içerisinde haraket ettirilebilir.
+
+[Örneği inceleyiniz.](/CSS-Dersleri/floating.html)
+Sayfamızda bir örneğin parent bir elemana float özelliği kazandırdığımızda normal akışın bozulduğu gözlemlenebilir. Bunu da gözlemlemek için parent elemana bir background
+rengi vererek gözlemleyebilirsiniz. Float uygulanan elemanlardan sonra gelen elemanların normal akışı içerisinde devam edebilmeleri için CLEAR uygulanması gerekmektedir.
