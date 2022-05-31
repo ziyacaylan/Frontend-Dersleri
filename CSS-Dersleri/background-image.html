@@ -11,16 +11,37 @@
       }
       body {
         margin: 0;
+        padding: 0;
       }
       #showcase {
         width: 100%;
-        height: 500px;
-        background-color: #2513ec;
+        /* background-color: #2513ec; */
         padding: 10px;
       }
+      #container {
+        width: 100%;
+        height: 800px;
+        background: url(/CSS-Dersleri/assets/img/background-image.jpg); /* Burada main alana arkaplan resimi uygulanmıştır. */
+        background-position: center; /*Resim orta kısmı görünecek şekilde çerçeveye oturtulmuştur.*/
+        background-size: cover; /*Resim boyutu kapsayıcı elementinin boyutuna göre ayarlar*/
+        background-repeat: no-repeat; /* resimin kapsayıı elemanından küçük olduğu durumlarda tekrar edip etmeyeceğini belirtir.*/
+      }
+      #container #showcase h1 {
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+      }
       #how-it-works {
+        position: fixed;
         background-color: #fc997c;
-        padding: 10px;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 150px;
+        padding: 15px;
+      }
+      #how-it-works h2 {
+        text-align: center;
       }
       .main-header {
         background-color: #fc997c;
@@ -36,10 +57,21 @@
       .main-nav__items {
         margin: 0;
         padding: 0;
-        list-style: none;
       }
       .main-nav__item {
         display: inline-block; /*listeye inline-blok özelliği kazandırılarak elemanlar yanyana alındı yukarıdaki iskelet yapı bozulmadan manü liste içerisinde yazırlanmış oldu*/
+        padding: 0 15px;
+      }
+      .main-nav__item a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        padding: 5px 15px;
+        border: 1px solid #449cee;
+        border-radius: 10px;
+        color: rgb(8, 55, 245);
+        background-color: #efdc4d;
       }
     </style>
   </head>
@@ -55,13 +87,19 @@
       </nav>
     </header>
 
-    <main>
-      <section id="showcase">
-        <h1>Sayfamıza Hoşgeldiniz</h1>
-      </section>
-      <section id="how-it-works">
-        <h2>Nasıl çalışır?</h2>
-      </section>
+    <!-- main container start -->
+    <main id="container">
+      <div id="showcase">
+        <h1>Burası Sayfanın Main Header Kısmıdır</h1>
+      </div>
     </main>
+    <!-- main container end -->
+    <!-- footer start -->
+    <footer>
+      <section id="how-it-works">
+        <h2>Burası Sayfanın Footer Kısmı...!</h2>
+      </section>
+    </footer>
+    <!-- footer end -->
   </body>
 </html>

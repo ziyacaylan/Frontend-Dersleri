@@ -438,6 +438,6 @@ Yükseklik ve genişlik değerleri px, em veya % ile belirtilir. Örneğin : wid
 
 - Listelere nasıl css uygulandığına ilişkin örneği inceleyiniz. [Bakınız örnek](/CSS-Dersleri/styling-list.html)
 
-### Styling Links :
+### Background Image :
 
--
+-[Örneği inceleyininiz.](/CSS-Dersleri/background-image.html) Bu örnekte body içerisinde içeriğin sunulacağı kısıma arka plan resimi uygulanmıştır.
