@@ -21,22 +21,55 @@
     }
     header h2 {
       padding: 30px 10px;
+      color: #f0c26c;
     }
-    .main-content {
+    #main-content {
       float: left;
+    }
+    .navbar {
+      display: inline-block;
     }
     .navbar-items {
       list-style: none;
       margin: 10px;
     }
-    .navbar-items li {
+    .navbar--item {
       background-color: #3f1873;
       padding: 10px;
       margin: 5px;
-      width: 150px;
+      width: 180px;
+      color: #fff;
+      font-size: 600;
     }
     .container {
+      display: inline-block;
+      width: 600px;
       float: right;
+    }
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .container h2 {
+      padding-bottom: 10px;
+    }
+    .container p {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: justify;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: #5a52c9;
+      width: 100%;
+      height: 100px;
+      padding: 30px 10px;
+    }
+    footer h2 {
+      color: #f0c26c;
     }
   </style>
   <body>
@@ -45,16 +78,17 @@
       <h2>Header</h2>
     </header>
     <!-- Header end -->
-    <!-- main content start -->
 
+    <!-- main content start -->
     <div id="main-content" class="clearfix">
       <div class="navbar">
-        <ul class="navbar-items">
-          <li>Html</li>
-          <li>Css</li>
-          <li>Javascript</li>
-        </ul>
+        <div class="navbar-items">
+          <div class="navbar--item">Html</div>
+          <div class="navbar--item">Css</div>
+          <div class="navbar--item">Javascript</div>
+        </div>
       </div>
+
       <div class="container">
         <h2>Front-End Ders Uygulamaları</h2>
         <p>
@@ -75,7 +109,7 @@
     <!-- main content end -->
     <!-- Footer start -->
     <footer>
-      <h3>Footer</h3>
+      <h2>Footer</h2>
     </footer>
     <!-- Footer End -->
   </body>
