@@ -474,23 +474,55 @@ Sayfa içerisinde bir elementin position değerini belirtmediğimizde default st
 
 ### Flexbox
 
-Flexbox nedir? : Flexbox 2017 yılında css e eklenen yeni bir özelliktir. Amacı ise clasik css te kullanmış olduğumuz float, position, display gibi özelliklerin üzerine alternatif olarak çıkmıştır. Aşağıdaki resimi inceleyiniz.
+Flexbox nedir? : Flexbox 2017 yılında css e eklenen yeni bir özelliktir. Amacı ise clasik css te kullanmış olduğumuz float, position, display gibi özelliklerin üzerine alternatif olarak çıkmıştır. Aşağıdaki resimi inceleyiniz. Resimdeki gibi bir sayfamızın olduğunu varsayalım. Mavi görünen kapsayıcı bir parent element ve içerisinde yer alan farklı özelliklere sahip etiketler (bu bir p etiketi, h etiketi, span etiketi yada bu bir div olabilir v.b.) olduğunu düşünelim. Bunları sayfa içerisinde istediğimiz konumlarda konumlandırabilmek flex özelliği sayesinde artık çok kolaydır. Bunun için ilk yapmamız gereken parent elenetin display özelliğini flex yapmak.
 ![how-to-use-flex](/CSS-Dersleri/assets/img/how-to-use-flex.jpg)
 
 Bu özelliği kullanabilmek için:
 
-- Öncelikle bir container a ihtiyacımız var. Pozisyonlarını ayarlamak istediğimiz elementlerin kapsayıcı elementin display özelliğini flex yapıyoruz. Bu işlem sonunda flex container içerisindeki her bir element; bu bir p etiketi yada bir div olsun farketmez bütün elementler bir flex item a çevrilir. Bu çevirme işleminden sonra elementleri istediğimiz şekilde haraket ettirebiliriz.
+- Pozisyonlarını ayarlamak istediğimiz elementlerin kapsayıcı elementin display özelliğini flex yapıyoruz. Bu işlem sonunda flex container içerisindeki her bir element; bu bir p etiketi yada bir div olsun farketmez bütün elementler bir flex item a çevrilir. Bu çevirme işleminden sonra elementleri istediğimiz şekilde haraket ettirebiliriz.
   ![flex-container](/CSS-Dersleri/assets/img/flex-container.jpg)
 
 - Parent elementi flex olan kapsayıcı elementimiz içerisindeki elementlerin haraket için izleyecekleri eksenler aşağıdaki resimden inceleyiniz.
   ![flex-main-axis](/CSS-Dersleri/assets/img/flex-main-axis.jpg)
+
   Main axis : Default ta ufuk çizgisidir.
   cross axis : main ekseni dik kesen çizgidir.
 
   #### Parent flex Özellikleri:
 
-1.  flex-direction :
-2.  flex-wrap :
-3.  justify-content :
-4.  align-items :
-5.  align-content :
+1.  flex-direction : Parent elementimizin display özelliğini flex yaptığımızda filex-direction kodu ile içerideki elementlerimizi dört farklı şekilde sıralayabiliriz.
+    Parent element içerisindeki elementlerimizi örneğin div olsun. Div elementleri blok elementlerdir. Parent elementimizi flex yaptığımızda parent içerisindeki div elemanlarının inline bir element gibi davrandıklarını ve içerik kadar yer kapladıklarını gözlemleyebilirsiniz. Yukarıdaki dizilim eksenini göz önünde bulundurduğumuzda dizilim için herhangi bir değer belirtmediğimizde elementler main axis üzerinde soldan başlayarak sağa doğru (from main-start to main-end) dizilirler.
+    - display:flex yapmadan önce dizilim.
+      ![before-flex](/CSS-Dersleri/assets/img/before-flex.jpg)
+    - display:flex yaptıktan sonra dizilim.
+      ![before-flex](/CSS-Dersleri/assets/img//after-flex.jpg)
+      [Örneği inceleyiniz.](/CSS-Dersleri/flex-direction.html). Flex özelliğini kapatıp açarak dizilimi gözlemleyiniz.
+
+flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. justify-content : 4. align-items : 5. align-content :
+
+- flex-direction: row yaptığımızda içerikteki elementlerin soldan sağa satır üzerinde dizileceklerdir. Belirtmediğimizde flex-direction özelliği default ta row olarak gelir.
+- flex-direction: row-reserve : bu kod ile içeriklerimiz sağlan sola doğru sıralanacaktır.
+- flex-direction: column : bu kod ile içeriklerimiz yukarıdan aşağıya doğru sıralanacaklardır.
+- flex-direction: column-reserve : bu kod ile içeriklerimiz aşağıdan yukarıya doğru sıralanacaklardır.
+
+2. flex-wrap : nowrap | wrap | wrap-reverse
+
+   - flex-nowrap : Default olarak gelir. Sayfamız daralmaya başladığında içeriklerimiz sayfaya sığmayacaktır. flex-wrap ile sayfaya içeriklerimiz sığmadığında alt satıra geçeceklerdir. Default olarak gelen nowrap ile taşma esnasında alt satıra geçme sağlanmaz.
+   - flex-wrap: wrap: kodumuzu wrap yaptığımızda ise sayfaya sığmayan elementimiz bir alt satıra geçerek görüntülenecektir. [Örneği inceleyiniz.](/CSS-Dersleri/flex-wrap.html)
+   - flex-wrap: wrap-reverse bu kodumuz ile sıralama tersten yapılacaktır. [Örneği inceleyiniz.](/CSS-Dersleri/flex-wrap.html)
+
+3. Flexbox Alignments: Elemanları yatayda hizalamak için justify-content, dikeyde hizalamak için ise align-items komutları kullanılır.
+   ![flexbox-alignment](/CSS-Dersleri/assets/img/flexbox-alignments.jpg)
+
+   - justify-content : flex-start | flex-end| center | space-between | space-around | space-evenly
+     ![justify-content](/CSS-Dersleri/assets/img/justify-content.jpg)
+     [Örneği inceleyiniz.](/CSS-Dersleri/flex-alignments.html)
+
+   - align-items : flex-start | flex-end| center | stretch | baseline
+     ![justify-content](/CSS-Dersleri/assets/img/align-items.jpg)
+     [Örneği inceleyiniz.](/CSS-Dersleri/flex-alignments.html)
+
+     - NOT : flex-direction özelliği defaultta row olarak gelmektedir. Bu özellik row iken elementleri yatayda hizalamak için justify-content dikeyde hizalamak için ise align-items komutu kullanılır.
+
+     flex-direction: column olduğunda ise busefer yatayda hizalamak için align-items, dikeyde hizalamak için ise justify-content komutu kullanılmaktadır.
+     ![flex-direction:column](/CSS-Dersleri/assets/img/flexbox-alignments-1.jpg)

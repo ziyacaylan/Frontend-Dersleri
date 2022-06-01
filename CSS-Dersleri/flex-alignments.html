@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Direction</title>
+    <style>
+      /*css reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin: 10px;
+        border: 2px solid #333;
+        background-color: #242f9b;
+        height: 500px;
+
+        display: flex;
+        flex-direction: column;
+
+        /*Elementleri yatayda hizalamak için*/
+        /*justify-content: flex-start; /*Default değer*/
+        /*justify-content: flex-end; /*Yatayda sağa yakın hizalanırlar*/
+        justify-content: center; /*Sayfanın ortasına hizalanırlar*/
+        /*justify-content: space-around; /* aralarındaki mesafe eşit olur ancak elementlerin dışında kalan bölge aralarında kalandan farklı olacaktır. (en sağ ve en sol 1x mesafede iken aralarındaki mesafe 2x)*/
+        /*justify-content: space-between; /*Elementlerin aralarında eşit mesafede hizalanırlar*/
+        /*justify-content: space-evenly; /*elementlerin aralarındaki ve en sağ ve soldaki bütün mesafeler eşit olarak hizalanır*/
+
+        /*Elementleri dikeyde hizalamak için ise align-items*/
+        align-items: flex-start;
+        align-items: flex-end;
+        align-items: center;
+        align-items: stretch; /*dikeyde parent element içerisinde sütunu olduğu gibi kaplayacaktır.*/
+        /* align-items: baseline; */
+      }
+      .box {
+        background-color: #f7862b;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box-1">Box-1</div>
+      <div class="box" id="box-2">Box-2</div>
+      <div class="box" id="box-3">Box-3</div>
+      <div class="box" id="box-4">Box-4</div>
+      <div class="box" id="box-5">Box-5</div>
+    </div>
+  </body>
+</html>
