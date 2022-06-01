@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling Effect Background Attachment</title>
+    <style>
+      /*Css Reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .bg {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .bg-image-1 {
+        height: 100vh;
+        background-image: url(/CSS-Dersleri/Css-Ornekler/Parallax-Scrolling-Effect-Background-Attachment/assets/img/background-3.jpeg);
+      }
+      .bg-image-2 {
+        height: 50vh;
+        background-image: url(/CSS-Dersleri/Css-Ornekler/Parallax-Scrolling-Effect-Background-Attachment/assets/img/background-2.jpeg);
+      }
+      .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+      }
+      .caption .border {
+        background-color: #111;
+        color: #fff;
+        padding: 20px;
+        font-size: 35px;
+        text-transform: uppercase;
+        letter-spacing: 10px; /*harfler arasındaki boşluğu arttırarak güzel bir görünüm elde etmeye çalıştık*/
+      }
+      .box {
+        color: #777;
+        background-color: #fff;
+        text-align: center;
+        padding: 50px 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- bacground image-1 start -->
+    <div class="bg bg-image-1">
+      <div class="caption border">
+        <span class="border">Lorem, ipsum.</span>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Lorem, ipsum dolor.</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
+        aspernatur, dolor illum mollitia nostrum tempora fuga? Corporis optio,
+        est impedit quas nemo id doloribus libero quibusdam sit laborum eveniet
+        cum. Soluta itaque eos, magni doloremque tenetur voluptatum ut deleniti
+        nisi, reiciendis architecto atque laborum natus ea ratione omnis
+        incidunt voluptatem non. Perferendis sapiente voluptatibus beatae
+        reiciendis dolores perspiciatis autem porro! Numquam fugit, fugiat
+        debitis deleniti maxime nesciunt? Et animi unde dolores laudantium
+        tempora, aperiam, ullam tempore magni quidem, at vel blanditiis
+        voluptatibus! Odit inventore rem fuga, excepturi impedit maiores labore?
+      </p>
+    </div>
+    <!-- bacground image-1 end -->
+    <!-- bacground image-2 start -->
+    <div class="bg bg-image-2">
+      <div class="caption border">
+        <span class="border">Lorem, ipsum.</span>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Lorem, ipsum dolor.</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
+        aspernatur, dolor illum mollitia nostrum tempora fuga? Corporis optio,
+        est impedit quas nemo id doloribus libero quibusdam sit laborum eveniet
+        cum. Soluta itaque eos, magni doloremque tenetur voluptatum ut deleniti
+        nisi, reiciendis architecto atque laborum natus ea ratione omnis
+        incidunt voluptatem non. Perferendis sapiente voluptatibus beatae
+        reiciendis dolores perspiciatis autem porro! Numquam fugit, fugiat
+        debitis deleniti maxime nesciunt? Et animi unde dolores laudantium
+        tempora, aperiam, ullam tempore magni quidem, at vel blanditiis
+        voluptatibus! Odit inventore rem fuga, excepturi impedit maiores labore?
+      </p>
+    </div>
+    <!-- bacground image-2 end -->
+  </body>
+</html>
