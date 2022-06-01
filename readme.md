@@ -473,3 +473,11 @@ Sayfa içerisinde bir elementin position değerini belirtmediğimizde default st
 - position:sticky özelliğini vererek absolute gibi elementin davranmasını sağlayabiliriz ancak absolute den farkı ise scroll için belirlediğimiz değere kaydırma ulaştığında fixed olacaktır. [Detayları görmek için örneği inceleyiniz](/CSS-Dersleri/pisition-sticky.html)
 
 ### Flexbox
+
+Flexbox nedir? : Flexbox 2017 yılında css e eklenen yeni bir özelliktir. Amacı ise clasik css te kullanmış olduğumuz float, position, display gibi özelliklerin üzerine alternatif olarak çıkmıştır. Aşağıdaki resimi inceleyiniz.
+![how-to-use-flex](/CSS-Dersleri/assets/img/how-to-use-flex.jpg)
+
+Bu özelliği kullanabilmek için:
+
+- Öncelikle bir container a ihtiyacımız var. Pozisyonlarını ayarlamak istediğimiz elementlerin kapsayıcı elementin display özelliğini flex yapıyoruz. Bu işlem sonunda flex container içerisindeki her bir element; bu bir p etiketi yada bir div olsun farketmez bütün elementler bir flex item a çevrilir. Bu çevirme işleminden sonra elementleri istediğimiz şekilde haraket ettirebiliriz.
+  ![flex-container](/CSS-Dersleri/assets/img/flex-container.jpg)
