@@ -481,3 +481,16 @@ Bu özelliği kullanabilmek için:
 
 - Öncelikle bir container a ihtiyacımız var. Pozisyonlarını ayarlamak istediğimiz elementlerin kapsayıcı elementin display özelliğini flex yapıyoruz. Bu işlem sonunda flex container içerisindeki her bir element; bu bir p etiketi yada bir div olsun farketmez bütün elementler bir flex item a çevrilir. Bu çevirme işleminden sonra elementleri istediğimiz şekilde haraket ettirebiliriz.
   ![flex-container](/CSS-Dersleri/assets/img/flex-container.jpg)
+
+- Parent elementi flex olan kapsayıcı elementimiz içerisindeki elementlerin haraket için izleyecekleri eksenler aşağıdaki resimden inceleyiniz.
+  ![flex-main-axis](/CSS-Dersleri/assets/img/flex-main-axis.jpg)
+  Main axis : Default ta ufuk çizgisidir.
+  cross axis : main ekseni dik kesen çizgidir.
+
+  #### Parent flex Özellikleri:
+
+1.  flex-direction :
+2.  flex-wrap :
+3.  justify-content :
+4.  align-items :
+5.  align-content :
