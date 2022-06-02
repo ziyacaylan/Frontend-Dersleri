@@ -516,10 +516,12 @@ flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. ju
 
    - justify-content : flex-start | flex-end| center | space-between | space-around | space-evenly
      ![justify-content](/CSS-Dersleri/assets/img/justify-content.jpg)
+
      [Örneği inceleyiniz.](/CSS-Dersleri/flex-alignments.html)
 
    - align-items : flex-start | flex-end| center | stretch | baseline
      ![justify-content](/CSS-Dersleri/assets/img/align-items.jpg)
+
      [Örneği inceleyiniz.](/CSS-Dersleri/flex-alignments.html)
 
      - NOT : flex-direction özelliği defaultta row olarak gelmektedir. Bu özellik row iken elementleri yatayda hizalamak için justify-content dikeyde hizalamak için ise align-items komutu kullanılır.
