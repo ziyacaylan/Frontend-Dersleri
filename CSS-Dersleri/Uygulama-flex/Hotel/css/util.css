@@ -1,0 +1,132 @@
+/*
+#007bff
+#6c757d
+#28a745
+#dc3545
+#ffc107
+#17a2b8
+#343a40
+#f8f9fa
+*/
+:root {
+  --white: #fff;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --dark: #343a40;
+  --light: #f8f9fa;
+}
+
+/*text color*/
+.text-primary {
+  color: var(--primary);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+.text-success {
+  color: var(--success);
+}
+.text-danger {
+  color: var(--danger);
+}
+.text-warning {
+  color: var(--warning);
+}
+.text-info {
+  color: var(--info);
+}
+.text-dark {
+  color: var(--dark);
+}
+.text-light {
+  color: var(--light);
+}
+
+/*bg colors*/
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.bg-success {
+  background-color: var(--success);
+}
+.bg-danger {
+  background-color: var(--danger);
+}
+.bg-warning {
+  background-color: var(--warning);
+}
+.bg-info {
+  background-color: var(--info);
+}
+.bg-dark {
+  background-color: var(--dark);
+}
+.bg-light {
+  background-color: var(--light);
+}
+
+/*buttons*/
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn-primary {
+  color: var(--white);
+  background-color: var(--primary);
+}
+.btn-secondary {
+  color: var(--white);
+  background-color: var(--secondary);
+}
+.btn-success {
+  color: var(--white);
+  background-color: var(--success);
+}
+.btn-danger {
+  color: var(--white);
+  background-color: var(--danger);
+}
+.btn-warning {
+  color: var(--white);
+  background-color: var(--warning);
+}
+.btn-info {
+  color: var(--white);
+  background-color: var(--info);
+}
+.btn-dark {
+  color: var(--white);
+  background-color: var(--dark);
+}
+.btn-light {
+  color: var(--white);
+  background-color: var(--light);
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--dark);
+}
+.btn-outline:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--white);
+}
+
+/*flex items*/
+
+/* flex grid*/

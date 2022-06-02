@@ -573,9 +573,11 @@ flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. ju
    Aşağıdaki linklerde flex kullanılarak tasarlanmaış örnekler mevcuttur.
 
    [Navbar Tasarımı](/CSS-Dersleri/Uygulama-flex/flex-navbar.html)
+
    [Site Layout Tasarımı](/CSS-Dersleri/Uygulama-flex/flex-layout.html)
+
    [Resim Galeri Tasarımı](/CSS-Dersleri/Uygulama-flex//flex-gallery.html)
 
    **_Proje (Otel Sitesi)_**
 
-   [Resim Galeri Tasarımı](/CSS-Dersleri/Uygulama-flex/flex-hotel.html)
+   [Resim Galeri Tasarımı](/CSS-Dersleri/Uygulama-flex/Hotel/index.html)
