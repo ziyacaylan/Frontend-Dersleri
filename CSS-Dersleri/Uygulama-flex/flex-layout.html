@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fontawesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Flex Layout Example</title>
+    <style>
+      /*css reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .header {
+        padding: 30px;
+        text-align: center;
+        background-color: #6a67ce;
+        color: #fff;
+      }
+      .nav-items {
+        display: flex;
+        background-color: #555;
+      }
+      .nav-items li {
+        list-style: none;
+      }
+      .nav-items li:last-child {
+        display: none;
+      }
+      .navbar a {
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 20px;
+        transition: 0.3s ease-out;
+      }
+      .navbar a:hover {
+        background-color: #666;
+        color: #fe7e6d;
+      }
+      .ph {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+        margin-top: 10px;
+      }
+      main {
+        display: flex;
+      }
+      #sidebar {
+        background-color: #f1f1f1;
+        order: 1; /*ilk başta sidebar sağ sol tarafta gelmişti ilk yazdığımız için order1 yaparak konumunu değiştirdik*/
+        flex: 25%;
+        padding: 20px;
+      }
+      #content {
+        flex: 75%;
+        padding: 20px;
+      }
+      .box {
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 10px 0;
+      }
+      footer {
+        background-color: #6a67ce;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+      }
+      @media (max-width: 700px) {
+        main,
+        .nav-items {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        .nav-items li:last-child {
+          display: block;
+          order: -1;
+        }
+        #content {
+          order: 1;
+        }
+        .nav-items li a {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <div class="header">
+        <h1>Lorem, ipsum.</h1>
+        <p>Lorem ipsum dolor sit.</p>
+      </div>
+      <div class="navbar">
+        <ul id="navbar-items" class="nav-items toggle-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a id="btn-menu" href=""><i class="fa fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main>
+      <div id="sidebar">
+        <div class="box">
+          <h2>Sidebar Here</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            animi ducimus provident nam aperiam quibusdam commodi, ad optio
+            alias nisi sunt minus corporis ratione assumenda voluptates autem
+            quod, similique perferendis.
+          </p>
+        </div>
+        <div class="ph" style="height: 50px"></div>
+        <div class="ph" style="height: 50px"></div>
+        <div class="ph" style="height: 50px"></div>
+        <div class="ph" style="height: 50px"></div>
+      </div>
+      <div id="content">
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            animi ducimus provident nam aperiam quibusdam commodi, ad optio
+            alias nisi sunt minus corporis ratione assumenda voluptates autem
+            quod, similique perferendis.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            animi ducimus provident nam aperiam quibusdam commodi, ad optio
+            alias nisi sunt minus corporis ratione assumenda voluptates autem
+            quod, similique perferendis.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            animi ducimus provident nam aperiam quibusdam commodi, ad optio
+            alias nisi sunt minus corporis ratione assumenda voluptates autem
+            quod, similique perferendis.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            animi ducimus provident nam aperiam quibusdam commodi, ad optio
+            alias nisi sunt minus corporis ratione assumenda voluptates autem
+            quod, similique perferendis.
+          </p>
+        </div>
+      </div>
+    </main>
+    <!-- Main End -->
+    <!-- Foolter Start -->
+    <footer>Lorem, ipsum dolor.</footer>
+    <!-- Foolter End -->
+  </body>
+</html>

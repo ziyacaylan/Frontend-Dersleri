@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Direction</title>
+    <style>
+      /*css reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin: 10px;
+        border: 2px solid #333;
+        background-color: #242f9b;
+        height: 500px;
+
+        display: flex;
+
+        /* flex-direction: column; */
+        /* align-items: flex-start; */
+        /* align-items: flex-end; */
+
+        flex-direction: row;
+      }
+      .box {
+        background-color: #f7862b;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid #444;
+        /*align-self: center; /*Buada item seviyesinde hepsine uyguladığımız için container altındaki align-items: flex-end komutunu ezer*/
+      }
+      .item-1 {
+        /* align-self: flex-start; */
+        /* flex: 1 1 250px; */
+        flex: 25%; /* Kapladığı alanı yüzdesel değer verebiliyoruz*/
+        order: 1;
+      }
+      .item-2 {
+        /* align-self: center; */
+        flex: 5%;
+      }
+      .item-3 {
+        /* align-self: center; */
+        flex: 20%;
+        order: -1; /*konumunu değiştiriyoruz*/
+      }
+      .item-4 {
+        /* align-self: center; */
+        flex: 10%;
+      }
+      .item-5 {
+        /* align-self: center; */
+        flex: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box item-1" id="box-1">Box-1</div>
+      <div class="box item-2" id="box-2">Box-2</div>
+      <div class="box item-3" id="box-3">Box-3</div>
+      <div class="box item-4" id="box-4">Box-4</div>
+      <div class="box item-5" id="box-5">Box-5</div>
+    </div>
+  </body>
+</html>

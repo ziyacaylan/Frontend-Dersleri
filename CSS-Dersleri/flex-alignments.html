@@ -35,6 +35,17 @@
         align-items: center;
         align-items: stretch; /*dikeyde parent element içerisinde sütunu olduğu gibi kaplayacaktır.*/
         /* align-items: baseline; */ /* Elementlerimiz içerisindeki içerikler (örneğin yazılar) hizalanır.*/
+
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        flex-direction: row;
+        align-content: center; /* Burada child elementler tam ortada toplanması sağlanmıştır. Ayrıca sığmayan elementlerin de alt satıra inmeleri flex-wrap komutuyla gerçekleştirilmiştir. (Bu işlem için 15box kullanılmıştır.)*/
+        align-content: flex-start;
+        align-content: flex-end;
+        align-content: space-around;
+        align-content: space-between;
+        align-content: stretch;
+        align-content: center;
       }
       .box {
         background-color: #f7862b;
@@ -46,6 +57,18 @@
   </head>
   <body>
     <div class="container">
+      <div class="box" id="box-1">Box-1</div>
+      <div class="box" id="box-2">Box-2</div>
+      <div class="box" id="box-3">Box-3</div>
+      <div class="box" id="box-4">Box-4</div>
+      <div class="box" id="box-5">Box-5</div>
+
+      <div class="box" id="box-1">Box-1</div>
+      <div class="box" id="box-2">Box-2</div>
+      <div class="box" id="box-3">Box-3</div>
+      <div class="box" id="box-4">Box-4</div>
+      <div class="box" id="box-5">Box-5</div>
+
       <div class="box" id="box-1">Box-1</div>
       <div class="box" id="box-2">Box-2</div>
       <div class="box" id="box-3">Box-3</div>

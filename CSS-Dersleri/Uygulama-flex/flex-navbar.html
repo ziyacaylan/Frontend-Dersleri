@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fontawesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Flex Navbar</title>
+    <style>
+      /*css reset*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: goldenrod;
+        padding: 0 20px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
+        align-self: center;
+      }
+      .navigation {
+        list-style: none;
+        display: flex;
+      }
+      .navigation a {
+        display: block;
+        padding: 16px;
+      }
+      .navigation a:hover {
+        background-color: rgb(233, 184, 61);
+      }
+      .navigation li:last-child {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          position: relative;
+          flex-direction: column;
+        }
+        nav a {
+          align-self: flex-start;
+        }
+        .navigation {
+          flex-direction: column;
+        }
+        .navigation a {
+          text-align: center;
+          padding: 10px;
+          border-top: 1px solid rgba(255, 255, 255, 0.3);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .navigation li:last-child {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 10px;
+        }
+        .responsive .navigation li:not(:last-child) {
+          display: none;
+        }
+        .navigation li:last-child a {
+          border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="responsive">
+      <a href="">Logo</a>
+      <ul class="navigation">
+        <li>
+          <a href="" class="navigation">Home</a>
+        </li>
+        <li>
+          <a href="" class="navigation">Abouts</a>
+        </li>
+        <li>
+          <a href="" class="navigation">Products</a>
+        </li>
+        <li>
+          <a href="" class="navigation">Contacts</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

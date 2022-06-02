@@ -528,3 +528,54 @@ flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. ju
 
      flex-direction: column olduğunda ise busefer yatayda hizalamak için align-items, dikeyde hizalamak için ise justify-content komutu kullanılmaktadır.
      ![flex-direction:column](/CSS-Dersleri/assets/img/flexbox-alignments-1.jpg)
+
+     - align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+       ![flex-direction:column](/CSS-Dersleri/assets/img/ align-content.jpg)
+
+     - gap: 10px;
+       gap: 10px 20px; **_row-gap column gap_**
+       row-gap: 10px;
+       column-gap: 20px;
+
+       Gap parent içerisinde yer alan elementlerimiz arasondaki mesafe için kullanılır. Çok kullanılmaz genelde margin ile çözülebilir ancak alternatif olarak sunulmuştur.
+
+       ![gap](/CSS-Dersleri/assets/img/gap.jpg)
+
+#### Flex Items Özellikleri:
+
+1. align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+   ![align-self](/CSS-Dersleri/assets/img/align-self.jpg)
+
+2. flex-grow : 3 /_ default 0 _/ parent içerisinindeki elementlerden istediğimizin yada istediklerimizin kaplayacağı alanı değiştirmek için kullanırız. 1 tanesine sadece
+   bu özelliği atarsak diğer elementler bir ekstra özellik belirtmedikçe içerik dar yer kaplar bu özelliği tatdığımız element ise geri kalan alanı kaplayacaktır. Birden fazla elemente verir ise bu sefer verdiğimiz oranlar çerçevesinde kapladıkları alan belirlenecektir.
+
+   ![flex-grow](/CSS-Dersleri/assets/img/flex-grow.jpg)
+
+3. flex-basis: Bu değeri atadiğimiz element sabit bir kapladığı alan olacaktır. Geri kana elementler ise içerik kadar yada ekstra bir özellik belirtilmişse; örneğin flex-grow
+   gibi verilen özellik neticesinde alan kaplarlar.
+
+4. flex-shrink : 0 /_default değer_/ bu değeri değiştirir örneğin 1 yaparsan, flex-basis : 200px olduğunu varsayalım. Bu durunda ilgili element sayfa daralmaya başladığında
+   ve yer kalmadığında 200px altına inecektir. Default değeri değiştirmez ise element 200px altına inmeyecek dışarı taşacaktır.
+
+**_NOT :_**
+
+- flex : 0 0 200px; (flex : (flex-grow) (flex-shrink) (flex-basis)) şeklinde kısa kod olarak da yazabiliriz.
+- flex : 25%; şeklinde elementlerin kaplayacağı alanı yüzde olarak da belirtebiliriz.
+
+5. order: 0 /_default değer_/ bu değer ile elementin konumunu değiştirebiliriz. default 0 gelir ancak bunu değiştirip 1 yaparsak diğerleri ile oynamazsak element sona
+   gidecektir. Eksi değer verir isek ise element en başta konumlanacaktır.
+
+   ![flex-order](/CSS-Dersleri/assets/img/order.jpg)
+
+   ### ÖRNEKLER
+
+   Aşağıdaki linklerde flex kullanılarak tasarlanmaış örnekler mevcuttur.
+
+   [Navbar Tasarımı](/CSS-Dersleri/Uygulama-flex/flex-navbar.html)
+   [Site Layout Tasarımı](/CSS-Dersleri/Uygulama-flex/flex-layout.html)
+   [Resim Galeri Tasarımı](/CSS-Dersleri/Uygulama-flex//flex-gallery.html)
+
+   **_Proje (Otel Sitesi)_**
+
+   [Resim Galeri Tasarımı](/CSS-Dersleri/Uygulama-flex/flex-hotel.html)
