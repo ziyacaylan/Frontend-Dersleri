@@ -150,9 +150,13 @@ img {
 }
 
 /* cards */
+
 .card {
   color: #fff;
   font-weight: 700;
+}
+.card img:hover {
+  opacity: 0.7;
 }
 .card-body {
   padding: 2rem;
