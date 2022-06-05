@@ -60,12 +60,12 @@ Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında 
 Bu etiketler başlık etiketleridir. [Linkteki](/HTML-Dersleri/basliklar.html) örnekte başlık etiketlerini inceleyebilirsiniz.
 H etiketleri blok etiketlerdir ve satırı tamamen kaplar. (İleride ele alınacaktır.)
 
-- &#60;h1&#62;
-- &#60;h2&#62;
-- &#60;h3&#62;
-- &#60;h4&#62;
-- &#60;h5&#62;
-- &#60;h6&#62;
++ &#60;h1&#62;
++ &#60;h2&#62;
++ &#60;h3&#62;
++ &#60;h4&#62;
++ &#60;h5&#62;
++ &#60;h6&#62;
 
 ### P Etiketi
 
