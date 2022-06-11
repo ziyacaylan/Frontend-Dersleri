@@ -581,3 +581,14 @@ flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. ju
    **_Proje (Otel Sitesi)_**
 
    [Resim Galeri Tasarımı](/CSS-Dersleri/Uygulama-flex/Hotel/index.html)
+
+   ### Grid
+
+   #### Css Grid Nedir\_?
+
+   Grid web sayfalarında tasarımlarda kullanılmak üzere geliştirilmiştir. Bir web sayfasının şablonunu css farklı yöntemler ile oluşturulabilmektedir. Yukarıda incelediğimiz float, flex gibi yöntemler ile tasarımını yapacağımız şablunu oluşturubiliyoruz ancak; grid bunların arasında en kolay olanıdır. Örneğin sayfamızı bir tablo gibi düşünürsek,
+   ![css_grid](/CSS-Dersleri/assets/img/grid.jpg)
+
+   yukarıdaki resimde de gördüğümüz üzere sayfamız satır ve sütunlara bölerek içeriklerimizi bu satır ve sütunları istediğimiz şekilde birleştirerek sayfamızın tasarımını aşağıdaki resimde de görüldüğü gibi oluşturabiliriz.
+
+   ![css_grid_page_design](/CSS-Dersleri/assets/img/grid_page_design.jpg)
