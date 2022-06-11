@@ -1,3 +1,8 @@
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+<!-- <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" /> -->
+
 # HTML Dersleri
 
 ## Html Nedir?
@@ -60,12 +65,12 @@ Web sayfamızda görünmesini istediğimiz bütün içeriği bu etiket altında 
 Bu etiketler başlık etiketleridir. [Linkteki](/HTML-Dersleri/basliklar.html) örnekte başlık etiketlerini inceleyebilirsiniz.
 H etiketleri blok etiketlerdir ve satırı tamamen kaplar. (İleride ele alınacaktır.)
 
-+ &#60;h1&#62;
-+ &#60;h2&#62;
-+ &#60;h3&#62;
-+ &#60;h4&#62;
-+ &#60;h5&#62;
-+ &#60;h6&#62;
+- &#60;h1&#62;
+- &#60;h2&#62;
+- &#60;h3&#62;
+- &#60;h4&#62;
+- &#60;h5&#62;
+- &#60;h6&#62;
 
 ### P Etiketi
 
