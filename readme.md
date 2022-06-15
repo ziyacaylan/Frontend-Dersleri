@@ -2,13 +2,13 @@
 
 # İÇİNDEKİLER
 
-1. [Html Nedir ?](#Html Nedir?)
+1.  [HTML Dersleri](#1html-dersleri)
 
-   1.1. Html Nedir?
+    1.1. [Html-nedir?](#11-html-nedir)
 
-   1.2. Html Ne yapar ?
+    1.2. [Hhtml-ne-yapar?](#12-html-ne-yapar)
 
-   1.3-Html Tarihi Hakkında Kısaca
+    1.3. [Html Tarihi Hakkında Kısaca](#13-html-tarihi-hakkında-kısaca)
 
 ---
 
