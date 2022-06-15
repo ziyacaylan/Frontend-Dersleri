@@ -1,23 +1,32 @@
-<<<<<<< HEAD
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-=======
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+# <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 
->>>>>>> fa202c41eb32e6202f0e499bfb311193d31bfcec
+# İÇİNDEKİLER
 
-# HTML Dersleri
+1. [Html Nedir ?](#Html Nedir?)
 
-## Html Nedir?
+   1.1. Html Nedir?
+
+   1.2. Html Ne yapar ?
+
+   1.3-Html Tarihi Hakkında Kısaca
+
+---
+
+---
+
+# 1.HTML Dersleri
+
+## 1.1-Html Nedir?
 
 Html hiper metin işaretleme dili (HyperText Markup Language) olaraktanımlanır. Yani web sayfalarında gördüklerimizin
 iskelet yapısını oluşturmak için kullanılan metin işaretleme dilidir. Html bir programlama dili DEĞİLDİR...!
 
-### Html Ne yapar ?
+### 1.2-Html Ne yapar ?
 
 - Web sayfalarında gördüğümüz görsel, yazı ve videoların konumlanmasını sağlamak
 - Konumlandırılan web sayfalarının tarayıcılar tarafından doğru bir şekilde görüntülenmesi için gerekli olan kuralları belirler.
 
-### Html Tarihi Hakkında Kısaca
+### 1.3-Html Tarihi Hakkında Kısaca
 
 Html CERN de araştırmacıların dokümanlarını birbirleriyle paylaşabilmeleri için bir sistem kullanmak amaıyla çıkartılmış
 1990 yılında da metin işaretleme dili olarak geliştirilmiştir.
