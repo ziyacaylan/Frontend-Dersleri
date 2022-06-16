@@ -1,4 +1,4 @@
-# <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+# <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" /> <img src="https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white" />
 
 # İÇİNDEKİLER
 
@@ -782,3 +782,10 @@ justify-items: start | end | center | stretch(default değer)
 place-items: align-items — justify-items
 
 Grid kullanılarak geliştirilmiş uygulama projemize [buradan ulaşabilirsiniz.](/CSS-Dersleri/Uygyulama-Grid-Site-News/index.html)
+
+# 3. BOOTSTRAP
+
+Html ve Css bilgilerimizi kullanarak tasarımlarımızı çok daha hızlı bir şekilde yapmamıza olanak sağlayan bir kütüphanedir. Bootstrap kütüphanesi içerisinde işlerimizi kolaylaştıracak bir çok yapı mevcuttur. Bu yapıları kullanarak örneğin bir card objesini hızlı bir şekilde çok fazla kod yazmadan oluşturabiliriz.
+
+- örneğin bir buton oluşturmak istediğimizde class ismini 'btn btn-primary' şeklinde verdiğimizde buton css uygulanmış bir şekilde hazır olarak gelecektir.
+- örneğin kırmızı bir yazı ile bir paragraf yazdırmak istersek paragrafın class ismine 'text-danger' vermemiz yeterlidir.
