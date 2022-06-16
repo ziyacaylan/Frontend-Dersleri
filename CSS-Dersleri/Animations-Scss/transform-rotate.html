@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Rotate</title>
+    <style>
+      div {
+        width: 120px;
+        height: 50px;
+        background-color: blueviolet;
+        color: #fff;
+        text-align: center;
+        margin: 60px;
+        padding: 10px;
+        transition: transform 2s;
+      }
+
+      #rotateP:hover {
+        transform: rotate(90deg);
+      }
+
+      #rotateN:hover {
+        transform: rotate(-90deg);
+      }
+
+      #rotateX:hover {
+        transform: rotateX(180deg);
+      }
+
+      #rotateY:hover {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="rotateP">Saat yönünde 90 derece döndür</div>
+    <div id="rotateN">Saat yönünün tersine 90 derece döndür</div>
+    <div id="rotateX">3 boyutlu olarak X ekseninde 180 derece döndür</div>
+    <div id="rotateY">3 boyutlu olarak Y ekseninde 180 derece döndür</div>
+  </body>
+</html>

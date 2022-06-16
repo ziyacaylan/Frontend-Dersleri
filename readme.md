@@ -783,6 +783,428 @@ place-items: align-items — justify-items
 
 Grid kullanılarak geliştirilmiş uygulama projemize [buradan ulaşabilirsiniz.](/CSS-Dersleri/Uygyulama-Grid-Site-News/index.html)
 
+### 2.56-Css Transition
+
+Transition bir elemanın iki state’i arasında transition, yani geçiş yapmanızı sağlar. Kısaca geçiş efekti olarak bilinmektedir.
+
+**Transition Özellikleri**
+
+- **transition-property:** transition’ı uygulamak istediğimiz bir veya birden fazla CSS property’sini belirtiriz.
+
+- **transition-duration:** Transition işleminin ne kadar sürede gerçekleşeceğini belirtiriz. Tanımladığınız her bir transition-property için dilerseniz tek bir duration
+  belirtebilirsiniz. Yada her bir property için ayrı ayrı transition süresi belirtebilirsiniz.
+
+- **transition-timing-function:** ransition’ın süresince hangi hızda ve hangi aşamada olacağını belirtiriz.
+
+- **transition-delay:** Bir geçişin başlamadan önce ne kadar süre bekletileceğini belirleyebilirsiniz.
+
+**Geçişler için zaman belirlemek**
+
+CSS3 **_transition-timing-function_** özelliğiyle geçişler için zaman belirleyebiliriz.  
+Alacağı değerler
+
+- ease – Yavaş bir başlangıç, ardından hızlı, daha sonra yavaş yavaş sona eren geçiş efekti belirtir. (Varsayılan)
+- linear – Başlangıç ve bitişi aynı hızda bir geçiş efekti belirtir.
+- ease-in – Yavaş bir başlangıç geçiş efekti belirtir.
+- ease-out – Yavaş bir bitiş geçiş efekti belirtir.
+- ease-in-out – Yavaş başlangıç-bitiş geçiş efekti belirtir.
+- cubic-bezier(n,n,n,n) – Bezier yöntemi ile zaman belirlememizi sağlar.
+
+**Geçişlerleri zamanlamak**
+Bazen geçiş efektini belli bir süre sonrasında çalışmasını isteyebiliriz.
+
+Bunun için **_transition-delay_** özelliğini kullanabiliriz.
+
+En baştaki örneğe t**_ransition-delay_** özelliği ve **_1s_** değerini ekledik.
+
+Artık geçiş efekti belirlediğimiz süre sonrasında başlayacaktır.
+
+**CSS3 transition özelliğinin uygulanması**
+Geçiş efektlerini her biri ayrı özellik belirterek kullanabiliriz.
+
+```
+div {
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+```
+
+Tek özellik satırı ile kısaltılmış olarak da kullanabiliriz.
+
+```
+div {
+    transition: width 2s linear 1s;
+}
+```
+
+Örnek :  
+Html kodları
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="bg-color">
+        <div class="box first-box">
+            <div class="center">
+                <a href="#">ease (default)</a>
+            </div>
+        </div>
+        <div class="box second-box">
+            <div class="center">
+                <a href="#">ease-in</a>
+            </div>
+        </div>
+        <div class="box third-box">
+            <div class="center">
+                <a href="#">ease-in-out</a>
+            </div>
+        </div>
+        <div class="box fourth-box">
+            <div class="center">
+                <a href="#">ease-out</a>
+            </div>
+        </div>
+        <div class="box fifth-box">
+            <div class="center">
+                <a href="#">linear</a>
+            </div>
+        </div>
+        <div class="box sixth-box">
+            <div class="center">
+                <a href="#">steps(4)</a>
+            </div>
+        </div>
+        <div class="box seventh-box">
+            <div class="center">
+                <a href="#">cubic-bezier(.11,-0.17,1,.21)</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+```
+
+Css Kodları
+
+```
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-color {
+  background-color: #5172ea;
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.box a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  transform: translate(-50%, -50%);
+}
+
+.first-box {
+  background: #cddc39;
+  transition: width 1s ease;
+}
+
+.first-box:hover {
+  width: 100%;
+}
+
+.second-box {
+  background: #07eb38;
+  transition: width 1s ease-in;
+}
+
+.second-box:hover {
+  width: 100%;
+}
+
+.third-box {
+  background: #0bd18f;
+  transition: width 1s ease-in-out;
+}
+
+.third-box:hover {
+  width: 100%;
+}
+
+.fourth-box {
+  background: #af0e87;
+  transition: width 1s ease-out;
+}
+
+.fourth-box:hover {
+  width: 100%;
+}
+
+.fifth-box {
+  background: #d3a409;
+  transition: width 1s linear;
+}
+
+.fifth-box:hover {
+  width: 100%;
+}
+
+
+.sixth-box {
+  background: #fa0154;
+  transition: width 1s steps(4);
+}
+
+.sixth-box:hover {
+  width: 100%;
+}
+
+.seventh-box {
+  background: #00bcd4;
+  transition: width 1s cubic-bezier(.11, -0.17, 1, .21);
+}
+
+.seventh-box:hover {
+  width: 100%;
+}
+
+```
+
+Yukarıdaki örnek animasyon ile animasyonlu navbar yada sidebar gibi gösterişli menüler hazırlayabilirsiniz...!  
+Örneğimize [buradan ulaşabilirsiniz.](/CSS-Dersleri/Animations-Scss/transion.html)
+
+### 2.57-Css Transform
+
+Transform özelliği ile bir Html etiketi üzerinde döndürme, boyutlandırma, eğme gibi işlemleri gerçekleştirebiliriz. Bu işlemleri 2D (2 boyutlu) ve 3D (3 boyutlu) olmak üzere 2 farklı şekilde yapabiliyoruz. Şimdi sırasıyla bu işlemleri nasıl yapabileceğimize bakalım.
+
+**Translate Yöntemi**
+
+- **translateX :** X eksenindeki konumunu değiştirmek için
+
+- **translateY :** Y eksenindeki konumunu değiştirmek için
+
+- **translateZ :** Z eksenindeki konumunu değiştirmek için
+
+- **translate :** X ve Y eksenlerindeki konumunu değiştirmek için kullanılır. Birinci parametre X ekseni için, ikinci parametre Y ekseni için uygulanır.
+
+- **translate3d :** X, Y ve Z eksenlerindeki konumunu değiştirmek için kullanılır. Birinci parametre X ekseni, ikinci parametre Y ve üçüncü parametre Z ekseni için uygulanır.
+
+**NOT :** Vereceğimiz değerler negatif olabilir. Negatif olduğunda tam tersi yönde hareket eder.
+
+Örnek kodları inceleyiniz
+
+```
+<style>
+div {
+    width:120px;
+    height:50px;
+    background-color:cornflowerblue;
+    color:#fff;
+    text-align: center;
+    margin:20px;
+    padding:10px;
+    transition:transform 2s;
+}
+
+#translateX:hover{
+    transform:translateX(50px);
+}
+
+#translateY:hover{
+    transform:translateY(50px);
+}
+
+#translate:hover{
+    transform:translate(50px, -50px);
+}
+</style>
+
+<div id="translateX">X ekseninde 50px kaydır</div>
+<div id="translateY">Y ekseninde 50px kaydır</div>
+<div id="translate">X ekseninde 50px, Y ekseninde -50px kaydır</div>
+```
+
+**Rotate Yöntemi**
+
+2 boyutlu kullanıldığında, Html etiketini saat yönünde veya tam tersi yönde döndürmek için kullanılır.
+
+3 boyutluda ise döndürme işlemi 3 boyutlu olacak şekilde uygulanır.
+
+- **rotateX :** Html etiketini, 3 boyutlu olarak X ekseninde döndürür.
+
+- **rotateY :** Html etiketini, 3 boyutlu olarak Y ekseninde döndürür.
+
+- **rotateZ :** Html etiketini, 3 boyutlu olarak Z ekseninde döndürür.
+
+- **rotate :** Pozitif değer verildiğinde, Html etiketini 2 boyutlu olarak saat yönünde döndürür. Negatif değer verildiğinde, Html etiketini 2 boyutlu olarak saat yönünün tersine döndürür.
+
+**NOT :** Vereceğimiz değerler negatif olabilir. Negatif olduğunda saat yönünün tersine döner.  
+Örnek kodları inceleyiniz
+
+```
+<style>
+div {
+    width: 120px;
+    height: 50px;
+    background-color: blueviolet;
+    color: #fff;
+    text-align: center;
+    margin: 60px;
+    padding: 10px;
+    transition: transform 2s;
+}
+
+#rotateP:hover {
+    transform: rotate(90deg);
+}
+
+#rotateN:hover {
+    transform: rotate(-90deg);
+}
+
+#rotateX:hover {
+    transform: rotateX(180deg);
+}
+
+#rotateY:hover {
+    transform: rotateY(180deg);
+}
+</style>
+
+<div id="rotateP">Saat yönünde 90 derece döndür</div>
+<div id="rotateN">Saat yönünün tersine 90 derece döndür</div>
+<div id="rotateX">3 boyutlu olarak X ekseninde 180 derece döndür</div>
+<div id="rotateY">3 boyutlu olarak Y ekseninde 180 derece döndür</div>
+```
+
+Örneğimize [buradan ulaşabilirsiniz.](/CSS-Dersleri/Animations-Scss/transform-rotate.html)
+
+**Scale Yöntemi**
+
+Bir Html etiketini vereceğimiz oranlar ölçüsünde büyütmek veya küçültmek için kullanılır.
+
+- **scaleX :** Genişliği belirtilen oranda büyütmek veya küçültmek için
+
+- **scaleY :** Yüksekliği belirtilen oranda büyütmek veya küçültmek için
+
+- **scale :** Genişliği ve yüksekliği belirtilen oranda büyütmek veya küçültmek için kullanılır. Birinci parametre genişlik için, ikinci parametre yükseklik için uygulanır.
+
+Örnek kodları inceleyiniz
+
+```
+<style>
+div {
+    width: 120px;
+    height: 50px;
+    background-color: blueviolet;
+    color: #fff;
+    text-align: center;
+    margin: 60px;
+    padding: 10px;
+    transition: transform 2s;
+}
+
+#scaleP:hover {
+    transform: scale(1.2, 2);
+}
+
+#scaleN:hover {
+    transform: scale(0.5, 0.5);
+}
+</style>
+
+<div id="scaleP">Genişliğini 1.2 , yüksekliğini 2 katına çıkar</div>
+<div id="scaleN">Genişliğini ve yüksekliğini yarı katına düşür.</div>
+```
+
+**Skew Yöntemi**
+
+Bir Html etiketinin, X ve Y ekseninde belirtilen derece kadar eğilmesini sağlar.
+
+- **skewX :** X eksenindeki eğilmeyi sağlar.
+
+- **skewY :** Y eksenindeki eğilmeyi sağlar.
+
+- **skew :** X ve Y eksenlerindeki eğilmeyi sağlar. Birinci parametre X ekseni için, ikinci parametre Y ekseni için uygulanır.
+
+Örnek kodları inceleyiniz
+
+```
+<style>
+div {
+    width:120px;
+    height:80px;
+    background-color:cornflowerblue;
+    color:#fff;
+    text-align: center;
+    margin:20px;
+    padding:10px;
+    transition:transform 2s;
+}
+
+#skewX:hover{
+    transform:skewX(30deg);
+}
+
+#skewY:hover{
+    transform:skewY(30deg);
+}
+
+#skew:hover{
+    transform:skew(30deg, -20deg);
+}
+</style>
+
+<div id="skewX">X ekseni ile 30 derecelik açı oluştur</div>
+<div id="skewY">Y ekseni ile 30 derecelik açı oluştur</div>
+<div id="skew">X ekseni ile 30, Y ekseni ile -20 derecelik açı oluştur</div>
+```
+
+YUkarıda transform özelliklerine değindim. Şimdi de bu özelliklerin birlikte kullanılması durumuna örnek oluşturalım.
+
+```
+<style>
+div {
+    width: 80px;
+    height: 80px;
+    background-color: cornflowerblue;
+    margin: 20px;
+    transition: all 2s;
+}
+
+div:hover {
+    transform: translate(50px, 50px) rotate(360deg) scale(1.5);
+    background-color:greenyellow;
+    border-radius:50%;
+}
+</style>
+
+<div></div>
+```
+
 # 3. BOOTSTRAP
 
 Html ve Css bilgilerimizi kullanarak tasarımlarımızı çok daha hızlı bir şekilde yapmamıza olanak sağlayan bir kütüphanedir. Bootstrap kütüphanesi içerisinde işlerimizi kolaylaştıracak bir çok yapı mevcuttur. Bu yapıları kullanarak örneğin bir card objesini hızlı bir şekilde çok fazla kod yazmadan oluşturabiliriz.
