@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Container</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        background-color: #034f84;
+        padding: 20px;
+      }
+      .item {
+        background-color: #f7786b;
+        padding: 20px;
+        /* margin: 20px; */
+        color: #fff;
+        font-size: 25px;
+      }
+
+      /*satırı öteleme*/
+      /* .item:first-child {
+        grid-column-start: 3;
+        grid-column-end: 5; /*burada iki satır kaplamasını sağlıyoruz
+      } */
+
+      /*aşağıdaki kullanımda kaplayacağı alanı belirtilen elementler ilgili alanları kaplar, boşta kalan alanları diğer elementler sıra ile yerleşirler*/
+      .item:first-child {
+        /* grid-column-start: 2; */
+        /* grid-column-end: 4; */
+        /*grid-column: 2 / span 2; /*bu komut yukarıdaki iki satırın yerine kullanılabilir.*/
+
+        /* grid-row-start: 1; */
+        /* grid-row-end: 5; */
+
+        /* grid-row: 1 / span 4;/*bu komut yukarıdaki iki satırın yerine kullanılabilir.*/
+
+        /*grid-area: <row start> / <column start> / <row end> / <column end>  */
+        grid-area: 1 / 2 / span 4 / span 2;
+      }
+
+      /*aşağıdaki örnek footer gibi işlemlerde kullanılabilir */
+      .item:last-child {
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">item 1</div>
+      <div class="item">item 2</div>
+      <div class="item">item 3</div>
+      <div class="item">item 4</div>
+      <div class="item">item 5</div>
+      <div class="item">item 6</div>
+      <div class="item">item 7</div>
+      <div class="item">item 8</div>
+      <div class="item">item 9</div>
+    </div>
+  </body>
+</html>

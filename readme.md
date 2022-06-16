@@ -74,7 +74,20 @@
     2.38. [Parent Flex Özellikleri](#239-parent-flex-özellikleri)  
     2.39. [Flex-items Özellikleri](#240-flex-items-özellikleri)  
     2.40. [Grid](#241-grid)  
-    2.41. [Css Grid nedir ?](#242-css-grid-nedir)
+    2.41. [Css Grid nedir ?](#242-css-grid-nedir)  
+    2.42. [Grid Container](#243-grid-container)  
+    2.43. [Grid Line](#244-grid-line)  
+    2.44. [Grid Row](#245-grid-row)  
+    2.45. [Grid Column](#246-grid-column)  
+    2.46. [Grid Cell](#247-grid-cell)  
+    2.47. [Grid Area](#248-grid-area)  
+    2.48. [Grid Gap](#249-grid-gap)  
+    2.49. ['repeat ()' 'fr' unit](#250--repeat---fr-unit)  
+    2.50. [Naming Grid Areas](#251--naming-grid-areas)  
+    2.51. ['.' nokta](#252---nokta)  
+    2.52. ['max-content' 'min-content' 'minmax'](#253-max-content-min-content-minmax)  
+    2.53. ['auto-fill' , 'auto-fit'](#254-auto-fill-auto-fit)  
+    2.54. [Grid Items Alignment](#255-grid-items-alignment)
 
 ---
 
@@ -666,7 +679,7 @@ flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. ju
 
    ### 2.41-Grid
 
-   #### 2.42-Css Grid Nedir\_?
+   ### 2.42-Css Grid Nedir ?
 
    Grid web sayfalarında tasarımlarda kullanılmak üzere geliştirilmiştir. Bir web sayfasının şablonunu css farklı yöntemler ile oluşturulabilmektedir. Yukarıda incelediğimiz float, flex gibi yöntemler ile tasarımını yapacağımız şablunu oluşturubiliyoruz ancak; grid bunların arasında en kolay olanıdır. Örneğin sayfamızı bir tablo gibi düşünürsek,
    ![css_grid](/CSS-Dersleri/assets/img/grid.jpg)
@@ -674,3 +687,98 @@ flex-direction: row | row-reserve | column | column-reserve 2. flex-wrap : 3. ju
    yukarıdaki resimde de gördüğümüz üzere sayfamız satır ve sütunlara bölerek içeriklerimizi bu satır ve sütunları istediğimiz şekilde birleştirerek sayfamızın tasarımını aşağıdaki resimde de görüldüğü gibi oluşturabiliriz.
 
    ![css_grid_page_design](/CSS-Dersleri/assets/img/grid_page_design.jpg)
+
+#### 2.43-Grid Container
+
+Row, column, cell gibi yapıların oluşumunu sağlayan ana kutuya denir.  
+[Örneği inceleyiniz.](/CSS-Dersleri/grid-container-column-row.html)
+
+#### 2.44-Grid Line
+
+Yatay ya da dikey çizgiler olarak da düşünebilirsiniz. Numara ile adlandırılırlar. (google chrome browserda mouse ile sağ tıklayıp 'incele' dediğimizde 'Layout' kısmına geldiğimizde grid için ilgili sekmeyi işaretlediğimizde bı çizgiler ve grip yapısı görünecektir...)  
+![grid line](/CSS-Dersleri/assets/img/grid-line.jpg)
+
+#### 2.45-Grid Row
+
+Yatay kısımlardan oluşan yapılardır.  
+![grid row](/CSS-Dersleri/assets/img/grid-row.jpg)  
+[Örneği inceleyiniz.](/CSS-Dersleri/grid-container-column-row.html)
+
+#### 2.46-Grid Column
+
+Dikey kısımlardan oluşan yapılardır.  
+![grid column](/CSS-Dersleri/assets/img/grid-column.jpg)  
+[Örneği inceleyiniz.](/CSS-Dersleri/grid-container-column-row.html)
+
+#### 2.47-Grid Cell
+
+Gridin en küçük birimidir. 4 tane grid line arasında bulunur.  
+![grid cell](/CSS-Dersleri/assets/img/grid-cell.jpg)
+
+#### 2.48-Grid Area
+
+Birçok birimden(grid cell) oluşan yapıdır.  
+![grid area](/CSS-Dersleri/assets/img/grid-area.jpg)  
+Şöyle güzel bir yanıda tek satırda hem satır hem de sütun bilgilerini yazabiliriz.  
+grid-area: row-start / column-start / row-end / column-end  
+[Örnekte konuya değinilmiştir. İnceleyiniz.](/CSS-Dersleri/grid-gaps-spannig.html)
+
+#### 2.49-Grid Gap
+
+Column ya da row arasındaki boşluklardır.  
+![grid gap](/CSS-Dersleri/assets/img/grid-gap.jpg)  
+[Örneği inceleyiniz.](/CSS-Dersleri/grid-gaps-spannig.html)
+
+#### 2.50- repeat () & fr Unit
+
+Grid ile birlikte bazı fonksiyonlarda gelmiştir. Bunlardan bir tanesi de 'repeat ()' fonksiyonudur. Örneğin satır bilgisini belirtirken tekrar eden yani ayni özellikteki satırlarda tekrar tekrar yazmak yerine bu fonksiyonu kullanırız. //grid-template-columns: 150px 150px 150px; yerine grid-template-columns: repeat(3, 150px); kodunu yazabiliriz. bu kısaltmafonksiyonlar işimizi kolaylaştırmaktadır.  
+fr(fraction): Bu birim css grid ile birlikte geldi. Kullanılabilinir alanı ifade ediyor. Örneğin; grid-template-columns: 1fr 2fr 3fr; kodumuzda satırımız tane olup oranları toplam 6 birim yani fr, satır oranları ise 1 / 2 / 3 birim şeklindedir.  
+[Örnekte konuya değinilmiştir. İnceleyiniz.](/CSS-Dersleri/grid-gaps-spannig.html)
+
+#### 2.51- Naming Grid Areas:
+
+Bu kısımda ise isimlendirme yapılarak bir template nasıl yapılıyor öğrenelim. Klasik display:grid; ve grid-template-columns & grid-template-rows yapımızı oluşturduktan sonra içeriklerimizi konumlandırmak için template oluşturuyoruz. Örnek bir kod aşağıdaki gibidir.  
+![grid gap](/CSS-Dersleri/assets/img/grid-template-area.jpg)
+
+Yukarıdaki gibi kodumuzu hazırladıktan sonra isimlendirmeleri de elementlerimize veriyoruz.  
+![grid gap](/CSS-Dersleri/assets/img/grid-template-area-1.jpg)
+
+Aşağıdaki örnekte bu konu işlenmiştir. Örneğe [buradan ulaşabilirsiniz.](/CSS-Dersleri/grid-naming-grid-areas.html)  
+![grid gap](/CSS-Dersleri/assets/img/naming-grid-areas-html-codes-screenshot.jpg)  
+Yukarıdaki resimde html kodları görülmektedir.
+
+![grid gap](/CSS-Dersleri/assets/img/naming-grid-areas-css-codes-screenshot.jpg)  
+Yukarıdaki resimde css kodları görülmektedir.
+
+![grid gap](/CSS-Dersleri/assets/img/naming-grid-areas-screenshot.jpg)  
+Yukarıdaki resimde sayfa konumlandırması görülmektedir.
+
+#### 2.52- . (nokta) :
+
+Boş bir cell anlamına geliyor ve template’inizde . koyduğunuz yer boş kalıyor. Grid ile konumlandırma yaparken grid-template-areas komutunda hangi konuma nelerin gelmesinin istediğimiz bölümlere isimleri yazdıktan sonra diğer alanlara . (nokta ) koyduğumuzda o alanlara sıraki element yerleşecektir.
+
+#### 2.53-max-content, min-content, minmax()
+
+**max-content:** içerik kadar genişlik ya da yüksekliği kaplar.  
+**min-content:** en geniş kelime kadar min yer kaplar.  
+**minmax() :** aynı anda hem min hem max değer girmeyi sağlar.
+
+#### 2.54-auto-fill, auto-fit
+
+**auto-fill:** Satırı sığabildiği kadar çok sütunla doldurur. Örnek olarak grid-template-columns: repeat(auto-fill, 100px) örneğimizde 100px genişlikte elementler ile dolduracaktır. Sayfamızı genişlettiğimizde ise şayet 100px i geçmişisek satıra bir tane daha element geleektir. Ancak mevcut elementler bu alana yayılmayacaktır.Sayfayı daralttığımızda ise kalan alan 100px altına indiğinde satıra sığmayan element bir alt satıra geçerek konumlanacaktır.
+
+**auto-fit:** Mevcut tüm alanları kaplayacak şekilde davranış gösterir. grid-template-columns: repeat(auto-fit, 1fr) bu kodumuzda sayfamız mevtut elementlerimizle doldurulacak kalan boşluklar ise elementlerimiz tarafından eşit bir şekilde paylaşılacaktır. Sayfamızı daralttığımızda içerik sığmayacak ise bir alt satıra geçerek konumlanacaktır.
+
+#### 2.55-Grid items Alignment
+
+GRid konteynır içerisindeki elementlerimizi hizalamak için **_align-items_** , **_justify-items_** ve **_place-items_** propertyleri kullanılmaktadır.  
+**align-items:** Grid itemların (row) yatay eksende hizalama yapmasını sağlar.  
+align-items: start | end | center | stretch(default değer)
+
+**justify-items:** Grid itemların (col) dikey eksende hizalama yapmasını sağlar.  
+justify-items: start | end | center | stretch(default değer)
+
+**place-items:** Her iki eksendeki hizalamaları tek bir seferde yapmasını sağlar.  
+place-items: align-items — justify-items
+
+Grid kullanılarak geliştirilmiş uygulama projemize [buradan ulaşabilirsiniz.](/CSS-Dersleri/Uygyulama-Grid-Site-News/index.html)

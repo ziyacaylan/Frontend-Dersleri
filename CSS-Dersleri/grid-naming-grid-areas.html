@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naming Grid Areas</title>
+    <style>
+      body {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .container {
+        width: 800px;
+        margin: 25px auto;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 170px 150px 130px 100px;
+        grid-template-areas:
+          "header header header"
+          "aside main main"
+          "aside item-1 item-2"
+          "footer footer footer";
+        grid-gap: 10px;
+
+        justify-content: center;
+        text-align: center;
+      }
+
+      .container > * {
+        background-color: #f77b55;
+      }
+
+      .header {
+        grid-area: header;
+      }
+      .aside {
+        grid-area: aside;
+      }
+      .main {
+        grid-area: main;
+      }
+      .item-1 {
+        grid-area: item-1;
+      }
+      .item-2 {
+        grid-area: item-2;
+      }
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">This is Header</header>
+      <aside class="aside">This is asside</aside>
+      <main class="main">This is main content</main>
+      <section class="item-1">This is a content</section>
+      <section class="item-2">This is a content</section>
+      <footer class="footer">This is Footer</footer>
+    </div>
+  </body>
+</html>
