@@ -63,31 +63,37 @@
     2.28. [css Kutu Özellikleri: (margin, padding, widht, height)](#228--css-kutu-özellikleri-margin-padding-widht-height)  
     2.29. [Borders kenarlar](#229-borders-kenarlar)  
     2.30. ['box-sizing'](#230-box-sizing)  
-    2.30. ['display'](#231-display)  
-    2.31. ['visibility'](#232-visibility)  
-    2.32. ['navbar'](#233-navbar)  
-    2.33. ['styling-list'](#234-styling-list)  
-    2.34. ['background-image'](#235-background-image)  
-    2.35. ['floating'](#236-floating)  
-    2.36. ['positions'](#237-positions)  
-    2.37. [Flexbox](#238-flexbox)  
-    2.38. [Parent Flex Özellikleri](#239-parent-flex-özellikleri)  
-    2.39. [Flex-items Özellikleri](#240-flex-items-özellikleri)  
-    2.40. [Grid](#241-grid)  
-    2.41. [Css Grid nedir ?](#242-css-grid-nedir)  
-    2.42. [Grid Container](#243-grid-container)  
-    2.43. [Grid Line](#244-grid-line)  
-    2.44. [Grid Row](#245-grid-row)  
-    2.45. [Grid Column](#246-grid-column)  
-    2.46. [Grid Cell](#247-grid-cell)  
-    2.47. [Grid Area](#248-grid-area)  
-    2.48. [Grid Gap](#249-grid-gap)  
-    2.49. ['repeat ()' 'fr' unit](#250--repeat---fr-unit)  
-    2.50. [Naming Grid Areas](#251--naming-grid-areas)  
-    2.51. ['.' nokta](#252---nokta)  
-    2.52. ['max-content' 'min-content' 'minmax'](#253-max-content-min-content-minmax)  
-    2.53. ['auto-fill' , 'auto-fit'](#254-auto-fill-auto-fit)  
-    2.54. [Grid Items Alignment](#255-grid-items-alignment)
+    2.31. ['display'](#231-display)  
+    2.32. ['visibility'](#232-visibility)  
+    2.33. ['navbar'](#233-navbar)  
+    2.34. ['styling-list'](#234-styling-list)  
+    2.35. ['background-image'](#235-background-image)  
+    2.36. ['floating'](#236-floating)  
+    2.37. ['positions'](#237-positions)  
+    2.38. [Flexbox](#238-flexbox)  
+    2.39. [Parent Flex Özellikleri](#239-parent-flex-özellikleri)  
+    2.40. [Flex-items Özellikleri](#240-flex-items-özellikleri)  
+    2.41. [Grid](#241-grid)  
+    2.42. [Css Grid nedir ?](#242-css-grid-nedir)  
+    2.43. [Grid Container](#243-grid-container)  
+    2.44. [Grid Line](#244-grid-line)  
+    2.45. [Grid Row](#245-grid-row)  
+    2.46. [Grid Column](#246-grid-column)  
+    2.47. [Grid Cell](#247-grid-cell)  
+    2.48. [Grid Area](#248-grid-area)  
+    2.49. [Grid Gap](#249-grid-gap)  
+    2.50. ['repeat ()' 'fr' unit](#250--repeat---fr-unit)  
+    2.51. [Naming Grid Areas](#251--naming-grid-areas)  
+    2.52. ['.' nokta](#252---nokta)  
+    2.53. ['max-content' 'min-content' 'minmax'](#253-max-content-min-content-minmax)  
+    2.54. ['auto-fill' , 'auto-fit'](#254-auto-fill-auto-fit)  
+    2.55. [Grid Items Alignment](#255-grid-items-alignment)  
+    2.56. [Css Transition](#256-css-transition)  
+    2.57. [Css Transform](#257-css-transform)  
+    2.58. [Css Animation](#258-css-animation)  
+    2.59. [Sass Nedir ?](#259-sass-nedir)  
+    2.60. [Sass Nasıl Yazılır - En Çok Hangi Özellikleri Kullanılır](#260-sass-nasıl-yazılır--en-çok-hangi-özellikleri-kullanılır)
+3.  [Bootstrap](#3-bootstrap)
 
 ---
 
@@ -1205,9 +1211,421 @@ div:hover {
 <div></div>
 ```
 
+### 2.58-Css Animation
+
+Animasyon web sayfalarında flash ve javascript tarafından oluşturulan animasyonun yerine kullanılır. Css animasyon özelliği, bir özellik kümesinden diğerine geçiş sağlamak içindir.CSS özelliklerini istediğiniz gibi değiştirebilir animasyon özelliği katabiliriz. Animasyon yapmak için önce animasyon adımlarını @keyframes ile oluşturmamız gerekiyor. CSS3 @keyframes öğenin belirli zamanlarda hangi stillerin uygulanacağını belirtir. Animasyinon aşağıdaki özelliklerini inceleyelim.
+
+- @keyframes
+- animation-name
+- animation-duration
+- animation-delay
+- animation-iteration-count
+- animation-direction
+- animation-timing-function
+- animation-fill-mode
+- animation
+
+**@keyframes**
+
+CSS3 @keyframes ile oluşturacağımız animasyonun kare kurallarını belirlememize imkan verir. Daha sonraki adımda ise oluşturduğumuz animasyon karesini HTML elemanına bağlamamız yeterli olacaktır.  
+Aşağıdaki örnekte ornek animasyonu 5 saniye sürecek ve <div> elemanının arka plan rengini belirlenen sürede kırmızıdan sarıya değiştirecektir.
+
+```
+@keyframes ornek{
+    from {background-color: blue;}
+    to {background-color: yellow;}
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation-name: ornek;
+    animation-duration: 5s;
+}
+```
+
+Yukarıdaki örnekte from ve to anahtar kelimelerini kullanarak stilin ne zaman değişeceğini belirttik. Animasyon karelerini yüzde kullanarak uygulayabiliriz. Yüzdeyi kullanarak istediğimiz kadar stil değişikliği adımı ekleyebilirsiniz. Yukardaki örnekte from yerine %0, to yerine 100% kullanabiliriz. Aşağıdaki örnek, animasyon süresinin %25‘i tamamlandığında, %50‘si tamamlandığında ve animasyonun %100‘ü tamamlandığında <div> elemanının arka plan rengini değiştirecektir.
+
+```
+@keyframes ornek {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: ornek;
+    animation-duration: 4s;
+}
+```
+
+Aşağıdaki örnek elemanının arka plan rengini ve konumunu değiştirecektir.
+
+```
+@keyframes ornek {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: ornek;
+    animation-duration: 4s;
+}
+```
+
+**Animasyonu Zamanlamak- animation-delay**
+
+Animasyonu belirlediğimiz süreden sonra başlamasını animation-delay ile belirleyebiliriz.  
+Aşağıdaki örnekte animasyon 2 saniye sonra başlayacaktır.
+
+```
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+```
+
+**Animasyon Tekrar Sayısını Belirlemek- aanimation-iteration-count**
+
+Oluşturduğumuz animasyonu animation-iteration-count ile istediğimiz kadar tekrarlanmasını sağlayabiliriz.  
+Aşağıdaki örnek animasyonu 4 kez çalıştıracaktır.
+
+```
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: blue;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+}
+```
+
+Animasyonun sürekli olarak tekrarlanmasını sağlamak için **_infinite_** değerini kullanabiliriz.
+
+```
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: blue;
+    animation-name: example;
+    animation-duration: es;
+    animation-iteration-count: infinite;
+}
+```
+
+**Animasyonu yönünü belirlemek - animation-direction**
+
+Animasyona herhangi bir yön belirlemediğimizde animasyon başlangıçtan sona doğru hareket edecektir. Animasyon yönünü belirlemek için animation-direction özelliğini kullanabiliriz. Aşağıdaki örnek animasyon karelerini ters yönde çalıştıracaktır.
+
+```
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: blue;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+    animation-direction: reverse;
+}
+```
+
+Animasyonu ilk önce ileriye, sonra geriye, sonra ileri kaydırmak için alternate değerini kullanabiliriz.
+
+```
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: blue;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+}
+```
+
+**Animasyon için zaman belirlemek - animation-timing-function**
+
+CSS3 animation-timing-function özelliğiyle animasyon için zaman belirleyebiliriz. Alacağı değerler:
+
+- ease – Yavaş bir başlangıç, ardından hızlı, daha sonra yavaş yavaş sona eren geçiş efekti belirtir. (Varsayılan)
+- linear – Başlangıç ve bitişi aynı hızda bir geçiş efekti belirtir.
+- ease-in – Yavaş bir başlangıç geçiş efekti belirtir.
+- ease-out – Yavaş bir bitiş geçiş efekti belirtir.
+- ease-in-out – Yavaş başlangıç-bitiş geçiş efekti belirtir.
+- cubic-bezier(n,n,n,n) – Bezier yöntemi ile zaman belirlememizi sağlar.
+
+Bu konu için oluşturulmuş [örneğimizi](/CSS-Dersleri/Animations-Scss/animation-timing-function.html) inceleyiniz...
+
+**NOT:**  
+Animasyon özelliklerini ayrı ayrı belirleyebiliriz.
+
+```
+div {
+    animation-name: ornek;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+```
+
+VEya animasyon özelliklerini tek satırda da belirleyebiliriz.
+
+```
+div {
+    animation: ornek 5s linear 2s infinite alternate;
+}
+```
+
+Animasyon özelliklerini kullanıldığı sayfa geçiş efektlerinin olduğu basit uygulamamızı [buradan](/CSS-Dersleri/Animations-Scss/Animation-uygulama/index.html) ulaşabilir ve inceleyebilirsiniz.
+
+**NOT:** Daha önceden hazırlanmış değişik animasyonlar için [https://animate.style](https://animate.style) sayfasını ziyaret edebilirsiniz. Buradaki hazır kütüphaneyi kullanmak için linki eklemek yeterlidir. Ayrıca kullanımlar ile ilgili dokümantasyon içermektedir. İnceleyiniz...
+
+### 2.59-Sass Nedir ?
+
+SASS , CSS yazmayı daha dinamik bir hale getirmek için ortaya çıkmıştır. Kısaca CSS ‘e bir programlama dili havası katmaktadır. CSS’ de bulunmayan pek çok özellik barındırır.(Değişken tanımlama, İç içe yapılar kullanma, Fonksiyon tanımlama,...) Birden fazla kullanma yöntemi vardır, Bunlardan biri bilgisayarınıza indirip kurabiliceğiniz dönüştürücülerdir. Dönüştürücüler kısaca yazmış olduğumuz .scss uzantılı dosyaları tarayıcıların anlayabileceği .css formatına dönüştürür. En Popüler SASS-CSS dönüştürücüleri şunlardır;
+
+- Koala
+- Scout-App
+- SimpLess
+- Sassmeister
+- TheSassWay
+- Compass
+- Prepros
+
+Node.js kullanıyorsanız, Sass'ı npm kullanarak da kurabilirsiniz.
+SASS’ın yerleşik olduğu dillerden biri Node.js'dir. Bu yüzden ilk önce Node.js'i kurmamız gerekiyor, böylece SASS daha sonra Node.js üzerinden çalışabiliyor.
+
+Node.js kurmak için https://nodejs.org/en/download/ adresinden sisteminize uygun versiyonu indirip kurmanız gerekiyor.
+
+npm install -g sass
+
+### 2.60-SASS Nasıl Yazılır ?, En çok Hangi Özellikleri kullanılır?
+
+**1.Değişkenler (Variables)**
+
+CSS’de değişken kullanımına olanak sağlar, en kullanışlı özelliklerden biridir. Aşağıda göstermiş olduğum şekilde başına $ işareti koymamız değişken olduğunu ifade etmek içindir.
+SASS:
+
+```
+$general-font: "Helvetica, sans-herif";
+$my-color: #a5a5a5;
+
+p {
+ font-family: $general-font;
+ color: $my-color;
+}
+```
+
+CSS Çıktısı:
+
+```
+p {
+ font-family: "Helvetica, sans-herif;
+ color: #a5a5a5;
+}
+```
+
+Bu şekilde ,tanımlamış olduğumuz değişkenleri istediğimiz yerde kullanabiliriz. Değişken tanımladığımız yerde yaptığımız küçük bir değişiklik ile yazılan tüm koda etki edilebilir.
+
+**2.İç İçe Yapılar Oluşturma(Nesting)**
+
+CSS yazmayı hızlandıran, kolaylaştıran ve kod kalabalığını azaltan önemli bir özelliktir.  
+SASS:
+
+```
+div {
+ .aciklama{
+   color:blue;
+   &:hover{
+    color:red
+   }
+ }
+ .resim{
+   width: 100%;
+ }
+}
+```
+
+CSS Çıktısı:
+
+```
+div .aciklama{
+  color:blue;
+}
+div .aciklama:hover{
+  color:red;
+}
+div .resim{
+  width: 100%;
+}
+```
+
+& sembolü :hover :after :before gibi seçiciler için SASS yazımına özel kullanılan bir yapıdır. İçinde bulunduğu parent'a etki eder.
+
+**3.İçeri Aktarım(Import)**
+
+Kod kalabalığından ve karışıklıktan kurtulmak için çok kullanışlı bir özelliktir. 2 adet .scss uzantılı dosyamız olsun. Birinde genel tanımladığımız değişkenlerimiz bulunsun, bir diğerinde ise still verdiğimiz SASS kodlarımız bulunsun. Bu özellik ile değişkenleri tanımladığımız \_variable.scss dosyasını, still verdiğimiz style.scss dosyası ile birleştirmiş oluyoruz.  
+SASS:
+
+```
+_variable.scss
+
+$h1-font-size: 50px;
+$h1-line-height: $font-weight-extralight;
+$h1-color: #444444;
+$h1-line-height: 60px;
+
+style.scss
+
+@import "variables";
+h1{
+ font-size: $h1-font-size;
+ line-height: $h1-line-height;
+ font-weight: $h1-font-weight;
+ color: $h1-color;
+}
+```
+
+CSS Çıktısı:
+
+```
+$h1-font-size: 50px;
+$h1-line-height: $font-weight-extralight;
+$h1-color: #444444;
+$h1-line-height: 60px;
+
+h1{
+ font-size: $h1-font-size;
+ line-height: $h1-line-height;
+ font-weight: $h1-font-weight;
+ color: $h1-color;
+}
+```
+
+**4.Katmanlar(Mixins)**  
+Katman yapısı, sürekli aynı parametreleri kullanarak yazdığımız CSS kodlarını tek bir sefer tanımlayarak, her yerde tek bir komut çağırarak kullanmamıza olanak sağlar. Fonksiyon çağırmaya çok benzer fakat burada işlem yaptırmıyoruz.  
+SASS:
+
+```
+@mixin overlay() {
+ left: 0;
+ top: 0;
+ background: black;
+ opacity: 0.2;
+}
+
+.my-background{
+ @include overlay();
+}
+```
+
+CSS Çıktısı:
+
+```
+.my-background{
+ left: 0;
+ top: 0;
+ background: black;
+ opacity: 0.2;
+}
+```
+
+**5.Kalıtım(Inheritance)**  
+Katılım özelliği ortak CSS kodlarını barındıran elementleri bir araya toplamak için kullanılanılır.  
+SASS:
+
+```
+.mesaj{
+ border: 1px solid gray;
+ padding: 15px;
+ color: black;
+}
+.basarili{
+ @extend .mesaj;
+ background: green;
+}
+.hata{
+ @extend .mesaj;
+ background: red;
+}
+.uyari{
+ @extend .mesaj;
+ background yellow;
+}
+```
+
+CSS Çıktısı:
+
+```
+.mesaj, .basarili, .hata, .uyari{
+ border: 1px solid gray;
+ padding: 15px;
+ color: black;
+}
+.basarili{
+ background: green;
+}
+.hata{
+ background: red;
+}
+.uyari{
+ background yellow;
+}
+```
+
+**6.Operatörler(Operators)**  
+Matematik işlemlerini CSS’de yapmamıza olanak sağlayan çok kullanışlı bir özelliktir. SASS tarafında matematiksel işlemler yaptırabilirsiniz ve CSS tarafına bu işlem sonuçlandırılmış olarak gönderilir.  
+SASS:
+
+```
+.box{
+ width: 1/3 * 100%;
+ height: 30px * 2.5;
+}
+```
+
+CSS Çıktısı:
+
+```
+.box{
+ width: 33.333333333%
+ height: 75px;
+}
+```
+
 # 3. BOOTSTRAP
 
-Html ve Css bilgilerimizi kullanarak tasarımlarımızı çok daha hızlı bir şekilde yapmamıza olanak sağlayan bir kütüphanedir. Bootstrap kütüphanesi içerisinde işlerimizi kolaylaştıracak bir çok yapı mevcuttur. Bu yapıları kullanarak örneğin bir card objesini hızlı bir şekilde çok fazla kod yazmadan oluşturabiliriz.
+Bootstrap, kullanılabilir kod parçalarından oluşan açık kaynaklı ve ücretsiz bir web uygulaması geliştirme araç takımıdır. Sahip olduğu CSS ve JavaScript taslakları, web sitelerinin ve mobil uygulamaların kullanıcılara görünen bileşenleri için kullanılır. HTML, CSS, Less, Sass ve JavaScript ile yazılmış olan Bootstrap, tamamen etkileşimli ve duyarlı web uygulamaları geliştirmek için kullanılabilecek öğrenmesi kolay bir alternatiftir. Bootstrap web uygulaması geliştirme araç takımı, eski Twitter çalışanları Mark Otto ve Jacob Thornton tarafından oluşturulmuştur.  
+Bootstrap kullanmanın belli başlı avantajlarını şu şekilde sıralayabiliriz.
 
-- örneğin bir buton oluşturmak istediğimizde class ismini 'btn btn-primary' şeklinde verdiğimizde buton css uygulanmış bir şekilde hazır olarak gelecektir.
-- örneğin kırmızı bir yazı ile bir paragraf yazdırmak istersek paragrafın class ismine 'text-danger' vermemiz yeterlidir.
+- Daha hızlı geliştirme
+- Duyarlı tasarım
+- Tasarım devamlılığı
+- Açık kaynaklı
+- Özelleştirme
+- Dokümantasyon
+- Temalar
