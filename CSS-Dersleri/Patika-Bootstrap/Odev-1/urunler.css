@@ -11,6 +11,7 @@ body {
   background-color: #e9ecef;
   font-family: "Roboto Mono", monospace;
 }
-#header a {
-  text-decoration: none;
+img {
+  width: 350px;
+  height: 400px;
 }
