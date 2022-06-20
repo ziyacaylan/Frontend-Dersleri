@@ -1629,3 +1629,211 @@ Bootstrap kullanmanın belli başlı avantajlarını şu şekilde sıralayabilir
 - Özelleştirme
 - Dokümantasyon
 - Temalar
+
+Bütün programlama dillerinde, frameworklerde veya hazır kütüphanelerde de olduğu gibi dokümantasyon çok önemlidir. Bilgisayar dünyasında sorularımızın cevapları çoğunlukla Stackoverflow gibi forumlarda ve yeni öğrenmeye çalıştığınız bilgilerde hep dökümantasyonlarda bulunmaktadır.  
+Bootstrap dokümantasyonuna [buradan] (https://getbootstrap.com/docs/4.5/getting-started/introduction/) ulaşabilirsiniz.
+
+### 3.1-12'lik Izgara(Grid) Sistemini Anlamak
+
+Bootstrap, sayfa düzeni (layout) oluşturmak için, CSS flexbox ile oluşturulmuş ızgara (grid) sistemini kullanmaktadır.  
+**Bootstrap ızgara sistemi 3 ana yapıdan oluşur:**
+
+- Kapsayıcı (.container)
+- Satırlar (.row)
+- Kolonlar (col-\*) (Örnek: .col-md-8)
+
+Her bir sütun, 12 kolondan meydana gelmekte ve 12'lik Grid sistemi oluşturmaktadır. 12'lik ızgara sisteminde, kolon sayısı varyasyonları ile istenildiği gibi tasarım yapılabilmektedir.
+
+**Eşit Kolonlar**  
+Eşit kolonlu tasarım için;
+
+- 12 adet 1'er kolon (.col-&#91;sınıfAdı&#93;-1)
+- 6 adet 2'li kolon (.col-&#91;sınıfAdı&#93;-2)
+- 4 adet 3'lü kolon (.col-&#91;sınıfAdı&#93;-3)
+- 3 adet 4'lü kolon (.col-&#91;sınıfAdı&#93;-4)
+- 2 adet 6'lı kolon (.col-&#91;sınıfAdı&#93;-6)
+- 1 adet 12'li kolon (.col-&#91;sınıfAdı&#93;-12) oluşturulabilir.
+
+```
+<div class="row">
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+    <div class="col">Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-2">Kolon</div>
+    <div class="col-2">Kolon</div>
+    <div class="col-2">Kolon</div>
+    <div class="col-2">Kolon</div>
+    <div class="col-2">Kolon</div>
+    <div class="col-2">Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-3">Kolon</div>
+    <div class="col-3">Kolon</div>
+    <div class="col-3">Kolon</div>
+    <div class="col-3">Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-4">Kolon</div>
+    <div class="col-4">Kolon</div>
+    <div class="col-4">Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-6">Kolon</div>
+    <div class="col-6">Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-12">Kolon</div>
+</div>
+}
+```
+
+Ya da col sınıfına sahip element sayısına göre (Örneğin; 3 adet .col sınıfı olan elementler 3 adet kolon oluşturur) otomatik olarak eşit kolonlara bölünebilir.
+
+**Eşit Olmayan Kolonlar**
+Kolon sayılarının 12'ye tamamlanma zorunluluğu yoktur. Tasarıma göre istenilen sayıda kolonlar oluşturulabilir ve istenilen yerlerde boşluk bırakılabilir. Bunun için col sınıfının yanına öntanımlı margin ve margin yönünü (ml-auto gibi) belirten bir sınıf adı daha eklenmelidir. Kolonun solunda boşluk bırakmak için margin (m) left (l) yani ml-auto sınıfı eklemeli, aynı şekilde sağ tarfında boşluk bırakılmak istenirse margin (m) right (r) yani mr-auto sınıfı eklemelidir.  
+**Örneğin;** col-4 mr-auto sınıfı olan bir kolonun sağ tarafında, col-4 ml-auto sınıfı ise kolonun solunda boşluk bırakır.
+
+```
+<div class="row">
+    <div class="col-2">2 Kolon</div>
+    <div class="col-10">10 Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-8">8 Kolon</div>
+    <div class="col-4">4 Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-8">8 Kolon</div>
+    <div class="col-6">6 Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-4">4 Kolon</div>
+    <div class="col-5">5 Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-4 mr-auto">4 Kolon</div>
+    <div class="col-5">5 Kolon</div>
+</div>
+
+<div class="row">
+    <div class="col-4">4 Kolon</div>
+    <div class="col-5 ml-auto">5 Kolon</div>
+</div>
+```
+
+**Kolonların Sıralanması**  
+Öntanımlı **order-[sıra numarası]** sınıfını ekleyerek kolonları sıralayabiliriz.
+
+Örneğin; col-3 order-3 üç kolonluk bölümü üçüncü sıraya yerleştirecektir.
+
+```
+<div class="row">
+    <div class="col-3 order-3">3 Kolon</div>
+    <div class="col-4 order-2">4 Kolon</div>
+    <div class="col order-1">5 Kolon</div>
+</div>
+```
+
+**İç İçe Izgara sistemi**  
+Bir satırdaki (row) kolonun (col) içine başka bir satır eklenerek yine kolonlara bölünebilir.
+
+**Örneğin;** 4'lük bir kolon (.col-[sınıfAdı]-4) ile 8'lik bir kolondan (.col-[sınıfAdı]-8) oluşan satırdaki 8'lik kolonun içinde yeni bir satır (row) eklenerek 2 adet 6'lık kolon (.col-[sınıfAdı]-6) oluşturulabilir.
+
+```
+<div class="row">
+    <div class="col-4">4 Kolon</div>
+    <div class="col-8">
+        8 Kolon
+
+        <div class="row">
+            <div class="col-6">6 Kolon</div>
+            <div class="col-6">6 Kolon</div>
+        </div>
+    </div>
+</div>
+```
+
+Container, row ve column yapısı aslında Bootstrap kullanım mantığının temellerini oluşturuyor diyebiliriz. Bu yapıyı anlamak Bootstrap ile çalışmayı çok çok kolaylaştıracaktır. Bootstrap container yapısı aşağıdaki gibidir.  
+![bootstrap container](/CSS-Dersleri/assets/img/bootstrap-grids.jpg)
+
+- **extra small** bir cihazda, yani **576px'den küçük** olan bir cihazda, ekran boyutunun **100%**'ünü kaplamaktadır.
+- **small** bir cihazda, yani **576px'den büyük veya eşit** olan bir cihazda, ekran boyutunun **100%**'ünü kaplamaktadır.
+- **medium** bir cihazda, yani **768px'den büyük veya eşit** olan bir cihazda, bu containerın genişliği **720px** olacaktır.
+- **large** bir cihazda, yani **992px'den büyük veya eşit** olan bir cihazda, bu containerın genişliği **960px** olacaktır.
+- **X-large** bir cihazda, yani **1200px'den büyük veya eşit** olan bir cihazda, bu containerın genişliği **1140px** olacaktır.
+- **XX-large** bir cihazda, yani **1400px'den büyük veya eşit** olan bir cihazda, bu containerın genişliği **1320px** olacaktır.
+
+**Bootstrap Renk Standartları**
+
+Bootstrap tarafından üretilmiş renk şemaları ve örnek kullanımı şu şekilde;
+
+- Primary: tema ana rengi
+- Secondary: temada kullanılacak ikincil renk.
+- Success: örnek olarak kullanıcıların bütün gereksinimleri sağladıkları bir formu doldurduktan sonra yeşil renk tonlarını içeren bir mesaj gösterirken kullanabileceğimiz sınıf.
+- Danger: Success için verdiğimiz örneğin tersi bir durumda kırmızı renk tonlarını içeren bir feedback için kullabileceğimiz sınıf.
+- Warning: Kullacıların dikkatini çekmek amaçlı kullanılan renk şema sınıfı.
+- Info: Kullacıların dikkatini çekmek amaçlı kullanılan renk şema sınıfı.
+- Light: Tema içinde yazılar ve arkaplan renklendirmesi için kullanabileceğimiz renk şema sınıfı.
+- Dark: Tema içinde yazılar ve arkaplan renklendirmesi için kullanabileceğimiz renk şema sınıfı.
+
+```
+  <!--
+    Primary, Secondary, Success, Danger, Warning, Info, Light, Dark
+  -->
+  <p class="text-primary">.text-primary</p>
+  <p class="text-secondary">.text-secondary</p>
+  <p class="text-success">.text-success</p>
+  <p class="text-danger">.text-danger</p>
+  <p class="text-warning bg-dark">.text-warning</p>
+  <p class="text-info bg-dark">.text-info</p>
+  <p class="text-light bg-dark">.text-light</p>
+  <p class="text-dark">.text-dark</p>
+  <p class="text-body">.text-body</p>
+  <p class="text-muted">.text-muted</p>
+  <p class="text-white bg-dark">.text-white</p>
+  <p class="text-black-50">.text-black-50</p>
+  <p class="text-white-50 bg-dark">.text-white-50</p>
+  <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+  <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+  <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+  <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+  <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+  <div class="p-3 mb-2 bg-info text-dark">.bg-info</div>
+  <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+  <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+  <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+```
+
+**Offset Kullanımı**  
+Web sayfamızı tasarlarken sütunlarda yani col sınıfına sahip div elementlerinde boşluk oluşturma amacıyla sütunun sağ ve sol kısımlardan ittirilmesi için offset sınıfı kullanılır. Bir Grid(Izgara) yapısı 12 birimden oluşur, bundan dolayı yapıda taşma oluşmaması için offset sınıfı için verilecek değerde sütunun sahip olduğu grid boyutu da göz önüne alınmalıdır. Offset değer belirleme durumunun daha iyi kavranması açısından aşağıdaki örnekleri inceleyiniz.
+
+**Not:** offset ile push sınıfları birbiri ile karıştırılmamalıdır. Benzer bir kullanıma sahip olan push sınıfın offset'ten farkı sütun yapısında yalnızca soldan bir itme uygulamasıdır.  
+**Örneğin:**
+
+```
+<div class="container">
+    <div class="row bg-dark " style="height: 100px;">
+        <div class="col-md-10 offset-md-2 bg-danger font-weight-bold text-center pt-4">.col-md-10 .offset-md-2</div>
+    </div>
+</div>
+```
