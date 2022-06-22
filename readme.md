@@ -1837,3 +1837,16 @@ Web sayfamızı tasarlarken sütunlarda yani col sınıfına sahip div elementle
     </div>
 </div>
 ```
+
+### 3.2-CSS Kütüphaneleri
+
+Bootstrap tarzı çeşitli css kütüphanaleri de bulunmaktadır. Bu kütüphanele bazı örnekler aşağıdaki gibidir.
+
+- https://get.foundation/
+- https://semantic-ui.com/
+- https://bulma.io/
+- https://getuikit.com/
+- https://purecss.io/
+- http://getskeleton.com/
+- https://milligram.io/
+- https://tailwindcss.com/
