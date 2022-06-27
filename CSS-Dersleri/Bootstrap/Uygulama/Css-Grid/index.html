@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      /*css reset*/
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin: auto;
+        width: 100%;
+        height: 100vh;
+        background-color: chocolate;
+        display: grid;
+        gap: 10px;
+
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 70px repeat(7, 1fr) 125px;
+
+        grid-template-areas:
+          "header header header"
+          "aside section-1 section-1"
+          "aside section-2 section-2"
+          "aside article-1 article-1"
+          "aside section-3 section-3"
+          "aside article-2 article-2"
+          "aside section-4 section-4"
+          "aside article-3 article-3"
+          "footer footer footer";
+      }
+      .box {
+        /* width: 100px;
+        height: 100px; */
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: 2px solid #3f3f3f;
+      }
+      .header {
+        grid-area: header;
+      }
+      .aside {
+        grid-area: aside;
+      }
+      .section-1 {
+        grid-area: section-1;
+      }
+      .section-2 {
+        grid-area: section-2;
+      }
+      .section-3 {
+        grid-area: section-3;
+      }
+      .section-4 {
+        grid-area: section-4;
+      }
+      .article-1 {
+        grid-area: article-1;
+      }
+      .article-2 {
+        grid-area: article-2;
+      }
+      .article-3 {
+        grid-area: article-3;
+      }
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box header">Header</div>
+      <div class="box aside">aside-manu</div>
+      <div class="box section-1">section-1</div>
+      <div class="box section-2">section-2</div>
+      <div class="box section-3">section-3</div>
+      <div class="box article-1">article-1</div>
+      <div class="box article-2">article-2</div>
+      <div class="box article-3">article-3</div>
+      <div class="box section-4">section-4</div>
+      <div class="box footer">This is footer</div>
+    </div>
+  </body>
+</html>
