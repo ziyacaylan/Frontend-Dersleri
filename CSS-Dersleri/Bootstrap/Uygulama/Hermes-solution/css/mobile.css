@@ -1,0 +1,20 @@
+@media screen and (max-width: 768px) {
+  .flex-items {
+    flex-direction: column;
+  }
+  .navbar .nav-items {
+    flex-direction: row;
+    padding: 0.5 0;
+    height: 150px;
+  }
+  .nav-items li {
+    padding: 0 0.5rem;
+  }
+  .flex-columns .row {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .services.flex-columns .row {
+    flex-direction: column;
+  }
+}

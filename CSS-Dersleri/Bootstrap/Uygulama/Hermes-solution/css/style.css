@@ -7,7 +7,156 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 body {
   font-family: "Ubuntu", sans-serif;
+}
+
+.hero {
+  background: url(/images/home/showcase.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.hero * {
+  z-index: 10;
+}
+.hero::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.logo {
+  font-weight: bold;
+}
+.logo i {
+  padding: 0 1.5rem 0 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--dark);
+
+  color: var(--white);
+}
+
+.nav-items {
+  padding: 0 2rem;
+  font-size: 1.1rem;
+}
+.nav-items li {
+  padding: 0.5rem 1rem;
+}
+.nav-items li:hover {
+  color: var(--success);
+  border-bottom: 2px solid var(--success);
+}
+
+.head-title h2 {
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+}
+.head-title p {
+  padding: 1.5rem 0;
+}
+.head-title a {
+  border-radius: 5px;
+}
+
+.about i {
+  background-color: var(--success);
+  color: var(--white);
+  padding: 1.3rem;
+  border-radius: 50%;
+}
+.about h3 {
+  padding: 1rem 0;
+}
+.about p {
+  padding: 0 2rem;
+}
+.btn-outline i {
+  padding: 0.5rem;
+}
+.teams img {
+  width: 100%;
+  border-radius: 50%;
+}
+.teams .info {
+  background-color: var(--success);
+  border-radius: 0.3rem;
+  margin: 1rem 2rem;
+  padding: 0.5rem;
+}
+.team {
+  padding: 0 1.5rem;
+}
+.teams h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.services.flex-columns .row {
+  flex-direction: row-reverse;
+}
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 125px;
+}
+.main-footer li {
+  padding: 1rem 0;
+}
+.main-footer li a {
+  color: var(--white);
+  padding: 0 1rem;
+  transition: all 0.2s;
+}
+.main-footer li a:hover {
+  color: var(--success);
+}
+.contact .column img {
+  width: 100%;
+  height: 100%;
+}
+
+.inquiry-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.inquiry-form input {
+  display: block;
+  border: none;
+  border-radius: 0.2rem;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.inquiry-form input:last-child {
+  border: 1px solid var(--white);
+}
+.inquiry-form input:focus {
+  outline-color: var(--success);
+  caret-color: var(--success);
+}
+#submit {
+  color: var(--white);
+  margin: 30px 0;
 }
