@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+  .navbar {
+    text-align: center;
+  }
+  .icons,
+  .grid-team {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .navbar,
+  .solutions .row,
+  .services .row,
+  .contact .row {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .gallery .row {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
