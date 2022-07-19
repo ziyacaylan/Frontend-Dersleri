@@ -1,5 +1,72 @@
 # <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" /> <img src="https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white" />
 
+# İÇİNDEKİLER
+
+2.  [CSS Dersleri](./css.md/#2-css-dersleri)  
+    2.1. [Css nedir ?](./css.md/#21-css-nedir)  
+    2.2. [Css nezaman çıkmıştır](./css.md/#22-css-nezaman-çıkmıştır)  
+    2.3. [Css syntax | css nasıl kullanılır ?](./css.md/#23-css-syntax--css-nasıl-kullanılır)  
+    2.4. [Css selektörler](./css.md/#24-css-selektörler)  
+    2.5. [Genel seçici](./css.md/#25-genel-seçici)  
+    2.6. [Class kullanımı](./css.md/#26-class-kullanımı)  
+    2.7. [Id kullanımı](./css.md/#27-id-kullanımı)  
+    2.8. [Özellik seçiciler attribute selectors](./css.md/#28-özellik-seçiciler-attribute-selectors)  
+    2.9. [Grup seçiciler group selectors](./css.md/#29-grup-seçiciler-group-selectors)  
+    2.10. [Çocuk seçiciler child selectors](./css.md/#210-çocuk-seçiciler-child-selectors)  
+    2.11. [':hover'](./css.md/#211--hover)  
+    2.12. [':active'](./css.md/#212--active)  
+    2.13. [':first child'](./css.md/#213--first-child)  
+    2.14. [':last child'](./css.md/#214--last-child)  
+    2.15. [':before'](./css.md/#215--before)  
+    2.16. [':after'](./css.md/#216--after)  
+    2.17. [':first-letter'](./css.md/#217---first-letter)  
+    2.18. [':first-line'](./css.md/#218---first-line)  
+    2.19. [Css hangi yöntemler ile yazabiliriz](./css.md/#219--css-hangi-yöntemler-ile-yazabiliriz)  
+    2.20. [Inline css](./css.md/#220--inline-css)  
+    2.21. [Internal css](./css.md/#221--internal-css)  
+    2.22. [External css](./css.md/#222--external-css)  
+    2.23. [bazı css komutlarını i̇nceleyelim](./css.md/#223--bazı-css-komutlarını-i̇nceleyelim)  
+    2.24. ['color'](./css.md/#224--color)  
+    2.25. ['backgroung-color'](./css.md/#225--backgroung-color)  
+    2.26. ['font-family'](./css.md/#226--font-family)  
+    2.27. ['font-size'](./css.md/#227--font-size)  
+    2.28. [css Kutu Özellikleri: (margin, padding, widht, height)](./css.md/#228--css-kutu-özellikleri-margin-padding-widht-height)  
+    2.29. [Borders kenarlar](./css.md/#229-borders-kenarlar)  
+    2.30. ['box-sizing'](./css.md/#230-box-sizing)  
+    2.31. ['display'](./css.md/#231-display)  
+    2.32. ['visibility'](./css.md/#232-visibility)  
+    2.33. ['navbar'](./css.md/#233-navbar)  
+    2.34. ['styling-list'](./css.md/#234-styling-list)  
+    2.35. ['background-image'](./css.md/#235-background-image)  
+    2.36. ['floating'](./css.md/#236-floating)  
+    2.37. ['positions'](./css.md/#237-positions)  
+    2.38. [Flexbox](./css.md/#238-flexbox)  
+    2.39. [Parent Flex Özellikleri](./css.md/#239-parent-flex-özellikleri)  
+    2.40. [Flex-items Özellikleri](./css.md/#240-flex-items-özellikleri)  
+    2.41. [Grid](./css.md/#241-grid)  
+    2.42. [Css Grid nedir ?](./css.md/#242-css-grid-nedir)  
+    2.43. [Grid Container](./css.md/#243-grid-container)  
+    2.44. [Grid Line](./css.md/#244-grid-line)  
+    2.45. [Grid Row](./css.md/#245-grid-row)  
+    2.46. [Grid Column](./css.md/#246-grid-column)  
+    2.47. [Grid Cell](./css.md/#247-grid-cell)  
+    2.48. [Grid Area](./css.md/#248-grid-area)  
+    2.49. [Grid Gap](./css.md/#249-grid-gap)  
+    2.50. ['repeat ()' 'fr' unit](./css.md/#250--repeat---fr-unit)  
+    2.51. [Naming Grid Areas](./css.md/#251--naming-grid-areas)  
+    2.52. ['.' nokta](./css.md/#252---nokta)  
+    2.53. ['max-content' 'min-content' 'minmax'](./css.md/#253-max-content-min-content-minmax)  
+    2.54. ['auto-fill' , 'auto-fit'](./css.md/#254-auto-fill-auto-fit)  
+    2.55. [Grid Items Alignment](./css.md/#255-grid-items-alignment)  
+    2.56. [Css Transition](./css.md/#256-css-transition)  
+    2.57. [Css Transform](./css.md/#257-css-transform)  
+    2.58. [Css Animation](./css.md/#258-css-animation)  
+    2.59. [Sass Nedir ?](./css.md/#259-sass-nedir)  
+    2.60. [Sass Nasıl Yazılır - En Çok Hangi Özellikleri Kullanılır](./css.md/#260-sass-nasıl-yazılır--en-çok-hangi-özellikleri-kullanılır)
+3.  [Bootstrap](./css.md/#3-bootstrap)  
+    3.1. [12'lik Izgara(Grid) Sistemini](./css.md/#31-12lik-izgaragrid-sistemini-anlamak)  
+    3.2. [css-kütüphaneleri](./css.md/#32-css-kütüphaneleri)
+
 # 2-CSS Dersleri
 
 ## 2.1-Css Nedir ?
@@ -1302,7 +1369,7 @@ Bootstrap kullanmanın belli başlı avantajlarını şu şekilde sıralayabilir
 Bütün programlama dillerinde, frameworklerde veya hazır kütüphanelerde de olduğu gibi dokümantasyon çok önemlidir. Bilgisayar dünyasında sorularımızın cevapları çoğunlukla Stackoverflow gibi forumlarda ve yeni öğrenmeye çalıştığınız bilgilerde hep dökümantasyonlarda bulunmaktadır.  
 Bootstrap dokümantasyonuna [buradan] (https://getbootstrap.com/docs/4.5/getting-started/introduction/) ulaşabilirsiniz.
 
-### 3.1-12'lik Izgara(Grid) Sistemini Anlamak
+### 3.1 12'lik Izgara(Grid) Sistemini Anlamak
 
 Bootstrap, sayfa düzeni (layout) oluşturmak için, CSS flexbox ile oluşturulmuş ızgara (grid) sistemini kullanmaktadır.  
 **Bootstrap ızgara sistemi 3 ana yapıdan oluşur:**
@@ -1507,7 +1574,7 @@ Web sayfamızı tasarlarken sütunlarda yani col sınıfına sahip div elementle
 </div>
 ```
 
-### 3.2-CSS Kütüphaneleri
+### 3.2 CSS Kütüphaneleri
 
 Bootstrap tarzı çeşitli css kütüphanaleri de bulunmaktadır. Bu kütüphanele bazı örnekler aşağıdaki gibidir.
 
