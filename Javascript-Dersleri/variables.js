@@ -55,4 +55,14 @@ console.log(arttir_sayac); // 2
 
 let counter = 1;
 let a = counter++;
+let eleman;
 console.log(a); // 1console.log(counter); // 2 değerini verir.
+
+console.log(Boolean(sayac));
+console.log(Boolean(a));
+console.log(Boolean(eleman));
+
+console.log(Boolean(10 < 11));
+console.log(Boolean(10 < 9));
+
+console.log(true + false);

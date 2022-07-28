@@ -220,3 +220,85 @@ y değişkenin değer türü kayan sayı (float) türündedir. Sayının integer
     let a = --counter;
     alert(a); // 0
 ```
+
+## 4.9-Boolean Veri Türü
+
+Program yazarken sadece iki ifade ile çalışmak (evet yada hayır, _0_ yada _1_ gibi) programın anlaşılabilmesi ve yazım kolaylığı açısından çok işimize yarar. İşte bu veri türünde ise iki ifade vardır. Bunlar _true_ ve _false_ tir.
+
+```
+Boolean(10>9); // true
+```
+
+```
+Boolean(10>11); // false
+```
+
+```
+const b1 = Boolean(100); // true
+const b2 = Boolean(3.14); // true
+const b3 = Boolean(-15); // true
+const b4 = Boolean("Hello"); // true
+const b5 = Boolean('false'); // true
+const b6 = Boolean(1 + 7 + 3.14); // true
+```
+
+```
+const c1 = Boolean(undefined); // false
+const c2 = Boolean(null); // false
+const c3 = Boolean(""); // false
+const c4 = Boolean(false); // false
+const c5 = Boolean(NaN); // false
+const c6 = Boolean(0); // false
+const c6 = Boolean(-0); // false
+```
+
+## 4.10-Değişken Türünü Kontrol Etme
+
+Çalıştığımız veriler her zaman kodumuz için uygun olmayabilir. Verilerin kontrolünü sağlayıp ona uygun kod yazabiliriz veya istediğimiz türe dönüştürerek ilerleyebiliriz.
+
+Bu kontrolleri yaparken sıkça _typeof_ kullanılır.
+
+```
+console.log(typeof 42);
+// beklenen output: "number"
+
+console.log(typeof 'kodluyoruz');
+//beklenen output: "string"
+
+console.log(typeof true);
+// beklenen output: "boolean"
+
+console.log(typeof Variable);
+// beklenen output: "undefined"
+```
+
+**Anahtar Notlar :**
+Bir başka şekilde isInteger( ), isFinite( ) veya isNaN( ) kullanarak da kontrol sağlayabiliriz.
+
+```
+//isInteger( ) yöntemi, sayıların tam sayı olup olmadığını belirler.
+Number.isInteger(123) //true
+Number.isInteger(-123) //true
+Number.isInteger(0.5) //false
+//isFinite () yöntemi, bir değerin sonlu bir sayı olup olmadığını belirler.
+Number.isFinite(0) //true
+Number.isFinite('123') //false
+Number.isFinite('Hello') //false
+Number.isFinite(-Infinity) //false
+Number.isFinite(0 / 0) //false
+// Number.isNaN () yöntemi, bir değerin NaN (Not-A-Number) olup olmadığını belirler.
+
+Number.isNaN(123) //false
+Number.isNaN(0) //false
+Number.isNaN('123') //false
+Number.isNaN('Hello') //false
+Number.isNaN('') //false
+Number.isNaN(true) //false
+Number.isNaN(undefined) //false
+Number.isNaN('NaN') //false
+Number.isNaN(NaN) //true
+```
+
+## 4.11-Değişken Türünü Değiştirmek (Type Coercion)
+
+Type Coercion; bir değişkenin türünü, başka bir değişkene dönüştürmeye yarayan yöntemdir. İki tipi vardır. Bunlar explicit ve implicit dönüşümlerdir. Explicit için metodlarla yapılan dönüşüm denilebilir. Implicit ise operatörler ile veya Javascript in kendi yaptığı dönüşüm diyebiliriz.
