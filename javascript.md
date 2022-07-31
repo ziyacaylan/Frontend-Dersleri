@@ -106,7 +106,7 @@ JavaScript, C# veya Java gibi diğer programa dillerine benzer veri tiplerini i�
 1- İlkel (Primitive) Veri Türleri
 
 - String
-- Nmuber
+- Number
 - Boolean
 - Undefined
 - Null
@@ -302,3 +302,134 @@ Number.isNaN(NaN) //true
 ## 4.11-Değişken Türünü Değiştirmek (Type Coercion)
 
 Type Coercion; bir değişkenin türünü, başka bir değişkene dönüştürmeye yarayan yöntemdir. İki tipi vardır. Bunlar explicit ve implicit dönüşümlerdir. Explicit için metodlarla yapılan dönüşüm denilebilir. Implicit ise operatörler ile veya Javascript in kendi yaptığı dönüşüm diyebiliriz.
+
+**Explicit Coercion**
+
+```
+String(123) // “123”
+ParseInt(“123”) // 12
+```
+
+**Implicit Coercion**
+
+```
+If(3<5) // true
+console.log(‘ ’+123) // “123”
+12/”6” // 2
+```
+
+**String Dönüşümü**
+
+Bir değeri string e dönüştermek için String() fonksiyonu kullanılır. Binary (kili) ifatede _+_ operatörü birstring ifadeye uygulandığında ise implicit dönüşüm tetiklenir.
+
+```
+String(123) // “123” explicit
+123 + ''    // “123”    implicit
+```
+
+**NOTLAR:**
+Symbol’de durum biraz farklıdır, çünkü dönüşüm sadece explicit bir şekilde yapılabilir, implicit bir şekilde yapılamaz.
+
+```
+String(Symbol('my symbol')) // 'Symbol(my symbol)'
+'' + Symbol('my symbol') // TypeError is thrown
+```
+
+**Boolean Dönüşümü**  
+Bir değeri explicit boolean a dönüştürmek için Boolean() metodu kullanılır.  
+İmplicit coercion dönüşüm ise mantıksal operatörlerin kullanıldığında tetiklenir.
+
+```
+Boolean(2) // explicit
+var a=!!2 //explicit
+if (2) { ... } // implicit due to logical context
+!!2 // implicit due to logical operator
+2 || 'hello' // implicit due to logical operator
+```
+
+**Örekler**
+
+```
+Boolean('') // false
+Boolean(0) // false
+Boolean(-0) // false
+Boolean(NaN) // false
+Boolean(null) // false
+Boolean(undefined) // false
+Boolean(false) // false
+
+Boolean({}) // true
+Boolean([]) // true
+Boolean(Symbol()) // true
+!!Symbol() // true
+Boolean(function() {}) // true
+```
+
+**Nesneler (Objects) için Type Coercion**
+Javascript te nesneler referans tipler olduğundan üzerlerinde değişiklik yapmak biraz zordur. Değişiklik yapabilmemiz için elimizde primitif tip olması gerekir. Yani referans tipler primitif tiplere zorlanır. Primitif olmayan herhangi bir değer yada obje (object veya array) dolu yada boş farketmez true değere dönecektir.
+
+```
+console.log(Boolean({})) // true
+console.log(Boolean([])) // true
+console.log(Boolean([1,2,3])) // true
+console.log(Boolean({13:234})) //true
+```
+
+## 4.12-Template Literals Kullanımı
+
+Template literals (öneki adı template Strings), kod okunabilirliği ve yazım kolaylığı sağlayan ES6 ile gelmiş bir string yazma şeklidir.
+
+**Sağladığı faydalar**
+
+- Çok satırlı dize yazımı
+
+```
+//Eski kullanım:
+let eskiString = "En sevdiğim yemekler:\nİskender\nMantı"
+
+//Yeni kullanım:
+let yeniString = `En sevdiğim yemekler:
+İskender
+Mantı`
+```
+
+- İnterpolasyon : metin içerisinde değişken kullanmak anlamına gelir.
+
+```
+let ad= `Ziya`;
+let soyad= `ÇAYLAN`;
+
+//Eski kullanım
+console.log("Benim adım "+ad+" "+ soyad);
+
+//Yeni kullanım
+console.log(`Benim adım ${ad} ${soyad}`);
+```
+
+- Html Şablonları : Çok satırlı dizeleri kolaylıkla kullanmak ve dizelerimize içerik eklemek için de Template Literal’den faydalanabiliriz.
+
+```
+//Değişkenlerimizi tanımlayalım
+const ad =`Ziya`
+const soyad =`ÇAYLAN`
+const gozRengi =`Kahverengi`
+const yas =39
+
+
+const kisi = `
+<p>${ad}</>
+<p>${soyad}</>
+<p>${gozRengi}</>
+<p>${yas}</>
+`;
+
+document.body.innerHTML = kisi;
+
+//Bu kullanım daha az karmaşık ve okunabilir.
+```
+
+**Kısaca Faydalarını sıralarsak**
+
+- Kod okunabilirliğini kolaylaştırır
+- String ifadeler içerisinde değişken yazma kolaylığı sağlar,
+- Şablon etiketlerini daha karmaşık hale getirir.

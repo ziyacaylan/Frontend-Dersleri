@@ -66,3 +66,8 @@ console.log(Boolean(10 < 11));
 console.log(Boolean(10 < 9));
 
 console.log(true + false);
+
+const value = parseInt("123");
+
+console.log(typeof value);
+console.log(value);
