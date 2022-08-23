@@ -433,3 +433,7 @@ document.body.innerHTML = kisi;
 - Kod okunabilirliğini kolaylaştırır
 - String ifadeler içerisinde değişken yazma kolaylığı sağlar,
 - Şablon etiketlerini daha karmaşık hale getirir.
+
+[Linkteki örneği inceleyiniz.](./Javascript-Dersleri/template-literal-example/template-literal.js). Örnekte template literal kullanılarak web sayfasında kitaplar listelenmiştir.
+
+## 4.13-String Veri Türü İşlemleri
