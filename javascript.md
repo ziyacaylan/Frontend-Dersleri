@@ -437,3 +437,51 @@ document.body.innerHTML = kisi;
 [Linkteki örneği inceleyiniz.](./Javascript-Dersleri/template-literal-example/template-literal.js). Örnekte template literal kullanılarak web sayfasında kitaplar listelenmiştir.
 
 ## 4.13-String Veri Türü İşlemleri
+
+**String nedir ?**
+
+Javascript e metinlerin tümü _string_ veri tipinde tutulur.
+
+**Length Özelliği**
+
+String ifadenin uzunluğunu bize verir. Aşağıdaki örneği inceleyiniz.
+
+```
+const str = "javascript";
+// bu ifadenin sonucu konsol ekranında 10 olarak görüntülenecektir.
+console.log(str.length);
+```
+
+**indexOf Özelliği**
+
+Metin içerisinde arama yapmak istediğimizde bize aradığımız değerin index numarasını verir.
+
+```
+const str = "Ziya çaylan";
+// 'ya' nın başladığı index numarasını geri döner yani 2
+console.log(str.indexOf("ya"));
+```
+
+**lastIndexOf Özelliği**
+
+indexOf ile aynı çalışır ancak arasındaki fark; metin içerisinde arama yapmak istediğimizde aradığımız değerin en son karşılaştığı index numarasını geri döner. Aşağıdaki örnekte olduğu gibi
+
+```
+const str = "Ziya çaylan";
+// 'a' nın en son görüldüğü index numarasını geri döner yani 9
+console.log(str.indexOf("a"));
+```
+
+**Search - Metin İçerisinde Arama Yapma**
+
+indexOf ile aynı şekilde çalışır ve _"Regular Expressions"_ işlemlerinde çok kullanılmaktadır.
+
+```
+const str = "Ziya çaylan";
+// 'ya' index numarasını geri döner yani 2
+console.log(
+  `Search ile "ya" yı aradığımızda geri dönen değer ${str.search("ya")}`  // konsolda : Search ile "ya" yı aradığımızda geri dönen değer 2
+);
+```
+
+**Slice - Metinden Parça Alma**
