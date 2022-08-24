@@ -485,3 +485,182 @@ console.log(
 ```
 
 **Slice - Metinden Parça Alma**
+
+- Bu metod ile metinden bir parça almak istediğimizde almak istediğimiz yerin index numarasını vererek alabiliriz.
+
+```
+const str = "Ziya çaylan";
+
+console.log(str.slice(2, 4)); // 2. index numarasından başlar ve 4. index numarasına kadar alır ancak 4. index dahil değildir.
+```
+
+- slice metoduna tek parametre verdiğimizde ise; verdiğimiz parametreden başlar ve metinin sununa kadar alır
+
+```
+const str = "Ziya çaylan";
+
+console.log(str.slice(2)); // 2. index numarasından başlar ve sona kadar alır Konsolda : ya çaylan
+```
+
+- index numarası hiç yazmaz isek metini komple alır.
+
+**Replace - Metodu (Metin bulma ve değiştirme)**
+
+Aradığımz metini bulmamızı ve istediğimiz metin ile değiştirmemizi sağlar.
+
+```
+const str = "Ziya çaylan";
+
+console.log(str.replace("çaylan", "ÇAYLAN")); // ""çaylan metinini bulur ver onun yerine "ÇAYLAN" yazar
+```
+
+**toUpperCase ve toLowerCase**
+
+- toUpperCase ile metin büyük harfe çevrilir.
+- toLowerCase ile de metin tamamı küçük harfe çevrilir.
+
+```
+const str = "Ziya çaylan";
+
+console.log(str.toUpperCase()); // ZIYA ÇAYLAN
+console.log(str.toLocaleLowerCase()); // ziya çaylan
+```
+
+**Concat - Metin Birleştirme**
+
+- Elimizdeki iki string türünden veriyi birleştirmemize olanak sağlar
+
+```
+const myName = "ziya";
+const surname = "çaylan";
+
+console.log(myName.concat(" ", surname)); //myName den sonra belirttiğimiz gibi " " (bir boşluk bırakır ve surname i ekler) konsolda : ziya çaylan
+```
+
+**charAt- İndex Numarasına Göre Karakter Bulmak**
+
+- Belirttiğimiz index numarasındaki karakteri geri döndürür.
+
+```
+const str = "Ziya çaylan";
+
+console.log(str.charAt(2)); // y
+console.log(str.charAt(3)); // a
+```
+
+**charCodeAt – İndex Numarasına Göre Karakterin Unicode Değerini Bulma**
+
+- Belirttiğimiz index numarasındaki karakterin Unicode değerini geri döndürür.
+
+```
+const str = "Ziya çaylan";
+
+console.log(str.charCodeAt(2)); // 121
+```
+
+**Split – Metni Diziye Çevirme**
+
+- splite metodu ile metin diziye çevrilebilir.
+- Kullanılan parametre ile de metinin nasıl parçalanacağı belirlenir.
+
+```
+const str = "Ziya çaylan";
+
+const isimler = str.split(" ");
+console.log(isimler); // [ 'Ziya', 'çaylan' ]
+
+const metin = "ziya-ali-veli-hasan-hüseyin-mehmet-mahmut-canan-caner-eda-seda";
+console.log(metin.split("-")); // ['ziya','ali','veli','hasan','hüseyin','mehmet','mahmut','canan','caner','eda','seda']
+```
+
+[Linkteki string örneklerini inceleyiniz.](./Javascript-Dersleri/string-ozellikleri/string.js).
+
+**Bazı Örnekler**
+
+```
+// istenilen karakterden sonrasını alma
+// Örnek --> ziyacaylan@gmail.com
+// '@' işaretinden sonraki karakterleri alma
+
+const email = "ziyacaylan@gmail.com";
+
+const domain = email.slice(email.search("@") + 1);
+console.log(domain);  // gmail.com
+
+const userName = email.slice(0, email.search("@"));
+console.log(userName);  // ziyacaylan
+```
+
+## 4.14-Document Object Model (DOM) Nedir ?
+
+- 3C (World Wide Web Consortium) a göre DOM programların ve komut dosyalarının bir belge içeriğine yapısına ve stiline dinamik olarak erişmesine ve güncellemesine izin veren bir platform ve dilden bağımsız bir arayüzdür.
+- HTML yapısını daha önce incelemiştik. Tarayıcının belgeyi temsil etmek için kullandığı veri yapısı bu şekli izler.Her kutu için, hangi HTML etiketini temsil ettiği ve hangi kutuları ve metni içerdiği gibi şeyleri bulmak için etkileşime girebileceğimiz bir nesne vardır. Bu temsil, **Document Object Model** veya kısaca **DOM** olarak adlandırılır.
+- DOM bir ağaç dizini gibi bütün dokümanları birbirine bağlar.  
+  ![DOM](./Javascript-Dersleri/assets/dom.jpg)
+
+  [Linkteki örnekleri inceleyiniz.](./Javascript-Dersleri/dom/index.html)
+
+**DOM içerisinden Etiket ve ID ile Öğe Seçimi**
+
+- document objesinin getElemntById() metodu kullanılarak sayfadaki html elementlerinin ID leri referans alınarak seçim işlemi yapılabilir.
+- ID'ler büyük-küçük harf duyarlıdır. Bu sayede HTML document içinde biriciklik gösterir ve her zaman geriye bir eleman döndürür. Bir eşleşme bulamazsa da geriye _null_ dönüşünü yapar.
+
+```
+document.getElementById('#root'); // null
+document.getElementById('root'); // <section id=​"root">​…​</section>​
+```
+
+**Get Elements By Tag Name**
+
+- Elemanları etiket isimlerine göre seçmek için document objesinin _getElemntByTagName()_ metodu kullanılır.
+- Genelde birden çok elemana ulaşmak için kullanılır.
+- Girdi olarak bir _html elementi_ alır ve geriye bir _HTMLCollection_ döndürür.
+
+**Get Elements By Name**
+
+- Elemanları isimleri göre getirmek için document objesinin _getElementByName()_ metodu kullanılır.
+- Elemanları name değerlerine göre bir _NodeList objesi_ döndürür.
+
+```
+<input type="text" name="e-posta">
+<input type="tel" name="telefon">
+<input type="date" name="tarih">
+```
+
+telefon adını taşıyan elemanları getirelim
+
+```
+const tel = document.getElementsByName('telefon');
+console.log(tel) // NodeList [input]
+```
+
+**Get Elements By Class Name**
+
+- DOM da istediğimiz class name e sahip olan elementleri seçmek için _getElemntByClassName()_ metodu kullanılır.
+- Bu metodda bize HTMLCollection döndürür.
+- Kullanırken class name başına **nokta** _"."_ koymalıyız.
+
+```
+    <div class="baykuş kusu">🦉</div>
+    <div class="guvercin kusu">🐦</div>
+    <div class="kartal kusu">🦅</div>
+    <div class="kedi">🐱</div>
+```
+
+```
+    //Get Elements By Class Name
+    const kuslar = document.getElementsByClassName("kusu");
+    console.log(kuslar); // HTMLCollection(3) [div.baykuş.kusu, div.guvercin.kusu, div.kartal.kusu]
+```
+
+**Query Selector**
+
+- QuerySelector () yöntemi, css seçicilere bağlı olarak DOM da html elemanlarını seçmemize olanak sağlayan iki modern javascript yönteminden biridir.
+- Bu yöntem ile elementlerin hem class larını hemde id lerini kullanabiliriz.
+- Bunu yaparken classların önüne "." id lerin önüne ise "#" kullanmamız gerekir.
+- Sayfada ilk eşleşen eleman ı geriye döndürür.
+- Belirtilen eleman ile eşleşmez ise geriye _null_ dönecektir.
+
+**Query Selector All**
+
+- querySelectorAll() metodu, QuerySelector () metodu ile aynı mantık ile çalışır tek farkı eşleşen ilk elamanı döndürmek yerine eşleşen tüm elemanları bir NodeList objesi olarak döndürmesidir.
