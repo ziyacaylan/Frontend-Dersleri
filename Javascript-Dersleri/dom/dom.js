@@ -16,3 +16,10 @@ console.log(tel); // NodeList [input]
 //Get Elements By Class Name
 const kuslar = document.getElementsByClassName("kusu");
 console.log(kuslar); // HTMLCollection(3) [div.baykuş.kusu, div.guvercin.kusu, div.kartal.kusu]
+
+/*prompt () kullanımı */
+let myName = prompt("Lütfen adınızı yazınız :");
+let isim = document.querySelector("#isim");
+
+isim.innerHTML = `${isim.innerHTML} <strong style = "color : blue;"
+>${myName}</strong>`;

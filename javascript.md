@@ -664,3 +664,108 @@ console.log(tel) // NodeList [input]
 **Query Selector All**
 
 - querySelectorAll() metodu, QuerySelector () metodu ile aynı mantık ile çalışır tek farkı eşleşen ilk elamanı döndürmek yerine eşleşen tüm elemanları bir NodeList objesi olarak döndürmesidir.
+
+**Prompt ile Kullanıcıdan bilgi alma**
+
+- javascript te kullanıcıdan bilgi almak için kullanılır.
+- alınan bilgi bir değişkene atanabilir; sözdizimi şu şekilde olacaktır: const _kelime = prompt("Lütfen bir kelime yazınız :");_
+
+```
+<div id="isim">Benim Adım :</div>
+```
+
+yukarıdaki html koduna javascript dosyamızdan ulaşarak bir isim girelim
+
+```
+/*prompt () kullanımı */
+let myName = prompt("Lütfen adınızı yazınız :");
+let isim = document.querySelector("#isim");
+
+isim.innerHTML = `${isim.innerHTML} <strong style = "color : blue;"
+>${myName}</strong>`;
+```
+
+Prompt mantığı şu şekildedir.
+
+- Kullanıcı **Tamam** düğmesine tıkladığında geriye girilen değer döndürülür.
+- Herhangi bir metin girmeden **Tamam** düğmesine tıklanır ise geriye boş bir dize döner.
+- Kullanıcı **İptal** düğmesine tıklar ise işlev boş döndürür.
+
+**DOM'a CSS Class Bilgisi Eklemek veya Çıkarmak**
+
+- Javascript te css sınıflarına manipüle etmenin en iy i yollarından birisi **classList** kullanmaktır.
+- **classList** bir öğenin sınıf isimlerini **DOMTokenList** olarak döndürür.
+- **classList** özelliği bütün modern browserlarda çalışmaktadır.
+
+```
+<head>
+<title>Dome Example</title>
+    <style>
+      .text-primary {
+        color: blue;
+      }
+      .btn {
+        display: inline-block;
+        border: none;
+        width: auto;
+        height: 2rem;
+        border-radius: 0.4rem;
+      }
+      .btn-primary {
+        background-color: blue;
+      }
+      .text-white {
+        color: white;
+      }
+      .text-secondary {
+        color: darkviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="baslik">Frontend Dersleri / Javascript / DOM</h1>
+    <button id="btn" class="btn">Benim Butonum</button>
+
+    <script src="./class-elkeme.js"></script>
+  </body>
+```
+
+Yukarıdaki html sayfasına ulaşarak class isimlere ulaşıp ekleme ve class silme işlemlerini deneyelim.
+
+```
+/*Listeye ulaşmak ve eleman eklemek veya elemanı değiştirmek */
+
+let lastItem = document.querySelector("ul#list>li:last-child");
+
+//console.log(lastItem);
+
+lastItem.innerHTML = "Son öğeye ulaşıldı ve değiştirildi";
+
+// ilk öğeye ulaşmak
+let firstItem = document.querySelector("ul#list>li:first-child");
+
+firstItem.innerHTML = "İlk öğeye ulaşıldı ve değiştirildi.";
+
+// listeye yeni bir öğe eklemek
+
+let ulList = document.querySelector("ul#list");
+
+let newItem = document.createElement("li");
+
+newItem.innerHTML = "Yeni eleman eklendi";
+
+ulList.append(newItem); // son eleman olarak ekleme yapar
+
+ulList.prepend(newItem); // ilk eleman olarak ekler
+```
+
+**Properties**
+
+- **add() :** HTML öğerise bir veya daha fazla class eklemek için kullanılır.
+- **remove() :** HTML öğesinden bir veya daha fazla class silmek için kullanılır.
+- **item() :** HTML de class'ı verilen index sırasına göre döndürür. Eğer index, class length'inden (sayısından) daha büyük veya length'ine eşit olursa undefined döner.
+- **contains() :** HTML öğesinin verilen class ismini içeriyorsa _true_ içermiyorsa _false_ döner. Bu sayede işlem yaptırmadan önce kontrol sağlamış oluruz.
+- **toggle() :** _classList.add()_ ve _classList.remove()_ yöntemini aynı anda çağırmak yerine _classList.toggle()_ yöntemini kullanılabilir.
+  **Anahtar NOT :** Bu metodu kullanmadan önce contains() metodu ile sınıfın var olup olmadığını manuel olarak kontrol etmek gerekir.
+- **replace() :** Bir css classını başka bir sınıf ile değiştirmek için kullanılır.
+- **length() :** Bir öğenin sahip olduğu sınıf sayısını bulmak için kullanılır.

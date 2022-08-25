@@ -5,9 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dome Example</title>
+    <style>
+      .text-primary {
+        color: blue;
+      }
+      .btn {
+        display: inline-block;
+        border: none;
+        width: auto;
+        height: 2rem;
+        border-radius: 0.4rem;
+      }
+      .btn-primary {
+        background-color: blue;
+      }
+      .text-white {
+        color: white;
+      }
+      .text-secondary {
+        color: darkviolet;
+      }
+    </style>
   </head>
   <body>
-    <button id="btn">Benim Butonum</button>
+    <h1 id="baslik">Frontend Dersleri / Javascript / DOM</h1>
+    <button id="btn" class="btn">Benim Butonum</button>
 
     <p>Lorem, ipsum dolor.</p>
     <p>Lorem, ipsum dolor.</p>
@@ -25,6 +47,16 @@
     <div class="kartal kusu">🦅</div>
     <div class="kedi">🐱</div>
 
+    <div id="isim">Benim Adım :</div>
+
+    <ul id="list">
+      <li>lorem</li>
+      <li>ipsum</li>
+      <li>dolar</li>
+    </ul>
+
     <script src="./dom.js"></script>
+    <script src="./listeye-oge-ekleme.js"></script>
+    <script src="./class-elkeme.js"></script>
   </body>
 </html>
