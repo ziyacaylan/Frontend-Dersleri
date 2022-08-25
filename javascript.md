@@ -769,3 +769,195 @@ ulList.prepend(newItem); // ilk eleman olarak ekler
   **Anahtar NOT :** Bu metodu kullanmadan önce contains() metodu ile sınıfın var olup olmadığını manuel olarak kontrol etmek gerekir.
 - **replace() :** Bir css classını başka bir sınıf ile değiştirmek için kullanılır.
 - **length() :** Bir öğenin sahip olduğu sınıf sayısını bulmak için kullanılır.
+
+## 4.15-Karşılaştırma Operatörleri ve Mantıksal Operatörler
+
+### Karşılaştırma Operatörleri
+
+- **== Eşitse** Operatörü :
+
+```
+const a = 10;
+const b = "10";
+console.log(a == b); // true
+```
+
+- **=== Hem değeri hem de türü eşit ise** Operatöri
+
+```
+/*=== Hem değeri hem de türü eşit ise */
+const a = 10;
+const b = "10";
+
+console.log(a === b); // false -> Değeri eşit fakat türü farklı olduğundan false
+```
+
+- **!= Eşit değilse** Operatörü
+
+```
+const a = 10;
+const b = "10";
+
+/*!= Eşit değilse */
+
+console.log(a != b); // değerleri eşit fakat değili false
+
+console.log(a !== b); // değeri eşit fakat türü farklı ancak değili true
+```
+
+- **< Küçükse** ve **<= Küçük veya eşitse** Operatörleri
+
+```
+const a = 10;
+const b = 10;
+
+/*< Küçükse */
+console.log(a < b); // false
+
+/*<= Küçük veya eşitse */
+console.log(a <= b); // true
+```
+
+- **> Büyükse** ve **>= Büyük veya eşitse** Operatörleri
+
+```
+const a = 10;
+const b = 10;
+
+/* > Büyükse ve >= Büyük veya eşitse */
+
+console.log(a > b); // false
+
+console.log(a >= b); // true
+```
+
+### Mantıksal Operatörler
+
+Mantıksal operatörler ile birden fazla koşula göre karşılaştıma yapabiliriz. Karşılaştırma sonucunda _true_ yada _false_ değeri döner
+
+- **&& ve**
+
+```
+const a = 10;
+const b = 10;
+constc = 20;
+
+//&& ve
+console.log(`&& ve : ${a === b && a < c}`); // true
+```
+
+- **|| veya**
+
+```
+const a = 10;
+const b = 10;
+constc = 20;
+
+// || veya
+console.log(`|| veya : ${a === b || a > c}`); // true
+```
+
+- **! değil**
+
+```
+const a = 10;
+const b = 10;
+constc = 20;
+
+// "! değil"
+console.log(`! değili : ${!(a === b || a > c)}`); // false
+```
+
+## 4.16-if / else (koşul yapısı) Kullanımı
+
+- If else yapısı içerisinde koşulun sağlandığı kodlar if içerisinde yer alırken, koşulun sağlanmadığı kodlar ise else içerisinde yer alır.
+- Eğer ilk koşul yanlışsa başka bir koşul belirtmek amacıyla else if kullanılır.
+
+```
+if(kosul) {
+    // Bu kod satırı çalışacaktır.
+}
+
+else {
+    // Bu kod satırı çalışır.
+}
+```
+
+**ÇALIŞMA SORUSU**
+
+- Bilgisayar tarafından 1-10 arası belirlenen bir sayıyı, kullanıcıdan klavye ile girilen bir sayı ile hatmin edilmeye çalışılan yapıyı kurgulayarak yazınız.
+- web sayfası üzerinde girilen sayı, tahmin edilen sayı ve sonuca göre doğru yada yanlış olduğunu belirtiniz.
+
+**_CEVAP_**  
+ [Linkten çalışma dosyasına ulaşarak inceleyiniz.](./Javascript-Dersleri/Karar-Yapilari-ve-Kosullar/karsilastirma-operatorleri-ve-mantiksal-operatorler/karsilastirma-operatorleri.js)  
+[index.html sayfa linki](./Javascript-Dersleri/Karar-Yapilari-ve-Kosullar/index.html)
+
+## 4.17-switch (çoklu koşul yapısı) Kullanımı
+
+Javascriptte if-else yapısında koşul sayısının arttığı durumlarda kod okunurluğunu arrıtmak ve daha performanslı sayılabilecek bir yapı olan _switch_ kullanılır.
+
+**Syntax**
+
+```
+switch(ifade) {
+  case a:
+    // kod bloğu
+    break;
+  case b:
+    // kod bloğu
+    break;
+  default:
+    // kod bloğu
+}
+```
+
+**ÖRNEK**
+
+```
+let hava = "Gunesli";
+switch(hava) {
+  case "Yagmurlu":
+      console.log("Semsiyeni yanina almayi unutma");
+      break;
+  case "Gunesli":
+      console.log("Hafif giyin");
+  case "Bulutlu":
+      console.log("Disari cik");
+      break;
+  case "Karlı":
+      console.log("Kalin giyin");
+      break;
+  case "Firtinali":
+      console.log("Bir süre disari cikma");
+      break;
+  default:
+      console.log("Bilinmeyen hava durumu:" , hava);
+}
+```
+
+Aşağıda switch akış diyagramı örnek olarak verilmiştir ve nasıl çalıştığını inceleyebilirsiniz...  
+![switch-case](./Javascript-Dersleri/assets/switch-case.jpg)
+
+## 4.18- Ternary Operatörü
+
+- **Ternary Operator** 3 adet parametre alan tekJavascript operatörüdür
+- _If_ kullanarak kontrol etmek istediğimiz koşullarda _ternary operator_ kullanarak satır sayısı olarak avantaj sağlayabiliriz.
+
+**Ternary operatörünün aldığı 3 parametre şu şekildedir:**
+
+- İlk önce bir condition belirtiriz ve sonra _?_ koyarız
+- Sonra yazdığımız condition doğru ise ne yapmak istediğimizi yazarız ve sonuna _:_ koyarız
+- Ve son olarakda condition false ise ne yapmak istediğimizi yazarız.
+
+**Anahtar NOT:**
+Ternary operatörleri aynı zamanda birbiri ardına zincirleyerek (chaining) kullanabiliriz. Bu sayede farklı olasılıkları da katarak daha detaylı senaryoları kontrol edebiliriz.
+
+```
+const para = 40;
+const satinAlma =
+    (para < 17) ? "Satın alamazsın..":
+    (para > 30) ? "Satın alabilirsin..":
+    "Para miktarını girmen gerekmektedir..";
+
+console.log(satinAlma) // "Satın alabilirsin.."
+```
