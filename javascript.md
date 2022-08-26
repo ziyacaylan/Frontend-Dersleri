@@ -961,3 +961,114 @@ const satinAlma =
 
 console.log(satinAlma) // "Satın alabilirsin.."
 ```
+
+## 4.19- Fonksiyon Nedir? Neden Kullanırız?
+
+Fonksiyon bir işlevi yerine getirmek için tasarlanmış kod bloklarıdır. Kodlaerımıza işlevsellik katmak için sık sık kullanırız.
+
+**Fonksiyon Adlandırma**
+
+- ilk olarak _function_ ibaresi yazılır ve sonra fonksiyonun ismi yazılır.
+- fonksiyon isimleri belirlenirken bir eylem bildiren isimler kullanılmalıdır. Fonksiyon isimleri bazı ön ekler alabilirler.
+- Örneğin bir değer almak istediğimizde **_get_**, bir değeri değiştirmek istediğimizde **_set_** yada duğru yada yanlış (true-false) gibi bir sonuç almak istediğimizde ise **_is_** ön eki eklenebilir.
+- Bununla birlikte şunu da unutmamalıyız istendiğinde adı olmayan anonim bir fonksiyon da kullanılabilir. Aşağıda bu fonksiyon türünden bahsediliyor
+
+- fonksiyon isminden sonra parantezler içerisinde parametreler verilir. Parametre girmek zorunlu olmadığı gibi fazla parametre girmek de kodun okunurluğunu bozabilir.
+- parametre alan bu fonksiyonları kullandığımızda parametrelere kendmiz değer atarız. Atanan bu değerlere **_argüman_** adı verilir.
+- fonksiyon isimleri küçük harf ile başlanmalı ve iki kelimenin yada daha fazla kelimenin birleşimi ile sonradan gelen kelimeler arasında boşluk v.b. kullanılmamalı ve ilk kelimeden sonraki kelimenin baş harfleri büyük yazılmalıdır.
+- fonksiyon ismi ve var ise parantezler arasında parametreler verildikten sonra parantez kapatılır ve süslü parantezler açılarak javascript kodları eklenir. Bu süslü parantezler arasındaki kısım _fonksiyonun gövdesi_ denir.
+
+```
+function printHello(name) {
+  console.log("Merhaba " + name);
+}
+
+printHello("Ziya");  // Merhaba Ziya
+```
+
+**Anahtar NOTLAR:**
+
+- Fonksiyonun tanımı bir **_statement_** dır. (geriye değer döndürmez.)
+- Ancak yazılan fonksiyon çalıştırılır ise **return** kullanmasa bile geriye değer döndürür Buna **_expression_** denir
+
+**_Anonymous Functions_**
+Bazen fonksiyonlara isim vermeden de kullanılır. Bunlar anonymous fonksiyonlardır. anonymous fonksiyonların bir isimi yoktur ve bir değişkene atanarak kullanılırlar.
+Değişken adı kullanılarak çağrıldıkları için birden çok anonim fonksiyonu aynı dizide kullanabilirsiniz.Dahası bir değişkene atandıklarından bu değişkeni başka bir fonksiyonun parametresine koyarak **_callback_** (geri arama) yapabilirsiniz.
+
+```
+function addition(sayi1,sayi2){  //function name and parameters
+        console.log(sayi1+sayi2);     //body
+}
+```
+
+```
+const add = function (sayi1,sayi2){  //Anonim bir fonksiyon oluşturduktan sonra bu
+                                   //fonsksiyonu bir değişkene atadık
+        console.log(sayi1+sayi2);
+}
+```
+
+**Değer Döndüren Fonksiyonlar**
+
+- Bazen fonksiyondan geriye değer döndürüp bunu da başka işlemler için kullanır yada başka bir fonksiyona parametre olarak verebiliriz.
+- Böyle durumlarda **_return_** ifadesi kullanılarak geriye değer döndürülür.
+
+```
+function sum(number1,number2){
+return (number1+number2);
+}
+const add = sum(5,10); // 15
+```
+
+**Fonksiyon Kapsamı**
+
+- Javascriptte fonksiyon içerisinde tanımlanmış olan değişkene dışarıdaki herhangi bir yerden erişilemez.
+- Tanımlanan değişken **_fonksiyon kapsamındadır._**
+- Fonksiyon içerisinde kullanılan değişken **_lokal değişken_** adı verilir.
+- Ancak fonksiyon tanımlandığı anda, tanımlandığı kapsamdaki **_global değişkenlere_** erişebilir.
+
+```
+const number1 = 3;
+const number2 = 5;
+
+function sum(sayi1,sayi2){
+    let sayi3 = 0; /sayi3 adında lokal bir değişken tanımlıyoruz
+    return sayi1+sayi2+sayi3;  //Fonksiyon içinde global ve local değişkenleri kullanıyoruz
+}
+
+function multiSum (){
+    return number1 + number2 + sayi3; // error
+}
+
+```
+
+**Callback Fonksiyonlar ve Asenkron Çalışma**
+
+- javascriptte kodumuz yukarıdan aşağıya doğru okunur ve bir önceki satır bitmeden bir sonrakine geçilmez. Buna **_senkron çalışma_** denir.
+- asenkron çalışmada ise fonksiyonların birbirlerini beklemelerine gerek yoktur.
+- javascript asenkron yapıdaki bir programlama dilidir.
+  Aşağıdaki örneği inceleyip anlamaya çalışalım:
+
+```
+const func1 = () => console.log("ilk fonksiyon çalıştı");
+
+const func2 = () => {
+  setTimeout(() => console.log("ikinci fonksiyon çalıştı"), 3000);
+};
+
+const func3 = () => {
+  setTimeout(() => console.log("üçüncü fonksiyon çalıştı"), 2000);
+};
+
+func1();
+func2();
+func3();
+```
+
+Yukarıdaki programda sırasıyla fonksiyonlar çağırılmıştır. Ancak ekran çıktısı aşağıdaki şekilde olacaktır.
+
+ilk fonksiyon çalıştı  
+üçüncü fonksiyon çalıştı  
+ikinci fonksiyon çalıştı
+
+**Fonksiyon Bildirimi(Function Declaration)**
