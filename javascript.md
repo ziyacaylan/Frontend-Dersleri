@@ -1205,3 +1205,48 @@ const newArray = (arr) =>
 let myArr = newArray([1, 2, 3, 4, 5]);
 console.log(myArr);
 ```
+
+**DOM Etkinlikleri ile Çalışma**
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Eklentileri ile çalışma</title>
+  </head>
+  <body>
+    <h1 id="my-title">Frontend Kodluyoruz.</h1>
+    <script src="./dom-eklentileri.js"></script>
+  </body>
+</html>
+```
+
+Javascript kullanarak başlığımıza ulaşarak üzerine tıklandığında rengini değiştirelim.
+
+```
+// Başlığımıza ulaşarak üzerine tıklandığında rengini değiştirelim.
+const myTitle = document.querySelector("#my-title");
+
+myTitle.addEventListener("click", clicked);
+
+function clicked() {
+  this.style.color == "red"
+    ? (this.style.color = "blue")
+    : (this.style.color = "red");
+}
+```
+
+Üzerine tıkladığımızda yazıyı değiştirelim.
+
+```
+const myTitle = document.querySelector("#my-title");
+
+function clickON() {
+  myTitle.innerHTML = "Üzerine tıklayarak Yazıyı DEĞİŞTİRDİK";
+}
+
+myTitle.addEventListener("click", clickON);
+```
