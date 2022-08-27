@@ -966,7 +966,7 @@ console.log(satinAlma) // "Satın alabilirsin.."
 
 Fonksiyon bir işlevi yerine getirmek için tasarlanmış kod bloklarıdır. Kodlaerımıza işlevsellik katmak için sık sık kullanırız.
 
-**Fonksiyon Adlandırma**
+**Fonksiyon Adlandırma Fonksiyon Bildirimi(Function Declaration)**
 
 - ilk olarak _function_ ibaresi yazılır ve sonra fonksiyonun ismi yazılır.
 - fonksiyon isimleri belirlenirken bir eylem bildiren isimler kullanılmalıdır. Fonksiyon isimleri bazı ön ekler alabilirler.
@@ -1071,4 +1071,137 @@ ilk fonksiyon çalıştı
 üçüncü fonksiyon çalıştı  
 ikinci fonksiyon çalıştı
 
-**Fonksiyon Bildirimi(Function Declaration)**
+**Fonksiyon İfadeleri (Function Expressions)**
+
+- Javascript bir değişkene fonksiyon atamaya ve daha sonra bunu fonksiyon olarak kullanmaya izin verir.
+
+**Arrow Functions**
+
+- Bu yöntem ile fonksiyon oluşturma ES6 ile birlikte gelmiştir.
+- Daha okunabilir bir syntax yapısına sahiptir.
+
+```
+const func1 = function (param1,param1){
+  return param1 + param2;
+}
+```
+
+Yukarıda normal fonksiyonun arrow fonksiyon karşılığı aşağıdaki gibidir.
+
+```
+const func1 =(param1, param2) => param1 + param2;
+```
+
+- Arrow fonksiyon **_syntax_** yazılırken parametrelerden sonra kod bloğu yazılırken sadece tek bir kod çalıştırılacaksa süslü parantezlerin yazılmasına ve de **_return_** bildiriminin yapılmasına gerek yoktur.(Yukarıdaki arrow fonksiyon buna örnektir.)
+- Ancak parametrelerden sonra birden fazla kod bloğu çalıştırılacak ise süslü parantezlerin konulması zorunludur ve geriye değer döndürülecek ise **_return_** bildiriminin yapılması zorunludur. (Aşağıdaki arow fonksiyon buna örnektir.)
+
+```
+// parantezler bize birden fazla statement yazmamızı sağlar.
+let toplam = (a, b) => {
+  let result = a + b;
+  return result;
+};
+```
+
+**Recursion**
+
+- En basit tanım şekli ile bir fonksiyon kendisini tekrar çağırıyor ise buna recursion denir.
+
+```
+alert(pow(2, 3)); // 8
+// recursion ile
+function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+
+alert(pow(2, 3)); // 8
+```
+
+Yukarıdaki örnekte n == 1 ise işlem yapmadan geriye 1 değerini döndürerek fonksiyonun çalışması sağlanır ancak n değeri 1 den farklı ise **_pow_** n == 1 olana kadar çağırılacak ve en sade haline gelene kadar dönecek ve sonunda sonucu bize döndürecektir.
+
+```
+const pow = (x, n) => n == 1 ? x : x * pow(x, n-1);
+```
+
+**Nested Functions**
+
+- Nested functions (İç içe fonksiyonlar) Javascriptte yaygınolarak kullanılan bir yapıdır.
+- Bir fonksiyon içerisinde başka bir foksiyon tanımladığımızda bu yapıya nedted funtions yapısı denir.
+
+**Fonksiyona Parametre (params) Atamak ve Geridönüş (return) Alma**
+
+Temel kurallar aşağıdaki gibidir.
+
+- Bir fonksiyon bir veya daha fazla parametre alabilir veya hiç almaya dabilir.
+- Bir fonksiyon geriye değer döndürüyor olabilir (return) yada döndürmüyor da olabilir.
+- Mümkün olduğuölçüde fonksiyonun bağımlılıklarını azaltmak gerekir.
+
+**_Anahtar Not:_**
+Bir fonksiyon aşağıdaki bigi kullanıldığında ve parametreye değer atanmadığında parametre kullanıldığı noktada **_undefined_** olacak ve duruma göre hata alınabilir.
+
+```
+const hello = (firstName) => console.log(`Merhaba ${firstName}`);
+
+hello (); // Merhaba undefined
+```
+
+Yukarıdaki hatalı durumdan kurtulmak için
+
+- Kontrol sağlanabilir
+
+```
+const hello = (firstName) => console.log(`Merhaba ${firstName ? firstName : ""}`);
+
+hello (); // Merhaba
+```
+
+- Yada default parametre atanabilir.
+
+```
+const hello = (firstName = "") => console.log(`Merhaba ${firstName ? firstName : ""}`);
+
+hello (); // Merhaba
+```
+
+Fonksiyon aşağıdaki şekilde ise geriye değer döndürecektir.
+
+```
+// Geriye değer döndürecektir. tek kod satrırı kullandığımız için return yazmamıza gerek yoktur.
+const hello = (firstName = "") => `Merhaba ${firstName ? firstName : ""}`;
+
+let user = hello ("Ziya");
+console.log(user); // Merhaba Ziya
+```
+
+**Çalışma Soruları**
+1- Biz dizi veya film listesini parametre olarak alan bir arrow fonksiyon yazalım. Verdiğimiz parametreleri 1-den başlayarak alt alta yazdıran fonksiyonu yazalım.
+
+```
+const myFavoriteMovies = (movieList) => {
+  movieList.forEach((movie, index) => {
+    console.log(`${index + 1}: ${movie}`);
+  });
+};
+
+myFavoriteMovies([
+  "The Martian",
+  "Passengers",
+  "Fast&Furious Series",
+  "Marvel Series",
+  "Top Gun: Maverick",
+]);
+```
+
+2- [1,2,3,4,5] aarayini alan bir arrow fonksiyon yazalım. Fonksiyon bu arrayi alsın ve sonuçta bize gene bir array dönsün. Geriye dönen bu yeni array ilk aldığı arraydeki tek sayiları 3, çift sayıları ise 2 ile çarpımından oluşsun.
+
+```
+const newArray = (arr) =>
+  arr.map((number) => (number % 2 == 0 ? number * 2 : number * 3));
+
+let myArr = newArray([1, 2, 3, 4, 5]);
+console.log(myArr);
+```
