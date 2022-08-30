@@ -1282,3 +1282,22 @@ localStorage.removeItem("key");
 ```
 
 [---> Ekteki örneği inceleyeren kendiniz denemeler yapınız](./Javascript-Dersleri/localStorage/index.html)
+
+**LocalStorage İçine Farklı Türde Veriler Eklemek**
+LocalStorage üzerinde farklı türden verileri saklamak için verileri _string_ türüne dönüştürmemiz gerekir.
+
+- Farklı türden verileri stringe çevirerek localStorage de saklamak için **_JSON.stringify()_** metodu kullanılır.
+- Farklı tüden verileri localStorage den çektiğimizde ise **_JSON.parse()_** metodu ile çevirmemiz gerekir. Aksi durumda object olarak görünecektir.
+
+```
+let user = {userName : "ziya", isActive : true};
+localStorage.setItem("user", JSON.stringify(user));
+```
+
+**locakStorage den verileri çekme:**
+
+```
+let userInfo = JSON.parse(localStorage.getItem("user"));
+```
+
+**[---> localStorage UYGULAMA linkten inceleyiniz ](./Javascript-Dersleri/localStorage/uygulama/)**
