@@ -1,13 +1,19 @@
-<style > * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --mainColor: #d35f07;
+  --backgroundColor: #3f3f3f;
+  --counter: #490ae8;
+}
 body {
-  background-color: #3f3f3f;
+  background-color: var(--backgroundColor);
 }
 #myTitle {
   margin: 30px;
+  color: var(--mainColor);
 }
 .container {
   display: flex;
@@ -18,11 +24,11 @@ body {
 }
 #counter {
   font-size: 3rem;
-  border: 4px solid #080808;
+  border: 4px solid var(--mainColor);
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 30px;
-  color: aliceblue;
+  color: var(--counter);
 }
 .buttons {
   margin: 10px;
