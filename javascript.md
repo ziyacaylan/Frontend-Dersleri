@@ -1250,3 +1250,35 @@ function clickON() {
 
 myTitle.addEventListener("click", clickON);
 ```
+
+## 4.20- Local Storage
+
+Web storage, web sayfalarında yapılan değişikliklerin kaydının tutulması şeklinde tanımlanır. Web sayfalarında yapılan değişikliklerin kaydını tutmak gerekebilir. Örneğin bir form doldurduğumuzu düşünelim ve sayfadan çıkıp yeniden girdiğimizde formu sıfırdan doldurmak sinir bozucu bir durum olarak karşımıza çıkar. Böyle durumlarda kayıtlar cookie yani çerezlerde tutulurdu. Ancak çerezlerin 4kb ile sınırlı olması ve de üçündü şahıslar tarafından kolayca erişilebilyor olması local storage kavramının yaygınlaşmasını sağlamıştır. HTML 5 ile birlikte web sayfasındaki bu ve benzeri bilgiler local storage lerde saklanabiliyor duruma gelmiştir.
+
+HTML 5 ile tarayıcılar iki tane yerel kayıt türünü desteklemektedir.
+
+- localStorage
+- sessionStorage
+
+Bu iki kayıt türü arasındaki temel fark local storage de kayıtlar zaman aşımı olmaksızın tutulabiliyorken sessionStorage de ise oturum sonlanana kadar yada veri kaybolana kadar tutulmaktadır.
+
+**Veri Ekle**
+
+```
+localStorage.setItem("key", "value");  // birinci parametre key yani anahtar ikinci ise value yani anahtara karşılık gelen veri
+```
+
+**Veri Okuma**
+
+```
+localStorage.getItem("key");
+```
+
+**Veri Silme**
+
+```
+localStorage.removeItem("key");
+	localStorage.clear();
+```
+
+[---> Ekteki örneği inceleyeren kendiniz denemeler yapınız](./Javascript-Dersleri/localStorage/index.html)
