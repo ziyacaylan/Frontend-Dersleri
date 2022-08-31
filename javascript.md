@@ -1301,3 +1301,112 @@ let userInfo = JSON.parse(localStorage.getItem("user"));
 ```
 
 **[---> localStorage UYGULAMA linkten inceleyiniz ](./Javascript-Dersleri/localStorage/uygulama/)**
+
+## 4.21- Form ve Form Submit Yönetimi
+
+- Formlar içinde bulundurdukları form elementlerinin name'leri sayesinde değerlerini alıp bu değerler ile işlem ypmammızı sağlayan yapılardır.
+- Genelde backend e istek yapılacağında kullanılırlar( Örnek: verik gönderme).
+- En önemli parametresi **_method_** parametresidir. **Method**, **"get"** ve **"post"** olamk üzere iki farklı değer alabilir.
+
+```
+<form action="siteadi" method="get|post">*form elementleri*</form> // form bu şekilde tanımlanmaktadır.
+```
+
+**GET Methodu**
+
+- form verilerini URL üzerinden gönderir.
+
+```
+<form method="GET"><input type="text" name="yas" placeholder="Yaşınızı giriniz." /><button type="submit">Gönder</button>
+</form>
+```
+
+**POST Methodu**
+
+- Verileri arka planda gönderir.
+- Önemli verilerin (username, password,user email gibi) gönderilmesinde kullanıcıya gösterilmeden gönderim sağlanır.
+
+```
+<form method="POST"><input type="email" name="email" placeholder="Email adresinizi giriniz." /><button type="submit">Gönder</button>
+</form>
+```
+
+**Giriş (Input) elementi/etiketi**
+
+- Form oluşturulduktn sonra içerisine değişik tiplerde (text,button,şifre v.b.) giriş elementleri eklenir.
+
+En çok kullanılan giriş tiplerine biraz göz atalım:
+
+- `<input type="text">` Girilen veri text tipindedir. Yani diğer bir değişle string veri tipinde gelen veridir. Kullanıcı adı, ad, soyad v.b.
+- `<input type="password">` Şifre tipinde veri girişi için tercih edilir.Textbox’a girilen ifadeler **“\*”** şeklinde gizlenerek gösterilir.
+- `<input type="radio">` radio button tipinde , istenilen verieleri seçmek için geliştirilen bir inputtur.
+- `<input type="button">` checkbox tipinde onay gerektiren durumlarda kullanılması için geliştirilmiş bir inputtur.
+- `<input type="submit">` Klasik buton oluşturur.Varsayılan olarak herhangi bir işlem yapmaz. JavaScript vb. programlama dilleri ile birlikte işlevsel hale gelir.
+- `<input type="reset">` Form içerisinde elementlere girilen verileri göndermede kullanılır. Action ile açılacak yeni sayfa veya mevcut sayfanın kendisine get ve post methoduna göre değişik şekillerde veri gönderme işlemini gerçekleştirir. methot="get" kullanılmışsa action durumunda göre sayfanın adres çubuğundaki url’in sonunda, methot="post" kullanılmışsa sayfanın arka planında veriler saklanır.
+- `<input type="color">` Button tipinde bir nesne oluşturur. Form içerisinde yer alan elementlere veri girilmiş halde iken reset e basıldığında elementler üzerinde görünen bütün veriler silinir ve form default haline geri döner.
+- `<input type="date">` Renk çeşitlerini tasarımcıya sunan ve seçim yapmasını sağlayan giriş veri tipidir.
+- `<input type="email">` Sadece email bilgisi girişi için tasarlanmış bir inputtur. Sayı dışındaki girişlerde, düzgün veri girişi yapılması gerektiği yönünde uyarı vermektedir. Safari dışındaki tüm tarayıcılar desteklemektedir.
+- `<input type="number">` Sadece sayı girişleriiçin kullanılan bir inputtur. Sayı dışında veri girişi yapıldığında uyarı verir.
+- `<input type="range">` Bir aralık belirtmemiz gerektiğinde, bu giriş tipini kullanmamız gerekmektedir. Dizi şeklinde veri gösterimi yapar. min="başlangıç değer" ve max="son değer" ile aralık belirlemesi yapılır. Tüm tarayıcılar tarafından desteklenmektedir.
+- `<input type="search">` Arama yapmak için eliştirilmiş bir inputtur. Aktif olan form içerisinde girilecek veri aranır. Sadece Google Chrome ve Safari tarafından desteklenmektedir.
+- `<input type="time">` Tarayıcıda saat gösterimini sağlayan tiptir. hh.mm varsayılan formatında görünür. Element üzerinde saat belirlemesi yapılması mümkündür. İnternet Explorer ve Mozilla Firefox dışındaki tarayıcılar tarafından desteklenmektedir.
+
+**onSubmit ve onChange Eventleri**
+
+- **onSubmit** From submit olduğu anda ne yapacağını söyleyeceğimiz eventtır.
+- **onChange** Form'un içindeki form elementlerinin(input) value'su her değiştiğinde bu değişen value'yu bizim her defasında elde etmemize olanak sağlayan eventtir.
+
+**Örnek**
+
+```
+<form method="GET">
+  <input type="text" name="username" placeholder="Kullanıcı adınızı giriniz" />
+  <input type="password" name="password" placeholder="Şifrenizi giriniz." />
+  <button type="submit">Giriş</button>
+</form>
+```
+
+Yukarıdaki örnek sonucunda submit ettiğimizde **url** imizin değiştiğini gözlemleyebilirsiniz.
+
+**Form Özellikleri**
+**- Action :** Form submit edildiğinde nasıl bir aksiyon alınacağını belirttiğimiz koddur. Genellikle form submit işleminden sonra data server a gönderilir.
+**- METHOD :** Form metodunun hangi metodla gönderileceğini belirtir. **"Get"** veya **"Post"** request olarak, bu özellik belirtilmemiş ise default değer olarak **"Get"** mettodu forma aktarılır.
+**- AUTOCOMPLETE** formu otomatik tamamlama özelliğinin açılıp kapatıldığı komut, bu özellik açık olduğunda daha önceki entry lere göre form otomatik olarak tamamlanacaktır.
+**- NOVALIDATE** aktif olduğu sürece form datamızın otomatik olarak doğrulanmamasını söyler.
+
+**ANAHTAR NOTLAR**
+Formumuzun içerisinde olmazsa olmaz sayılan temel elementler inputlar ve botunlardır. Input elementlerinin başlıca özellikleri şu şekildedir.
+**- fname** Görünecek olan yazıyı belirler. Bu yazı adeta bit html etiketi gibi görünür.
+**- type** formunuzun text/numerik bir form olacağına karar veririz.
+**- name** Inputumuzun name özelliği dir. Genelde isimler küçük harf ile verilir.
+**- value** Input içerisinde aktif olarak görünecek yazı için verilir.
+
+**Input İçerisinden Değer Alma**
+
+- Input oluşturma
+
+```
+let myInput=document.createElement("input"); // input oluşturuldu
+
+/* Daha sonra inputumuza özellikler aktaralım.*/
+
+myInput.setAttribute("id", "myInput");
+myInput.setAttribute("type","text");
+myInput.setAttribute("value","Buraya Yazın");
+```
+
+- oluşturduğumuz inputu html içerisine yerleştirelim.
+
+```
+let myDiv = document.createElement ("div"); // bir div oluşturup onun içerisine yerleştirelim.
+
+/*appendChild fonksiyonu ile input u div e ekleyelim.*/
+myDiv.appendChild(myInput);
+```
+
+- Inputun Değerini alalım.
+
+```
+let inputDeger = document.getElementById("myInput").value;
+console.log(inputDeger); // konsolda inputun değeri gösterildi.
+```
