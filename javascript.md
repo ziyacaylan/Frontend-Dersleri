@@ -1410,3 +1410,5 @@ myDiv.appendChild(myInput);
 let inputDeger = document.getElementById("myInput").value;
 console.log(inputDeger); // konsolda inputun değeri gösterildi.
 ```
+
+[---> Linkteki örneği inceleyiniz...](./Javascript-Dersleri/form/Uygulama/)
