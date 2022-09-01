@@ -1412,3 +1412,383 @@ console.log(inputDeger); // konsolda inputun değeri gösterildi.
 ```
 
 [---> Linkteki örneği inceleyiniz...](./Javascript-Dersleri/form/Uygulama/)
+
+## 4.22- Array (Dizi) Oluşturma ve İçerisindeki Elemanlara Ulaşma
+
+- Array birden fazla değeri (value) içerisinde barındıran yapıdır.
+- Array oluşturmak için köşeli parantez kullanılır.
+
+```
+let numbers = [1,2,3,4,5,6]; // sayılardan oluşan bir array tanımlandı.
+
+let arr = [1, 2, 3, true, "eleman", {name: "ziya", scrore : 99}]; // değişik tipte parametreli elemanlara sahip bir array tanımlandı.
+```
+
+**- Array çerisindeki elemana ulaşmak için:** array isminden sonra köşeli parantezler içerisinde ulaşmak istenilen elemanın index numarası belirtilir. Verilen index numarası dışında bir index verilir ise geriye **undefined** döner.
+
+**Type Of Array**
+
+- Arraylerin tipi _object_'dir.
+
+```
+let numbers = [1,2,3,4,5,6];
+console.log(typeOf numbers); // object
+```
+
+**Arraylerin Deklare Edilmesi (Let || const)**
+
+- Arraylerin let ile tanımlanan bir array daha sonradan yeniden tanımlanabilir.
+
+```
+let gunler = ['pazartesi','sali','carsamba']
+gunler = ['cuma','cumartesi','pazar']; // array yeniden tanımlanarak içerik değiştirilerek yeniden tanımlanmıştır.
+```
+
+- const ile deklare edilen bir array daha sonradan yeniden tanımlanamaz.
+
+```
+let gunler = ['pazartesi','sali','carsamba']
+gunler = ['cuma','cumartesi','pazar']; // Error 'TypeError: Assignment to constant variable'
+```
+
+- Ancak const ile tanımlanmış bir arrayın index ile ulaşarak elemanına değiştirmek let ile aynı yapılabilir.
+
+```
+let gunler = ['pazartesi','sali','carsamba']
+gunler[0] = 'Cuma';
+
+```
+
+## 4.23- Önemli Array methodları (Diziye Yeni Eleman Eklemek, Çıkartmak ve Güncellemek Diziye Yeni Eleman Eklemek)
+
+**- Dizilere **_.push(), .unshift() ve .splice()_** metotlarıyla yeni eleman ekleyebiliriz.**
+
+```
+const arr = [];
+
+arr.push("zero");
+arr.push("one");
+arr.push("two");
+arr.push("three");
+
+console.log(arr); // [ 'zero', 'one', 'two', 'three' ]
+```
+
+- **_.unshift()_** methodu dizinin başına eleman ekler.
+
+```
+const arr = [];
+
+arr.unshift(3);
+arr.unshift(2);
+arr.unshift(1);
+arr.unshift(0);
+
+console.log(arr); // [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ]
+```
+
+**Diziden Elemena Silmek**
+
+- Dizilerden eleman silmek için **_pop(), shift(), splice()_** metodları kullanılabilir.
+  **_.pop() method_**
+
+```
+const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
+
+arr.pop();
+arr.pop();
+arr.pop();
+arr.pop();
+
+console.log(arr); // [ 0, 1, 2, 3 ]
+```
+
+**Anahtar NOT**
+
+- pop() methodu dizinin sonundan bir eleman siler. Her çalıştırıldığında sondan bir eleman silinecektir.
+- pop() methodu çalıştığında dizinin sonundan bir eleman silinir. Method çıktısı olarakda silinen eleman geriye döndürülür. Yani istersek bir bu elemanı yakalayabiliriz.
+- pop() methodu parantez içerisine parametre almaz.
+
+```
+const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
+let decNum = arr.pop();
+console.log("Silinen Eleman :", decNum); // Silinen Eleman : three
+```
+
+**_.shift() method_**
+
+```
+const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
+
+arr.shift();
+arr.shift();
+arr.shift();
+arr.shift();
+
+console.log(arr); // [ 'zero', 'one', 'two', 'three' ]
+```
+
+**Anahtar NOT**
+
+- shift() methodu dizinin başından bir eleman siler. Her çalıştırıldığında dizinin ilk elemanı silinecektir.
+- diziden silinen ilik eleman geriye dönecektir.
+
+```
+const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
+let decNum = arr.shift();
+console.log("Silinen Eleman :", decNum); // Silinen Eleman : 0
+```
+
+**_.splice() method_**
+
+- splice() methodu ile bir diziden hem eleman silinebilir hem de eleman eklenebilir.
+- diziye eleman ekleme:
+
+```
+let nums = [1, 4];
+console.log(nums); // [ 1, 4 ]
+
+nums.splice(1,0,2,3); // 1. elemandan itibaren başla ve 0 tane sil ve 2, 3 elemanlarını ekle
+console.log(nums); // [ 1, 2, 3, 4 ]
+```
+
+**Dizide Eleman Güncellemek**
+Dizinin elemanlarına index numarasını kullanarak ulaşabiliriz. Bu sayede istenilen elemanı güncelleyebiliriz.
+
+```
+let myNums = [ 1, 2, 3, 4 ];
+myNums[1] = "iki";
+myNums[2] = "üç";
+console.log(myNums); // [ 1, 'iki', 'üç', 4 ]
+```
+
+**_.includes() method_**
+
+- Bu method dizi içerisinde bir elemanın bulunup bulunmadığını kontrol eder. Ve geriye Boolean (true/false) bir değer döner
+
+```
+const meyveler = ["elma", "armut", "kavun", "karpuz"];
+
+const kavunvar = meyveler.includes("kavun");
+console.log("Kavun var mı : ", kavunvar); // Kavun var mı :  true
+
+```
+
+**_.slice() method_**
+
+- .slice() mthodu dizinin bil kısmını dilimlememize olanak sağlar. Ve geriye yeni bir dizi olarak döner.
+- Parantez içerisine dilimlemek istediğimiz aralığın başlangıç ve bitiş ve bitiş indexlerini yazarız. Burada dikkat etmemiz gereken; bitiş index i almak istediğimiz aralığa dahil değildir.
+- Bu method dizimizin orjinal halini değiştirmemekte yeni oluşan dizi ise farklı bir değişkende tutulmalıdır.
+
+```
+const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const newArray = someNumbers.slice(2, 5);  // 2. indexten itibaren başla ve 5. elemana kadar al
+console.log(".slice() ile oluşan yeni Array :", newArray); // .slice() ile oluşan yeni Array : [ 3, 4, 5 ]
+console.log(someNumbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+**_.join() method_**
+
+- Bu method bir array içerisinde yer alan bütün elemanları birleştirerek _string_ bir ifade olarak geri döndürür.
+- Parantes içerisinde herhangi bir değer vermez isek default değer olarak araya virgül koyarak string ifade oluşturulur.
+- Mevcut diziye dokunmaz geriye string bir değer döner.
+
+```
+// const str = someNumbers.join(); //1. satır
+// const str = someNumbers.join("-"); //2. satır
+const str = someNumbers.join(""); //3. satır
+// console.log(str); // 1,2,3,4,5,6,7,8,9 // 1.satır sonucu
+// console.log(str); // 1-2-3-4-5-6-7-8-9 // 2.satır sonucu
+console.log(str); // 123456789 // 3.satır sonucu
+console.log(someNumbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+```
+
+**_.concat() method_**
+
+- Bu method ise iki diziyi birleştirmekiçin kullanılır.
+- Geriye oluşan yeni diziyi döner.
+
+```
+const numbers = [1, 2, 3, 4, 5, 6];
+const strNums = ["bir", "iki", "üç", "dört", "beş"];
+
+const newNumbers = numbers.concat(strNums);
+
+console.log(newNumbers); // [1, 2, 3, 4, 5, 6, "bir", "iki", "üç", "dört", "beş"]
+```
+
+**_.forEach() method_**
+
+- Bu method parametre olarak içerisine bir fonksiyon alır ve bu şekilde diziyi manipüle edebiliriz.
+- Bu method sonunda **geriye herhangi bir değer DÖNMEZ.**
+
+```
+gunler.forEach((gun) => {
+  console.log("Günler Büyük Harfle :", gun.toUpperCase());
+});
+```
+
+**_.map() method_**
+
+-Map metodu da forEach gibi kendisine verilen fonksiyonu dizinin her elemanı için uygular fakat forEach'ten farklı olarak sonucu yeni bir dizide tutar.
+
+- Orijinal dizi olduğu gibi kalır.
+
+```
+const gunler = [
+  "pazar",
+  "pazartesi",
+  "salı",
+  "çarşamba",
+  "perşembe",
+  "cuma",
+  "cumartesi",
+];
+
+const newDays = gunler.map((gun) => gun.toUpperCase());
+console.log(newDays);  // ['PAZAR', 'PAZARTESI', 'SALI', 'ÇARŞAMBA', 'PERŞEMBE', 'CUMA', 'CUMARTESI']
+```
+
+**_.some() method_**
+
+- Dizi içerisinde bir elemanın var olup olmadığını sorgulamak için kullanılır.
+- Bu method da parametre olarak bir fonksiyon alır
+- Dizinin bütün elemanları ile fonksiyon ektileşime girer ve sonuç olarak geriye true/false döner
+- ektileşime giren değer dizi elemanlarından birinde bile true olsa geriye true döner.
+
+```
+const sayilar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const tekSayiVarmi = sayilar.some((sayi) => sayi % 2 !== 0);
+console.log(tekSayiVarmi);  //true
+```
+
+Yukarıdaki örnek ile aşağıdakiörneği karşılaştırınız.
+
+```
+const sayilar = [2, 4, 6, 8, 10];
+
+const tekSayiVarmi = sayilar.some((sayi) => sayi % 2 !== 0);
+console.log(tekSayiVarmi); //false
+```
+
+Eşleşen tek bir değer bile olsa true döner
+
+```
+const sayilar = [2, 4, 6, 8, 9, 10];
+
+const tekSayiVarmi = sayilar.some((sayi) => sayi % 2 !== 0);
+console.log(tekSayiVarmi); //true
+```
+
+**_.every() method_**
+
+- every metodu belirtilen bir koşulun dizideki tüm elemanlara uyup uymadığını kontrol ederiz.
+- some metodunda olduğu gibi, Boolean yani true veya false olarak döner.
+- Parametre olarak bir fonksiyon alır
+- True dönebilmesi için dizideki tüm elemanların fonksiyondaki koşula uyması gerekir.
+
+```
+const sayilar = [2, 4, 6, 8, 9, 10];
+
+const result = sayilar.every((sayi) => sayi >= 2); // dizinin sayıları 2 den büyük veya eşit mi?
+console.log(result); // true
+```
+
+```
+const sayilar = [2, 4, 6, 8, 9, 10];
+
+const result = sayilar.every((sayi) => sayi > 5); // dizinin sayıları 5 den büyük mü?
+console.log(result); // false
+```
+
+**_.filter() method_**
+
+- filter metodu bir dizi içerisindeki belirli bir koşulu sağlayan elemanlar ile yeni bir dizi oluşturmamıza dolayısıyla dizi elemanlarını filtrelememize yarıyor.
+- Geriye yeni bir dizi döner ve oluşan bu diziyi yeni bir değişkende saklıyoruz.
+- Orjinal dizimiz üzerinde herhangi bir değişiklik yapmayacaktır.
+
+```
+const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const tekSayilar = someNumbers.filter((sayi) => sayi % 2 !== 0);
+console.log(tekSayilar); // [ 1, 3, 5, 7, 9 ]
+```
+
+**_.find() method_**
+
+- Bu method belirtilen koşula uyan elemanı bulmamızı sağlar.
+- Diğer metodların aksine _find_ methodu elemanın kendisini döner
+- koşulu sağlayanbirden fazla eleman var ise bulduğu ilk elemanı döner.
+- Koşulu sağlayan bir eleman bulamaz ise _undefined_ döner
+
+```
+const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const sonuc = someNumbers.find((sayi) => sayi > 4);
+console.log(sonuc);  // 5
+```
+
+**_.sort() method_**
+
+- Bu method ile dizi içerisindeki elemanları sıralama yapabiliriz.
+- Orjinal dizi sıralanmış olarak geri döner.
+- Eğer parametre olarak bir fonksiyon verilmezse dizi elemanları string'e çevrilir ve UTF-16 değerlerine göre sıralanır.
+- Artan veya azalan olarak sıralamak için (sayi1-sayi2)-> artan, (sayi2-sayi1)-> azalan şeklinde parametreler verilir. Aşağıdaki örnekleri inceleyiniz.
+
+```
+const someNumbers = [1, 3, 2, 6, 4, 9, 5, 8, 7];
+someNumbers.sort((a, b) => a - b);
+console.log("Dizinin küçükten büyüğe sıralanması : ", someNumbers); //Dizinin küçükten büyüğe sıralanması : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+someNumbers.sort((a, b) => b - a);
+console.log("Dizinin büyükten küçüğe sıralanması : ", someNumbers); //Dizinin küçükten büyüğe sıralanması : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+**_.reduce() method_**
+
+- Bu metot dizimizi yalnızca bir değere indirger.
+- Parantez içerisine parametre olarak bir fonksiyon ve accumulator'ün (toplayıcının) başlangıç değeri girilir
+- Bu metot orijinal diziyi değiştirmez
+- Tam olarak ne yaptığını anlamak için aşağıdaki örnekleri inceleyelim.
+
+```
+const sayilar = [10,20,30];
+
+// Dizi içindeki sayıları toplayarak indirgeyecek bir fonksiyon yazalım:
+function indirgeyici (akumulator, sayi) {
+    return akumulator + sayi;
+}
+
+// Bu fonksiyonu ve toplamaya 0'dan başlayacağımızı belirten 0 sayısını metodumuza parametre olarak girelim ve sonucu bir değişkende tutalım:
+const sonuc1 = sayilar.reduce(indirgeyici,0);
+
+console.log(sonuc1);
+//0 + 10 + 20 + 30 = 60 olacağından çıktı olarak 60 bekleriz.
+
+
+
+// Eğer akümülatorümüzü 0 yerine 5'den başlatsaydık çıkabilecek sonucu görelim:
+
+const sonuc2 = sayilar.reduce(indirgeyici, 5);
+
+console.log(sonuc2);
+// 5 + 10 + 20 + 30 = 65 olacağından çıktı olarak 65 bekleriz.
+```
+
+**Dizi İçerisinde Dizi Tanımlama**
+
+- Dizi içerisinde dizi bir eleman olarak bir dizi alabilir.
+
+```
+const ogrenciler = [
+  ["ziya", "caylan"],
+  ["ali", "veli"],
+  ["hasan", "hüseyin"],
+  ["salim", "malim"],
+];
+```
+
+[-->Daha iyi kavrayabilmek için linkteki örnekleri inceleyiniz ve örnekleri çoğaltınız.](./Javascript-Dersleri/Array/02-alistirmalar.js)
