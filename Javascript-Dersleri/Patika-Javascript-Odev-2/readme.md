@@ -8,6 +8,8 @@
 - DOM
 - localStorage
 
+**https://app.patika.dev/ziyacaylangmailcom**
+
 ---
 
 ![Patika-javascript-odev-1](../assets/odev-2.jpg)
