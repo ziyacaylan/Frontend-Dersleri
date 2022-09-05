@@ -1792,3 +1792,7 @@ const ogrenciler = [
 ```
 
 [-->Daha iyi kavrayabilmek için linkteki örnekleri inceleyiniz ve örnekleri çoğaltınız.](./Javascript-Dersleri/Array/02-alistirmalar.js)
+
+## 4.24- DÖNGÜLER
+
+**JavaScript for Döngüsü Kullanımı**
