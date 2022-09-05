@@ -1796,3 +1796,109 @@ const ogrenciler = [
 ## 4.24- DÖNGÜLER
 
 **JavaScript for Döngüsü Kullanımı**
+For döngüsünde koşul sağlandığı sürece döngü tekrarlanacak koşul sağlanmadığı anda döngüden çıkılacaktır. Syntax aşağıdaki gibidir.
+
+```
+for (BaşlangıçAtaması; Koşulİfadesi; döngüSonundaÇalışacakİfade) {
+  "Koşul sağlanıyorsa(true) çalışmasını istediğim komutlar."
+};
+"Koşul sağlanmazsa(false) döngüden çıkılır."
+```
+
+**Örnek :**
+
+```
+for(let i = 1; i < 5; i++) {
+    console.log(i); // ekrana index değeri yazdırılıyor
+};
+```
+
+**Break ve Continue Kullanımı**
+
+- Bazen döngülerde istediğimiz anda istediğimiz bilgi sağlanmış ve artık döngünün dönmesine ihtiyaç kalmamış olabilir. Böyle bir durumda döngünün devam etmesine gerek yoktur. Döngüden çıkmamız gerekir. İşte bböyle bir durumda _break_ ifadesi kullanılır.
+- Break ifadesi bulunduğu döngüden çıkılmasını sağlar. Yani iç içe döngüler var ise sadece bulunduğu döngüden çıkacak ancak bir üstteki döngü dönmeye devam edecektir.
+- Koşul sonsuz söngü olursa sozsuz dönmeye devam edecektir. Bazen böyle durumlar isteriz. Böyle durumlardan çıkmak için ise döngü içerisinde kontrol ifadeleri kullanırız.
+
+```
+const users = ["ziya", "ali", "veli", "hasan", "eda", "meda"];
+
+for (let i = 0; i < users.length; ++i) {
+  if (users[i] === "veli") {
+    break;
+  }
+  //...
+  console.log(users[i]); // ekranda "ziya" ve "ali" yazacak diğerleri yazılmayacak.
+}
+
+```
+
+- Continue ifadesinde ise döngü dönmeye devam eder ancak program continue ifadesine geldiğinde döndü o kısımda dönmeyi bırakır yani göngünün geri kalan komutlarını uygulamayı bırakır ve sanki o andaki döngü tamamlanmış gibi döngünün başına giderek kaldığı yerden itibaren dönmeye devam eder. Aşağıdaki örneği incelediğimizide daha iyi anlaşılacaktır.
+
+```
+const users = ["ziya", "ali", "veli", "hasan", "eda", "meda"];
+
+for (let i = 0; i < users.length; ++i) {
+  if (users[i] === "veli") {
+    continue;
+  }
+  //...
+  console.log(users[i]); // ekranda "ziya", "ali", "hasan", "eda", "meda" yazacak "veli" ise yazılmayacaktır.
+}
+
+```
+
+// sonsuz döngü ve çıkılması örnek
+let idx = 0;
+for (;;) {
+console.log(`idx = ${idx}`);
+if (idx === 25) {
+break;
+}
+++idx;
+}
+
+**JavaScript While Döngüsü Kullanımı**
+
+- for döngüsü benzeridir.
+- koşul sağlandığı sürece dönmeye devam edecektir.
+- Syntax aşağıdaki gibidir.
+
+```
+while(koşul) {
+  // Yapılacak işlem/işlemler;
+}
+```
+
+```
+const users = ["ziya", "ali", "veli", "hasan", "eda", "meda"];
+
+let i = 0;
+while (users[i]) {
+  console.log(users[i]);  // "ziya", "ali", "veli", "hasan", "eda", "meda"
+  ++i;
+}
+
+```
+
+```
+// while sonsuz döngü ve istenildiği zaman çıkılması önneği
+let idx = 0;
+while (true) {
+  console.log(`idx = ${idx}`);
+  if (idx === 25) {
+    break;
+  }
+  ++idx;
+}
+```
+
+**JavaScript forEach Kullanımı**
+
+- forEach döngüyü sırayla çalıştırmamızı sağlayan bir array metodudur.
+- forEach fonksiyonu item, index, array olmak üzere 3 parametre alabilir.
+
+```
+arr.forEach(function(value, index, array) {
+  // index ve array kullanmak opsiyoneldir
+}
+```
