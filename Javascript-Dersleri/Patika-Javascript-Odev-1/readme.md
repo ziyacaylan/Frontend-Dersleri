@@ -1,4 +1,4 @@
-## Patika Javascript Ödev 1 : avascript Saat ve Karşılama
+## Patika Javascript Ödev 1 : Javascript Saat ve Karşılama
 
 ---
 

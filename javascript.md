@@ -1896,9 +1896,144 @@ while (true) {
 
 - forEach döngüyü sırayla çalıştırmamızı sağlayan bir array metodudur.
 - forEach fonksiyonu item, index, array olmak üzere 3 parametre alabilir.
+- geriye herhangi bir değer dönmez.Bir arrayın herbir elemanı için bir fonksiyon çalıştırır ve geriye herhangi bir değer dönmeyecektir.
 
 ```
 arr.forEach(function(value, index, array) {
   // index ve array kullanmak opsiyoneldir
 }
+```
+
+```
+// farklı bir örnek
+const names = [
+  "ziya",
+  "ali",
+  "veli",
+  "hasan",
+  "eda",
+  "meda",
+  "seda",
+  "ecrin",
+  "mecrin",
+];
+
+names.forEach((value, index, arr) => {
+  console.log("value: ", value); // names lerin o andi değerini ekrana yazdırır
+  console.log("value parametresinin aldığı index :", index); // döndüğü esnadaki index değeri yazdırılır.
+  console.log("arr:", arr); // bütün arr her seferinde yazdırılır
+});
+```
+
+```
+// names leri büyük fark olarak ekrana yazdıralım.
+names.forEach((name) => console.log(name.toUpperCase()));
+console.log(names); // dikkat edilir ise orjinal arrayimizde bir değişiklik olmamıştır.
+
+const myResult = names.forEach((name) => console.log(name.toLocaleLowerCase()));
+console.log(myResult); // undefined geriye bir değer dönmediği gözlemlenmiştir.
+```
+
+**Filter ile Array İçerisinde Sadece İstenilen Bilgilerin Yeni Listeye Eklenmesi**
+**Filter Methodu**
+
+- Bu array methodu dizi elemanlarını döngüye sokarak istediğimiz koşulu sağlayan elemanları alarak yeni bir array oluşturmamızı sağlar.
+- Bu array methodu, bir fonksiyon alır ve sonunda yeriye yeni bir array döndürür. Mevcut array üzerinde herhangi bir değişiklik yapmaz.
+
+```
+const products = ["Mikrofon","Kablo","Telefon","Bilgisayar","Mouse","Klavye","Ekran"];
+
+const newProducts = products.filter((product) => product.length > 5); // string uzunluğu 5 ten büyük olanları yeni dizi olarak döner
+console.log(newProducts); // [ 'Mikrofon', 'Telefon', 'Bilgisayar', 'Klavye' ]
+```
+
+```
+// Aşağıdaki users dizisindeki nesneler içerisinden isActive'i true olanları almak istiyorum.
+const users = [
+  { fullName: "Mehmet Veli", isActive: false },
+  { fullName: "Ali Duran", isActive: true },
+  { fullName: "Ahmet Yılmaz", isActive: true },
+  { fullName: "Oğuz Şahin", isActive: false },
+];
+
+const isActiveUsers = users.filter((user) => user.isActive === true);
+console.log(isActiveUsers); // [{ fullName: 'Ali Duran', isActive: true },  { fullName: 'Ahmet Yılmaz', isActive: true }]
+```
+
+[---> Linkteki alıştırma sorularını inceleyiniz.](./Javascript-Dersleri/D%C3%B6ng%C3%BCler/04-filter.js)
+
+**Map ile Array İçerisideki Yapının Değiştirilerek Yeni Liste Oluşturulması**
+
+- .map() bir array methodudur.
+- Bu method mevcut arrayın üzerinde değişiklikler yaparak yeni bir array olarak geriye döner.
+
+```
+const names = [
+  "ziya",
+  "ali",
+  "veli",
+  "hasan",
+  "eda",
+  "meda",
+  "seda",
+  "ecrin",
+  "mecrin",
+];
+
+const newNames = names.map((oneName) => oneName.toUpperCase());
+
+console.log(names);    // ['ziya','ali','veli','hasan','eda','meda', 'seda','ecrin','mecrin']
+console.log(newNames); //['ZIYA','ALI','VELI','HASAN','EDA','MEDA','SEDA','ECRIN','MECRIN']
+```
+
+```
+const names = [
+  "ziya",
+  "ali",
+  "veli",
+  "hasan",
+  "eda",
+  "meda",
+  "seda",
+  "ecrin",
+  "mecrin",
+];
+
+
+const USER_OBJ = names.map((user) => ({
+  userName: `${user}`,
+  shortName: `${user[0].toUpperCase()}`,
+  newName: `${user[0].toUpperCase()}${user.slice(1).toLocaleLowerCase()}`,
+}));
+console.log(USER_OBJ);
+```
+
+Yukarıdaki örneğin sonucunda konsolda görüntüleneek yeni obje aşağıdaki gibidir.
+
+```
+// yukarıdaki örneğin konsol çıktısı
+[
+  { userName: 'ziya', shortName: 'Z', newName: 'Ziya' },
+  { userName: 'ali', shortName: 'A', newName: 'Ali' },
+  { userName: 'veli', shortName: 'V', newName: 'Veli' },
+  { userName: 'hasan', shortName: 'H', newName: 'Hasan' },
+  { userName: 'eda', shortName: 'E', newName: 'Eda' },
+  { userName: 'meda', shortName: 'M', newName: 'Meda' },
+  { userName: 'seda', shortName: 'S', newName: 'Seda' },
+  { userName: 'ecrin', shortName: 'E', newName: 'Ecrin' },
+  { userName: 'mecrin', shortName: 'M', newName: 'Mecrin' }
+]
+```
+
+```
+// Örnek 2: Maaş zam hesaplama; İşçilerin aldıkları maaşlara ait bir dizi olsun. Maaşı 3000 TL'nin üzerinde olanlarınkine %15, altında olanlarınkine de %25 zam yapan bir array map oluşturalım.
+
+const maaslar = [1100, 13000, 2500, 4500, 1500, 25000, 2000];
+
+const newSalary = maaslar.map((salary) =>
+  salary > 3000 ? Math.round(salary * 1.15) : Math.round(salary * 1.25)
+);
+
+console.log(`eski maaşlar: ${maaslar}`); // eski maaşlar: 1100,13000,2500,4500,1500,25000,2000
+console.log(`Zamlı maaşlar: ${newSalary}`);  // Zamlı maaşlar: 1375,14950,3125,5175,1875,28750,2500
 ```
