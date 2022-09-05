@@ -8,7 +8,7 @@
 - DOM
 - localStorage
 
-**https://app.patika.dev/ziyacaylangmailcom**
+**[ ---> Patika Profilim](https://app.patika.dev/ziyacaylangmailcom)**
 
 ---
 
