@@ -1,4 +1,4 @@
-## Patika Javascript Ödev 2 : ToDoListesinin hazırlanması
+## Patika Javascript Ödev 2 : ToDo Listesinin hazırlanması
 
 - toDoList hazırlanarak DOM üzerinde görüntülendi.
 
