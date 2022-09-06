@@ -2400,3 +2400,28 @@ const [ali, veli, hasan, ...otherStudents] = someStudents;
 console.log(ali);
 console.log(otherStudents);
 ```
+
+## 4.26- Hata Yakalama (Try Ve Catch Kullanımı)
+
+_try...catch_ kısaca bir iş yaparken herhangi bir hata ile karşılaşma durumunun ele alınması anlamını ifade etmektedir.
+**try** kelimesi kodları çalışma zamanında test etmek için kullanılırken **catch** anahtar kelimesi ise hata ile karşılaşılması durumunda bu hatayı yakalamak için kullanılır.
+
+Syntax aşağıdaki gibidir.
+
+```
+try {
+  //Çalıştırılacak kodlar
+}catch(hata) {
+  //Hata yakalandığında çalışacak kodlar
+}finally {
+  //try tamamlandıktan sonra hata olsada olmasada çalışacak olan kodlar.
+}
+```
+
+**Throw İle İstisnalar Oluşturma**
+Normalde kod çalışırken herhangi bir hata ile karşılaşılırsa Javascript durur ve bir hata mesajı oluşturur.
+
+- JavaScript aslında iki özelliğe sahip bir Error nesnesi oluşturacaktır: isim ve mesaj.
+- **throw** ifadesi bize özel hatalar oluşturmamıza olanak tanır. Teknik olarak _throw_ ile bir istisna _(hata)_ atılabilir.
+
+## 4.27- Fetch API ile Çalışmak

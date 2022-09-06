@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try-Catch Kullanımı Örnekleri</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .flex-container {
+        width: 75%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #dogumTarihi {
+        padding: 1.2rem;
+        font-size: 1.6rem;
+      }
+      .btn {
+        padding: 1.2rem;
+        margin-left: 0.8rem;
+        border: 2px solid #4f4f4f;
+        border-radius: 1rem;
+        font-size: 1.6rem;
+        background-color: #cbf209;
+        color: #1f1e1e;
+      }
+      .btn:hover {
+        background-color: #1f1e1e;
+        color: #cbf209;
+        transition: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <input type="text" id="dogumTarihi" />
+      <button class="btn" onclick="valid()">Gönder</button>
+    </div>
+    <script src="./try-catch.js"></script>
+  </body>
+</html>
