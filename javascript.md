@@ -1306,28 +1306,28 @@ let userInfo = JSON.parse(localStorage.getItem("user"));
 
 - Formlar içinde bulundurdukları form elementlerinin name'leri sayesinde değerlerini alıp bu değerler ile işlem ypmammızı sağlayan yapılardır.
 - Genelde backend e istek yapılacağında kullanılırlar( Örnek: verik gönderme).
-- En önemli parametresi **_method_** parametresidir. **Method**, **"get"** ve **"post"** olamk üzere iki farklı değer alabilir.
+- En önemli parametresi **_Metot_** parametresidir. **Metot**, **"get"** ve **"post"** olamk üzere iki farklı değer alabilir.
 
 ```
-<form action="siteadi" method="get|post">*form elementleri*</form> // form bu şekilde tanımlanmaktadır.
+<form action="siteadi" Metot="get|post">*form elementleri*</form> // form bu şekilde tanımlanmaktadır.
 ```
 
-**GET Methodu**
+**GET Metotu**
 
 - form verilerini URL üzerinden gönderir.
 
 ```
-<form method="GET"><input type="text" name="yas" placeholder="Yaşınızı giriniz." /><button type="submit">Gönder</button>
+<form Metot="GET"><input type="text" name="yas" placeholder="Yaşınızı giriniz." /><button type="submit">Gönder</button>
 </form>
 ```
 
-**POST Methodu**
+**POST Metotu**
 
 - Verileri arka planda gönderir.
 - Önemli verilerin (username, password,user email gibi) gönderilmesinde kullanıcıya gösterilmeden gönderim sağlanır.
 
 ```
-<form method="POST"><input type="email" name="email" placeholder="Email adresinizi giriniz." /><button type="submit">Gönder</button>
+<form Metot="POST"><input type="email" name="email" placeholder="Email adresinizi giriniz." /><button type="submit">Gönder</button>
 </form>
 ```
 
@@ -1342,7 +1342,7 @@ En çok kullanılan giriş tiplerine biraz göz atalım:
 - `<input type="radio">` radio button tipinde , istenilen verieleri seçmek için geliştirilen bir inputtur.
 - `<input type="button">` checkbox tipinde onay gerektiren durumlarda kullanılması için geliştirilmiş bir inputtur.
 - `<input type="submit">` Klasik buton oluşturur.Varsayılan olarak herhangi bir işlem yapmaz. JavaScript vb. programlama dilleri ile birlikte işlevsel hale gelir.
-- `<input type="reset">` Form içerisinde elementlere girilen verileri göndermede kullanılır. Action ile açılacak yeni sayfa veya mevcut sayfanın kendisine get ve post methoduna göre değişik şekillerde veri gönderme işlemini gerçekleştirir. methot="get" kullanılmışsa action durumunda göre sayfanın adres çubuğundaki url’in sonunda, methot="post" kullanılmışsa sayfanın arka planında veriler saklanır.
+- `<input type="reset">` Form içerisinde elementlere girilen verileri göndermede kullanılır. Action ile açılacak yeni sayfa veya mevcut sayfanın kendisine get ve post Metotuna göre değişik şekillerde veri gönderme işlemini gerçekleştirir. methot="get" kullanılmışsa action durumunda göre sayfanın adres çubuğundaki url’in sonunda, methot="post" kullanılmışsa sayfanın arka planında veriler saklanır.
 - `<input type="color">` Button tipinde bir nesne oluşturur. Form içerisinde yer alan elementlere veri girilmiş halde iken reset e basıldığında elementler üzerinde görünen bütün veriler silinir ve form default haline geri döner.
 - `<input type="date">` Renk çeşitlerini tasarımcıya sunan ve seçim yapmasını sağlayan giriş veri tipidir.
 - `<input type="email">` Sadece email bilgisi girişi için tasarlanmış bir inputtur. Sayı dışındaki girişlerde, düzgün veri girişi yapılması gerektiği yönünde uyarı vermektedir. Safari dışındaki tüm tarayıcılar desteklemektedir.
@@ -1359,7 +1359,7 @@ En çok kullanılan giriş tiplerine biraz göz atalım:
 **Örnek**
 
 ```
-<form method="GET">
+<form Metot="GET">
   <input type="text" name="username" placeholder="Kullanıcı adınızı giriniz" />
   <input type="password" name="password" placeholder="Şifrenizi giriniz." />
   <button type="submit">Giriş</button>
@@ -1370,7 +1370,7 @@ Yukarıdaki örnek sonucunda submit ettiğimizde **url** imizin değiştiğini g
 
 **Form Özellikleri**
 **- Action :** Form submit edildiğinde nasıl bir aksiyon alınacağını belirttiğimiz koddur. Genellikle form submit işleminden sonra data server a gönderilir.
-**- METHOD :** Form metodunun hangi metodla gönderileceğini belirtir. **"Get"** veya **"Post"** request olarak, bu özellik belirtilmemiş ise default değer olarak **"Get"** mettodu forma aktarılır.
+**- Metot :** Form metodunun hangi metodla gönderileceğini belirtir. **"Get"** veya **"Post"** request olarak, bu özellik belirtilmemiş ise default değer olarak **"Get"** mettodu forma aktarılır.
 **- AUTOCOMPLETE** formu otomatik tamamlama özelliğinin açılıp kapatıldığı komut, bu özellik açık olduğunda daha önceki entry lere göre form otomatik olarak tamamlanacaktır.
 **- NOVALIDATE** aktif olduğu sürece form datamızın otomatik olarak doğrulanmamasını söyler.
 
@@ -1459,7 +1459,7 @@ gunler[0] = 'Cuma';
 
 ```
 
-## 4.23- Önemli Array methodları (Diziye Yeni Eleman Eklemek, Çıkartmak ve Güncellemek Diziye Yeni Eleman Eklemek)
+## 4.23- Önemli Array Metotları (Diziye Yeni Eleman Eklemek, Çıkartmak ve Güncellemek Diziye Yeni Eleman Eklemek)
 
 **- Dizilere **_.push(), .unshift() ve .splice()_** metotlarıyla yeni eleman ekleyebiliriz.**
 
@@ -1474,7 +1474,7 @@ arr.push("three");
 console.log(arr); // [ 'zero', 'one', 'two', 'three' ]
 ```
 
-- **_.unshift()_** methodu dizinin başına eleman ekler.
+- **_.unshift()_** Metotu dizinin başına eleman ekler.
 
 ```
 const arr = [];
@@ -1490,7 +1490,7 @@ console.log(arr); // [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ]
 **Diziden Elemena Silmek**
 
 - Dizilerden eleman silmek için **_pop(), shift(), splice()_** metodları kullanılabilir.
-  **_.pop() method_**
+  **_.pop() Metot_**
 
 ```
 const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
@@ -1505,9 +1505,9 @@ console.log(arr); // [ 0, 1, 2, 3 ]
 
 **Anahtar NOT**
 
-- pop() methodu dizinin sonundan bir eleman siler. Her çalıştırıldığında sondan bir eleman silinecektir.
-- pop() methodu çalıştığında dizinin sonundan bir eleman silinir. Method çıktısı olarakda silinen eleman geriye döndürülür. Yani istersek bir bu elemanı yakalayabiliriz.
-- pop() methodu parantez içerisine parametre almaz.
+- pop() Metotu dizinin sonundan bir eleman siler. Her çalıştırıldığında sondan bir eleman silinecektir.
+- pop() Metotu çalıştığında dizinin sonundan bir eleman silinir. Metot çıktısı olarakda silinen eleman geriye döndürülür. Yani istersek bir bu elemanı yakalayabiliriz.
+- pop() Metotu parantez içerisine parametre almaz.
 
 ```
 const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
@@ -1515,7 +1515,7 @@ let decNum = arr.pop();
 console.log("Silinen Eleman :", decNum); // Silinen Eleman : three
 ```
 
-**_.shift() method_**
+**_.shift() Metot_**
 
 ```
 const arr = [ 0, 1, 2, 3, 'zero', 'one', 'two', 'three' ];
@@ -1530,7 +1530,7 @@ console.log(arr); // [ 'zero', 'one', 'two', 'three' ]
 
 **Anahtar NOT**
 
-- shift() methodu dizinin başından bir eleman siler. Her çalıştırıldığında dizinin ilk elemanı silinecektir.
+- shift() Metotu dizinin başından bir eleman siler. Her çalıştırıldığında dizinin ilk elemanı silinecektir.
 - diziden silinen ilik eleman geriye dönecektir.
 
 ```
@@ -1539,9 +1539,9 @@ let decNum = arr.shift();
 console.log("Silinen Eleman :", decNum); // Silinen Eleman : 0
 ```
 
-**_.splice() method_**
+**_.splice() Metot_**
 
-- splice() methodu ile bir diziden hem eleman silinebilir hem de eleman eklenebilir.
+- splice() Metotu ile bir diziden hem eleman silinebilir hem de eleman eklenebilir.
 - diziye eleman ekleme:
 
 ```
@@ -1562,9 +1562,9 @@ myNums[2] = "üç";
 console.log(myNums); // [ 1, 'iki', 'üç', 4 ]
 ```
 
-**_.includes() method_**
+**_.includes() Metot_**
 
-- Bu method dizi içerisinde bir elemanın bulunup bulunmadığını kontrol eder. Ve geriye Boolean (true/false) bir değer döner
+- Bu Metot dizi içerisinde bir elemanın bulunup bulunmadığını kontrol eder. Ve geriye Boolean (true/false) bir değer döner
 
 ```
 const meyveler = ["elma", "armut", "kavun", "karpuz"];
@@ -1574,11 +1574,11 @@ console.log("Kavun var mı : ", kavunvar); // Kavun var mı :  true
 
 ```
 
-**_.slice() method_**
+**_.slice() Metot_**
 
 - .slice() mthodu dizinin bil kısmını dilimlememize olanak sağlar. Ve geriye yeni bir dizi olarak döner.
 - Parantez içerisine dilimlemek istediğimiz aralığın başlangıç ve bitiş ve bitiş indexlerini yazarız. Burada dikkat etmemiz gereken; bitiş index i almak istediğimiz aralığa dahil değildir.
-- Bu method dizimizin orjinal halini değiştirmemekte yeni oluşan dizi ise farklı bir değişkende tutulmalıdır.
+- Bu Metot dizimizin orjinal halini değiştirmemekte yeni oluşan dizi ise farklı bir değişkende tutulmalıdır.
 
 ```
 const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -1588,9 +1588,9 @@ console.log(".slice() ile oluşan yeni Array :", newArray); // .slice() ile olu�
 console.log(someNumbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-**_.join() method_**
+**_.join() Metot_**
 
-- Bu method bir array içerisinde yer alan bütün elemanları birleştirerek _string_ bir ifade olarak geri döndürür.
+- Bu Metot bir array içerisinde yer alan bütün elemanları birleştirerek _string_ bir ifade olarak geri döndürür.
 - Parantes içerisinde herhangi bir değer vermez isek default değer olarak araya virgül koyarak string ifade oluşturulur.
 - Mevcut diziye dokunmaz geriye string bir değer döner.
 
@@ -1605,9 +1605,9 @@ console.log(someNumbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ```
 
-**_.concat() method_**
+**_.concat() Metot_**
 
-- Bu method ise iki diziyi birleştirmekiçin kullanılır.
+- Bu Metot ise iki diziyi birleştirmekiçin kullanılır.
 - Geriye oluşan yeni diziyi döner.
 
 ```
@@ -1619,10 +1619,10 @@ const newNumbers = numbers.concat(strNums);
 console.log(newNumbers); // [1, 2, 3, 4, 5, 6, "bir", "iki", "üç", "dört", "beş"]
 ```
 
-**_.forEach() method_**
+**_.forEach() Metot_**
 
-- Bu method parametre olarak içerisine bir fonksiyon alır ve bu şekilde diziyi manipüle edebiliriz.
-- Bu method sonunda **geriye herhangi bir değer DÖNMEZ.**
+- Bu Metot parametre olarak içerisine bir fonksiyon alır ve bu şekilde diziyi manipüle edebiliriz.
+- Bu Metot sonunda **geriye herhangi bir değer DÖNMEZ.**
 
 ```
 gunler.forEach((gun) => {
@@ -1630,7 +1630,7 @@ gunler.forEach((gun) => {
 });
 ```
 
-**_.map() method_**
+**_.map() Metot_**
 
 -Map metodu da forEach gibi kendisine verilen fonksiyonu dizinin her elemanı için uygular fakat forEach'ten farklı olarak sonucu yeni bir dizide tutar.
 
@@ -1651,10 +1651,10 @@ const newDays = gunler.map((gun) => gun.toUpperCase());
 console.log(newDays);  // ['PAZAR', 'PAZARTESI', 'SALI', 'ÇARŞAMBA', 'PERŞEMBE', 'CUMA', 'CUMARTESI']
 ```
 
-**_.some() method_**
+**_.some() Metot_**
 
 - Dizi içerisinde bir elemanın var olup olmadığını sorgulamak için kullanılır.
-- Bu method da parametre olarak bir fonksiyon alır
+- Bu Metot da parametre olarak bir fonksiyon alır
 - Dizinin bütün elemanları ile fonksiyon ektileşime girer ve sonuç olarak geriye true/false döner
 - ektileşime giren değer dizi elemanlarından birinde bile true olsa geriye true döner.
 
@@ -1683,7 +1683,7 @@ const tekSayiVarmi = sayilar.some((sayi) => sayi % 2 !== 0);
 console.log(tekSayiVarmi); //true
 ```
 
-**_.every() method_**
+**_.every() Metot_**
 
 - every metodu belirtilen bir koşulun dizideki tüm elemanlara uyup uymadığını kontrol ederiz.
 - some metodunda olduğu gibi, Boolean yani true veya false olarak döner.
@@ -1704,7 +1704,7 @@ const result = sayilar.every((sayi) => sayi > 5); // dizinin sayıları 5 den b�
 console.log(result); // false
 ```
 
-**_.filter() method_**
+**_.filter() Metot_**
 
 - filter metodu bir dizi içerisindeki belirli bir koşulu sağlayan elemanlar ile yeni bir dizi oluşturmamıza dolayısıyla dizi elemanlarını filtrelememize yarıyor.
 - Geriye yeni bir dizi döner ve oluşan bu diziyi yeni bir değişkende saklıyoruz.
@@ -1717,10 +1717,10 @@ const tekSayilar = someNumbers.filter((sayi) => sayi % 2 !== 0);
 console.log(tekSayilar); // [ 1, 3, 5, 7, 9 ]
 ```
 
-**_.find() method_**
+**_.find() Metot_**
 
-- Bu method belirtilen koşula uyan elemanı bulmamızı sağlar.
-- Diğer metodların aksine _find_ methodu elemanın kendisini döner
+- Bu Metot belirtilen koşula uyan elemanı bulmamızı sağlar.
+- Diğer metodların aksine _find_ Metotu elemanın kendisini döner
 - koşulu sağlayanbirden fazla eleman var ise bulduğu ilk elemanı döner.
 - Koşulu sağlayan bir eleman bulamaz ise _undefined_ döner
 
@@ -1731,9 +1731,9 @@ const sonuc = someNumbers.find((sayi) => sayi > 4);
 console.log(sonuc);  // 5
 ```
 
-**_.sort() method_**
+**_.sort() Metot_**
 
-- Bu method ile dizi içerisindeki elemanları sıralama yapabiliriz.
+- Bu Metot ile dizi içerisindeki elemanları sıralama yapabiliriz.
 - Orjinal dizi sıralanmış olarak geri döner.
 - Eğer parametre olarak bir fonksiyon verilmezse dizi elemanları string'e çevrilir ve UTF-16 değerlerine göre sıralanır.
 - Artan veya azalan olarak sıralamak için (sayi1-sayi2)-> artan, (sayi2-sayi1)-> azalan şeklinde parametreler verilir. Aşağıdaki örnekleri inceleyiniz.
@@ -1747,7 +1747,7 @@ someNumbers.sort((a, b) => b - a);
 console.log("Dizinin büyükten küçüğe sıralanması : ", someNumbers); //Dizinin küçükten büyüğe sıralanması : [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-**_.reduce() method_**
+**_.reduce() Metot_**
 
 - Bu metot dizimizi yalnızca bir değere indirger.
 - Parantez içerisine parametre olarak bir fonksiyon ve accumulator'ün (toplayıcının) başlangıç değeri girilir
@@ -1935,10 +1935,10 @@ console.log(myResult); // undefined geriye bir değer dönmediği gözlemlenmiş
 ```
 
 **Filter ile Array İçerisinde Sadece İstenilen Bilgilerin Yeni Listeye Eklenmesi**
-**Filter Methodu**
+**Filter Metotu**
 
-- Bu array methodu dizi elemanlarını döngüye sokarak istediğimiz koşulu sağlayan elemanları alarak yeni bir array oluşturmamızı sağlar.
-- Bu array methodu, bir fonksiyon alır ve sonunda yeriye yeni bir array döndürür. Mevcut array üzerinde herhangi bir değişiklik yapmaz.
+- Bu array Metotu dizi elemanlarını döngüye sokarak istediğimiz koşulu sağlayan elemanları alarak yeni bir array oluşturmamızı sağlar.
+- Bu array Metotu, bir fonksiyon alır ve sonunda yeriye yeni bir array döndürür. Mevcut array üzerinde herhangi bir değişiklik yapmaz.
 
 ```
 const products = ["Mikrofon","Kablo","Telefon","Bilgisayar","Mouse","Klavye","Ekran"];
@@ -1964,8 +1964,8 @@ console.log(isActiveUsers); // [{ fullName: 'Ali Duran', isActive: true },  { fu
 
 **Map ile Array İçerisideki Yapının Değiştirilerek Yeni Liste Oluşturulması**
 
-- .map() bir array methodudur.
-- Bu method mevcut arrayın üzerinde değişiklikler yaparak yeni bir array olarak geriye döner.
+- .map() bir array Metotudur.
+- Bu Metot mevcut arrayın üzerinde değişiklikler yaparak yeni bir array olarak geriye döner.
 
 ```
 const names = [
@@ -2037,3 +2037,290 @@ const newSalary = maaslar.map((salary) =>
 console.log(`eski maaşlar: ${maaslar}`); // eski maaşlar: 1100,13000,2500,4500,1500,25000,2000
 console.log(`Zamlı maaşlar: ${newSalary}`);  // Zamlı maaşlar: 1375,14950,3125,5175,1875,28750,2500
 ```
+
+## 4.25- Object (Nesne) Nedir? Nasıl Oluşturulur?
+
+Object yani objeler javascript te çok önemli bir yere sahiptir. Nasıl çalıştıklarını anlamak bir frontend developer için hayati öneme sahiptir. Bu nedenle çok iyi anlamamız gerekir.
+**_Tanımı :_** Obje içerisinde birden fazla değeri depolayan yapılardır. _Property_ olarak bilinen bu değerler _primitive(String, number, boolean v.b.)_ veya başka objeler olabilir ve her bir değer string veya sembol ile isimlendirilebilir.
+
+```
+const cars = {
+  model: "auris",
+  brand: "toyota",
+  release_year: 1998,
+  users: { user1: "ziya", user2: "eda" },
+};
+
+```
+
+**Obje Oluşturma**
+
+- Obje 3 şekilde oluşturulabilir.
+- _new_ keyword'ü iel oluşturulabilir.
+- Süslü parantezler ( { } ) kullanılarak oluşturulabilir.
+- Son yöntem ise _Object.create()_ yöntemidir. Şimdi bu yöntemleri örnekler ile inceleyelim.
+
+```
+// new keyword'ü ile oluşturma
+let student = new Object();
+student.name = "ziya";
+student.lastname = "çaylan";
+student.age = 39;
+
+console.log(student); // { name: 'ziya', lastname: 'çaylan', age: 39 }
+```
+
+```
+// Süslü parantezler kullanılarak oluşturma
+let phone = {
+  brand: "samsung",
+  model: "S7-edge",
+  capacity: "32GB",
+  ram: "4GB",
+};
+
+console.log(phone);  // { brand: 'samsung', model: 'S7-edge', capacity: '32GB', ram: '4GB' }
+```
+
+```
+// Object.create yöntemi
+/*Herhanbi bir yerden kalıtım almayacaksa _null_ parametresi atamamız gerekecektir.  */
+let noInheritence = Object.create(null); //herhangi bir kalıtım(inheritence) almaz
+
+/*standartObject isimli obje örneği, object literal ve new object keyword ile oluşturulan objelerin prototiplerini parametre olarak aldığı için, onlar gibi çalışır.*/
+let standartObject = Object.create(Object.prototype); //standart obje kalıtımı alır.
+
+let myPhone = Object.create(phone);
+myPhone.brand = "Samsung";
+myPhone.model = "S7";
+myPhone.capacity = "96GB";
+myPhone.ram = "4GB";
+
+console.log(myPhone); // { brand: 'Samsung', model: 'S7', capacity: '96GB', ram: '4GB' }
+```
+
+**Object Anahtar(Key) ve Değer(Value) Yapısının Kullanımı ve Metodları**
+Bir objenin Syntax' ı aşağıdaki gibidir.
+
+_let-const object_name = { key : value }_
+
+```
+let car = {
+ brand: "BMW", 	// key(anahtar) "brand" "BMW" value(değerini) tutar
+ year: 2020,  		// key(anahtar) "year" 2020 value(değerini) tutar
+};
+```
+
+- Property değerlerine noktalı yazım(dot notation) kullanarak erişilebilir
+
+```
+console.log(car.brand); // "BMW"
+```
+
+- Birden fazla kelime içeren property name kullanabiliriz, ancak bunlar tırnak (" ") içinde kullanılmalıdır:
+
+```
+let car = {
+  brand: "BMW",
+  year: 2020,
+ "is manual" : true,
+};
+```
+
+**- Köşeli Parantez (Square brackets ) Kullanımı**
+
+- Birden fazla kelime içeren property'ler için dot notation kullanamayız. Bunun yerine “square bracket notation” yani köşeli parantezli yazım kullanılır:
+
+```
+let person= {};                     // set (oluştur)
+person["likes sea"] = true;         // get (getir)
+console.log(person["likes sea"]);   // true (doğru)
+delete person["likes sea"];         // delete (sil)
+```
+
+- Köşeli parantezli yazım aynı zamanda property name getirmede kullanılabilir:
+
+```
+let animal= {};           // set
+let key = "flies";        // key atama
+animal[key] = true;       // value atama
+```
+
+**Computed property kullanımı**
+
+- Bir obje oluştururken key'ler için köşeli parantezler yardımı ile dinamik değerler (variable) kullanabiliriz. Buna hesaplanmış öaellikler (Computed property) denir.
+- Computed properties, objedeki hangi property'nin güncelleneceğini dinamik olarak seçmemize olanak tanır.
+
+```
+// Computed property
+
+let updateObj = (key_1, value_1, key_2, value_2, key_3, value_3) => {
+  return { [key_1]: value_1, [key_2]: value_2, [key_3]: value_3 };
+};
+
+let myCar = updateObj(
+  "brand",
+  "qashqai",
+  "model",
+  "qashqai",
+  "release year",
+  2016
+);
+
+console.log(myCar); //{ brand: 'qashqai', model: 'qashqai', 'release year': 2016 }
+```
+
+**Kompleks Objeler Kullanımı**
+Objelerin asıl amaçlarından biride yazılan uygulamaların state'lerini yönetmektir. Bu nedenle kompleks uygulamalarda da kompleks objeler kullanılmaktadır. Aşağıdaki örneği inceleyiniz:
+
+```
+let state = {
+	users:[
+		{name: "Brock", age: 25, favoriteColor: "red"},
+		{name: "Jessie", age: 17, favoriteColor: "yellow"},
+		{name: "James", age: 41, favoriteColor: "blue"},
+		{name: "Winnie", age: 18, favoriteColor: "purple"}
+	],
+	settings:{
+		version: "1.0.5",
+        DNS: "105.xx.xx.xx",
+        website: "https://www.example.com/"
+	},
+	banList: ["Ash", "Angelica", "Tom", "Jerry"]
+}
+```
+
+Yukarıdaki örnekte propertilere ulaşmayı deneyelim.
+
+```
+console.log(state);
+
+console.log(state.users[1].name); // state objesinin users property'sinin (ki bu property bir dizidir) 1. index'teki elemanının ( buda bir objedir.) name property'si
+
+console.log(state.settings.website); // https://www.example.com/
+```
+
+**JSON Veri Tipini Obje Olarak Kullanmak**
+Projenizde JSON dosyalarıyla çalışabilmeniz için önce onu dosyada import etmeniz ve obje şekline çevirmeniz gerekmektedir. Bu işlem çok basit bir şekilde yapılabilir.
+
+```
+const veri = require("./dosyanizin/dizini/veri.json") // Bu işlemde require fonksiyonu ile dosyanızı import etmektesiniz
+
+// Bu işlemden sonra veri bileşenini obje şeklinde kullanabilirsiniz.
+```
+
+**_Anahtar NOTLAR :_** **ÖZET**
+
+- Objeler, birkaç özel niteliğe sahip ilişkilendirilebilir array(dizi)'lerdir.
+- Key / value şeklinde property'leri saklar.
+- Key ifadesi string veya sembol olmalıdır.
+- Value ifadesi herhangi bir değer alabilir.
+- Belli bir property'e erişmek için kullanabileceklerimiz:
+  - Dot notation: obj.property
+  - Square brackets notation obj[“property”]. Bu özellik key'in obj[varWithKey] gibi bir değişkenden alınmasına izin verir.
+
+Bu zamana kadar bahsettiğimiz objeler “plain object” olarak isimlendirilir.
+
+**Obje Metotları**
+
+- Object.keys(obj) – Key’lerden oluşan bir array döner(return).
+- Object.values(obj) – Value’lardan oluşan bir array döner.
+- Object.entries(obj) – [key, value] çiftlerinden oluşan bir array döner.
+
+Tüm bu Object.\* metotları array veri tipinde değer döner.
+
+```
+let person = {
+  name: “Jack”,
+  age: 20
+};
+
+console.log(Object.keys(person)); //["name", "age"]
+console.log(Object.values(person)); //["Jack", 20]
+console.log(Object.entries(person)); //[ ["name","Jack"], ["age",20] ]
+```
+
+**JSON Metotları**
+
+- Objenizi String veri türüne çevirip, projenizde objelerinizi direk sayfaya basmak isterseniz, onun içinde bir metot bulunmakta.
+
+```
+//JSON Metotları
+
+let human = {
+  name: "ziya",
+  lastName: "çaylan",
+  age: 39,
+};
+let stringObject = JSON.stringify(human); // JSON tipine dönüştürüldü
+console.log(stringObject);  // {"name":"ziya","lastName":"çaylan","age":39}
+
+let newHuman = JSON.parse(stringObject); // JSON tipinden obje tipine dönüştürüldü.
+
+console.log(newHuman);  // { name: 'ziya', lastName: 'çaylan', age: 39 }
+```
+
+**Nesnelere Nasıl Metot Ekleriz?**
+
+- Nesnenin bir özelliği bir fonksiyonu işaret ediyor ise buna metot denir.
+- Metod nesneye iki şekilde eklenebilir.
+  Birincisi : Nesneye property olarak elkeme
+  İkincisi : Nesneye prototype (prototip) fonksiyonu üzerinden eklemek.
+
+```
+/*Nesneye fonksiyon ekleme */
+let developer = {
+  name: "Ziya",
+  surname: "ÇAYLAN",
+  age: 39,
+  city: "İstanbul",
+  introduce: function () {
+    console.log(
+      `My name is ${this.name} ${this.surname}, I'm ${this.age} years old.`
+    );
+  },
+};
+
+console.log(developer);
+console.log(developer.introduce());
+```
+
+**Aşağıdaki örnekte _constructor_ kullanarak da bir nesne tanımlama yapılmıştır.**
+
+```
+// Constructor
+function ogrenci(isim, yas) {
+  this.isim = isim;
+  this.yas = yas;
+}
+
+const ali = new ogrenci("ali", 21);
+console.log(ali.yas); // 21
+console.log(ali);  // ogrenci { isim: 'ali', yas: 21 }
+
+ali.yeniOzellik = "Sonradan eklenmiş bir özellik";
+console.log(ali.yeniOzellik); // "Sonradan eklenmiş bir özellik"
+
+console.log(ali.yas); // 21
+console.log(ali); // ogrenci { isim: 'ali', yas: 21 }
+```
+
+**Objeye prototype yardımıyla fonksiyon eklemek :**
+
+```
+//Sınıfa Prototype yardımıyla fonksiyon eklemek :
+ogrenci.prototype.yeniFonksiyon = () => {
+  console.log("Merhaba Kodluyoruz");
+};
+const ayse = new ogrenci("ayşe", 22);
+ayse.yeniFonksiyon(); // "Merhaba Kodluyoruz"
+
+ayse.__proto__.enYeniFonksiyon = () => {
+  console.log("Tekrar Merhaba Kodluyoruz!");
+};
+
+ayse.enYeniFonksiyon();
+// Output : "Tekrar Merhaba Kodluyoruz!"
+```
+
+**Object ve Array Destructuring Kullanımı**
