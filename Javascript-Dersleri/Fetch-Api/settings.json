@@ -1,0 +1,8 @@
+{
+  "userName": "ziya",
+  "password": "1234abc",
+  "serverIP": "127.0.0.1",
+  "serverName": "kodluyoruz.org",
+  "isActive": true,
+  "userID": [1, 2, 3, 4, 5, 6]
+}

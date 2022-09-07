@@ -2425,3 +2425,114 @@ Normalde kod çalışırken herhangi bir hata ile karşılaşılırsa Javascript
 - **throw** ifadesi bize özel hatalar oluşturmamıza olanak tanır. Teknik olarak _throw_ ile bir istisna _(hata)_ atılabilir.
 
 ## 4.27- Fetch API ile Çalışmak
+
+Fetch APİ kaynakların getirilmesine yönelik basit bir arayüzdür. Asenkron olarak veri alıp göndermemize olanak sağlamaktadır. Yani _Promise_ tabanlı olduğundan _async_ yapıdadır. _Promise_ özelliği _ES6_ ile birlikte gelen bir özelliktir. Callback fonksiyonu yerine yazabiliriz.  
+Bunu bir örnekle açıklamak gerekir ise; diyelimki biz bir kasadan sipariş verdik ve siparişi kasada bekliyoruz. Şayet sipariş gelene kadar kasada beklersek bir sonraki kişinin sipariş vermesini engellemiş oluruz. İşte bu noktada siparişi verip kenarda beklerken kasa, "tamam ben senin siparişini aldım sana söz veriyorum _(Promise)_ siparişini teslim edicem" deyip sıradakinin de siparişini alması durumu bize uyugn bir örnek olacaktır.
+
+**- fetch()**, bu yöntem bir kaynak almak için kullanılır.
+
+**- Headers**, response/request başlıklarını temsil ederek bunları sorgulamanıza ve sonuçlara bağlı olarak farklı eylemler gerçekleştirmenize olanak tanır.
+
+**- Request** , bir kaynak talebini temsil eder.
+
+**- Response**, bir isteğe verilen yanıtı temsil eder.
+
+**Temel Fetch Kullanımı**
+_fetch(url)_ Fetch api'yi kullanmak için bu metoda istek yapacağımız url'i parametre olarak veriyoruz.
+
+```
+const url = "istek yapıacak adres";
+
+fetch(url);
+```
+
+- fetch() metodunun sonuna _then()_ promise metodunu ekleyebiliriz.
+
+```
+.then(function() {
+})
+```
+
+Aşağıdaki örneği inceleyelim:
+
+```
+const url = "https://jsonplaceholder.typicode.com/todos";
+
+fetch(url).then((response) => response.json()) //parse json data
+          .then(function (todos) {
+                  todos.forEach((todo) => {
+                    console.log(todo.title); // başlıklarkonsola yazdırılıyor.
+                  });
+          });
+```
+
+```
+💭 POST isteği ile verimizi servera gönderelim
+let payload = {
+    title: "Blog Title",
+    body: "lorem ipsum",
+    userId:1
+  }
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {"Content-type": "application/json; charset=UTF-8"}
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(err => console.log(err));
+```
+
+**Aşama aşama fetch().then().then().catch() yapısı:**  
+Şayet bir noktadahata ile karşılaşırsan catch ile hatayı yakalarız.  
+![fetch-api yapısı](./Javascript-Dersleri/assets/fetch-api.jpg)
+
+Fetch-Api için verimli bir örnek;
+
+```
+let isError = false;
+function getCategory() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (!isError) {
+        resolve("phone");
+      } else {
+        reject("error");
+      }
+    }, 1500);
+  });
+}
+
+function getProducts(category) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`5 products in ${category}`);
+    }, 1500);
+  });
+}
+
+getCategory()
+  .then(getProducts)
+  .then((res) => console.log(res));
+
+async function getProduct() {
+  try {
+    let category = await getCategory();
+    let result = await getProducts(category);
+
+    console.log(result);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+```
+
+**KAYNAKLAR**  
+_- patika.dev_  
+_- developer.mozilla.org_  
+_- w3schools.com_  
+_- medium.com_  
+_- ethemkeskin.com_  
+_- Json Placeholder API_  
+_- Udemy_
