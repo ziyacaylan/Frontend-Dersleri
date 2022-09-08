@@ -1,0 +1,12 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "patika.dev",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "ziyacaylan",
+  "license": "ISC"
+}
