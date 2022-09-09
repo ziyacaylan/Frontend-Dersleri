@@ -2,6 +2,8 @@
 
 # İÇİNDEKİLER
 
+**---> Bu kısım daha sonra güncellenecektir.**
+
 1.  [HTML Dersleri](./html.md/#html-dersleri)  
     1.1. [Html nedir?](./html.md/#11-html-nedir)  
     1.2. [Html ne yapar?](./html.md/#12-html-ne-yapar)  
