@@ -1,0 +1,20 @@
+body {
+  font-family: Verdana, monospace, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: justify;
+  min-height: 800px;
+}
+h1 {
+  text-align: center;
+  color: blueviolet;
+  font-size: larger;
+  text-decoration: underline;
+}
+.container {
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  position: relative;
+  margin: auto;
+}
