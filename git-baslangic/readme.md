@@ -1,3 +1,0 @@
-## BAŞLIK
-
-Deneme olarak eklenmiştir.
