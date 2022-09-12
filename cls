@@ -281,4 +281,299 @@ Date:   Mon Jun 27 15:27:06 2022 +0300
     node module kullanılacak
 
 [33mcommit f5f3cd7e0214dd381c9ba4a43baeb96dae3c9874[m
-Author: ziyacaylan <ziyacaylan@gmail.com
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Mon Jun 27 14:27:19 2022 +0300
+
+    css grid örnek uyuglama yapıldı
+
+[33mcommit a19cadc80d1fe2239db49dee35c20a9fe78c0ea8[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 22 19:07:55 2022 +0300
+
+    bootstrap ile örnek site tamamlandı
+
+[33mcommit 925456603ad0b6866130bc6fbe0696af572baa4e[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Tue Jun 21 17:05:49 2022 +0300
+
+    patika-bootstrap-medium-sitesi örnek tamamlandı
+
+[33mcommit b21e00cccd780567e393dcd8b9b2d5d57611d791[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Mon Jun 20 22:21:58 2022 +0300
+
+    patika-bootstrap-ödev-2 güncellendi
+
+[33mcommit b0537c75dfb4c3099297132515cb858c449b47d9[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Mon Jun 20 22:17:33 2022 +0300
+
+    Patika-Bootstrap-Odev-2 tamamlandı
+
+[33mcommit 865f4008dffa24cc090ea1ccf595eb7ffaf269b5[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Mon Jun 20 20:20:51 2022 +0300
+
+    bootstrap işlendi
+
+[33mcommit eed6566431161b7d6b6e4e1a99e34ad7025ae31e[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 18 00:19:07 2022 +0300
+
+    patika-bootstrap-odev-1 tamamlandı
+
+[33mcommit ed90f950204063f0e8afe8b55b5393d3ec3b9dfd[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Fri Jun 17 18:12:30 2022 +0300
+
+    animation işlendi
+
+[33mcommit 94f718b2300f97e260b4e4a6ae6cd93d0df281cc[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu Jun 16 21:18:13 2022 +0300
+
+    transition ve transform işlendi
+
+[33mcommit 1bb474e895e10f8aac8bc5cd1fac5e710766681c[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu Jun 16 18:35:29 2022 +0300
+
+    bootstrap giriş
+
+[33mcommit ed0eda45cc907c5a5e07c69f2a0279cf9efa0e7e[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu Jun 16 17:44:13 2022 +0300
+
+    grid dersi bitti
+
+[33mcommit 05b71ee2c653688cf762afad81b984c5e17466b5[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 15 20:33:18 2022 +0300
+
+    içindekiler düzenlendi
+
+[33mcommit 5502d6478555f7b21f1f71d3401a2098e9cc7ef2[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 15 17:13:07 2022 +0300
+
+    içindekiler düzenlemesi yapıldı
+
+[33mcommit 043d14444a05ccb5f98aa8084c4675ad910f2cfa[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 15 16:48:46 2022 +0300
+
+    css grid örnek site işlendi
+
+[33mcommit b940045cbbca238a9e1cd8e2d8965f648afcf86f[m
+Merge: 7971e67 fa202c4
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Mon Jun 13 14:10:39 2022 +0300
+
+    Merge branch 'main' of https://github.com/ziyacaylan/Html-Css-Dersleri
+
+[33mcommit 7971e676dd9ebfee4e5d24da8f14d82fd81d5a1e[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Mon Jun 13 14:09:51 2022 +0300
+
+    patika-bootstrap-odev-baslangic
+
+[33mcommit fa202c41eb32e6202f0e499bfb311193d31bfcec[m
+Author: Ziya ÇAYLAN <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:20:58 2022 +0300
+
+    Update readme.md
+
+[33mcommit f978507aaa23706e8971574793e6ecf8d78eac28[m
+Author: Ziya ÇAYLAN <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:20:22 2022 +0300
+
+    Update readme.md
+
+[33mcommit 3e4ecbb3e06fde851ad2001890ff6cecac14af24[m
+Merge: 93213d6 1a4c563
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:19:50 2022 +0300
+
+    last
+
+[33mcommit 93213d6a25e2c546bee56343fa6fc3f874feee61[m
+Merge: 51a185c 12220c2
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:15:18 2022 +0300
+
+    some changing
+
+[33mcommit 1a4c563d20c391d381d9985443c6726c30e916cb[m
+Author: Ziya ÇAYLAN <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:14:12 2022 +0300
+
+    Update readme.md
+
+[33mcommit 331ba0f1436144117c8545f4ea46b32486122e95[m
+Author: Ziya ÇAYLAN <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:13:23 2022 +0300
+
+    Update readme.md
+
+[33mcommit 51a185cbd34b6fecaa8cf92770adaf7558018da2[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:12:23 2022 +0300
+
+    html and css image added
+
+[33mcommit 12220c2824ba20dc6ce37f99e69d566ed00600cf[m
+Author: Ziya ÇAYLAN <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 14:05:56 2022 +0300
+
+    Update readme.md
+
+[33mcommit ddad74da3790ee2eafd4bb2661fcc2ea90d08868[m
+Merge: 901b5c8 100c183
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 13:55:28 2022 +0300
+
+    Merge branch 'main' of https://github.com/ziyacaylan/Html-Css-Dersleri
+
+[33mcommit 901b5c8dc46d4e28594b4467a4cc67f2ce2c7f5c[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 11 13:55:26 2022 +0300
+
+    css grid
+
+[33mcommit 100c1833902cec51998997310305a93fc5a04f5c[m
+Author: Ziya ÇAYLAN <ziyacaylan@gmail.com>
+Date:   Sun Jun 5 09:29:07 2022 +0300
+
+    Update readme.md
+
+[33mcommit f0120a4d5246a68824864012ccc4341bf65e98a5[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Sat Jun 4 22:39:39 2022 +0300
+
+    last modified
+
+[33mcommit 1978a5f2c050dcaa2d7b49b4f7b5d14470c42666[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Fri Jun 3 18:34:51 2022 +0300
+
+    hotel project finished
+
+[33mcommit 5f10bf144238d3c81364253dddbdf28837b3949b[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu Jun 2 23:40:29 2022 +0300
+
+    hotel project started
+
+[33mcommit efbf9c855cdf663f52f90ab2113462f4a1aaf59b[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu Jun 2 19:06:05 2022 +0300
+
+    flex examples
+
+[33mcommit 12bf4477e201f32253470bbf3610ac196a1202e3[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu Jun 2 13:04:27 2022 +0300
+
+    flex-aligments finished
+
+[33mcommit be5eb8052977c3b8c19fd98a40843acf0a29604b[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 1 19:51:47 2022 +0300
+
+    flexbox elignments finished
+
+[33mcommit 8d50f0da74d096969a937bebc35b43b762dceed3[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 1 16:42:07 2022 +0300
+
+    properties of tle flex container entered
+
+[33mcommit dc496aa80317473bd8108a7a3b0e1fde9fbcef02[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 1 16:16:01 2022 +0300
+
+    flex entered
+
+[33mcommit a0474eb41ff0f61e820de9183d75f8e97a770268[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed Jun 1 15:49:25 2022 +0300
+
+    css example finished
+
+[33mcommit 5125b63117de62b74098d99bed7715c44479a1f0[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Tue May 31 23:48:18 2022 +0300
+
+    position finished
+
+[33mcommit adda6667261e9c5a02323b90037d664a7c30dcb3[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Tue May 31 19:56:25 2022 +0300
+
+    position relative and absolute added
+
+[33mcommit 15d0c14450d3bff26b7dbf822cfce0917cb2d8ea[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Tue May 31 17:19:17 2022 +0300
+
+    floating end
+
+[33mcommit e408f8d82f59014a11285e77f5531755fb0edaa0[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Tue May 31 15:06:25 2022 +0300
+
+    background-image covered
+
+[33mcommit a7feaac76e0c99dbd4457fd829052b126cf34ad0[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Fri May 27 16:11:22 2022 +0300
+
+    css dersleri navbar styling display
+
+[33mcommit c789fd85249d73ed2b36987eca66cbd99f71ade4[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 23:58:03 2022 +0300
+
+    Patika Css Odev-3 tamamlandı
+
+[33mcommit 394bcbd783a4354edcf0050e55dfc61aebd96111[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 18:21:29 2022 +0300
+
+    Patika-Css-Odev-2 tamamlandı
+
+[33mcommit b7625f54bf1258961e888566ba28219fece9ed79[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 16:37:55 2022 +0300
+
+    css ders sonu
+
+[33mcommit d82e5dc489a2e993489010de2fe494061483e49a[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 16:22:40 2022 +0300
+
+    Css dersleri güncellendi
+
+[33mcommit cd2c9e73a6e5f5c8a1498901b9f0a70ff8cdbe1d[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 14:16:56 2022 +0300
+
+    css dersleri hatalı resim düzeltildi.
+
+[33mcommit 3f6911bd584cd26ae5157aeaff8b62d4d862c8c6[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 14:14:47 2022 +0300
+
+    css dersleri güncellendi
+
+[33mcommit 05636d3fa15497087e4e6c3d3e7e44905add91d2[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Thu May 26 13:12:37 2022 +0300
+
+    patika css ödev 1 tamamlandı
+
+[33mcommit f9449e93e63aa261bbfae9a7bcc9fffba31edae4[m
+Author: ziyacaylan <ziyacaylan@gmail.com>
+Date:   Wed May 25 16:58:24 2022 +0300
+
+    last modified
