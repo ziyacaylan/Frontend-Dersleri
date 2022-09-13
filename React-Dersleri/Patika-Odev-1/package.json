@@ -1,0 +1,17 @@
+{
+  "name": "odev-1",
+  "version": "1.0.0",
+  "description": "patika-frontend orta seviye react dersleri ödev 1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "ziyacaylan@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^3.2.10",
+    "slugify": "^1.6.5"
+  }
+}
