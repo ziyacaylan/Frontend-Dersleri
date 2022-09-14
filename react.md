@@ -58,3 +58,14 @@ React kullanmaya başlamadan önce bazı kurulumları tamamlamamız gerekir.
     }
     Is this OK ? (Yes)   // yukarıdaki json dosyasını bize lisans seçiminden sonra üretir ve sonunda herşey yolundamı gibi bir soru ile işlem tamamlanır.
   ```
+
+## 5.2- React Uygulaması Oluşturma
+
+Öncelikle _react_ ile proje oluşturmadan önce yukarıda da değindiğimiz gibi node.js bilgisayarımızda yüklü (react geliştirme ortamının hazır olması) olması gerekmektedir. React baştan sona aşamalı olarak kullanılabilecek şekilde tasarlanmıştır. Yani ihtiyacımıza göre kullanmak mümkündür.(İstediğimiz kısımları kurup çalıştırabiliriz.)
+
+- create-react-app komutu ile hızlı bir şekilde bir proje oluşturmak mümkündür.
+  Terminal ekranında projeyi oluşturacağımız dizine fokus olduktan sonra aşağıdaki komutu çalıştırıp bizim için projenin oluşturulmasını bekleriz.
+
+```
+
+```
