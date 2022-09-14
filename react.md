@@ -67,5 +67,159 @@ React kullanmaya başlamadan önce bazı kurulumları tamamlamamız gerekir.
   Terminal ekranında projeyi oluşturacağımız dizine fokus olduktan sonra aşağıdaki komutu çalıştırıp bizim için projenin oluşturulmasını bekleriz.
 
 ```
+npx create-react-app [proje_ismi]  // proje_ismi yazan bölüme projemizin ismini yazarak projenin oluşturulmasına başlanır. Bu işlem kısa bir süre sürecektir.
+```
+
+- Kurulum tamalandığında proje klasörümüz içerisine fokus olalım.
 
 ```
+cd [proje_ismi]  // proje isiminin olduğu klasörün içerisine girdik.
+```
+
+- *npm start*komutu ile oluşturduğumuz projemizi çalıştırırız. Çalışma tamamlandığında browserda ilk ekrnımız bizi karşılayacaktır.
+  Konsolda proje çalıştığında aşağıdaki çıktıyı alacağız.
+
+```
+Compiled successfully!
+
+You can now view hello-react in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.1.35:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+```
+
+Projenin klasöy yapısı aşağıdaki gibi olacaktır.
+
+![react-proje-klasor-yapısı](./React-Dersleri/assets/react-klasor-yapisi.jpg)
+
+**Proje Yapımızı biraz tanıyalım**
+
+- _node_modules_ klasörü bizim bağımlılıklarımızın olduğu bir klasördür. İhtiyaç duyduğumuz bağımlılıklarımızı yüklediğimizde bu klasör altında toplanacaktır.Proje _gitHob_' a yüklenirken genelde yüklenmez.
+- _public_ klasörümüz ise build edildiğinde çıktının oluşacağı klasördür.
+- _src_ klasörü ise işte bizim geliştirme ortamımızda kullanacağımız bolca işlem yapacağımız klasördür. Konular ilerledikçe içerisindeki dosyalara denineceğim.
+
+Diğer dosyalara sırası geldikçe konu içerisinde bağsedeeğim.
+
+## 5.3-Component Nedir?
+
+Companenetler, uygulamamızı tekrar kullanılabilir parçalara ayırmamıza ve her parçayı ayrı ayrı dizayn etmemize izin veren yapılardır. Sitenizi büyük bir puzzle olarak düşünün. React ile önce teker teker puzzle parçalarını oluşturup ardından bunları birleştirerek büyük resmi oluşturacaksınız.
+
+Componentler aslında fonksiyon gibi çalışır. Parametre gönderilebilir (bunları props diye adlandırıyoruz), yapacağı spesifik işlemi yapar ve ekranda neler görüneceğini açıklayan React elementleri return ile döndürürler.
+
+**Component Oluşturmak/Kullanmak**
+İlk kompanentimizi oluşturmadan önce projemizi oluşturduğumuzda gelen hazır yapımıza bir bakalım ve inceleyelim. Daha sonra ise kendi components klasörümüzü oluşturarak içerisinde kendi ilk kompanentimizi oluşturalım.
+
+```
+import logo from "./logo.svg";
+import "./App.css";
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+_App.js_ dosyamızın içeriği yukarıdaki gibidir. Browser'ımız çalıştığında ekranda olan görüntüyü bize sunan yapı şu anda bu fonksiyondur.
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+
+_index.js_ dosyamız içerisine import edilen _App.js_ ReactDOM ile sayfamızdaki ilgili element seçilip içerisinde metodumuz çalıştırılır. Yukarıdaki _index.js_ kodlarından da görüldüğü üzere _root_ _id_'si yakalanmış ve bu element içerisinde hazırlanan kompanent yerleştirilmiştir. Şimdilik bu kısımda herhangi bir işimiz yoktur.  
+Önce _App.js_ içerisindeki bu fonksiyonu silerek kendimiz yeniden yazalım ve browser'ımız üzerinde değişiklikleri gözlemleyelim.
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Browserımızdaki çıktı :  
+![hello-react](./React-Dersleri/assets/hello-react-browser.jpg)
+
+**Şimdi ise kendi componentimizi oluşturalım :**
+
+- önce componenetlerimizi tutacağımız bir _components_ isimli klasör ekleyelim ve içerisine örnek olarak _Header.js_ isimli bir dosya ekleyelim. Bu dosya içerisinde kendi fonksiyonumuzu yazalım ve bu fonksiyonu dışarıya export etmeyi unutmayalım.
+
+```
+function Header() {
+  return (
+    <div>
+      <h2>Merhaba Ben Header Birleşeniyim.</h2>
+    </div>
+  );
+}
+
+export default Header;
+```
+
+Atık komponentimiz hazır ve bunu _App.js_ içerisine import ederek kullanabiliriz.
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <Header></Header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Ekran çıktımız :  
+![hello-react](./React-Dersleri/assets/hello-react-header-browser.jpg)
