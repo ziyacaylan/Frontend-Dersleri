@@ -1,13 +1,19 @@
 import "./App.css";
 
 import Header from "./components/Header";
+const myName = "Ziya";
+const mySurname = "Çaylan";
+const isLoggedIn = true;
 
 function App() {
   return (
-    <div>
-      <h1>Hello React</h1>
-      <Header></Header>
-    </div>
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Merhaba, Benim Adım ${myName} ${mySurname}`
+          : "Giriş yapmadızın..."}
+      </h1>
+    </>
   );
 }
 

@@ -223,3 +223,136 @@ export default App;
 
 Ekran çıktımız :  
 ![hello-react](./React-Dersleri/assets/hello-react-header-browser.jpg)
+
+**ANAHTAR NOKLAR:**
+
+- Kompanenet içerisinde fonksiyon yazarken dikkat etmemiz gereken fonksiyon isminin büyük harf ile başlayarak yazılmasıdır. Bunun sebebi ise biz daha sonra _render_ ederken bazen yazmış olduğumuz kompaneneti render edeceğiz bazen ise bir html elementini render edeceğiz. Bunların karışmaması gerekmektedir. Bu kod yazım standartlarına uymamız gerekmektedir.
+- Kompanenetimizin _render_ edilebilmesi için birde kapsayıcı bir elemana ihtiyacımız vardır.
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <Header></Header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki kod satırında kapsayıcı eleman _div_ elementimizdir. Şayet kullanmak istemezsek alternatifleri de mevcuttur. İstersek boş bir element olarak (_<> </>_)
+da kullanabiliriz. Ya da *React.Fragment*kullanabiliriz.
+
+```
+function App() {
+  return (
+    <>
+      <h1>Hello React</h1>
+      <Header></Header>
+    </>
+  );
+}
+
+```
+
+- Elemntlerimizi oluşturuken Javascriptin özel tanımlı keyword'lerini kullanmamamız gerekir. Aşağıdaki kod bloğunda label'ın for attribut' ü yazılmıştır. html sayfası üzerinde _Name_'e tıkladığımızda _input_'a fokus oluyoruz ancak konsol ekranını incelediğimizde hata alırız.
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <Header></Header>
+      <label for="my-input">
+        Name
+        <input id="my-input"></input>
+      </label>
+    </div>
+  );
+}
+
+export default App;
+```
+
+![hello-react](./React-Dersleri/assets/react-attribute-hata.jpg)
+
+Bu elemen içerisinde _for_ yerine _htmlFor_ attribute'ünün kullanmalıyız.
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <Header></Header>
+      <label htmlFor="my-input">
+        Name
+        <input id="my-input"></input>
+      </label>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Componentlerde Değişken Render Etmek**
+Bunu örnek kodlarımız üzerinde inceleyelim ve uygulayalım. _App.js_ içerisnde tanımladığımız değişkenleri süslü parantezler içerisinde yada **Template literals**'ler içerisinde aşağıdaki gibi tnımlayarak kullanabiliriz.
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+const myName = "Ziya";
+const mySurname = "Çaylan";
+function App() {
+  return (
+    <>
+      <h1>
+        Merhaba, Benim Adım {myName} {mySurname}
+      </h1>
+      <hr />
+      <h1>{`Merhaba, Benim Adım ${myName} ${mySurname}`}</h1>
+    </>
+  );
+}
+
+export default App;
+```
+
+**Koşullu Render İşlemi**
+
+```
+import "./App.css";
+
+import Header from "./components/Header";
+const myName = "Ziya";
+const mySurname = "Çaylan";
+const isLoggedIn = false;  // true olursa Merhaba, Benim Adım Ziya Çaylan, false olursa 'Giriş yapmadızın...' yazacaktır.
+function App() {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Merhaba, Benim Adım ${myName} ${mySurname}`
+          : "Giriş yapmadızın..."}
+      </h1>
+    </>
+  );
+}
+
+export default App;
+```
