@@ -356,3 +356,444 @@ function App() {
 
 export default App;
 ```
+
+## 5.4-Props Nedir? Nasıl Kullanılır?
+
+Oluşturacağımız komponenetlerde parametre geçmek isteyebiliriz.Props’lar , bir componentten başka bir componente veri aktarımı yapmamızı sağlar. Props’lar salt okunur (read-only) dir. Değiştirilemezler. Data; ana componentten alt componentlere geçerken alt componentler tarafından herhangi bir değişime uğramaz.
+
+İlk oluşturduğumuz projemize **components** klasörüne bir _User_ componenti ekleyerek bunun üzerinde _props_'ları inceleyelim.  
+**User.js** içeriğine fonksiyonumuzu yazalım ve dışarıdan göndereceğimiz _props_'ları alarak kullanalım.
+
+```
+const User = (props) => {
+  return (
+    <>
+      <h1>
+        {props.isLoggedIn
+          ? `${props.name} ${props.surname}`
+          : "Giriş yapmadınız..."}
+      </h1>
+    </>
+  );
+};
+
+export default User;
+```
+
+Daha sonra ise bu componeneti App.js içerisine import ederek komponentimize props'ları gönderelim.
+
+```
+import "./App.css";
+import User from "./components/User";
+
+function App() {
+  return (
+    <>
+      <User name="Ziya" surname={"ÇAYLAN"} isLoggedIn={true} />
+    </>
+  );
+}
+
+export default App;
+
+```
+
+Browserda projemizi çalıştırdığımızda _isLoggedIn=true_ gönderdiğimizde ekranda ismimizin yazdığını gözlemleyebilirsiniz. _Eğer isLoggedIn=false_ gönderir isek ekranda bu sefer _"Giriş yapmadınız..."_ yazacaktır. Komponente props göndermenin diğer bir şekli de aşağıda verilmiştir.
+
+```
+const User = ({ name, surname, isLoggedIn }) => {
+  return <h1>{isLoggedIn ? `${name} ${surname}` : "Giriş yapmadınız..."}</h1>;
+};
+
+export default User;
+```
+
+Her defasında _props_ yazacağımıza süslü parantezler içerisinde gönderdiğimiz parametreleri yazabiliriz. Yazdığımız bu parametrelerin sıralı olmasına gerek yoktur. Karmaşık sıra ilede yazılabilir.
+
+**Props olarak Bir Array Geçmek**  
+Komponentimize prop olarakbir array geçmek istediğimizde bizden benzersiz bir _key_ bekleyecektir. Şimdi bunu aşağıdaki kodlarda inceleyelim.
+
+```
+import "./App.css";
+import User from "./components/User";
+
+//const friends =
+function App() {
+  return (
+    <>
+      <User
+        name="Ziya"
+        surname="ÇAYLAN"
+        isLoggedIn={true}
+        age={39}
+        friends={[
+          "Ali",
+          "Veli",
+          "Hasan",
+          "Hüseyin",
+          "Eda",
+          "Seda",
+          "Meda",
+          "Canan",
+        ]}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+Yukarıda _App.js_ dosyamozda _array_'imizi _prop_ olarak **User.js** komponenetimize geçtik. bizden beklediği keydeğerinide _index_ olarak verdik ve elementimizde kullandık. İnceleyiniz: Bu _key_ değeri mutlaka en dıştakı elemana verilmesi gereklidir.
+
+```
+const User = ({ name, surname, isLoggedIn, age, friends }) => {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${name} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend, index) => (
+        <h3 key={index}>
+          {" "}
+          {index} - {friend}
+        </h3>
+      ))}
+    </>
+  );
+};
+
+export default User;
+```
+
+Yukarıda kullandığımız ve komponenetin bizden beklediği _key_ değeri illa _index_ olmak zorunda değildir. Bunun yerine benzersiz bir parametrede verebiliriz.
+
+```
+import "./App.css";
+import User from "./components/User";
+
+const friends = [
+  { id: 1, fname: "Metin" },
+  { id: 2, fname: "Ali" },
+  { id: 3, fname: "Veli" },
+  { id: 4, fname: "Emel" },
+  { id: 5, fname: "Temel" },
+  { id: 6, fname: "Kazım" },
+];
+
+function App() {
+  return (
+    <>
+      <User
+        name="Ziya"
+        surname="ÇAYLAN"
+        isLoggedIn={true}
+        age={39}
+        friends={friends}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki kod satırından da görüleceği üzere bu sefer _props_ olarak komponentimize _object_'ten oluaş bir _array_ gönderdik. Nu object içerisinde _id_ bizim kullanabileceğimiz benzersiz bir parametredir. Doylayısı ile index yerine bunu kullanabiliriz.
+
+```
+const User = ({ name, surname, isLoggedIn, age, friends }) => {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${name} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend) => (
+        <h3 key={friend.id}>
+          {friend.id} - {friend.fname}
+        </h3>
+      ))}
+    </>
+  );
+};
+
+export default User;
+```
+
+**Prop Types**  
+Gönderdiğimiz _props_'ların tiplerini belirleyebileceğimiz araç _propTypes_'dır. Yazmış olduğumuz komponenti sadece biz kullanmayacağımızı düşünürsek; örneğin bir grup çalışması yapıyoruz ve bazı kısımları biz baılarınıise arkadaşlarımız geliştiriyor varsayalım. Gönderilecek props'ların tiplerini eğer baştan belirtir isek geliştirme aşamasında farklı bir geliştirici komponentimizi kullanırken yanlış tipte bir parametre kullanır ise hata vereektir. Böylece hatayı düzeltmek zorunda kalacağından hatalarınönüne de geçilmiş olur. Aşağıdaki kodları inceleyiniz.
+
+```
+import "./App.css";
+import User from "./components/User";
+
+const friends = [
+  { id: 1, fname: "Metin" },
+  { id: 2, fname: "Ali" },
+  { id: 3, fname: "Veli" },
+  { id: 4, fname: "Emel" },
+  { id: 5, fname: "Temel" },
+  { id: 6, fname: "Kazım" },
+];
+
+function App() {
+  return (
+    <>
+      <User
+        fname={123}
+        surname="ÇAYLAN"
+        isLoggedIn={true}
+        age={39}
+        friends={friends}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki kod satırında _fname_ **Number** olarak gönderilmiştir.
+
+```
+import PropTypes from "prop-types";
+
+function User({ fname, surname, isLoggedIn, age, friends }) {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${fname} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend) => (
+        <h3 key={friend.id}>
+          {friend.id} - {friend.fname}
+        </h3>
+      ))}
+    </>
+  );
+}
+
+User.propTypes = {
+  fname: PropTypes.string,
+  surname: PropTypes.string,
+  age: PropTypes.number,
+  isLoggedIn: PropTypes.bool,
+  friends: PropTypes.array,
+};
+export default User;
+```
+
+Yanlış yani _invalid_ gelen parametreden dolayı konsol ekranında görüntülenecek hata mesajı aşağıdaki gibi olacaktır.  
+![react-propsTypes-error](./React-Dersleri/assets/react-props-types-err.jpg)
+
+**Prop Types: isRequired**
+
+Proptypes lerini belirtirken gönderilmesi zorunlu alanları da işaretleyebiliriz. Böylece paramatre olarak mutlaka gönderilmesi gerekecektir. Bu işlem için propsTypes'lar belirtilirken tipten sonra nokta koyarak _isRequired_ yazmamız yeterli olacaktır.
+
+```
+function User({ fname, surname, isLoggedIn, age, friends }) {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${fname} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend) => (
+        <h3 key={friend.id}>
+          {friend.id} - {friend.fname}
+        </h3>
+      ))}
+    </>
+  );
+}
+
+User.propTypes = {
+  fname: PropTypes.string.isRequired,
+  surname: PropTypes.string,
+  age: PropTypes.number,
+  isLoggedIn: PropTypes.bool,
+  friends: PropTypes.array,
+};
+export default User;
+```
+
+**Prop Types: oneOfType**
+Gönderilen parametreler içerisinde bazılarını yada duruma göre istenilen bazı parametreleri bir veri tipinde değilde birden fazla veri tipinde kabul edilebilir. Böyle bir durumda ise _oneOfType_ keyword'ünü kullanırız.
+
+```
+function User({ fname, surname, isLoggedIn, age, friends }) {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${fname} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend) => (
+        <h3 key={friend.id}>
+          {friend.id} - {friend.fname}
+        </h3>
+      ))}
+    </>
+  );
+}
+
+User.propTypes = {
+  fname: PropTypes.string.isRequired,
+  surname: PropTypes.string,
+  age: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  isLoggedIn: PropTypes.bool,
+  friends: PropTypes.array,
+};
+export default User;
+```
+
+**Prop Types: shape**
+Obje olarak gönderdiğimiz porps'larda shape adında bir özelliğimiz daha vardır. Örneğin obje olarak bir adres bilgisi props' u gönderelim. Objemizin _title_ ve _zicode_ isimli iki adet _key_ değeri olsun bait olarak. Bunlarında tiplerinin belirtilmesi gerektiğinde _shape_ özelliğini kullanırız.
+
+```
+import "./App.css";
+import User from "./components/User";
+
+const friends = [
+  { id: 1, fname: "Metin" },
+  { id: 2, fname: "Ali" },
+  { id: 3, fname: "Veli" },
+  { id: 4, fname: "Emel" },
+  { id: 5, fname: "Temel" },
+  { id: 6, fname: "Kazım" },
+];
+
+function App() {
+  return (
+    <>
+      <User
+        fname={1231}
+        surname="ÇAYLAN"
+        isLoggedIn={true}
+        age={39}
+        friends={friends}
+        address={{ title: "Çekmeköy/İSTABUL", zipcode: 34660 }}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+```
+import PropTypes from "prop-types";
+
+function User({ fname, surname, isLoggedIn, age, friends, adress }) {
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${fname} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend) => (
+        <h3 key={friend.id}>
+          {friend.id} - {friend.fname}
+        </h3>
+      ))}
+    </>
+  );
+}
+
+User.propTypes = {
+  fname: PropTypes.string.isRequired,
+  surname: PropTypes.string,
+  age: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  isLoggedIn: PropTypes.bool,
+  friends: PropTypes.array,
+  adress: PropTypes.shape({
+    title: PropTypes.string,
+    zipcode: PropTypes.number,
+  }),
+};
+export default User;
+```
+
+**Default Props**
+Herhangi bir tanım yapılmamışbir prop'a default bir değer atanabilir.
+
+```
+import "./App.css";
+import User from "./components/User";
+
+const friends = [
+  { id: 1, fname: "Metin" },
+  { id: 2, fname: "Ali" },
+  { id: 3, fname: "Veli" },
+  { id: 4, fname: "Emel" },
+  { id: 5, fname: "Temel" },
+  { id: 6, fname: "Kazım" },
+];
+
+function App() {
+  return (
+    <>
+      <User
+        fname={1231}
+        surname="ÇAYLAN"
+        age={39}
+        friends={friends}
+        address={{ title: "Çekmeköy/İSTABUL", zipcode: 34660 }}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki kod satırlarında _isLoggedIn_ değerinin gönderilmediğine dikkat ediniz. Aşağıdaki komponenet içeriğimizde default değer olarak bu parametreye _false_ atanmış ve yapılan kontroller ile erken _render_ işlemi gerçekleştirimiştir.
+
+```
+import PropTypes from "prop-types";
+
+function User({ fname, surname, isLoggedIn, age, friends, adress }) {
+  if (!isLoggedIn) {
+    return <h2>Giriş yapmadınız...</h2>;
+  }
+  return (
+    <>
+      <h1>
+        {isLoggedIn
+          ? `Benim Adım : ${fname} ve Soyadım : ${surname}, Yaşım : ${age}`
+          : "Giriş yapmadınız..."}
+      </h1>
+      {friends.map((friend) => (
+        <h3 key={friend.id}>
+          {friend.id} - {friend.fname}
+        </h3>
+      ))}
+    </>
+  );
+}
+
+User.propTypes = {
+  fname: PropTypes.string.isRequired,
+  surname: PropTypes.string,
+  age: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  isLoggedIn: PropTypes.bool,
+  friends: PropTypes.array,
+  adress: PropTypes.shape({
+    title: PropTypes.string,
+    zipcode: PropTypes.number,
+  }),
+};
+
+User.defaultProps = {
+  isLoggedIn: false,
+};
+export default User;
+```
