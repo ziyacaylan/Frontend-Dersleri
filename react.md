@@ -1115,3 +1115,122 @@ export default InputExample;
 ```
 
 Bir fonksiyon ile işi böylece tamamladık. Bu tarz kullanımda dikkat etmemiz gereken kısım inputların _name_'leri de atanmıştır. İlerleyen derslerimizde bu form işlemlerini daha kolay gerçekleştiren kütüphaneler anlatılacaktır. Ancak arka planın nasıl işlediğinin bilinmesi adına bu uygulamalar öen marz etmektedir.
+
+## 5.6-Lifecycle
+
+**useEffect**
+React komponenetlerinin yaşam döngülerini ele alacağız. Yani bir komponenet güncellendiğinde, oluşturulduğunda yada kaldırıldığında durumlarını yakalayıp istersek işlem yapacağız. Proje üzerinde inceleyelim.
+
+```
+import "./App.css";
+import { useState, useEffect } from "react";
+
+function App() {
+  const [number, setNumber] = useState(0);
+  const [name, setName] = useState("Ziya");
+
+  useEffect(() => {
+    console.log("Component mount edildi.");
+  }, []);
+
+  useEffect(() => {
+    console.log("Component mount edildi.");
+  }, [number]);
+
+  useEffect(() => {
+    console.log("Component mount edildi.");
+  }, [name]);
+
+  return (
+    <div className="App">
+      <h1>increase number</h1>
+      <h2>{number}</h2>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+      <hr />
+      <h2>{name}</h2>
+      <button onClick={() => setName("Ziya ÇAYLAN")}>Change the name</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki kodlarda da görüldüğü üzere yeni projemizin _App.js_ komponenti altında elementlerimizi ekleyip yaşam döngülerini inceleyelim.Burada elementin mount olduğu anda yani DOM üzerinde oluşturulduğu anı yine react altındaki bir _hook_ ile yakalayıp işlem yapabiliyoruz. _useState_' de olduğu gibi bu seferde _useEffect_ keywor'ünü kullanacağız.
+
+```
+useEffect(() => {
+    console.log("Component mount edildi.");
+  }, []);
+```
+
+Yukarıdaki kod satırı fonksiyonumuzda return işleminden önce yazılmalıdır. Bir üstteki kod penceresinden de gözlemleyiniz. Burada _useEffect_'leri oluştururken dikkat etmemiz gereken başka bir husus ise bir kontrole sokmamamızdır. Yani _if_ veya farklı bir kontrol içerisinde _useEffect_' i belirtemeyiz.  
+useEffect içerisinde fonksiyonumuz yazıldıktan sonra, süslü parantezlerden sonra bir virgül konularak köşeli parantez yazılır. Köşeli parantez içerisinde bir değer belirtilmez ise bu sefer rayfa yüklendiğinde, elementler oluştuğunda fonksiyonumuz çalışacaktır. Yani her element mount olduğunda fonksiyonumuz bir kere çalışacaktır.
+
+```
+useEffect(() => {
+    console.log("Component mount edildi.");
+  }, [number]);
+```
+
+useEffect içerisinde bir değer belirtir isek bu defa sadece o elementi takip edecek ve staeinin durumunu yakalayacaktır.
+
+**Component Unmount**
+Komponenetlerin yaşam döngüsü bittiğindede aynewn mount edildiği andaki gibi yakalayabilir ve bu bilgiyi programımız içerisinde kullanabiliriz. Şimdi bu işlemi naıl yapıyoruz bir örnek program üzerinde incelemeye çalışalım.
+
+- Projemize components dizini altına yeni bir Counter.js komponenti ekleyelim.
+- _App.js_ içerisindeki counter elementimii buraya taşıyalım ve App componentimize sadece bir button ekleyelim.
+  _App.js_ aşağıdaki gibi olacaktır.
+
+```
+import { useState } from "react";
+import "./App.css";
+import Counter from "./components/Counter.js";
+
+function App() {
+  const [isVisible, setVisible] = useState(true);
+  return (
+    <div className="App">
+      {isVisible && <Counter />}
+      <button onClick={() => setVisible(!isVisible)}>Toggle</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+_Counter.js_ komponentimizi ise aşağıdaki gibi düzenleyelim.
+
+```
+import { useState, useEffect } from "react";
+
+function Counter() {
+  const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    console.log("Component mount edildi.");
+    const interval = setInterval(() => {
+      setNumber((n) => n + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    console.log("Component state güncellendi.");
+  }, [number]);
+
+  return (
+    <div>
+      <h1>increase number</h1>
+      <h2>{number}</h2>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+Olayımızı şu şekilde kurguladık. _setInterval_ metodumuzu kullanarak counter değerini her bir saniyede bir arttırıyoruz. Bu işlem için konsol ekranından elementin her seferinde render edilme işlemi takip edebiliriz. Aynı zamanda _App.js_ dosyamızdaki buton vasıtası ile visible/inVisible olayını takip edip elementin unmount olduğu anı gene konsol ekranından gözlemleyebiliriz.  
+Aklımıza şu aşamada gelen soru şu _"Neden bir elementin unMount yani DOMdan kaldırılması işlemine ihtiyacımız olsun ?"_ Bu sorunun cevabını ise örnek olarak şu şekilde vermeye çalışalım. Diyelim ki bir butonumuz var ve mount olduğu anda bir data çekiyor ve biz bu datayı biyerlerde depoluyoruz. Ancak elementiunmount ettiğimizde bu işlemin yani data çekme işleminin de sonlandırılması gerekiyor olabilir. Tabi senaryoları çoğaltabiliriz. Bu veya benzeri durumlarda ihtiyaç duyabiliriz. Bunun için nasıl çalıştığını bilmemiz gerekmetedir.
