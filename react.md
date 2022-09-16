@@ -224,7 +224,7 @@ export default App;
 Ekran çıktımız :  
 ![hello-react](./React-Dersleri/assets/hello-react-header-browser.jpg)
 
-**ANAHTAR NOKLAR:**
+**ANAHTAR NOTLAR:**
 
 - Kompanenet içerisinde fonksiyon yazarken dikkat etmemiz gereken fonksiyon isminin büyük harf ile başlayarak yazılmasıdır. Bunun sebebi ise biz daha sonra _render_ ederken bazen yazmış olduğumuz kompaneneti render edeceğiz bazen ise bir html elementini render edeceğiz. Bunların karışmaması gerekmektedir. Bu kod yazım standartlarına uymamız gerekmektedir.
 - Kompanenetimizin _render_ edilebilmesi için birde kapsayıcı bir elemana ihtiyacımız vardır.
@@ -797,3 +797,321 @@ User.defaultProps = {
 };
 export default User;
 ```
+
+## 5.5-State Nedir? Nasıl Oluşturulur?
+
+_State_, kabaca komponenetlerimiz değerinin değişip değişmediği tutan bir javascript objesidir diyebiliriz. Komponenetin herhangi bir anında değerinin değişme potansiyeli olan bir veri bir state olarak tanımlanır ve değeri değiştiği anda bu komponente yansıtılır.  
+Bu tanımı daha iyi anlayabilmek için uygulama üzerinde görmeye çalışalım. Bir proje oluşturup bunun üzerinde anlatacağım.
+Repo içerisinde _state-nedir_ adlı klasörün içerisine terminalden fokus olalım.  
+Terminal Ekranına:
+
+```
+npx create-react-app .  // proje ismi kısmına nokta koyarsan yeni bir klasör içerisinde değilde fokus olduğu klasörün içerisine proje oluşturulacaktır.
+```
+
+Yukarıdaki komut ile projemizi oluşturduk. _App.js_ içerisinde _state_ kavramını inceleyeceğiz, bu nedenle komponentimizin default olarak içerisinde gelen verileri temizleyelim.
+
+- Sayfamıza bir tane _h1_ etiketi ekleyelim içerisinde _"Benim adım : Ziya, Yaşım : 39"_ yazdıralım. Ve stateleri kullanarak isim ve yaş kısımlarını değiştirelim.
+- Değiştirlem işlemi h1 elementimizin altına koyacağımız iki butona (buton-1: İsmi Değiştir, Buton-2: Yaşı Değiştir) tıklandığında gerçekleşecek.
+
+```
+import "./App.css";
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("Ziya");
+  const [age, setAge] = useState(35);
+
+  return (
+    <div className="App">
+      <h1>
+        Merhaba {name} Yaşım : {age}
+      </h1>
+      <button onClick={() => setName("Rüya")}>İsmi Değiştir</button>
+      <button onClick={() => setAge(39)}>Yaşı Değiştir</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**_useState_** kavramını öncelikle sayfamıza import ediyoruz.
+
+```
+import { useState } from "react";
+```
+
+fonksiyonumuz içerisine return işleminden öncesine state'imizi tanımlamamız gerekiyor. Bu kısımda köşeli parantezler içerisine ilk olarak parametre ismi verilir daha sonra ise bu parametreyi değiştirecek olan callback fonksiyon ismi yazılır. Burada fonksiyon ismi yazılırken genel yazım standardı dikkate alınarak yazılmaya özen gösterilmelidir. Yani değeri değşecek parametremiz bizim burada _name_ olduğundan _setName_ şeklinde **_camelCase_** kullanılarak isim yazılır. Bu bir kural değil genel yazım standartlarından gelen yazım şeklidir.  
+[Projeyi linkten inceleyiniz.](./React-Dersleri/state-nedir/)
+
+\***\*ANAHTAR NOT : \*\***
+_State_' lerde veri tipi ne ise o veri tipinde atamayapmamız gerekmektedir. Yapılan en büyük hataların başında değiştirilecek veri tipine dikkat etmeden değişikliğe gitmeye çalışmak gelir.
+İkinci en büyük hatalardan biri de state ile değişiklik yaparken mevcut verinin korunması gerektiği kısmıdır. Yani state ile durum güncellemesi yaparken şayet eski veri üzerine ilave yapılıyorsa bu verinin varlığı unutulmamalıdır. Aşağıdaki örnekte bu konuya değinilmiştir.
+
+**Array States**
+Bir array'i state ile değerlerini değiştirmek istersek bunu nasıl yapılacağını program üzerinde görelim.
+
+```
+import "./App.css";
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("Ziya");
+  const [age, setAge] = useState(35);
+  const [friends, setFriends] = useState(["Emel", "Temel"]);
+
+  return (
+    <div className="App">
+      <h1>
+        Merhaba {name} Yaşım : {age}
+      </h1>
+      <button onClick={() => setName("Rüya")}>İsmi Değiştir</button>
+      <button onClick={() => setAge(39)}>Yaşı Değiştir</button>
+      <hr />
+      <br />
+      <br />
+      <h2>Friends</h2>
+      {friends.map((friend, index) => (
+        <div key={index}>{friend}</div>
+      ))}
+      <button onClick={() => setFriends([...friends, "Ayşe", "Fatma"])}> // ... ile eski veri silinmeden eklemeler yapılmıştırk. ****DİKKAT****
+        Yeni Arkadaşları Ekle
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki örnekte _friends_ arrayi için bir state oluşturulmuş ve içerisindeki array verisi üzerine eklemeler yapılmıştır. Ekleme yapılırken eski verinin kaybolmadığına dikkat ediniz.  
+[Projeyi linkten inceleyiniz.](./React-Dersleri/state-nedir/)
+
+**Object States**
+Şimdide bir state'i object olarak belirleyip nasıl güncelleyebiliriz, nanüple edebiliriz ona bakalım.
+
+```
+import "./App.css";
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("Ziya");
+  const [age, setAge] = useState(35);
+  const [friends, setFriends] = useState(["Emel", "Temel"]);
+  const [address, setAddress] = useState({ city: "İstanbul", zipcode: 34660 });
+
+  return (
+    <div className="App">
+      <h1>
+        Merhaba {name} Yaşım : {age}
+      </h1>
+      <button onClick={() => setName("Rüya")}>İsmi Değiştir</button>
+      <button onClick={() => setAge(39)}>Yaşı Değiştir</button>
+      <hr />
+      <br />
+      <br />
+      <h2>Friends</h2>
+      {friends.map((friend, index) => (
+        <div key={index}>{friend}</div>
+      ))}
+      <button onClick={() => setFriends([...friends, "Ayşe", "Fatma"])}>
+        Yeni Arkadaşları Ekle
+      </button>
+      <hr />
+      <br />
+      <br />
+      <h2>Address</h2>
+      <h3>
+        Adress : {address.city} / {address.zipcode}
+      </h3>
+      <button onClick={() => setAddress({ ...address, city: "Kastamonu" })}>
+        Değişiklik Yap
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Yukarıdaki kod satırında _object_ olarak tanımlanan _state_ içerisinde address _property_' si değiştirilmiştir. Değişiklik aynı kurallar çerçevesinde yapılmıştır.  
+[Projeyi linkten inceleyiniz.](./React-Dersleri/state-nedir/)  
+Şimdide bir sayaç uygulaması yaparak state kavramını pekiştirmeye çalışalım. Mevcut projemiz üzerine yeni bir komponenet ekleyerek bu komponenti düzenleyelim.
+
+```
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+Yukarıdaki kod satırlarında da görüldüğü gibi arttırma butonuna tıklandığında sayaç artmakta ve state sayacı yanı _<h1>_ etiketimizin içeriğini güncellemektedir. Azaltma butonuna basıldığında ise state'imiz değeri azaltmaktadır.
+
+```
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+// import App from './App';
+import Counter from "./components/Counter";
+import reportWebVitals from "./reportWebVitals";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Counter />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+
+Hazırladığımız counter componentini bu sefer i*ndex.js* dosyası içerinde çalıştırdık. _App.js_ komponentini burada çağırma işlemini iptal ettiğimize dikkat ediniz.
+
+State işlemini yapan fonksiyonumuzu herzaman element içerisinde yazmamıza gerek yoktur. İstersek bu fonksiyonu dışarıda da yazabilriz. Öyleki ilerleyen zamanlarda büyük projelerde çok fazla data ile çalışmak gerektiğinde işimizi kolaylaştırak yöntem tercih edilecektir.
+
+```
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+  const decrease = () => {
+    setCount(count - 1);
+  };
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increase}>Increase</button>
+      <button onClick={decrease}>Decrease</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+Yukarıda fonksiyonlar element içerisinde değilde dışarıda yazılmıştır. increase ve decrease fonksiyonlar elementin onClick özelliğine verilmiştir.
+
+**Input için State Tanımı Yapmak**
+Bu kısımda ise inputlar ile çalışırken state kavramını nasıl kullanabiliriz bunu ele alalım. Bunun için projemize _InputExample.js_ isimli bir komponent ekleyin _index.js_ altında bu komponentimizi çağıralım.
+
+```
+import { useState } from "react";
+
+function InputExample() {
+  const [name, setName] = useState("Ziya");
+  const [surname, setSurname] = useState("ÇAYLAN");
+  return (
+    <div>
+      <br />
+      <br />
+      Please enter your name
+      <br />
+      <input value={name} onChange={(event) => setName(event.target.value)} />
+      <br />
+      Please enter your surname
+      <br />
+      <input
+        value={surname}
+        onChange={(event) => setSurname(event.target.value)}
+      />
+      <br />
+      <br />
+      <br />
+      {name} {surname}
+    </div>
+  );
+}
+
+export default InputExample;
+```
+
+Alıştırma olması açısından state işlemini yapanbu fonksiyonlarımızı bir de dışarıda yazalım.
+
+```
+import { useState } from "react";
+
+function InputExample() {
+  const [name, setName] = useState("Ziya");
+  const [surname, setSurname] = useState("ÇAYLAN");
+
+  const onChangeName = (event) => setName(event.target.value);
+  const onChangeSurname = (event) => setSurname(event.target.value);
+  return (
+    <div>
+      <br />
+      <br />
+      Please enter your name
+      <br />
+      <input value={name} onChange={onChangeName} />
+      <br />
+      Please enter your surname
+      <br />
+      <input value={surname} onChange={onChangeSurname} />
+      <br />
+      <br />
+      <br />
+      {name} {surname}
+    </div>
+  );
+}
+
+export default InputExample;
+
+```
+
+Yukarıdaki kodları biraz daha kısaltalım. Yazacağımız state fonksiyonu iki tane ve diyelimki bizim birçokinput v.s. form elementimiz olsun. Herbiri için fonksiyon yazmak maliyetli bir iş olacaktır. Bu durumda bir fonksiyon yazıp bu fonksiyon üzerinden state işlemini gerçekleştirmek mantıklı olacaktır.
+
+```
+import { useState } from "react";
+
+function InputExample() {
+  const [form, setForm] = useState({ name: "", surname: "" });
+
+  const onChangeInput = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value,
+      [event.target.surname]: event.target.value,
+    });
+  };
+  return (
+    <div>
+      <br />
+      <br />
+      Please enter your name
+      <br />
+      <input name="name" value={form.name} onChange={onChangeInput} />
+      <br />
+      Please enter your surname
+      <br />
+      <input name="surname" value={form.surname} onChange={onChangeInput} />
+      <br />
+      <br />
+      <br />
+      {form.name} {form.surname}
+    </div>
+  );
+}
+
+export default InputExample;
+```
+
+Bir fonksiyon ile işi böylece tamamladık. Bu tarz kullanımda dikkat etmemiz gereken kısım inputların _name_'leri de atanmıştır. İlerleyen derslerimizde bu form işlemlerini daha kolay gerçekleştiren kütüphaneler anlatılacaktır. Ancak arka planın nasıl işlediğinin bilinmesi adına bu uygulamalar öen marz etmektedir.
