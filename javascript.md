@@ -2401,7 +2401,135 @@ console.log(ali);
 console.log(otherStudents);
 ```
 
-## 4.26- Hata Yakalama (Try Ve Catch Kullanımı)
+## 4.26 Javascript OOP
+
+**Constructor nedir ?**
+_Constructor :_ Nesne (object) özelliklerini başlatmak için kullanılır. Yeni bir nesne oluşturulduğunda eğer içerisinde bir constructor metodu var ise otomatik olarak çalıştırılır.Javascript, eğer bir constructor tanımlamazsak kendisi boş bir constructor tanımlar ve çalıştırır.
+
+**ANAHTAR NOT:**
+ES5 versiyonunda tanımladığımız _constructor_ aslında bir metod, _ES6_ ve _ES7_ versiyonlarında veya _ES6_ ve sonrasında class kavramları kullanılmaktadır. Constructor metodu yada sınıflar tanımlanırken syntax'ı; baş harfi büyük olarak yazılır. Çünkü bu constructor'dan nesneler türettiğimzde ise türettiğimiz nesneler küçük harf ile başlayacaktır. Genel yazım kuralları bu şekilde olup uyum göstermemiz gerekir.
+
+**_Örnek:_**
+Bir quiz uygulamasını constructor oluşturarak bir örnek üzerinde açıklayalım. Önce constructor kullanmadan nasıl yazabiliriz bakalım ve daha sonra constructor kullanarak yapalım. Böylece aralarındaki farkı net bir şekilde görmüş oluruz.
+
+```
+let soru = {
+  soruMetni: "Hangisi javascript paket yönetim uygulamasıdır?",
+  cevapSeçenekleri: {
+    a: "Node.js",
+    b: "Typescript",
+    c: "Npm",
+  },
+  cevap: "c",
+  cevabıKontrolEt: function (cevap) {
+    return cevap === this.cevap;
+  },
+};
+let sor2 = {
+  soruMetni: "Hangisi .net paket yönetim uygulamasıdır?",
+  cevapSeçenekleri: {
+    a: "Node.js",
+    b: "nuget",
+    c: "Npm",
+  },
+  cevap: "b",
+  cevabıKontrolEt: function (cevap) {
+    return cevap === this.cevap;
+  },
+};
+```
+
+Şimdi de bu işlemleri bir constructor meto yani bir sınıf kullanarak yazalım. Aralarındaki farkı gözlemleyelim.
+
+```
+function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
+  (this.soruMetni = soruMetni),
+    (this.cevapSecenekleri = cevapSecenekleri),
+    (this.dogruCevap = dogruCevap);
+}
+
+let soru1 = new Soru(
+  "Hangisi javascript paket yönetim uygulamasıdır?",
+  {
+    a: "Node.js",
+    b: "Typescript",
+    c: "Npm",
+  },
+  "c"
+);
+let soru2 = new Soru(
+  "Hangisi .net paket yönetim uygulamasıdır?",
+  {
+    a: "Node.js",
+    b: "nuget",
+    c: "Npm",
+  },
+  "b"
+);
+```
+
+Yukarıdaki örnekte sorular için önceden bir kalıp nesne kalıbı olarak _constructor_ metdo tanımlanmış ve daha sonra bu _constructor_ jkullanılarak sorular türetilmiştir. Böylece dikkat edilir ise her seferinde kod tekrarı yapılmamış olur.
+
+```
+console.log(soru1.soruMetni); // Hangisi javascript paket yönetim uygulamasıdır?
+console.log(soru1.cevapSecenekleri);  // { a: 'Node.js', b: 'Typescript', c: 'Npm' }
+console.log(soru1.dogruCevap); // c
+```
+
+Aşağıdaki objede görüleceği üzere bir array oluşturulup bunun içerisinde sorular eklenmiştir.
+
+```
+let sorular = [
+  new Soru(
+    "Hangisi javascript paket yönetim uygulamasıdır?",
+    { a: "Node.js", b: "Typescript", c: "Npm" },
+    "c"
+  ),
+  new Soru(
+    "Hangisi .net paket yönetim uygulamasıdır?",
+    { a: "Node.js", b: "nuget", c: "Npm" },
+    "b"
+  ),
+  new Soru(
+    "Hangisi .net paket yönetim uygulamasıdır?",
+    { a: "Node.js", b: "nuget", c: "Npm" },
+    "b"
+  ),
+  new Soru(
+    "Hangisi .net paket yönetim uygulamasıdır?",
+    { a: "Node.js", b: "nuget", c: "Npm" },
+    "b"
+  ),
+];
+```
+
+Nada sonra bu ortak metodumuza yani sınıfımıza (ES% için sonstructor'ımıza ) bir özellik eklediğimizde bu sınıftan türetilmiş bütün objelere aynı özellik aktarılmış olacaktır.
+
+```
+function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
+  (this.soruMetni = soruMetni),
+    (this.cevapSecenekleri = cevapSecenekleri),
+    (this.dogruCevap = dogruCevap),
+    (this.cevabıKontrolEt = function (cevap) {
+      return dogruCevap === this.dogruCevap;
+    });
+}
+```
+
+Yukarıdaki kodlarımızdan da görüleceği gibi constructor'ımıza cevabıKontrolEt fonksiyonumuzu ekledik. Böylece bu sınıftan türettiğimiz bütün objeler aynı özelliğe ulaşabilecekler.
+
+```
+console.log(sorular[0].soruMetni); // Hangisi javascript paket yönetim uygulamasıdır?
+console.log(sorular[0].cevapSecenekleri); // { a: 'Node.js', b: 'Typescript', c: 'Npm' }
+console.log(sorular[0].cevabıKontrolEt("c")); // true
+console.log(sorular[0].dogruCevap); // c
+```
+
+**Prototype Nedir ?**
+JavaScript nesneleri özelliklerini ve metotlarını prototiplerinden alır. Tüm nesneler prototipini _Object.prototype_ isimli prototipten alır.
+Tüm javascript nesneleri prototype özelliğine sahiptirler.
+
+## 4.27- Hata Yakalama (Try Ve Catch Kullanımı)
 
 _try...catch_ kısaca bir iş yaparken herhangi bir hata ile karşılaşma durumunun ele alınması anlamını ifade etmektedir.
 **try** kelimesi kodları çalışma zamanında test etmek için kullanılırken **catch** anahtar kelimesi ise hata ile karşılaşılması durumunda bu hatayı yakalamak için kullanılır.
@@ -2424,7 +2552,7 @@ Normalde kod çalışırken herhangi bir hata ile karşılaşılırsa Javascript
 - JavaScript aslında iki özelliğe sahip bir Error nesnesi oluşturacaktır: isim ve mesaj.
 - **throw** ifadesi bize özel hatalar oluşturmamıza olanak tanır. Teknik olarak _throw_ ile bir istisna _(hata)_ atılabilir.
 
-## 4.27- Fetch API ile Çalışmak
+## 4.28- Fetch API ile Çalışmak
 
 Fetch APİ kaynakların getirilmesine yönelik basit bir arayüzdür. Asenkron olarak veri alıp göndermemize olanak sağlamaktadır. Yani _Promise_ tabanlı olduğundan _async_ yapıdadır. _Promise_ özelliği _ES6_ ile birlikte gelen bir özelliktir. Callback fonksiyonu yerine yazabiliriz.  
 Bunu bir örnekle açıklamak gerekir ise; diyelimki biz bir kasadan sipariş verdik ve siparişi kasada bekliyoruz. Şayet sipariş gelene kadar kasada beklersek bir sonraki kişinin sipariş vermesini engellemiş oluruz. İşte bu noktada siparişi verip kenarda beklerken kasa, "tamam ben senin siparişini aldım sana söz veriyorum _(Promise)_ siparişini teslim edicem" deyip sıradakinin de siparişini alması durumu bize uyugn bir örnek olacaktır.
@@ -2528,7 +2656,7 @@ async function getProduct() {
 
 ```
 
-## 4.27- ES6 ile birlikte gelen yenilikler
+## 4.29- ES6 ile birlikte gelen yenilikler
 
 Bu bölümde _ES6_ ile birlikte gelen yeni özelliklerden bahsedeceğim. Öyleki bir sonraki dersimiz _react_ içeriinde bu özellikleri bol bol kullanacağız.
 
@@ -2707,6 +2835,7 @@ const getCommnets = (number) => {
     }
   });
 };
+
 
 getCommnets(1)
   .then((data) => console.log(data))  //  {name: 'Ziya', lastName: 'caylan'}
