@@ -1,6 +1,7 @@
 # Contacts App Uygulaması
 
 _Kaynak : [Patika.dev](Patika.dev)_  
+**[ ---> Patika Profilim](https://app.patika.dev/ziyacaylangmailcom)**  
 ![uygulama foto](../assets/contacts_app.jpg)
 
 # Getting Started with Create React App
