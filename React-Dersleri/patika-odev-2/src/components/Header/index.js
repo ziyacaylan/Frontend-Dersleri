@@ -8,6 +8,7 @@ function Header({ todos, setTodos, count, setCount }) {
 
   useEffect(() => {
     setNewTodo(initialInputValues);
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
   const onSubmit = (e) => {
     e.preventDefault(); // Submit olduğunda sayfa yenileme durduruldu.

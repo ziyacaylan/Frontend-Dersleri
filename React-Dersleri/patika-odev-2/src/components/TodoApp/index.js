@@ -5,7 +5,9 @@ import TodoList from "../List";
 import "../TodoApp/todos.css";
 
 function Todos() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) || []
+  );
   const [hide, setHide] = useState("All");
   const [count, setCount] = useState(0);
   return (
@@ -16,15 +18,15 @@ function Todos() {
         setHide={setHide}
         count={count}
         setCount={setCount}
-      />{" "}
-      <TodoList todos={todos} setTodos={setTodos} hide={hide} />{" "}
+      />
+      <TodoList todos={todos} setTodos={setTodos} hide={hide} />
       <Footer
         todos={todos}
         setTodos={setTodos}
         setHide={setHide}
         count={count}
         setCount={setCount}
-      />{" "}
+      />
     </div>
   );
 }
