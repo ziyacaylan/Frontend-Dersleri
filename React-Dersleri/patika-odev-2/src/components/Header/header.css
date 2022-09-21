@@ -1,0 +1,41 @@
+.page-title {
+  color: #ead7d7;
+  font-size: 100px;
+  font-family: inherit;
+  font-weight: inherit;
+  /* line-height: 1.4rem; */
+}
+.new-todo {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  background-color: #fefefe;
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+.new-todo:hover {
+  box-shadow: none;
+}
+:focus {
+  outline: 0;
+}
+input:focus-visible {
+  outline-offset: 0px;
+}
+input {
+  writing-mode: horizontal-tb !important;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
