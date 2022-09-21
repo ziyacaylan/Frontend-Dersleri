@@ -1234,3 +1234,215 @@ export default Counter;
 
 Olayımızı şu şekilde kurguladık. _setInterval_ metodumuzu kullanarak counter değerini her bir saniyede bir arttırıyoruz. Bu işlem için konsol ekranından elementin her seferinde render edilme işlemi takip edebiliriz. Aynı zamanda _App.js_ dosyamızdaki buton vasıtası ile visible/inVisible olayını takip edip elementin unmount olduğu anı gene konsol ekranından gözlemleyebiliriz.  
 Aklımıza şu aşamada gelen soru şu _"Neden bir elementin unMount yani DOMdan kaldırılması işlemine ihtiyacımız olsun ?"_ Bu sorunun cevabını ise örnek olarak şu şekilde vermeye çalışalım. Diyelim ki bir butonumuz var ve mount olduğu anda bir data çekiyor ve biz bu datayı biyerlerde depoluyoruz. Ancak elementiunmount ettiğimizde bu işlemin yani data çekme işleminin de sonlandırılması gerekiyor olabilir. Tabi senaryoları çoğaltabiliriz. Bu veya benzeri durumlarda ihtiyaç duyabiliriz. Bunun için nasıl çalıştığını bilmemiz gerekmetedir.
+
+## 5.7-Stillendirme Temelleri
+
+Hazırlamakta olduğumuz komponentler içerisinde stillendirme yaparken; sıklıkla olmasa bazen inline-css kullanmak zorunda kalabiliriz. Böyle durumlarda aşağıdaki kurallara uyarak css kodu ekleyebiliriz.
+
+- Komponenet içerisinde css kodu yazarken _stye=_ keyword'ünden sonra tırnak değil süslü parantez ({}) kullanmalıyız.
+- Süslü parantez içerisinde css özelliklerimizi ise birobje olarak yazmamız gerekiyor. Yani süslü parantezler içerisine bir süslü parantez daha açıp bunun içerisine css kodlarımızı key-value şeklinde belirtmemiz gerekiyor.
+- Bir diğer dikkat etmemiz gereken kural ise, örneğin _background-color_ verecek isek bu ifadeyi bu şekilde yazamayız. Sebebi ise javascriptte değilşekleri orta tire kullanarak tanımlayamamaktayız. Bunun yerine bu ifadeyi _camelCase_ kullanarak yazmak zorundayız. Öyleyse _backgroundColor_ şekilnde yazabiliriz. Aşağıda bu kurallara ilişkin örnek kod satırı verilmiştir.
+
+```
+function Header() {
+  return (
+    <div>
+      <h2
+        style={{
+          backgroundColor: "#3f3f3f",
+          color: "red",
+          padding: "10px",
+          borderRadius: "5px",
+          textAlign: "center",
+        }}
+      >
+        Merhaba Ben Header Birleşeniyim.
+      </h2>
+    </div>
+  );
+}
+
+export default Header;
+
+```
+
+- Hazır olan bir css kütüphanesi ise kullanmak istersek bu şekilde tercih edilmese de css linkimizi aşağıdaki gibi _public_ klasörümüz altında yer alan _index.html_ altına ekleyerek de kullanabiliriz. Örneğin aşağıdaki kod satırında _bootstrap_ kütüpkanesi eklenmiştir.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+      integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+  </body>
+</html>
+```
+
+Sayfamıza bazı bootstrap elemanları ekleyelim.
+
+```
+import "./App.css";
+import User from "./components/User";
+import Header from "./components/Header";
+
+const friends = [
+  { id: 1, fname: "Metin" },
+  { id: 2, fname: "Ali" },
+  { id: 3, fname: "Veli" },
+  { id: 4, fname: "Emel" },
+  { id: 5, fname: "Temel" },
+  { id: 6, fname: "Kazım" },
+];
+
+function App() {
+  return (
+    <>
+      <User
+        fname={1231}
+        surname="ÇAYLAN"
+        isLoggedIn={true}
+        age={39}
+        friends={friends}
+        address={{ title: "Çekmeköy/İSTABUL", zipcode: 34660 }}
+      />
+      <Header />
+      <button type="button" class="btn btn-primary ms-3 p-2 px-5 mt-5">
+        Primary
+      </button>
+      <button type="button" class="btn btn-secondary ms-3 p-2 px-5 mt-5">
+        Secondary
+      </button>
+      <button type="button" class="btn btn-success ms-3 p-2 px-5 mt-5">
+        Success
+      </button>
+      <button type="button" class="btn btn-danger ms-3 p-2 px-5 mt-5">
+        Danger
+      </button>
+      <button type="button" class="btn btn-warning ms-3 p-2 px-5 mt-5">
+        Warning
+      </button>
+      <button type="button" class="btn btn-info ms-3 p-2 px-5 mt-5">
+        Info
+      </button>
+      <button type="button" class="btn btn-light ms-3 p-2 px-5 mt-5">
+        Light
+      </button>
+      <button type="button" class="btn btn-dark ms-3 p-2 px-5 mt-5">
+        Dark
+      </button>
+    </>
+  );
+}
+
+```
+
+**Module CSS**
+
+- komponentlerimiz içerisinde css dosyalarımızı yazarken isimlnedirme esnasında _module_ kavramını kullanmamız sayfalar içerisinde style atamaları yaparken yada isimlendirmelerde bizlere benzersiz stil isimleri oluşturur böylece olası css kod çakışmalarının da önüne geçilecektir.
+
+**_style.module.css_**  
+**_Header.module.css_**  
+**Footer.module.css\_**  
+yukarıdaki isimler örnek olarak yazılmıştır.
+
+## 5.8-Fetching
+
+**Native Fetch**
+
+Bu kısımda daha önceki derslerde işlediğimiz fetch işlemlerini uygulama üzerinde fake bir APİ'dan data çekerek sayfamızda göstereceğiz. Fake Api olarak *https://jsonplaceholder.typicode.com/users* kullanacağız.
+
+- Önce yeni bir proje oluşturalım.
+- Komponent klasörünü oluşturup içerisine _Users.js_ komponentini oluşturalım ve bu komponentimizi _App.js_ içerisine ekleyelim.
+- Verileri _fetch_ kullanarak çekelim ve sayfa üzerinde _users_'ların _name_'lerini gösterelim.
+
+```
+import { useEffect, useState } from "react";
+
+function Users() {
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => setUsers(users))
+      .catch((e) => console.log(e))
+      .finally(() => setIsLoading(false));
+  }, []);
+  return (
+    <div>
+      <h1>Users</h1>
+      {isLoading && <h2>Loading...</h2>}
+      {users.map((user) => {
+        return <div key={user.id}>{user.name}</div>;
+      })}
+    </div>
+  );
+}
+
+export default Users;
+```
+
+**Axios**
+Yukarıdaki örnek içerisinde users komponentimizin alt tarafında *https://jsonplaceholder.typicode.com/posts* url'imizden ilgili post bilgilerini çekerek listeleyelim.
+
+```
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+function UserPosts() {
+  const [userPosts, setUserPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios("https://jsonplaceholder.typicode.com/posts")
+      .then((posts) => setUserPosts(posts.data))
+      .catch((e) => console.log(e))
+      .finally(() => setIsLoading(false));
+  });
+  return (
+    <div>
+      <h1>Posts</h1>
+      {isLoading && <h2>Loading Posts...</h2>}
+      {userPosts.map((post) => (
+        <div key={post.id}> {post.title}</div>
+      ))}
+    </div>
+  );
+}
+
+export default UserPosts;
+```
+
+[Örneği içerenprojeyi linkten inceleyebilirsiniz.](./React-Dersleri/fetching/)
+
+## 5.9-Routing
+
+Bu kütüphane birleşenleri kullanıldığında sayfalar arası gezinmeler oldukça kolaylaşmaktadır.eact geliştiricileri arasında router kütüphanalerinden en çok kullanılanı React Router kütüpahanesindir. Bize etkin şekilde, sayfa yenilenmeden (refresh) diğer bir sayfaya geçmemiz konusunda yardımcı olan bu kütüphane, BrowserRouter, HashRouter, HistoryRouter, MemoryRouter, NativeRouter, Router ve StaticRouter seçenekleri ile gelmektedir.
+**Kurulumu ve Örnek Üzerinde Açıklama**
+
+- Öncelikle projemizi oluşturalım.
+- npm install react-router-dom@6
