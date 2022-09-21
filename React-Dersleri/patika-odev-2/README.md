@@ -1,3 +1,16 @@
+## Patika React Ödev 2
+
+_Kaynak : [Patika.dev](Patika.dev)_
+
+## **[ ---> Patika Profilim](https://app.patika.dev/ziyacaylangmailcom)**
+
+---
+
+![patika-todo-app](../assets/todo-app_1.jpg)
+![patika-todo-app](../assets/todo-app-2.jpg)
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
