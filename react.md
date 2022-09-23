@@ -1600,5 +1600,5 @@ Bu iki hook'da aslında aynı işi yapmaktadır ancak NavLink kullandığımızd
   **Projemizi Aşağıdaki linkten **
   [Projeyi linkten inceleyiniz.](./React-Dersleri/Roting/routing)
 
-  ![patika-todo-app](../../assets/react-roter-dom_1.jpg)  
-  ![patika-todo-app](../../assets/react-roter-dom_2.jpg)
+  ![patika-todo-app](/../assets/react-roter-dom_1.jpg)  
+  ![patika-todo-app](../assets/react-roter-dom_2.jpg)
