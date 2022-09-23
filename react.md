@@ -1602,3 +1602,62 @@ Bu iki hook'da aslında aynı işi yapmaktadır ancak NavLink kullandığımızd
 
   ![patika-todo-app](../../assets/react-roter-dom_1.jpg)  
   ![patika-todo-app](../../assets/react-roter-dom_2.jpg)
+
+## 5.10-Formik ile Form Yönetimi
+
+Form işlemlerinin daha kolay yapıldığı bir kütüphanedir. Duruma göre dinamik oluşturulması, Doğrulama yapılması, Aynı formun bir kaç tane dolduran kontrolü, yetkilendirmesi gibi birçok durumu bulunabilir.  
+ Formik veya benzeri çözümleri kullanmamızın bir diğer sebebi de, state kullanarak yaptığınız form kontrollerinde state her değiştiğinde component tekrardan render edilir. Formik kullanarak bunun önüne geçmiş oluyoruz.
+
+İlk olarak kurulumile işe başlayalım. Projemizi oluşturduktan sonra kütüphaneyi kullanabilmek için projemize dahil etmemiz gerekiyor.
+
+- **_npm install formik_** komutu ile kurulumu gerçekleştiriyoruz.
+- İlk olarak dokümantasyonun bize verdiği örnekleri kullanarak biraz inceleyelim.
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Formik, Field, Form } from 'formik';
+
+const Basic = () => (
+  <div>
+    <h1>Sign Up</h1>
+    <Formik
+      initialValues={{
+        firstName: '',
+        lastName: '',
+        email: '',
+      }}
+      onSubmit={async (values) => {
+        await new Promise((r) => setTimeout(r, 500));
+        alert(JSON.stringify(values, null, 2));
+      }}
+    >
+      <Form>
+        <label htmlFor="firstName">First Name</label>
+        <Field id="firstName" name="firstName" placeholder="Enter name" />
+
+        <label htmlFor="lastName">Last Name</label>
+        <Field id="lastName" name="lastName" placeholder="Enter Lastname" />
+
+        <label htmlFor="email">Email</label>
+        <Field
+          id="email"
+          name="email"
+          placeholder="Enter email"
+          type="email"
+        />
+        <button type="submit">Submit</button>
+      </Form>
+    </Formik>
+  </div>
+);
+
+ReactDOM.render(<Basic />, document.getElementById('root'));
+
+```
+
+Yukarıdaki kod bloğu formik dokümantasyonunun basic exaples kısmında bize verilmektedir. Bu kodu oluşturduğumuz projemizin _src_ klasörü altındaki _index.js_ dosyası içerisine kopyalayıp çalıştıralım. Aşağıdaki ekran görüntüsü bizi karşılayacaktır.
+
+![formik](./React-Dersleri/assets/formik.jpg)
+
+Kodları incelediğimizde formik kütüphanemizden gelen form kullanılmış ve içerisinde _Field_ isimli aslında normalde bizim _input_ yerine kullanılan bir element kullanıldığını görebiliriz. Normal form kullanımından çok farklı bir yapı olmadığını görebiliriz. Şimdi gelelim farklılıklarına; Hemen _Formik_ içerisinde _initialValues_ isimli bir hook içerisinde inputlarımızın default değerlerinin tanımlandığı görülmektedir. Burada dikkat etmemiz gereken husus _Field_ elementlerinin _name_'leri ile buradaki isimlerin aynı yazılmasıdır. Eğer farklı isimler girersek eşleşmeyeceği için value ataması yapılamayacaktır.
