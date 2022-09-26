@@ -2214,3 +2214,5 @@ const App = () => {
 export default App;
 
 ```
+
+## 5.11-Memoization
