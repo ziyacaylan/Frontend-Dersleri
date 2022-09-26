@@ -11,9 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.ali {
-  flex-direction: row;
+.container {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: antiquewhite;
+  border-radius: 15px;
+}
+
+input {
+  padding: 8px;
+}
+label {
+  margin-bottom: 10px;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2582b7;
+  margin-bottom: 15px;
+}
+button:hover {
+  background-color: #5da2ca;
+  transition: 0.3s;
 }
