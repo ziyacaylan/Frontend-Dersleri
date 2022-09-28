@@ -1,0 +1,12 @@
+/* #162A3E */
+.app {
+  text-align: center;
+  height: 100vh;
+}
+
+.app.dark {
+  text-align: center;
+  background-color: #162a3e;
+  height: 100vh;
+  color: #fff;
+}
