@@ -1,70 +1,250 @@
-# Getting Started with Create React App
+## 5.11-Memoization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React componenetlerinin gereksiz yere render edilmesini önlemek ve bu komponenetleri daha performanslı hale getirmek için _memoization_ yöntemi kullanılır. Hesaplanması uzun süren işlevlerimizin sonuçlarını saklayarak aynı girdiler için aynı işlev çağrıldığında: işlevin tekrar çalıştırılmadan saklanılan sonucunun dönülmesine Memoization denir.Fakat sonuçların saklanması işlemi ucuz değildir. Bu yüzden sadece maliyetli ve aynı girdilerle aynı çıktıları üreten işlevlerde kullanılması önerilir.
+Konuyu pekiştirebilmek için yeni bir proje üzerinde uygulamalı olarak görelim.
 
-## Available Scripts
+- Yeni bir proje oluşturup "App.js" kısmında komponentimize _h1_ elementi ekleyip içerisinde bir _number_ değeri görüntüleyelim.
+- _h1_ elemenitimizde tuttuğumuz number değerini arttırmak için hemen altına bir _button_ ekleyelim. Butona her bastığımızda number bir artacak şekilde stateimizi de tanımlayalım.
+- Daha sonra bir _Header_ komponenti oluşturup _App.js_ içerisinde sayfanın üst kısmında gösterelim. Ve komponentimiz içerisinde saya arttırıldığında render edildiğini görmek için bir log tanımlayalım.
 
-In the project directory, you can run:
+```
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+function App() {
+  const [number, setNumber] = useState(0);
+  return (
+    <div className="App">
+      <Header />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+    </div>
+  );
+}
 
-### `npm start`
+export default App;
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Header komponeneti :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+import React from "react";
 
-### `npm test`
+function Header() {
+  console.log("Header Component Re-rendered");
+  return <div>Header</div>;
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default Header;
+```
 
-### `npm run build`
+Butona _number_ değerini her bir arttırdığımızda konsol ekranından **_Header Component Re-rendered_** yazdığını gözlemleyebiliriz. Yani biz her arttırma işleminde üzerinde herhangi bir değişiklikolmayan Header komponenti de gereksiz yere render edilmektedir.  
+Bu gereksiz renderin önüne geçmek için Header komponentimizi _React.memo()_ ile sarmalayarak dışa export etmemiz gerekmektedir(_React.memo(Header)_).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+import React from "react";
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+function Header() {
+  console.log("Header Component Re-rendered");
+  return <div>Header</div>;
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export default React.memo(Header);
+```
 
-### `npm run eject`
+Peki render ne zaman yeniden render edilir ? sorusunu sorarsak ise; nezaman _Header_ komponentine bir gönderdiğimiz propertilerde değişiklik olur ise ozaman yeniden render edilir.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+function App() {
+  const [number, setNumber] = useState(0);
+  return (
+    <div className="App">
+      <Header number={number <= 5 ? 0 : number} />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+    </div>
+  );
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export default App;
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+import React from "react";
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+function Header({ number }) {
+  console.log("Header Component Re-rendered");
+  return <div>Header - {number}</div>;
+}
 
-## Learn More
+export default React.memo(Header);
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Yukarıdaki kod bloğunda _Header_ 5 olana kadar _Header_ render edilmeyecek ancak 5'ten sonra gönderdiğimiz prop değişeceğinden dolayı komponenet re-render edilecektir.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**useMemo**
+Daha iyi anlamlandırabilmek için örneğimiz içerisinew aşağıdaki yapıyı ekleyelim.
 
-### Code Splitting
+- _App.js_ komponentimiz içerisine bir obje ekleyelim ve bu objeyi _Header_ komponentimize _prop_ olarak geçelim.
+- Daha sonra bu gönderdiğmiiz objeyi Header altında görüntüleyelim.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+function App() {
+  const [number, setNumber] = useState(0);
+  const data = { name: "Ziya" };
+  return (
+    <div className="App">
+      <Header number={number <= 5 ? 0 : number} data={data} />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+    </div>
+  );
+}
 
-### Analyzing the Bundle Size
+export default App;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+import React from "react";
 
-### Making a Progressive Web App
+function Header({ number, data }) {
+  console.log("Header Component Re-rendered");
+  return (
+    <div>
+      <h2>Header - {number}</h2>
+      <code>{JSON.stringify(data)}</code>
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+export default React.memo(Header);
+```
 
-### Advanced Configuration
+Yukarıdaki gibi kodlarımızı düzenlediğimizde _Header_ komponentimizin her seferinde render edildiğini konsoldan da gözlemleyebiliriz. Ama sayaç 5 i geçmeden _Header_ komponentimiz _render_ edilmiyordu ancak şimdi içeriği değişmeyen bir obje gönderdiğimizde de render ediliyor. Bunun sebebi objemizden kaynaklanmaktadır. Şöyle düşünelim. _true_ === _true_ _true_'dur. Ancak _[] === []_ _false_'dir. Veya _{} === {}_ _false_'dur. Yani objenin bellek üzerindeki referansı değişmektedir. Bu nedenlede render edilmektedir. Peki bundan nasıl kurtulacağız :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Yöntem 1 :** gönderdiğimiz objemizi fonksiyon dışında tamınlamalıyız.
 
-### Deployment
+```
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+const data = { name: "Ziya" };
+function App() {
+  const [number, setNumber] = useState(0);
+  return (
+    <div className="App">
+      <Header number={number <= 5 ? 0 : number} data={data} />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+export default App;
+```
 
-### `npm run build` fails to minify
+- Eğer bunu yapamıyorsak yani tanımladığımız objemiz illa fonksiyon içerisinde olması gerekiyorsa ve fonksiyon içerisindeki birveriyide kullanarak işlem yapıyorsa bu durumda _useMemo_ hook'umuzu kullanmalıyız.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+import { useState, useMemo } from "react";
+import "./App.css";
+import Header from "./components/Header";
+function App() {
+  const [number, setNumber] = useState(0);
+  const data = useMemo(() => {
+    return { name: "Ziya" };
+  }, []);
+  return (
+    <div className="App">
+      <Header number={number <= 5 ? 0 : number} data={data} />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+      <button onClick={() => setNumber(number + 1)}>Click</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Ekranı gözlemlediğimizde _Header_ her defasında render edilmediğini görebilirsiniz. Ancak biz depandency _array_'imize örnek olarak _number_'ı geçelim. Bu sefer _number_ verisi değiştiğinden komponentin render edildiğini görebiliriz.
+
+**useCallback**
+Şimdide örneğimizi aşağıdaki gibi düzenleyelim.
+
+- Header komponentimize number değerini arttırdığımız butonu taşıyalım ve Header komponenti üzerinden tıklandığında App.js komponenti üzerindeki number değeri arttırılacak şekilde düzenleme yapalım.
+
+```
+import { useState, useMemo } from "react";
+import "./App.css";
+import Header from "./components/Header";
+function App() {
+  const [number, setNumber] = useState(0);
+  const data = useMemo(() => {
+    return { name: "Ziya" };
+  }, []);
+  return (
+    <div className="App">
+      <Header increment={() => setNumber(number + 1)} />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+```
+import React from "react";
+
+function Header({ increment }) {
+  console.log("Header Component Re-rendered");
+  return (
+    <div>
+      <h2>Header</h2>
+      <button onClick={increment}>Click</button>
+    </div>
+  );
+}
+
+export default React.memo(Header);
+```
+
+Şimdi number değerini arttırmak için butona her bastığımızda Header'ın yeniden render edildiğini görebiliriz. Bunun sebebi ise Header komponentine gönderdiğimiz fonksiyon her seferinde yeniden hesaplandığı içindir. Aslında fonksiyonumuz her defansıda aynı fonksiyon fonksiyon değişmiyor.Sadece hesapladığı veri değişiyor.  
+Bu durmdan kullanmak için _useCallback()_ hook'unu kullanabiliriz. Bu durumda _number_'ı hesaplayıp göndreceğimiz _increment_ fonksiyonunu _return_'den önce tanımlayıp burada _useMemo_ gibi tanımlayıp bunun içerisinde setNumber için fonksiyonumuzu yazarız.
+
+```
+import { useState, useMemo, useCallback } from "react";
+import "./App.css";
+import Header from "./components/Header";
+function App() {
+  const [number, setNumber] = useState(0);
+
+  const increment = useCallback(() => {
+    setNumber((prevState) => prevState + 1);
+  }, []);
+  return (
+    <div className="App">
+      <Header increment={increment} />
+      <hr />
+      <h1>{`Sayaç : ${number}`}</h1>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+Böylece callback fonksiyonumuz hesaplanır ve değer gönderilir ancak fonksiyon içeriği değişmediğinden Header tekrar tekrar render edilmemiş olur.
