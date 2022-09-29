@@ -1,5 +1,7 @@
 ## Patika React Ödev 2
 
+**Projenin Canlı Linki : [https://ziyac-todolist.netlify.app/](https://ziyac-todolist.netlify.app/)**
+
 _Kaynak : [Patika.dev](Patika.dev)_
 
 ## **[ ---> Patika Profilim](https://app.patika.dev/ziyacaylangmailcom)**
