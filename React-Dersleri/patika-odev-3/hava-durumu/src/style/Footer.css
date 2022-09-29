@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: -10;
+}
+.footer.footer-up {
+  background-color: var(--footer-up-color);
+  height: 150px;
+}
+.footer.footer-down {
+  background-color: var(--footer-down-color);
+  height: 70px;
+}
