@@ -1,15 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
 import "../style/style.css";
+import CardBody from "./CardBody";
 
 function WeatherContainer() {
   return (
-    <Container>
-      <div className="container">
-        <h1 className="text-center">Hava Durumu</h1>
-      </div>
-    </Container>
+    <div className="container weather-container ">
+      <h1 className="text-center text-white">Container</h1>
+      <CardBody />
+    </div>
   );
 }
 

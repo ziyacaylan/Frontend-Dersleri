@@ -4,7 +4,17 @@
   position: relative;
   left: 0;
   bottom: 0;
-  z-index: -10;
+  /* z-index: -10; */
+}
+.footer a {
+  cursor: pointer;
+}
+.footer a:hover {
+  cursor: pointer;
+}
+.footer a img {
+  /* z-index: -5; */
+  cursor: pointer;
 }
 .footer.footer-up {
   background-color: var(--footer-up-color);
@@ -13,4 +23,35 @@
 .footer.footer-down {
   background-color: var(--footer-down-color);
   height: 70px;
+}
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-patika {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: var(--icon-color-blue);
+  border-radius: 50%;
+}
+.icon-patika img {
+  width: 50px;
+  height: 50px;
+}
+.icon-patika:hover {
+  background-color: var(--icon-color-hover);
+}
+@media only screen and (max-width: 576px) {
+  .footer {
+    width: 100%;
+    height: 520px;
+  }
+  .footer.footer-up {
+    height: 450px;
+  }
+  .footer.footer-down {
+    height: 70px;
+  }
 }
