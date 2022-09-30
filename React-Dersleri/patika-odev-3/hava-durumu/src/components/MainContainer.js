@@ -19,7 +19,7 @@ const bgImg = [
 function MainContainer() {
   const RandomImg = () => {
     const random = Math.random() * bgImg.length;
-    console.log(random);
+    //console.log(random);
     return bgImg[Math.floor(random)];
   };
   return (
