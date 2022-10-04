@@ -10,14 +10,47 @@
   height: 50px;
 }
 
+.settings-icon {
+  width: 40px;
+  height: 40px;
+}
+.icon-settings {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: var(--header-color);
+  border-radius: 50%;
+}
+.icon-settings img {
+  width: 50px;
+  height: 50px;
+}
+.icon-settings:hover {
+  /* border: 2px solid var(--icon-color-blue); #eec40a; */
+  background-color: var(--header-hover-color);
+  cursor: pointer;
+}
+.weather-card {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
+}
 @media only screen and (max-width: 768px) {
   .header {
     width: 100%;
-    height: 120px;
+    height: 180px;
   }
   .logo-content {
     width: 100%;
     display: grid;
     justify-content: center !important;
+    margin: auto !important;
+    padding: 0 !important;
+  }
+  .settings-content {
+    width: 100%;
+    display: grid;
+    justify-content: center !important;
+    margin: auto !important;
+    padding: 0 !important;
   }
 }

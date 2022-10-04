@@ -5,9 +5,9 @@ import CardBody from "./CardBody";
 
 function WeatherContainer() {
   return (
-    <div className="container weather-container ">
-      <h1 className="text-center text-white">Container</h1>
-      <CardBody />
+    <div className="container weather-container text-center">
+      <h1 className="text-white">Container</h1>
+      <CardBody></CardBody>
     </div>
   );
 }

@@ -1,19 +1,44 @@
 import Card from "react-bootstrap/Card";
-import { useGeoPosition } from "../context/GoePositionContext";
-//import useGeoLocation from "./useGeoLocation";
+import useGeoLocation from "../hook/useGeoLocation";
+import CityMenu from "./CityMenu";
+import BootstrapSwitchButton from "bootstrap-switch-button-react";
 
 function CardBody() {
-  const { location } = useGeoPosition();
-  //const location = useGeoLocation();
-  console.log(location);
+  const location = useGeoLocation();
+
+  //console.log(url);
+  //console.log(location);
   return (
     <div className="container">
-      <Card style={{ width: "800px" }}>
+      <Card style={{ width: "800px" }} className="weather-card">
         <Card.Body>
-          {/* <p>
-            {location.loaded &&
-              `latitude: ${location.coordinates.lat} longitude : ${location.coordinates.lng}`}
-          </p> */}
+          <div className="d-flex align-items-center">
+            <div className="d-flex col-12 col-md-6 flex-wrap">
+              <div className="d-flex col-12 col-md-6">
+                <strong>Enlem</strong>
+                {location.loaded && ` : ${location.coordinates.lat} `}
+              </div>
+
+              <div className="d-flex col-12 col-md-6">
+                <strong>Boylam</strong>
+                {` : ${location.coordinates.lng}`}
+              </div>
+            </div>
+            <div className="d-flex justify-content-end col-12 col-md-6 mb-3">
+              <BootstrapSwitchButton
+                checked={true}
+                onlabel={"Konum"}
+                offlabel="Şehir"
+                onChange={(checked = true) => {
+                  this.setState({ isUserAdmin: checked });
+                }}
+                width={95}
+                height={30}
+                className="d-inline-block"
+              />
+            </div>
+          </div>
+          <CityMenu />
         </Card.Body>
       </Card>
     </div>

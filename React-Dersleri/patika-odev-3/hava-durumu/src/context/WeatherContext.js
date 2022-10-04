@@ -1,12 +1,22 @@
 import axios from "axios";
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
+import useCity from "../context/CityContext";
 
 const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [weatherData, setWeatherData] = useState([]);
+  const [lang, setLang] = useState(localStorage.getItem("lang") === "true");
+  const [tempType, setTempType] = useState(
+    localStorage.getItem("tempType") === "true"
+  );
 
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+    localStorage.setItem("tempType", tempType);
+  }, [lang, tempType]);
+  //console.log(city);
   const getWeatherData = async (lat, lon) => {
     const key = process.env.REACT_APP_API_KEY;
     try {
@@ -15,7 +25,7 @@ export const WeatherProvider = ({ children }) => {
       );
       setWeatherData(data);
     } catch (error) {
-      alert(`Havadurumu raporu gelmedi, SArınım bir hata var : ${error}`);
+      alert(`Havadurumu raporu gelmedi, Sarınım bir hata var : ${error}`);
     }
   };
 
@@ -24,6 +34,10 @@ export const WeatherProvider = ({ children }) => {
     setLoading,
     weatherData,
     setWeatherData,
+    lang,
+    setLang,
+    tempType,
+    setTempType,
   };
   return (
     <WeatherContext.Provider value={values}>{children}</WeatherContext.Provider>

@@ -4,15 +4,19 @@ import MainContainer from "./components/MainContainer";
 import WeatherContainer from "./components/WeatherContainer";
 import Footer from "./components/Footer";
 import { UserProvider } from "./context/UserContext";
+import { CityProvider } from "./context/CityContext";
+import { WeatherProvider } from "./context/WeatherContext";
 
-// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}   --> by city name
 function App() {
   return (
     <UserProvider>
-      <Header />
-      <MainContainer />
-      <WeatherContainer />
-
+      <WeatherProvider>
+        <CityProvider>
+          <Header />
+          <MainContainer />
+          <WeatherContainer />
+        </CityProvider>
+      </WeatherProvider>
       <Footer />
     </UserProvider>
   );
