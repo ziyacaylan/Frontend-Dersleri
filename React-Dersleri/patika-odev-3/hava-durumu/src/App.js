@@ -1,24 +1,23 @@
 import React from "react";
-import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
-import WeatherContainer from "./components/WeatherContainer";
-import Footer from "./components/Footer";
-import { UserProvider } from "./context/UserContext";
-import { CityProvider } from "./context/CityContext";
+import Header from "./components/Page/Header";
+import Footer from "./components/Page/Footer";
+import MainContainer from "./components/Page/MainContainer";
+import "./style/style.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { WeatherProvider } from "./context/WeatherContext";
+import { CityProvider } from "./context/CityContext";
 
 function App() {
   return (
-    <UserProvider>
-      <WeatherProvider>
-        <CityProvider>
+    <div>
+      <CityProvider>
+        <WeatherProvider>
           <Header />
           <MainContainer />
-          <WeatherContainer />
-        </CityProvider>
-      </WeatherProvider>
-      <Footer />
-    </UserProvider>
+          <Footer />
+        </WeatherProvider>
+      </CityProvider>
+    </div>
   );
 }
 

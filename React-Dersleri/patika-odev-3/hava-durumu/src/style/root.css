@@ -8,4 +8,24 @@
   --header-color: #3e4551;
   --header-hover-color: #474b50;
   --default-color: #fff;
+
+  /* boostrap colors */
+  --amber-800: #ff8f00;
+  --deep-purple-50: #ede7f6;
+  --deep-purple-300: #9575cd;
+  --blue-50: #e3f2fd;
+  --indigo-500: #3f51b5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+html {
+  /* font-size: 10px; */
+}
+body {
+  font-family: "Poppins", sans-serif;
+  /* font-size: 1.6rem; */
 }

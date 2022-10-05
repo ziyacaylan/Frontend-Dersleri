@@ -8,5 +8,11 @@
     "start": "node index"
   },
   "author": "ziyacaylan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
