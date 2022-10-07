@@ -1,11 +1,11 @@
 :root {
-  --header-color: #3e4551;
+  --header-color: rgba(255, 255, 255, 0.3);
   --footer-down-color: #212529;
   --footer-up-color: #2a2e32;
   --icon-color: #a3de83;
   --icon-color-blue: #0d6efd;
   --icon-color-hover: #0a58ca;
-  --header-color: #3e4551;
+  --header-lr-border: rgba(255, 255, 255, 0.3);
   --header-hover-color: #474b50;
   --default-color: #fff;
 
@@ -15,6 +15,8 @@
   --deep-purple-300: #9575cd;
   --blue-50: #e3f2fd;
   --indigo-500: #3f51b5;
+
+  --place-holder-color: #f8f8f8;
 }
 
 *,

@@ -10,7 +10,16 @@
   background-color: var(--footer-down-color);
   height: 70px;
 }
-
+.icon-patika {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--icon-color-blue);
+}
+.icon-patika:hover {
+  background-color: var(--icon-color-hover);
+  cursor: pointer;
+}
 @media only screen and (max-width: 576px) {
   .footer {
     width: 100%;

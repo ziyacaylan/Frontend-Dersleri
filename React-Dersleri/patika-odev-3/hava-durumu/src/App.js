@@ -6,16 +6,18 @@ import "./style/style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { WeatherProvider } from "./context/WeatherContext";
 import { CityProvider } from "./context/CityContext";
+import { DayProvider } from "./context/DayContext";
 
 function App() {
   return (
     <div>
       <CityProvider>
-        <WeatherProvider>
-          <Header />
-          <MainContainer />
-          <Footer />
-        </WeatherProvider>
+        <DayProvider>
+          <WeatherProvider>
+            <MainContainer />
+            <Footer />
+          </WeatherProvider>
+        </DayProvider>
       </CityProvider>
     </div>
   );

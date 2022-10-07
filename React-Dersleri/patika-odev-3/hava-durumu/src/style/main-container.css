@@ -1,6 +1,9 @@
 .main-container {
+  /* position: relative; */
   width: 100%;
-  height: 85vh;
+  height: 140vh;
+  /* top: 0;
+  left: 0; */
   background-position: center;
   background-image: url(../assets/clouds.jpg);
   background-repeat: no-repeat;
@@ -9,177 +12,104 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  z-index: -5;
 }
 
+.form-container,
 .glass-panel {
   color: #fff;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
-  border-radius: 15px;
-  padding: 32px;
+  border-radius: 25px;
+  padding: 0.5rem;
   backdrop-filter: blur(10px);
 }
-
-/*card start
-.stretch-card > .card {
+.city-text {
+  display: inline-block;
   width: 100%;
-  min-width: 100%;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--blue-50);
+  background-color: transparent !important;
+}
+.city-select {
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--blue-50) !important;
+  font-size: 1.2rem !important;
+  border-radius: 25px !important;
+  background-color: transparent !important;
 }
 
-body {
-  background-color: #f9f9fa;
+.city-text:focus,
+.city-select:focus {
+  outline: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 10px #eb6804 !important;
 }
 
-.flex {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+.select-items {
+  background: rgba(255, 255, 255, 0.1) !important;
+  background-color: transparent !important;
+  color: var(--footer-up-color);
 }
 
-@media (max-width: 991.98px) {
-  .padding {
-    padding: 1.5rem;
-  }
+::placeholder {
+  color: var(--place-holder-color);
 }
-
-@media (max-width: 767.98px) {
-  .padding {
-    padding: 1rem;
-  }
+/*card start*/
+.weth-description {
+  font-size: 2rem;
 }
-
-.padding {
-  padding: 5rem;
+.weth-icon {
+  width: 80px;
+  height: 80px;
 }
-
-.grid-margin,
-.purchace-popup > div {
-  margin-bottom: 25px;
+.icon-weather-48 {
+  width: 48px;
+  height: 48px;
 }
-
-.card {
-  border: 0;
-  border-radius: 2px;
+.border-right {
+  border-right: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
-
-.card-weather {
-  background: #e1ecff;
-  background-image: linear-gradient(
-    to left bottom,
-    #d6eef6,
-    #dff0fa,
-    #e7f3fc,
-    #eff6fe,
-    #f6f9ff
-  );
+.border-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+.city-title {
+  margin-bottom: 0 !important;
 }
-
-.card-weather .card-body:first-child {
-  background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1557323760/weather.svg)
-    no-repeat center;
-  background-size: cover;
+.weth-desc-paragraph {
+  margin-bottom: 0 !important;
 }
+/*Card End*/
 
-.card .card-body {
-  padding: 1.88rem 1.81rem;
+/*DayCard Start*/
+.item-day {
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 10px !important;
 }
-
-.card-body {
-  flex: 1 1 auto;
-  padding: 1.25rem;
-}
-
-.card-weather .weather-date-location {
-  padding: 0 0 38px;
-}
-
-.h3,
-h3 {
-  font-size: 1.56rem;
-}
-
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Poppins", sans-serif;
+.text-day {
+  font-size: 1.2rem;
   font-weight: 500;
-}
-
-.text-gray,
-.card-subtitle,
-.new-accounts ul.chats li.chat-persons a p.joined-date {
-  color: #969696;
-}
-
-p {
-  font-size: 13px;
-}
-
-.text-gray,
-.card-subtitle,
-.new-accounts ul.chats li.chat-persons a p.joined-date {
-  color: #969696;
-}
-
-.card-weather .weather-data {
-  padding: 0 0 4.75rem;
-}
-
-.mr-auto,
-.mx-auto {
-  margin-right: auto !important;
-}
-
-.display-3 {
-  font-size: 2.5rem;
-}
-
-.card-weather .card-body {
-  background: #ffffff;
-}
-
-.card-weather .weakly-weather {
-  background: #ffffff;
-  overflow-x: auto;
-}
-
-.card-weather .weakly-weather .weakly-weather-item {
-  flex: 0 0 14.28%;
-  border-right: 1px solid #f2f2f2;
-  padding: 1rem;
-  text-align: center;
-}
-
-.mb-0,
-.my-0 {
   margin-bottom: 0 !important;
 }
 
-.card-weather .weakly-weather .weakly-weather-item i {
-  font-size: 1.2rem;
+.text-block,
+.geo-list {
+  margin-bottom: 0 !important;
 }
+.icon-weather {
+  width: 60px;
+  height: 60px;
+}
+/*DayCard End*/
 
-card end*/
+@media only screen and (max-width: 768px) {
+  .card-weather {
+    padding-top: 10px !important;
+  }
+}
