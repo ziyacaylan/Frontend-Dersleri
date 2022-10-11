@@ -1,23 +1,18 @@
 import { useEffect } from "react";
 import { useFormik } from "formik";
 import { useCity } from "../../context/CityContext";
-import { useWeather } from "../../context/WeatherContext";
 import Form from "react-bootstrap/Form";
 
 function CityForm() {
-  const { city, setCity } = useWeather();
-  const { handleSubmit, values, handleChange, handleBlur } = useFormik({
+  const { setCity } = useCity();
+  const { handleSubmit, values, handleChange } = useFormik({
     initialValues: {
       city: "",
     },
     onSubmit: (values) => {
-      //alert(JSON.stringify(values, null, 2));
-      setCity((city) => values.city);
+      setCity(values.city);
     },
   });
-  useEffect(() => {
-    setCity(city);
-  }, [city, setCity]);
   return (
     <div className="form-container mt-4">
       <form onSubmit={handleSubmit}>

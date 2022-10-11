@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useWeather } from "../../context/WeatherContext";
-import { useDay } from "../../context/DayContext";
-import DayCard from "./DayCard";
+import Forecast from "./Forecast";
+import { useCity } from "../../context/CityContext";
 
-import cloudsImg from "../../assets/icons/d-few-clouds.png";
-import dayClearSky from "../../assets/icons/d-clear-sky.png";
 import sunset from "../../assets/icons/sunset.png";
 import sunrise from "../../assets/icons/sunrise.png";
 import tempUp from "../../assets/icons/temp-up.png";
@@ -12,77 +10,83 @@ import tempDown from "../../assets/icons/temp-down.png";
 import humidity from "../../assets/icons/humidity.png";
 import windFlag from "../../assets/icons/wind-flag.png";
 import windDirection from "../../assets/icons/wind-direction.png";
-
-const days = [
-  "Pazar",
-  "Pazartesi",
-  "Salı",
-  "Çarşamba",
-  "Perşembe",
-  "Cuma",
-  "Cumartesi",
-];
+import pressure from "../../assets/icons/pressure.png";
 
 function Card() {
   const {
-    loading,
-    setLoading,
     isForecastLoading,
     setIsForecastLoading,
+    forecastDays,
     error,
     setError,
-    city,
-    setCity,
-    weeklyForcast,
-    setWeeklyForcast,
+    weeklyForecast,
+    setWeeklyForecast,
     language,
     setLanguage,
     tempType,
     setTempType,
   } = useWeather();
 
-  const { day, setDay } = useDay();
+  const { currentWeather } = useWeather();
 
-  const getDay = () => {
-    const dayInAWeek = new Date().getDay();
-    const forecastDays = days
-      .slice(dayInAWeek, days.length)
-      .concat(days.slice(0, dayInAWeek));
+  //console.log(currentWeather);
 
-    console.log(forecastDays[0]);
-  };
-  getDay();
+  //console.log(forecastDays);
 
   return (
     <div className="card-weather mt-4">
       <div className="glass-panel ">
-        <h1 className="text-center city-title">Şehir Adı</h1>
+        <h1 className="text-center city-title">
+          {currentWeather.name.toUpperCase()}
+        </h1>
         <div className="d-flex justify-content-center align-items-center">
           <div className="weather d-flex">
             <div className="weather-general pe-3">
               <div className="weather-icon text-center">
-                <img src={cloudsImg} alt="" className="weth-icon" />
+                <img
+                  src={`icons/${currentWeather.weather[0].icon}.png`}
+                  alt="weather"
+                  className="weth-icon"
+                />
               </div>
               <div className="weth-description text-center">
-                <p className="weth-desc-paragraph">Weather Description</p>
+                <p className="weth-desc-paragraph color-cyan-500">
+                  {currentWeather.weather[0].description}
+                </p>
               </div>
               <div className="d-flex justify-content-center align-items-center">
-                <p>14.5 °C</p>
+                <p>
+                  <span className="corrent-temp color-orange-400">
+                    {Math.floor(currentWeather.main.temp)} °C
+                  </span>
+                </p>
               </div>
-              <div className="d-flex justify-content-center align-items-center">
+              <div className="d-flex justify-content-center align-items-center text-size-1 text-weight-1">
                 <div>
-                  <p>Hissesilen Sıcaklık</p>
+                  <p className="color-cyan-500">Hissesilen Sıcaklık</p>
                 </div>
                 <div className="ps-1">
-                  <p>: 15 °C</p>
+                  <p className="color-orange-400">
+                    :{" "}
+                    <strong>
+                      {Math.round(currentWeather.main.feels_like)}
+                    </strong>{" "}
+                    °C
+                  </p>
                 </div>
               </div>
-              <div className="day-item d-flex justify-content-center align-items-center">
+              <div className="day-item d-flex justify-content-center align-items-center color-cyan-500 text-size-1 text-weight-1">
                 <div>
-                  <p>Perşembe</p>
+                  <p>{forecastDays[0]}</p>
                 </div>
                 <div className="clock-item ps-2">
-                  <p>23:20</p>
+                  <p>
+                    {new Date()
+                      .toLocaleTimeString()
+                      .split(":")
+                      .slice(0, 2)
+                      .join(":")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -92,65 +96,93 @@ function Card() {
                 <ul className="list-unstyled d-flex flex-wrap justify-content-center align-items-center geo-list">
                   <li className="sun-rise-set px-3 border-right border-left">
                     <div>
-                      <p className="text-block">Doğumu & Batımı</p>
+                      <p className="text-block color-cyan-500 text-size-1 text-weight-1">
+                        Doğumu & Batımı
+                      </p>
                       <div className="d-flex justify-content-between align-items-center">
                         <img src={sunrise} alt="" className="icon-weather-48" />
-                        <p className="text-block">Gün Doğumu</p>
+                        <p className="text-block color-orange-400 text-size-1 text-weight-1">
+                          {new Date(currentWeather.sys.sunrise * 1000)
+                            .toLocaleTimeString()
+                            .split(":")
+                            .slice(0, 2)
+                            .join(":")}
+                        </p>
                       </div>
                       <div className="d-flex justify-content-between align-items-center">
                         <img src={sunset} alt="" className="icon-weather-48" />
-                        <p className="text-block">Gün Batımı</p>
+                        <p className="text-block color-orange-400 text-size-1 text-weight-1">
+                          {new Date(currentWeather.sys.sunset * 1000)
+                            .toLocaleTimeString()
+                            .split(":")
+                            .slice(0, 2)
+                            .join(":")}
+                        </p>
                       </div>
                     </div>
                   </li>
                   <li className="max-min-temp px-3 border-right">
-                    <p className="text-block text-center">Sıcaklıklar</p>
+                    <p className="text-block text-center color-cyan-500 text-size-1 text-weight-1">
+                      Sıcaklıklar
+                    </p>
                     <div className="d-flex justify-content-between align-items-center">
                       <img src={tempUp} alt="" className="icon-weather-48" />
-                      <p className="text-block">
-                        Max <span>13 °C</span>
+                      <p className="text-block color-orange-400 text-size-1 text-weight-1">
+                        Max:{" "}
+                        <span>
+                          {Math.floor(currentWeather.main.temp_max)} °C
+                        </span>
                       </p>
                     </div>
                     <div className="d-flex justify-content-between align-items-center">
                       <img src={tempDown} alt="" className="icon-weather-48" />
-                      <p className="text-block">
-                        Min<span>13 °C</span>
+                      <p className="text-block color-orange-400 text-size-1 text-weight-1">
+                        Min:{" "}
+                        <span>
+                          {Math.floor(currentWeather.main.temp_min)} °C
+                        </span>
                       </p>
                     </div>
                   </li>
                   <li className="humidity px-3 border-right">
-                    <p className="text-block text-center">Nem oranı</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>70%</span>
+                    <p className="text-block text-center color-cyan-500 text-size-1 text-weight-1">
+                      Nem & Basınç
+                    </p>
+                    <div className="d-flex justify-content-between align-items-center color-orange-400 text-size-1 text-weight-1">
+                      <span>{`${currentWeather.main.humidity} `}%</span>
                       <img src={humidity} alt="" className="icon-weather-48" />
                     </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p className="text-block">Yükseklik</p>
+                    <div className="d-flex justify-content-between align-items-center color-orange-400 text-size-1 text-weight-1">
+                      <p className="text-block">
+                        {`${currentWeather.main.pressure} `}hPa
+                      </p>
                       <img
-                        src={dayClearSky}
+                        src={pressure}
                         alt=""
-                        className="icon-weather-48"
+                        className="icon-weather-48 mt-2"
                       />
                     </div>
                   </li>
                   <li className="wind px-3">
                     <div>
-                      <p className="text-block">Rüzgar Durumu</p>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <span>9,6</span>
+                      <p className="text-block color-cyan-500 text-size-1 text-weight-1">
+                        Rüzgar Durumu
+                      </p>
+                      <div className="d-flex justify-content-between align-items-center color-orange-400 text-size-1 text-weight-1">
+                        <span>{`${currentWeather.wind.speed} m/s`}</span>
                         <img
                           src={windFlag}
                           alt=""
                           className="icon-weather-48"
                         />
                       </div>
-                      <div className="d-flex justify-content-between align-items-center">
+                      <div className="d-flex justify-content-between align-items-center color-orange-400 text-size-1 text-weight-1">
                         <img
                           src={windDirection}
                           alt=""
                           className="icon-weather-48"
                         />
-                        <span>Yönü</span>
+                        <span>{`${currentWeather.wind.deg}°`}</span>
                       </div>
                     </div>
                   </li>
@@ -161,30 +193,11 @@ function Card() {
         </div>
         <hr />
         <div className="weather-days">
-          <ul className="list-unstyled d-flex flex-wrap justify-content-center align-items-center">
-            <li className="px-3">
-              <DayCard />
-            </li>
-            <li className="px-3">
-              <DayCard />
-            </li>
-            <li className="px-3">
-              <DayCard />
-            </li>
-            <li className="px-3">
-              <DayCard />
-            </li>
-            <li className="px-3">
-              <DayCard />
-            </li>
-            <li className="px-3">
-              <DayCard />
-            </li>
-          </ul>
+          <Forecast />
         </div>
-        <hr />
+        {/* <hr /> */}
         {/* TAble start */}
-        <div className="table-responsive">
+        {/* <div className="table-responsive">
           <table className="table">
             <thead>
               <tr>
@@ -225,9 +238,9 @@ function Card() {
                   </tr>
                 );
               })} */}
-            </tbody>
-          </table>
-        </div>
+        {/* </tbody>
+          </table> */}
+        {/* </div>  */}
         {/* Table end */}
       </div>
     </div>

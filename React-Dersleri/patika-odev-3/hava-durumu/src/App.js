@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./components/Page/Header";
 import Footer from "./components/Page/Footer";
 import MainContainer from "./components/Page/MainContainer";
 import "./style/style.css";
@@ -12,12 +11,12 @@ function App() {
   return (
     <div>
       <CityProvider>
-        <DayProvider>
-          <WeatherProvider>
+        <WeatherProvider>
+          <DayProvider>
             <MainContainer />
             <Footer />
-          </WeatherProvider>
-        </DayProvider>
+          </DayProvider>
+        </WeatherProvider>
       </CityProvider>
     </div>
   );

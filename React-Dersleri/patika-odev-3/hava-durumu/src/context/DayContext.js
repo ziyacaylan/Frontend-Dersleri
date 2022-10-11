@@ -3,11 +3,11 @@ import { createContext, useState, useContext } from "react";
 const DayContext = createContext();
 
 export const DayProvider = ({ children }) => {
-  const [day, setDay] = useState([]);
+  const [days, setDays] = useState([]);
 
   const values = {
-    day,
-    setDay,
+    days,
+    setDays,
   };
   return <DayContext.Provider value={values}>{children}</DayContext.Provider>;
 };

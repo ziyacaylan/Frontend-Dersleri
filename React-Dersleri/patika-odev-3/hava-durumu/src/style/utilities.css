@@ -1,3 +1,43 @@
 .text-indigo-500 {
   color: var(--indigo-500);
 }
+.color-cyan-500 {
+  color: var(--cyan-500);
+}
+.color-orange-400 {
+  color: var(--orange-400);
+}
+.color-orange-500 {
+  color: var(--orange-500);
+}
+
+/*Font size*/
+.text-size-1 {
+  font-size: 1.2rem;
+}
+.text-size-2 {
+  font-size: 1.5rem;
+}
+.text-size-3 {
+  font-size: 1.8rem;
+}
+.text-size-4 {
+  font-size: 2rem;
+}
+.text-size-5 {
+  font-size: 2.5rem;
+}
+.text-size-6 {
+  font-size: 3rem;
+}
+
+/*Font weight*/
+.text-weight-1 {
+  font-weight: 500;
+}
+.text-weight-2 {
+  font-weight: 600;
+}
+.text-weight-3 {
+  font-weight: 700;
+}

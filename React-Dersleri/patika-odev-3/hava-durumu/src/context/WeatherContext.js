@@ -1,11 +1,24 @@
-import { createContext, useContext, useState, useEffect, useMemo } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { useCity } from "./CityContext";
+
 const WeatherContext = createContext();
+
+const WEEK_DAYS = [
+  "Pazar",
+  "Pazartesi",
+  "Salı",
+  "Çarşamba",
+  "Perşembe",
+  "Cuma",
+  "Cumartesi",
+];
 
 export const WeatherProvider = ({ children }) => {
   const [isForecastLoading, setIsForecastLoading] = useState(false);
-  const [weeklyForcast, setWeeklyForcast] = useState([]);
-  const [city, setCity] = useState("");
+  const [currentWeather, setCurrentWeather] = useState({});
+  const [weeklyForecast, setWeeklyForecast] = useState({});
+  const { city } = useCity();
   const [error, setError] = useState("");
   const [language, setLanguage] = useState(
     localStorage.getItem("language") || navigator.language.split("-")[0]
@@ -16,12 +29,14 @@ export const WeatherProvider = ({ children }) => {
     localStorage.getItem("tempType" === "true")
   );
 
-  const key = process.env.REACT_APP_WEATHER_KEY;
-  const url = process.env.REACT_APP_WEATHER_API_CURRENT;
-  const foreCastUrl = process.env.REACT_APP_WEATHER_DAILY_API;
+  const dayInAWeek = new Date().getDay();
+  const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
+    WEEK_DAYS.slice(0, dayInAWeek)
+  );
 
-  const new_key = process.env.REACT_APP_WEATHER_NEW_KEY;
-  const new_api = process.env.REACT_APP_WEATHER_NEW_API;
+  const key = process.env.REACT_APP_WEATHER_KEY;
+  const current_url = process.env.REACT_APP_WEATHER_API_CURRENT;
+  const foreCastUrl = process.env.REACT_APP_WEATHER_DAILY_API;
 
   useEffect(() => {
     localStorage.setItem("language", language);
@@ -32,13 +47,18 @@ export const WeatherProvider = ({ children }) => {
     setIsForecastLoading(false);
     try {
       const { data } = await axios.get(
-        `${foreCastUrl}${city}&appid=${key}&lang=${language}&units=metric`
+        `${current_url}q=${city}&appid=${key}&lang=${language}&units=metric`
       );
-      console.log(
-        `${foreCastUrl}${city}&appid=${key}&lang=${language}&units=metric`
-      );
+      setCurrentWeather(data);
 
-      setWeeklyForcast(data);
+      await axios(
+        `${foreCastUrl}q=${city}&appid=${key}&lang=${language}&units=metric`
+      ).then((response) => {
+        setWeeklyForecast(response.data);
+      });
+      // console.log(
+      //   `${foreCastUrl}${city}&appid=${key}&lang=${language}&units=metric`
+      // );
       setError("");
       setIsForecastLoading(true);
     } catch (error) {
@@ -58,19 +78,20 @@ export const WeatherProvider = ({ children }) => {
   const values = {
     isForecastLoading,
     setIsForecastLoading,
+    forecastDays,
+    city,
     error,
     setError,
-    city,
-    setCity,
-    weeklyForcast,
-    setWeeklyForcast,
+    currentWeather,
+    setCurrentWeather,
+    weeklyForecast,
+    setWeeklyForecast,
     language,
     setLanguage,
     tempType,
     setTempType,
   };
 
-  //console.log(lat, lng, weatherData);
   return (
     <WeatherContext.Provider value={values}>{children}</WeatherContext.Provider>
   );
