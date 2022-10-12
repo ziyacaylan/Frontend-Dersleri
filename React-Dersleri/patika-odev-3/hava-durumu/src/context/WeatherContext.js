@@ -20,14 +20,7 @@ export const WeatherProvider = ({ children }) => {
   );
   const [savedCity, setSavedCity] = useState(
     JSON.parse(localStorage.getItem("savedCity")) || {}
-    //   id: 0,
-    //   cityName: "",
-    //   icon: "",
-    //   temp: "",
-    // }
   );
-
-  //console.log(savedCity);
 
   const week_days_eng = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const week_days_tr = [

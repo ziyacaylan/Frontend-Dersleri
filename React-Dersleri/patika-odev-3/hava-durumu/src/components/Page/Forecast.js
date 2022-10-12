@@ -1,13 +1,9 @@
-import React, { useState } from "react";
-import rain from "../../assets/icons/d-rain.png";
+import React from "react";
 import { useWeather } from "../../context/WeatherContext";
-
-//const weatherDays = [];
 
 function Forecast() {
   const { weeklyForecast, forecastDays } = useWeather();
 
-  // const getWeather = () => {
   let day = Number(
     new Date().toLocaleDateString().split(".").slice(0, 1).join()
   );
@@ -56,15 +52,9 @@ function Forecast() {
     }
   });
 
-  //console.log(weatherDays);
-
-  // };
-  // getWeather();
-
   return (
     <ul className="list-unstyled d-flex flex-wrap justify-content-center align-items-center">
       {weatherDays.map((itemList, index) => {
-        //console.log(weatherDays);
         return (
           <li key={index} className="px-2">
             <div className="item-day card-size mb-2">

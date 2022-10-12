@@ -4,7 +4,6 @@ import Logo from "../../my-logo.png";
 import locationGif from "../../assets/icons/location.gif";
 import useGeoLocation from "../../hook/useGeoLocation";
 import { useWeather } from "../../context/WeatherContext";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaRegMinusSquare } from "react-icons/fa";
 
 function Header() {

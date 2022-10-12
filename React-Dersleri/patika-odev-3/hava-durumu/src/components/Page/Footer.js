@@ -19,7 +19,10 @@ function Footer() {
             <div className="col place-items-center">
               <ul className="list-unstyled d-flex flex-wrap justify-content-center">
                 <li className="py-3">
-                  <a href="https://github.com/ziyacaylan" target="blank">
+                  <a
+                    href="https://github.com/ziyacaylan/Frontend-Dersleri/tree/main/React-Dersleri/patika-odev-3/hava-durumu"
+                    target="blank"
+                  >
                     <FontAwesomeIcon icon={faGithub} className="fa-3x px-4" />
                   </a>
                 </li>

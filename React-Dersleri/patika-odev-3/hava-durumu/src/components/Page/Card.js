@@ -1,7 +1,6 @@
 import React from "react";
 import { useWeather } from "../../context/WeatherContext";
 import Forecast from "./Forecast";
-import { useCity } from "../../context/CityContext";
 
 import sunset from "../../assets/icons/sunset.png";
 import sunrise from "../../assets/icons/sunrise.png";
@@ -13,25 +12,7 @@ import windDirection from "../../assets/icons/wind-direction.png";
 import pressure from "../../assets/icons/pressure.png";
 
 function Card() {
-  const {
-    isForecastLoading,
-    setIsForecastLoading,
-
-    error,
-    setError,
-    weeklyForecast,
-    setWeeklyForecast,
-
-    setLanguage,
-    tempType,
-    setTempType,
-  } = useWeather();
-
   const { currentWeather, forecastDays, language } = useWeather();
-
-  //console.log(currentWeather);
-
-  //console.log(forecastDays);
 
   return (
     <div className="card-weather mt-4">
