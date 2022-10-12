@@ -118,7 +118,7 @@ function Forecast() {
                                 ? `${Math.round(val.temp_min)}`
                                 : `${Math.round(itemList[0].temp_min)}`
                             )}{" "}
-                        °C
+                        °
                       </span>{" "}
                       /{" "}
                     </span>
@@ -134,7 +134,7 @@ function Forecast() {
                                 : `${Math.round(itemList[0].temp_max)}`
                             )}
                       </span>{" "}
-                      °C
+                      °
                     </span>
                   </p>
                 </div>

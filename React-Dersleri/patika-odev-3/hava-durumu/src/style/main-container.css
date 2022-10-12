@@ -42,6 +42,10 @@
   font-weight: 600 !important;
   letter-spacing: 0.2rem;
 }
+.savedCity {
+  border-radius: 18px !important;
+  color: var(--default-color) !important;
+}
 .form-container,
 .glass-panel {
   color: var(--default-color);

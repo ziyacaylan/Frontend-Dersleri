@@ -10,6 +10,11 @@
   background-color: var(--footer-down-color);
   height: 70px;
 }
+.icon-patika,
+.icon-patika img {
+  width: 50px;
+  height: 50px;
+}
 .icon-patika {
   display: grid;
   place-items: center;
