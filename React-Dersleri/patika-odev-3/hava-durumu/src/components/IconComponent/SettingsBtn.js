@@ -1,17 +1,17 @@
-import { useState } from "react";
+import React from "react";
 import settingsIcon from "../../assets/icons/settings.png";
+import { useAnimation } from "../../context/AnimationContext";
 function SettingsBtn() {
-  // const [anim, setAnim] = useState("");
+  const { anim, setAnim } = useAnimation();
+
   return (
-    // <div className={`icon-settings animate__animated ${anim}`}>
-    <div className="btn-content">
-      <img
-        className="settings-icon"
-        src={settingsIcon}
-        alt="Settings"
-        // onMouseOver={() => setAnim("animate__heartBeat")}
-        // onMouseOut={() => setAnim("animate__pulse")}
-      />
+    <div
+      className="btn-content"
+      onClick={() =>
+        setAnim(anim === "settings-page-up" ? "" : "settings-page-up")
+      }
+    >
+      <img className="settings-icon" src={settingsIcon} alt="Settings" />
     </div>
   );
 }

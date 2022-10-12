@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import { useCity } from "../../context/CityContext";
+import { useWeather } from "../../context/WeatherContext";
 import Form from "react-bootstrap/Form";
 
 function CityForm() {
   const { setCity } = useCity();
+  const { language } = useWeather();
+
   const { handleSubmit, values, handleChange } = useFormik({
     initialValues: {
       city: "",
@@ -22,7 +25,9 @@ function CityForm() {
             name="city"
             type="text"
             className="city-text py-1 ps-3 text-gray-100"
-            placeholder="Bir konum giriniz"
+            placeholder={`${
+              language === "tr" ? "Bir konum giriniz" : "Enter a City..."
+            }`}
             onChange={handleChange}
             value={values.city}
           />

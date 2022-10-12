@@ -23,11 +23,7 @@ export const WeatherProvider = ({ children }) => {
   const [language, setLanguage] = useState(
     localStorage.getItem("language") || navigator.language.split("-")[0]
   );
-  //console.log("kayıtlı dil: ", language);
-
-  const [tempType, setTempType] = useState(
-    localStorage.getItem("tempType" === "true")
-  );
+  const [tempType, setTempType] = useState(localStorage.getItem("tempType"));
 
   const dayInAWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
@@ -37,11 +33,6 @@ export const WeatherProvider = ({ children }) => {
   const key = process.env.REACT_APP_WEATHER_KEY;
   const current_url = process.env.REACT_APP_WEATHER_API_CURRENT;
   const foreCastUrl = process.env.REACT_APP_WEATHER_DAILY_API;
-
-  useEffect(() => {
-    localStorage.setItem("language", language);
-    localStorage.setItem("tempType", tempType);
-  }, [language, tempType]);
 
   const getForeCastWeatherDataByCity = async (city) => {
     setIsForecastLoading(false);
@@ -73,7 +64,7 @@ export const WeatherProvider = ({ children }) => {
   };
   useEffect(() => {
     city && getForeCastWeatherDataByCity(city);
-  }, [city]);
+  }, [city, language]);
 
   const values = {
     isForecastLoading,

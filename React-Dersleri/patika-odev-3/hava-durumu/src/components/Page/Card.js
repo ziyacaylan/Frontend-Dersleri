@@ -16,18 +16,18 @@ function Card() {
   const {
     isForecastLoading,
     setIsForecastLoading,
-    forecastDays,
+
     error,
     setError,
     weeklyForecast,
     setWeeklyForecast,
-    language,
+
     setLanguage,
     tempType,
     setTempType,
   } = useWeather();
 
-  const { currentWeather } = useWeather();
+  const { currentWeather, forecastDays, language } = useWeather();
 
   //console.log(currentWeather);
 
@@ -63,7 +63,9 @@ function Card() {
               </div>
               <div className="d-flex justify-content-center align-items-center text-size-1 text-weight-1">
                 <div>
-                  <p className="color-cyan-500">Hissesilen Sıcaklık</p>
+                  <p className="color-cyan-500">{`${
+                    language === "tr" ? "Hissesilen Sıcaklık" : "Feels Like"
+                  }`}</p>
                 </div>
                 <div className="ps-1">
                   <p className="color-orange-400">
@@ -97,7 +99,11 @@ function Card() {
                   <li className="sun-rise-set px-3 border-right border-left">
                     <div>
                       <p className="text-block color-cyan-500 text-size-1 text-weight-1">
-                        Doğumu & Batımı
+                        {`${
+                          language === "tr"
+                            ? "Doğumu & Batımı"
+                            : "Sunrise & Sunset"
+                        }`}
                       </p>
                       <div className="d-flex justify-content-between align-items-center">
                         <img src={sunrise} alt="" className="icon-weather-48" />
@@ -123,7 +129,7 @@ function Card() {
                   </li>
                   <li className="max-min-temp px-3 border-right">
                     <p className="text-block text-center color-cyan-500 text-size-1 text-weight-1">
-                      Sıcaklıklar
+                      {`${language === "tr" ? "Sıcaklıklar" : "Tempratures"}`}
                     </p>
                     <div className="d-flex justify-content-between align-items-center">
                       <img src={tempUp} alt="" className="icon-weather-48" />
@@ -146,7 +152,11 @@ function Card() {
                   </li>
                   <li className="humidity px-3 border-right">
                     <p className="text-block text-center color-cyan-500 text-size-1 text-weight-1">
-                      Nem & Basınç
+                      {`${
+                        language === "tr"
+                          ? "Nem & Basınç"
+                          : "Humidity & Pressure"
+                      }`}
                     </p>
                     <div className="d-flex justify-content-between align-items-center color-orange-400 text-size-1 text-weight-1">
                       <span>{`${currentWeather.main.humidity} `}%</span>
@@ -166,7 +176,9 @@ function Card() {
                   <li className="wind px-3">
                     <div>
                       <p className="text-block color-cyan-500 text-size-1 text-weight-1">
-                        Rüzgar Durumu
+                        {`${
+                          language === "tr" ? "Rüzgar Durumu" : "Wind Status"
+                        }`}
                       </p>
                       <div className="d-flex justify-content-between align-items-center color-orange-400 text-size-1 text-weight-1">
                         <span>{`${currentWeather.wind.speed} m/s`}</span>

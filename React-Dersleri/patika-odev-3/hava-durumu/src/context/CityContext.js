@@ -1,5 +1,4 @@
 import { useState, createContext, useContext } from "react";
-import JSONCityData from "../Data/Cities.json";
 
 const CityContext = createContext();
 

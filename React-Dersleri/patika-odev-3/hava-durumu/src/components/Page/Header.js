@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SettingsBtn from "../IconComponent/SettingsBtn";
 import Logo from "../../my-logo.png";
 import locationGif from "../../assets/icons/location.gif";
@@ -8,7 +8,7 @@ import CityForm from "./CityForm";
 
 function Header() {
   const location = useGeoLocation();
-  const { loading, setLoading, weatherData } = useWeather();
+  const { language } = useWeather();
 
   //console.log(e.target.value);
   //console.log(city);
@@ -28,24 +28,34 @@ function Header() {
             <div className="d-flex justify-content-center align-items-center-important flex-wrap">
               <img src={locationGif} alt="" className="icon-location pb-1" />
             </div>
-            <div className="ps-1 color-orange-400 text-size-1 text-weight-1">
-              <div className="d-flex justify-content-start flex-wrap py-2 ps-3">
-                <div>
-                  <span className="geo-text">Enlem</span>
+            <div className="ps-1 color-orange-400  text-weight-1">
+              {/* Burası Enlem */}
+              <div className="d-flex justify-content-between pt-3 ps-2 location-lat">
+                <div className="pe-4 ">
+                  <span className="geo-text">{`${
+                    language === "tr" ? "Enlem: " : "Latitude: "
+                  }`}</span>
                 </div>
                 <div>
                   <span>
-                    : {location.loaded ? location.coordinates.lat : "İzin YOK"}
+                    {location.loaded
+                      ? location.coordinates.lat
+                      : `${language === "tr" ? "İzin YOK" : "No Permission"}`}
                   </span>
                 </div>
               </div>
-              <div className="d-flex justify-content-start flex-wrap py-2 ps-3">
-                <div>
-                  <span className="geo-text">Boylam</span>
+              {/* Burası Boylam */}
+              <div className="d-flex justify-content-between flex-wrap py-2 ps-2">
+                <div className="pe-2">
+                  <span className="geo-text">{`${
+                    language === "tr" ? "Boylam: " : "Longitude: "
+                  }`}</span>
                 </div>
                 <div>
                   <span>
-                    : {location.loaded ? location.coordinates.lng : "İzin YOK"}
+                    {location.loaded
+                      ? location.coordinates.lng
+                      : `${language === "tr" ? "İzin YOK" : "No Permission"}`}
                   </span>
                 </div>
               </div>
