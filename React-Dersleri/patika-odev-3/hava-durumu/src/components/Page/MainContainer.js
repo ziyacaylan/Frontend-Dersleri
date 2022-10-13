@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import CityForm from "./CityForm";
 import Header from "./Header";
@@ -8,8 +8,13 @@ import Settings from "./Settings";
 
 function MainContainer() {
   const { error, city, isForecastLoading } = useWeather();
+  const [pageHeight, setPageHeight] = useState("");
+
+  useEffect(() => {
+    city && setPageHeight("pageHeight");
+  }, [city]);
   return (
-    <div className="main-container">
+    <div className={`main-container ${pageHeight}`}>
       <Header />
       <Settings />
       <div className="container">

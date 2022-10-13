@@ -12,10 +12,10 @@ import windDirection from "../../assets/icons/wind-direction.png";
 import pressure from "../../assets/icons/pressure.png";
 
 function Card() {
-  const { currentWeather, forecastDays, language } = useWeather();
+  const { currentWeather, forecastDays, language, tempType } = useWeather();
 
   return (
-    <div className="card-weather mt-4">
+    <div className="card-weather mt-4 pb-3">
       <div className="glass-panel ">
         <h1 className="text-center city-title">
           {currentWeather.name.toUpperCase()}
@@ -38,23 +38,25 @@ function Card() {
               <div className="d-flex justify-content-center align-items-center">
                 <p>
                   <span className="corrent-temp color-orange-400">
-                    {Math.floor(currentWeather.main.temp)} °C
+                    {`${Math.floor(currentWeather.main.temp)} ${
+                      tempType === "°C" ? "°C" : "°F"
+                    }`}
                   </span>
                 </p>
               </div>
               <div className="d-flex justify-content-center align-items-center text-size-1 text-weight-1">
                 <div>
                   <p className="color-cyan-500">{`${
-                    language === "tr" ? "Hissesilen Sıcaklık" : "Feels Like"
+                    language === "tr" ? "Hissesilen Sıcaklık:" : "Feels Like:"
                   }`}</p>
                 </div>
                 <div className="ps-1">
                   <p className="color-orange-400">
-                    :{" "}
                     <strong>
-                      {Math.round(currentWeather.main.feels_like)}
-                    </strong>{" "}
-                    °C
+                      {` ${Math.round(currentWeather.main.feels_like)} ${
+                        tempType === "°C" ? "°C" : "°F"
+                      }`}
+                    </strong>
                   </p>
                 </div>
               </div>
@@ -115,18 +117,22 @@ function Card() {
                     <div className="d-flex justify-content-between align-items-center">
                       <img src={tempUp} alt="" className="icon-weather-48" />
                       <p className="text-block color-orange-400 text-size-1 text-weight-1">
-                        Max:{" "}
+                        Max:
                         <span>
-                          {Math.floor(currentWeather.main.temp_max)} °C
+                          {` ${Math.floor(currentWeather.main.temp_max)} ${
+                            tempType === "°C" ? "°C" : "°F"
+                          }`}
                         </span>
                       </p>
                     </div>
                     <div className="d-flex justify-content-between align-items-center">
                       <img src={tempDown} alt="" className="icon-weather-48" />
                       <p className="text-block color-orange-400 text-size-1 text-weight-1">
-                        Min:{" "}
+                        Min:
                         <span>
-                          {Math.floor(currentWeather.main.temp_min)} °C
+                          {` ${Math.floor(currentWeather.main.temp_min)} ${
+                            tempType === "°C" ? "°C" : "°F"
+                          }`}
                         </span>
                       </p>
                     </div>

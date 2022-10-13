@@ -1,10 +1,10 @@
 .footer {
   width: 100%;
-  height: 200px;
+  height: auto;
 }
 .footer.footer-up {
   background-color: var(--footer-up-color);
-  height: 130px;
+  height: auto;
 }
 .footer.footer-down {
   background-color: var(--footer-down-color);
@@ -24,16 +24,4 @@
 .icon-patika:hover {
   background-color: var(--icon-color-hover);
   cursor: pointer;
-}
-@media only screen and (max-width: 576px) {
-  .footer {
-    width: 100%;
-    height: 520px;
-  }
-  .footer.footer-up {
-    height: 450px;
-  }
-  .footer.footer-down {
-    height: 70px;
-  }
 }

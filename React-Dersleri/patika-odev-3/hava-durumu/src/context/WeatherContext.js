@@ -68,7 +68,9 @@ export const WeatherProvider = ({ children }) => {
         setWeeklyForecast(response.data);
       });
       // console.log(
-      //   `${foreCastUrl}${city}&appid=${key}&lang=${language}&units=metric`
+      //   `${foreCastUrl}q=${city}&appid=${key}&lang=${language}${
+      //     tempType === "°C" ? "&units=metric" : ""
+      //   }`
       // );
       setError("");
       setIsForecastLoading(true);

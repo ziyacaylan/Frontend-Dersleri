@@ -13,6 +13,7 @@ function Forecast() {
 
   let Days = [];
   const weatherDays = [];
+  //console.log(weeklyForecast);
 
   weeklyForecast?.list.map((item, index) => {
     const weather_day = Number(
@@ -54,9 +55,9 @@ function Forecast() {
 
   return (
     <ul className="list-unstyled d-flex flex-wrap justify-content-center align-items-center">
-      {weatherDays.map((itemList, index) => {
+      {weatherDays?.map((itemList, index) => {
         return (
-          <li key={index} className="px-2">
+          <li key={index} className="mx-2">
             <div className="item-day card-size mb-2">
               <div className="mx-5 my-2">
                 <div className="text-center my-3">
@@ -72,13 +73,16 @@ function Forecast() {
                         ? itemList.length >= 4
                           ? `icons/${itemList[4].icon}.png`
                           : `icons/${itemList[0].icon}.png`
-                        : itemList.find((val) =>
-                            val.hour === 12
-                              ? `icons/${val.icon}.png}`
-                              : `icons/${itemList[0].icon}.png`
-                          )
+                        : `icons/${
+                            itemList.filter(
+                              (val) =>
+                                Number(
+                                  val.hour.split(":").slice(0, 1).join()
+                                ) >= 12
+                            )[0].icon
+                          }.png`
                     }
-                    alt=""
+                    alt="weather-icon"
                     className="icon-weather"
                   />
                 </div>
@@ -88,11 +92,13 @@ function Forecast() {
                       ? itemList.length >= 4
                         ? `${itemList[4].description}`
                         : `${itemList[0].description}`
-                      : itemList.find((val) =>
-                          val.hour === 12
-                            ? `${val.description}`
-                            : `${itemList[0].description}`
-                        )}
+                      : `${
+                          itemList.filter(
+                            (val) =>
+                              Number(val.hour.split(":").slice(0, 1).join()) >=
+                              12
+                          )[0].description
+                        }`}
                   </span>
                 </div>
                 <div className="day-temp text-center">
@@ -103,11 +109,14 @@ function Forecast() {
                           ? itemList.length >= 4
                             ? `${Math.round(itemList[4].temp_min)}`
                             : `${Math.round(itemList[0].temp_min)}`
-                          : itemList.find((val) =>
-                              val.hour === 12
-                                ? `${Math.round(val.temp_min)}`
-                                : `${Math.round(itemList[0].temp_min)}`
-                            )}{" "}
+                          : `${Math.round(
+                              itemList.filter(
+                                (val) =>
+                                  Number(
+                                    val.hour.split(":").slice(0, 1).join()
+                                  ) >= 12
+                              )[0].temp_min
+                            )}`}{" "}
                         °
                       </span>{" "}
                       /{" "}
@@ -118,11 +127,14 @@ function Forecast() {
                           ? itemList.length >= 4
                             ? `${Math.round(itemList[4].temp_max)}`
                             : `${Math.round(itemList[0].temp_max)}`
-                          : itemList.find((val) =>
-                              val.hour === 12
-                                ? `${Math.round(Math.round(val.temp_max))}`
-                                : `${Math.round(itemList[0].temp_max)}`
-                            )}
+                          : `${Math.round(
+                              itemList.filter(
+                                (val) =>
+                                  Number(
+                                    val.hour.split(":").slice(0, 1).join()
+                                  ) >= 12
+                              )[0].temp_max
+                            )}`}
                       </span>{" "}
                       °
                     </span>

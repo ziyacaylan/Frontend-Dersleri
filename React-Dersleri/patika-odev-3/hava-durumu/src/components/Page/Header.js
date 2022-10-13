@@ -23,7 +23,7 @@ function Header() {
           <img src={Logo} alt="My Logo" className="logo" />
         </div>
         {/* Burası Location */}
-        <div className="col-md-3 d-flex align-items-center justify-content-center mb-3">
+        <div className="col-md-3 d-flex align-items-center justify-content-center flex-nowrap mb-3">
           <div className="d-flex justify-content-start align-items-center flex-wrap">
             <div className="d-flex justify-content-center align-items-center-important flex-wrap">
               <img src={locationGif} alt="" className="icon-location pb-1" />
