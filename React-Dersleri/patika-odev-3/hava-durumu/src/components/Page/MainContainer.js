@@ -5,6 +5,7 @@ import Header from "./Header";
 import { useWeather } from "../../context/WeatherContext";
 import ErrorPage from "./ErrorPage";
 import Settings from "./Settings";
+import Footer from "./Footer";
 
 function MainContainer() {
   const { error, city, isForecastLoading } = useWeather();
@@ -34,6 +35,7 @@ function MainContainer() {
           <ErrorPage />
         )}
       </div>
+      {/* <Footer /> */}
     </div>
   );
 }
