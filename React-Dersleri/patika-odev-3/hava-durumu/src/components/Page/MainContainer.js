@@ -14,6 +14,7 @@ function MainContainer() {
   useEffect(() => {
     city && setPageHeight("pageHeight");
   }, [city]);
+
   return (
     <div className={`main-container ${pageHeight}`}>
       <Header />
@@ -23,7 +24,7 @@ function MainContainer() {
         {!error ? (
           city &&
           (!isForecastLoading ? (
-            <div className="d-flex align-items-center justify-content-center mt-5">
+            <div className="d-flex align-items-center justify-content-center mt-5 emptyHeight">
               <div className="spinner-border text-primary" role="status">
                 <span className="sr-only">Loading...</span>
               </div>

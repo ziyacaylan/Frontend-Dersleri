@@ -11,6 +11,7 @@
 ✔️ React  
 ✔️ Context Api  
 ✔️ Formik  
+✔️ Validation  
 ✔️ Yup  
 ✔️ Fontawesome  
 ✔️ Bootstrap  
@@ -27,8 +28,8 @@
 ![patika-weather-app](../../assets/patika-odev-3_1.jpg)  
 ![patika-weather-app](../../assets/patika-odev-3_2.jpg)  
 ![patika-weather-app](../../assets/patika-odev-3_3.jpg)  
-![patika-weather-app](../../assets/patika-odev-3_4.jpg)  
-![patika-weather-app](../../assets/patika-odev-3_5.jpg)  
-![patika-weather-app](../../assets/patika-odev-3_6.jpg)
+![patika-weather-app](../../assets/patika-odev-3_4_1.jpg)  
+![patika-weather-app](../../assets/patika-odev-3_5_1.jpg)  
+![patika-weather-app](../../assets/patika-odev-3_6_1.jpg)
 
 ---

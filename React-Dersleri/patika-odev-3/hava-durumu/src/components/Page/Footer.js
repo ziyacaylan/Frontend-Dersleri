@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PatikaIcon from "../IconComponent/Patika";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,9 +7,16 @@ import {
   faCodepen,
   faFreeCodeCamp,
 } from "@fortawesome/free-brands-svg-icons";
+import { useCity } from "../../context/CityContext";
 function Footer() {
+  const [footerPosition, setFooterPosition] = useState("footer-position");
+  const { city } = useCity();
+
+  useEffect(() => {
+    city && setFooterPosition("");
+  }, [city]);
   return (
-    <div className="footer">
+    <div className={`footer ${footerPosition}`}>
       <div className="footer footer-up">
         <div className="container">
           <div className="row">

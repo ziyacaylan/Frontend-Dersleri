@@ -11,7 +11,7 @@ function Forecast() {
     new Date().toLocaleTimeString().split(":").slice(0, 1).join()
   );
 
-  let Days = [];
+  // let Days = [];
   const weatherDays = [];
   //console.log(weeklyForecast);
 
@@ -20,6 +20,13 @@ function Forecast() {
       new Date(item.dt * 1000)
         .toLocaleDateString()
         .split(".")
+        .slice(0, 1)
+        .join()
+    );
+    const item_hour = Number(
+      new Date(item.dt * 1000)
+        .toLocaleTimeString()
+        .split(":")
         .slice(0, 1)
         .join()
     );
@@ -33,13 +40,25 @@ function Forecast() {
         temp_max: `${item.main.temp_max}`,
         temp_min: `${item.main.temp_min}`,
       };
-      Days.push(weatherDay);
-      weeklyForecast.list.length - 1 === index && weatherDays.push([...Days]);
-    } else if (weather_day !== day) {
-      day += 1;
-      Days.length > 0 && weatherDays.push([...Days]);
-      Days.splice(0, Days.length);
 
+      if (now_hour < 12) {
+        if (item_hour === 12) {
+          weatherDays.push(weatherDay);
+        }
+      } else {
+        // ilk datayı al muhtemel satt 15/18/21 now_hour< 13/14 => item_hour = 15
+        if (now_hour > 12 && now_hour < 15) {
+          // item_hour === 15 ise al
+          item_hour === 15 && weatherDays.push(weatherDay);
+        } else if (now_hour >= 15 && now_hour < 18) {
+          // item_hour === 18
+          item_hour === 18 && weatherDays.push(weatherDay);
+        } else if (now_hour >= 18 && now_hour <= 23) {
+          // item_hour === 21
+          item_hour === 21 && weatherDays.push(weatherDay);
+        }
+      }
+    } else {
       const weatherDay = {
         id: `${index}`,
         date: `${new Date(item.dt * 1000).toLocaleDateString()}`,
@@ -49,93 +68,95 @@ function Forecast() {
         temp_max: `${item.main.temp_max}`,
         temp_min: `${item.main.temp_min}`,
       };
-      Days.push(weatherDay);
+
+      if (now_hour < 12) {
+        // havadurumunun 2/3/4/5 veya 6. günü
+        // item_hour = 12 ise al yada 9 ise al
+        if (item_hour === 9) {
+          // son gün olabilir yada ara gün ama son gün saat 9 var
+          weatherDays.push(weatherDay);
+        } else if (item_hour === 12) {
+          // ara gün 12 var doldur
+          weatherDays.push(weatherDay);
+        }
+      } else {
+        // son gün item_hour = 12 ise datayı al
+        item_hour === 12 && weatherDays.push(weatherDay);
+      }
     }
   });
+  //console.log(weatherDays);
+
+  const handleClick = (event) => {
+    document.querySelector(".active")?.classList?.remove("active");
+    document.getElementById(`${event?.target?.id}`).classList?.add("active");
+  };
 
   return (
     <ul className="list-unstyled d-flex flex-wrap justify-content-center align-items-center">
-      {weatherDays?.map((itemList, index) => {
+      {weatherDays?.map((item, index) => {
         return (
-          <li key={index} className="mx-2">
-            <div className="item-day card-size mb-2">
-              <div className="mx-5 my-2">
-                <div className="text-center my-3">
-                  <p className="text-day color-orange-400 text-size-1 text-weight-1">
+          <li
+            key={index}
+            id={index}
+            className={`mx-2 ${index === 0 ? "active" : ""}`}
+            onClick={handleClick}
+          >
+            <div
+              className="item-day card-size mb-2"
+              onClick={handleClick}
+              id={index}
+            >
+              <div className="mx-5 my-2" onClick={handleClick} id={index}>
+                <div
+                  className="text-center my-2"
+                  onClick={handleClick}
+                  id={index}
+                >
+                  <p
+                    className="text-day color-orange-400 text-size-1 text-weight-1"
+                    onClick={handleClick}
+                    id={index}
+                  >
                     {forecastDays[index]}
                   </p>
                 </div>
+                <div className="text-center">
+                  <span className="color-orange-400">
+                    {item.hour.split(":").slice(0, 2).join(" : ")}
+                  </span>
+                </div>
 
-                <div className="text-center mb-3">
+                <div className="text-center mb-2">
                   <img
-                    src={
-                      now_hour > 12
-                        ? itemList.length >= 4
-                          ? `icons/${itemList[4].icon}.png`
-                          : `icons/${itemList[0].icon}.png`
-                        : `icons/${
-                            itemList.filter(
-                              (val) =>
-                                Number(
-                                  val.hour.split(":").slice(0, 1).join()
-                                ) >= 12
-                            )[0].icon
-                          }.png`
-                    }
+                    onClick={handleClick}
+                    id={index}
+                    src={`icons/${item.icon}.png`}
                     alt="weather-icon"
                     className="icon-weather"
                   />
                 </div>
                 <div className="text-center color-cyan-500 text-size-1 text-weight-1">
-                  <span>
-                    {now_hour > 12
-                      ? itemList.length >= 4
-                        ? `${itemList[4].description}`
-                        : `${itemList[0].description}`
-                      : `${
-                          itemList.filter(
-                            (val) =>
-                              Number(val.hour.split(":").slice(0, 1).join()) >=
-                              12
-                          )[0].description
-                        }`}
+                  <span onClick={handleClick} id={index}>
+                    {item.description}
                   </span>
                 </div>
                 <div className="day-temp text-center">
                   <p className="mt-2">
                     <span className="text-size-1 text-weight-1">
-                      <span className="color-cyan-500">
-                        {now_hour > 12
-                          ? itemList.length >= 4
-                            ? `${Math.round(itemList[4].temp_min)}`
-                            : `${Math.round(itemList[0].temp_min)}`
-                          : `${Math.round(
-                              itemList.filter(
-                                (val) =>
-                                  Number(
-                                    val.hour.split(":").slice(0, 1).join()
-                                  ) >= 12
-                              )[0].temp_min
-                            )}`}{" "}
-                        °
-                      </span>{" "}
-                      /{" "}
+                      <span
+                        className="color-cyan-500"
+                        onClick={handleClick}
+                        id={index}
+                      >
+                        {`${Math.round(item.temp_min)}`} °
+                      </span>
                     </span>
+                    /
                     <span className="color-orange-400 text-size-1 text-weight-1">
-                      <span>
-                        {now_hour > 12
-                          ? itemList.length >= 4
-                            ? `${Math.round(itemList[4].temp_max)}`
-                            : `${Math.round(itemList[0].temp_max)}`
-                          : `${Math.round(
-                              itemList.filter(
-                                (val) =>
-                                  Number(
-                                    val.hour.split(":").slice(0, 1).join()
-                                  ) >= 12
-                              )[0].temp_max
-                            )}`}
-                      </span>{" "}
+                      <span onClick={handleClick} id={index}>
+                        {` ${Math.round(item.temp_max)}`}
+                      </span>
                       °
                     </span>
                   </p>

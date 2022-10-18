@@ -2,7 +2,7 @@
   /* position: relative;*/
   width: 100%;
   /* height: 80vh; */
-  height: 100vh;
+  height: calc(100vh - 208px);
   top: 0;
   left: 0;
   background-position: center;
@@ -15,8 +15,12 @@
   background-size: cover;
   z-index: -15;
 }
+
 .pageHeight {
   height: auto;
+}
+.emptyHeight {
+  height: calc(100vh - 420px);
 }
 .settings-page {
   position: absolute;
@@ -142,6 +146,20 @@
 .item-day {
   border: 1px solid rgba(255, 255, 255, 0.8) !important;
   border-radius: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.item-day:hover {
+  -webkit-box-shadow: 0 0 4px 6px black;
+  -moz-box-shadow: 0 0 4px 6px black;
+  box-shadow: 0 0 4px 6px black;
+  border-radius: 10px !important;
+}
+.active {
+  -webkit-box-shadow: 0 0 4px 6px black;
+  -moz-box-shadow: 0 0 4px 6px black;
+  box-shadow: 0 0 4px 6px black;
+  border-radius: 10px !important;
+  height: 240px;
 }
 .text-day {
   font-size: 1.2rem;
