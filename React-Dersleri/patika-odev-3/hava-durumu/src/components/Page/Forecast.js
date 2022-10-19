@@ -14,7 +14,7 @@ function Forecast() {
   // let Days = [];
   const weatherDays = [];
   //console.log(weeklyForecast);
-  now_hour = 3;
+
   weeklyForecast?.list.map((item, index) => {
     const weather_day = Number(
       new Date(item.dt * 1000)
