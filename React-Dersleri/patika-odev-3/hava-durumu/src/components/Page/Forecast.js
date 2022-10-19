@@ -14,7 +14,7 @@ function Forecast() {
   // let Days = [];
   const weatherDays = [];
   //console.log(weeklyForecast);
-
+  now_hour = 3;
   weeklyForecast?.list.map((item, index) => {
     const weather_day = Number(
       new Date(item.dt * 1000)
@@ -71,12 +71,9 @@ function Forecast() {
 
       if (now_hour < 12) {
         // havadurumunun 2/3/4/5 veya 6. günü
-        // item_hour = 12 ise al yada 9 ise al
-        if (item_hour === 9) {
+        // item_hour = 12 ise al
+        if (item_hour === 12) {
           // son gün olabilir yada ara gün ama son gün saat 9 var
-          weatherDays.push(weatherDay);
-        } else if (item_hour === 12) {
-          // ara gün 12 var doldur
           weatherDays.push(weatherDay);
         }
       } else {
