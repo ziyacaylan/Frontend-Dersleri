@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #faf7f0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .search-input {
+  width: 500px;
+  height: 35px;
+  margin: 15px auto 0 auto;
+  border: 1px solid #ecf0f1;
+  border-radius: 7px;
+  text-indent: 10px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+}
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+.symbol,
+.title {
+  padding: 10px 20px;
+}
+.emoji-result {
+  margin-top: 20px;
+}
+
+.emoji-result .emoji-list {
+  list-style-type: none;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 1px;
+  padding: 10px 0 10px 10px;
+}
+
+.emoji-list .title {
+  margin-left: 20px;
+}
+
+.emoji-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  height: 35px;
+  border: 1px solid #b8e8fc;
+}
+
+.emoji-list li .copy {
+  font-size: 1.2rem;
+  margin-right: 50px;
+  cursor: pointer;
+  color: #bccef8;
+}
+
+.emoji-list li .copy:hover {
+  color: #3c4048;
+  font-weight: 500;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.icons {
+  padding-top: 5px;
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+}
