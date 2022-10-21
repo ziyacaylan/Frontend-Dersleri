@@ -4,23 +4,18 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import App from "../../App";
-import EmojiRow from "./EmojiRow";
 
 describe("Emojies Results testing", () => {
   beforeEach(() => {
     render(<App />);
   });
 
-  test("copies all codes to clipboard when clicked", async () => {
-    //const user = userEvent.setup();
-
-    const click = screen.getAllByTestId("row");
+  test("copy", () => {
     const copytext = screen.getAllByText("Copy to clipboard");
-    const readText = navigator.readText().then((data) => data.symbol);
-    expect(readText).toBeGreaterThan(0);
-    //await user.click(copyButton);
-    // const clipboardText = await navigator.clipboard.readText();
-    // expect(clipboardText).toBe("bla bla bla");
+    userEvent.click(copytext);
+    const input = screen.getByRole("textbox");
+    userEvent.paste(input, copytext);
+    expect(input.length === 1);
   });
 
   // test("Copying emoji should work successfully", () => {
