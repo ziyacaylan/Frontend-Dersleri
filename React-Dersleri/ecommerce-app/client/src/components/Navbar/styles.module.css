@@ -27,3 +27,6 @@
 .nav .right a:first-child {
   margin-right: 5px;
 }
+.nav .logo {
+  font-weight: bold;
+}
