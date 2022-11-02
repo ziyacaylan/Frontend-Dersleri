@@ -12,6 +12,10 @@ import "./reset.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+//Context
+import { AuthProvider } from "./contexts/AuthContext";
+import { BasketProvider } from "./contexts/BasketContext";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     refetchOnMount: false,
@@ -21,16 +25,21 @@ const queryClient = new QueryClient({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <React.Fragment>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ChakraProvider>
-          <App />
+          <AuthProvider>
+            <BasketProvider>
+              <App />
+            </BasketProvider>
+          </AuthProvider>
         </ChakraProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  </React.StrictMode>
+  </React.Fragment>
 );
 
 // If you want to start measuring performance in your app, pass a function
