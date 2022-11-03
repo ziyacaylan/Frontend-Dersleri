@@ -21,7 +21,7 @@ function Card({ item }) {
               {moment(item.createdAt).format("DD/MM/YYYY")}
             </Box>
             <Box marginTop="1" fontWeight="semibold" as="h4" lineHeight="tight">
-              M{item.title}
+              {item.title}
             </Box>
             <Box>{item.price} TL</Box>
           </Box>

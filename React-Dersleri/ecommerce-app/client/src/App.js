@@ -10,6 +10,8 @@ import Signin from "./Pages/Auth/Signin";
 import Signup from "./Pages/Auth/Signup";
 import Profile from "./Pages/Profile/index";
 import Basket from "./Pages/Basket";
+import Admin from "./Pages/Admin";
+
 import Error404 from "./Pages/Error404";
 
 function App() {
@@ -23,9 +25,15 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/basket" element={<Basket />} />
+
           <Route element={<ProtectedRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
+
+          <Route element={<ProtectedRoute admin={true} />}>
+            <Route path="/admin/*" element={<Admin />} />
+          </Route>
+
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </div>

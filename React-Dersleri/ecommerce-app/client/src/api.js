@@ -73,3 +73,28 @@ export const postOrder = async (input) => {
   );
   return data;
 };
+
+export const fetchOrders = async (input) => {
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_BASE_ENDPOINT}/order`,
+    input
+  );
+  return data;
+};
+
+export const deleteProduct = async (product_id) => {
+  console.log(product_id);
+  const { data } = await axios.delete(
+    `${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`
+  );
+
+  return data;
+};
+export const updateProduct = async (input, product_id) => {
+  const { data } = await axios.put(
+    `${process.env.REACT_APP_BASE_ENDPOINT}/product/${product_id}`,
+    input
+  );
+
+  return data;
+};
