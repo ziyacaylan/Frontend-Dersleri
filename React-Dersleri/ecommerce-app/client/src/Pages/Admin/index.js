@@ -6,6 +6,7 @@ import Home from "./Home";
 import Orders from "./Orders";
 import Products from "./Products";
 import ProductDetail from "./ProductDetail";
+import NewProduct from "./Products/NewProduct";
 
 //style
 import "./styles.css";
@@ -32,6 +33,7 @@ function Admin() {
           <Route path="/home" element={<Home />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/newProduct" element={<NewProduct />} />
           <Route path="/products/:product_id" element={<ProductDetail />} />
         </Routes>
       </Box>

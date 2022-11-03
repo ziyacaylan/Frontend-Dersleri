@@ -77,9 +77,15 @@ function Products() {
 
   return (
     <div>
-      <Text fontSize="2xl" p={5}>
-        Products
-      </Text>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Text fontSize="2xl" p={5}>
+          Products
+        </Text>
+        <NavLink to="/admin/products/newProduct">
+          <Button colorScheme="purple">Yeni Ürün Ekle</Button>
+        </NavLink>
+      </Flex>
+
       <Table dataSource={data} columns={columns} rowKey="_id" />
     </div>
   );

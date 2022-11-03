@@ -1,8 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
-import { fetchProduct, updateProduct } from "../../../api";
-import { useQuery } from "react-query";
+import { postProduct } from "../../../api";
+import { useMutation, useQueryClient } from "react-query";
+//import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Formik, FieldArray } from "formik";
 import {
   Text,
@@ -17,46 +17,38 @@ import {
 import validationSchema from "./validation";
 import { message } from "antd";
 
-function ProductDetail() {
-  const { product_id } = useParams();
-
-  const { isLoading, isError, data, error } = useQuery(
-    ["admin:product", product_id],
-    () => fetchProduct(product_id)
-  );
-
-  console.log("Ürün ID si geldi işte bu", product_id);
-
-  if (isLoading) return <div>Loading...</div>;
-
-  if (isError) return <div>Error : {error.message}</div>;
-  //console.log(data);
-  console.log("admin/productDetail data:", data);
+function NewProduct() {
+  const queryClient = useQueryClient();
+  const newProductMutation = useMutation(postProduct, {
+    onSuccess: () => queryClient.invalidateQueries("products"),
+  });
   const handleSubmit = async (values, bag) => {
-    console.log("admin/productDetail submitted:", values);
+    console.log(values);
+    message.loading({ content: "Loading...", key: "product_added" });
+    // values.photos = JSON.stringify(values.photos);
+    const newValues = { ...values, photos: JSON.stringify(values.photos) };
 
-    //console.log("submited");
-    message.loading({ content: "Loading...", key: "product_update" });
-    try {
-      await updateProduct(values, product_id);
-      message.success({
-        content: "The product successfully updated",
-        key: "product_update",
-        duration: 2,
-      });
-    } catch (error) {
-      message.error("The product does not updated.");
-    }
+    newProductMutation.mutate(newValues, {
+      onSuccess: () => {
+        console.log("success");
+
+        message.success({
+          content: "The product successfully added",
+          key: "product_added",
+          duration: 2,
+        });
+      },
+    });
   };
   return (
     <div>
-      <Text fontSize="2xl">Edit</Text>
+      <Text fontSize="2xl">New Product</Text>
       <Formik
         initialValues={{
-          title: data.title,
-          description: data.description,
-          price: data.price,
-          photos: data.photos,
+          title: "",
+          description: "",
+          price: "",
+          photos: [],
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
@@ -160,7 +152,7 @@ function ProductDetail() {
                     type="submit"
                     isLoading={isSubmitting}
                   >
-                    Update
+                    Save
                   </Button>
                 </form>
               </Box>
@@ -172,4 +164,4 @@ function ProductDetail() {
   );
 }
 
-export default ProductDetail;
+export default NewProduct;
