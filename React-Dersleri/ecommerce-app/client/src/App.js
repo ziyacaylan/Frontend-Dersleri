@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import ProtectedRoute from "./Pages/ProtectedRoute";
 
+import Home from "./Pages/Home";
 import Navbar from "./components/Navbar/index";
 import Products from "./Pages/Products/index";
 import ProductDetail from "./Pages/ProductDetail/index";
@@ -20,7 +21,8 @@ function App() {
       <Navbar />
       <div className="Routes">
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Products />} />
           <Route path="/product/:product_id" element={<ProductDetail />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />

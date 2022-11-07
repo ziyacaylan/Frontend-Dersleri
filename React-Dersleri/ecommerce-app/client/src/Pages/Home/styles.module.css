@@ -1,0 +1,12 @@
+.container {
+  /* background-color: #edf2f7; */
+}
+.homePageCarouselBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.homePageCarousel {
+  width: 800px;
+}
