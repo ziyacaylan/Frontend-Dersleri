@@ -60,6 +60,66 @@ const ulkeBilgisiniAl = function (ulke) {
     });
 };
 
-btn.addEventListener("click", () => ulkeBilgisiniAl("turkey"));
-
 //ulkeBilgisiniAl('turkesdsd');
+
+/* CHALLENGE 2 BURADAN BAŞLIYOR */
+let checkedOption = 0;
+// burada hangi seçenek seçildiği bulunuyor.
+let handleChange = function (radioButton) {
+  checkedOption = Number(radioButton.value);
+  //console.log(checkedOption);
+};
+
+function verileriCek(option) {
+  if (option === 0) {
+    alert("Bir seçim yapmalısınız...!");
+    return;
+  }
+  option && option === 1 && benNeredeyim("52.508", "13.381");
+  option && option === 2 && benNeredeyim("19.037", "72.873");
+  option && option === 3 && benNeredeyim("-33.933", "18.474");
+}
+function benNeredeyim(lat, lng) {
+  const apiKey = "22195313621880416279x84334";
+
+  fetch(`https://geocode.xyz/${lat},${lng}?json=1&auth=${apiKey}`)
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`Bir sorun var, Hata Kodu : ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      if (data.msg) {
+        throw new Error(`Bir sorun var, Hata Kodu : ${data.msg}`);
+        return;
+      }
+
+      console.log(data);
+
+      let country = "";
+      let city = "";
+
+      country = data.country;
+      city = data.city;
+
+      const popup = document.querySelector(".popup");
+      const popupTitle = document.querySelector(".popup-title");
+
+      if (country) {
+        popupTitle.innerHTML = `${country}, ${city}'desiniz...`;
+        popup.style.display = "block";
+        ulkeBilgisiniAl(country);
+        document.querySelector(".btn-country").style.display = "none";
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      alert(`Birşeyler ters gitti ${err.message}`);
+    });
+}
+
+document.querySelector("#close").addEventListener("click", function () {
+  document.querySelector(".popup").style.display = "none";
+});
+
+btn.addEventListener("click", () => verileriCek(checkedOption));

@@ -127,6 +127,38 @@
           </p>
         </div>
         <div>
+          <div class="options">
+            <div class="radio-btn">
+              <input
+                type="radio"
+                name="test"
+                id="1"
+                value="1"
+                onchange="handleChange(this);"
+              />
+              <label for="test">Test 1 ( lat: 52.508, lng: 13.381)</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                type="radio"
+                name="test"
+                id="2"
+                value="2"
+                onchange="handleChange(this);"
+              />
+              <label for="test">Test 2 ( lat: 19.037, lng: 72.873)</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                type="radio"
+                name="test"
+                id="3"
+                value="3"
+                onchange="handleChange(this);"
+              />
+              <label for="test">Test 3 ( lat: -33.933, lng: 18.474)</label>
+            </div>
+          </div>
           <main class="main-container">
             <div class="countries">
               <!--
@@ -148,6 +180,12 @@
         </div>
       </section>
     </div>
+    <section>
+      <div class="popup">
+        <button id="close">&times;</button>
+        <h2 class="popup-title">Automatic Pop-Up</h2>
+      </div>
+    </section>
     <script src="./script.js"></script>
   </body>
 </html>
