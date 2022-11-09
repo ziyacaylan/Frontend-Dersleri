@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h4 class="text-center p-1">Asenkron Javascript</h4>
+      <h4 class="text-center p-1">
+        Coding Chllenge #<span class="text-color-orange">35</span>
+      </h4>
+      <br />
+      <p>
+        Bu meydan okumada, sadece GPS koordinatlarına dayanarak ülkeyi seçen
+        <span class="text-color-green">'benNeredeyim'</span> işlevi
+        oluşturacaksınız. Corafi koordinatları kodlamak için ikinci bir API
+        kullanacaksınız. Yani bu meydan okumada İlk defa kendi başınıza bir API
+        kullanacaksınız😁
+      </p>
+
+      <h3 class="text-color-gold">Göreviniz :</h3>
+      <section>
+        <span>BÖLÜM <span class="text-color-orange">1</span></span>
+        <p>
+          <span class="text-color-orange">1.</span> Girdi olarak bir enlem
+          <span class="text-color-blue">değeri</span>
+          <span class="text-color-green">('lat')</span> ve bir boylam
+          <span class="text-color-blue">değeri</span>
+          <span class="text-color-green">('lng')</span> alan
+          <span class="text-color-green">'benNeredeyim'</span> işlevi
+          oluşturun.(bunlar GPS koordinatları olacak örnekler test verileri
+          kısmında).
+        </p>
+        <br />
+        <p>
+          <span class="text-color-orange">2. </span> Sağlanan koordinatların
+          ""ters corafi kodlamasını yapın. Ters corafi kodlama araçları
+          elimizdeki koordinatları şehir ve ülke adı gibi anlamlı bir konuma
+          dönüştürmek için kullanılır. Ters coğrafi kodlama yapmak için bu
+          API'<span class="text-color-green"
+            >yi kullanın: https://geocode.xyz/api</span
+          >
+          .AJAX çağrısı bu formata sahip bir
+          <span class="text-color-gold">URL oluşturacaktır: https://</span
+          ><span class="text-color-gray"
+            >//geocode.xyz/52.508,13.831?geoit=json.</span
+          ><span class="text-color-blue">fetch</span> API'<span
+            class="text-color-green"
+            >sini ve verileri almak için promiseleri kullanın. Önceden
+            oluşturduğumuz<span class="text-color-blue">'getJSON'</span>
+            kullanmayın.🙂</span
+          >
+        </p>
+        <br />
+        <p>
+          <span class="text-color-orange">3.</span> Verilere sahip olduğunuda,
+          sağlanan konum hakkında aldığınız tüm özellikleri görmek için konsola
+          göz atın. Ardından, bu verileri kullanarakkonsola şöyle bir
+          <span class="text-color-gold">mesaj:</span> "Almanya, Berlin'<span
+            class="text-color-green"
+            >desiniz"</span
+          >
+        </p>
+        <br />
+        <p>
+          <span class="text-color-orange">4.</span>
+          <span class="text-color-gold"> Promise</span> zincirinin sonuna bir
+          .catch yöntemini ekleyin ve hataları konsola yazdırın.
+        </p>
+        <br />
+        <p>
+          <span class="text-color-orange">5.</span> Bu API,saniyede yalnızca
+          <span class="text-color-orange">3</span> istekte bulunmanıza izin
+          verin. Yeniden yüklemeleri hızlı yaparsanız
+          <span class="text-colo-orange">4,3</span> koduyla hata alacaktır. Bu,
+          istekle ilgili bir hatadır. Unutmayın,
+          <span class="text-color-blue">fetch</span>() bu durumda promise'<span
+            class="text-color-green"
+            >i reddetmez. Promise'</span
+          >i reddetmek için kendiniz anlamlı bir hata mesajı ile hata oluşturun.
+        </p>
+        <br />
+      </section>
+      <section>
+        <span>BÖLÜM <span class="text-color-orange">2</span></span>
+        <br />
+        <p>
+          <span class="text-color-orange">6.</span> Şimdi bir ülke oluşturmak
+          için alınan verileri kullanma zamanı. Yani coğrafi kodlamaAPI
+          sonucundan ilgini özniteliği al ve bunu daha önce kullandığımız
+          country API'<span class="text-color-green">sine ekleyelim.</span>
+        </p>
+        <br />
+        <p>
+          <span class="text-color-orange">7.</span> En son derste yaptığımız
+          gibi ülkeyi işleyin ve hataları yakalayın (hatta bu kodu
+          kopyalayabilirsiniz, aynı kodu yazmanıza gerek yok)
+        </p>
+        <br />
+        <p>
+          Test <span class="text-color-gold">verisi:</span> <br />§ Koordinatlar
+          <span class="text-color-orange"> 1: 52.508, 13.381</span> (Enlem,
+          Boylam) <br />
+          § Koordinatlar
+          <span class="text-color-orange">2: 19.037, 72.873</span><br />
+          § Koordinatlar
+          <span class="text-color-orange">3. -33.933, 18.474</span>
+        </p>
+      </section>
+      <br />
+      <hr />
+      <br />
+      <section class="results">
+        <div class="result-container">
+          <h2 class="text-center p-1">ÇÖZÜM</h2>
+          <p class="p-1">
+            ---> Bir Önceki Derste API'den çektiğimiz ülke bilgileri bir card
+            üzerinde gösterilmiştir. Ve aşağıdaki gibidir.
+          </p>
+          <p class="p-1">
+            ---> Bu challenge çözümü için javascript bölümüne bakınız.
+          </p>
+        </div>
+        <div>
+          <main class="main-container">
+            <div class="countries">
+              <!--
+        <article class="country">
+          <img class="country__img" src="" />
+          <div class="country__data">
+            <h3 class="country__name">COUNTRY</h3>
+            <h4 class="country__region">REGION</h4>
+            <p class="country__row"><span>👫</span>POP people</p>
+            <p class="country__row"><span>🗣️</span>LANG</p>
+            <p class="country__row"><span>💰</span>CUR</p>
+          </div>
+        </article>
+        -->
+            </div>
+            <button class="btn-country">Where am I?</button>
+            <div class="images"></div>
+          </main>
+        </div>
+      </section>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
