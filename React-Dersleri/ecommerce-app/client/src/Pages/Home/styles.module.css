@@ -1,5 +1,7 @@
 .container {
   /* background-color: #edf2f7; */
+  width: 90%;
+  margin: 0 auto;
 }
 .homePageCarouselBox {
   display: flex;
@@ -9,4 +11,15 @@
 
 .homePageCarousel {
   width: 800px;
+}
+.grow {
+  transition: 1s ease;
+  cursor: pointer;
+  margin: 0 auto; /*yatay olarak ortaladım*/
+}
+.grow:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 1s ease;
 }

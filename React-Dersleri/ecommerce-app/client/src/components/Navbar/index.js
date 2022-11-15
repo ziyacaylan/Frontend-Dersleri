@@ -1,20 +1,29 @@
-import styles from "./styles.module.css";
-import * as React from "react";
-import { Link } from "react-router-dom";
 import {
-  Image,
   Box,
   Button,
-  ButtonGroup,
-  Container,
   Flex,
+  Text,
   HStack,
+  Image,
   IconButton,
   useBreakpointValue,
   useColorModeValue,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
-import ECommerce from "../../assets/e-commerce.png";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+
+import Logo from "../../assets/Logo.png";
+import styles from "./styles.module.css";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { useBasket } from "../../contexts/BasketContext";
@@ -22,60 +31,227 @@ import { useBasket } from "../../contexts/BasketContext";
 function Navbar() {
   const { loggedIn, user } = useAuth();
   const { items } = useBasket();
+
   const isDesktop = useBreakpointValue({
     base: false,
     lg: true,
   });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   //console.log(loggedIn);
-  return (
-    <Box
-      as="section"
-      pb={{
-        base: "12",
-        md: "24",
-      }}
-    >
-      <Box
-        as="nav"
-        bg="bg-surface"
-        boxShadow={useColorModeValue("sm", "sm-dark")}
-      >
-        <Container
-          py={{
-            base: "4",
-            lg: "5",
-          }}
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [isDesktop]);
+
+  const handleOpenMenu = function () {
+    if (isMenuOpen) {
+      return (
+        <Box
+          display={"flex"}
+          flexDirection="column"
+          justifyContent={"flex-start"}
+          alignItems={"center"}
         >
+          <Link to="/">
+            <Button
+              variant="ghost"
+              color={"gray"}
+              _hover={{
+                // background: "white",
+                color: "teal.500",
+              }}
+            >
+              Anasayfa
+            </Button>
+          </Link>
+          <Link to="/product">
+            <Button
+              variant="ghost"
+              color={"gray"}
+              _hover={{
+                // background: "white",
+                color: "teal.500",
+              }}
+            >
+              Ürünler
+            </Button>
+          </Link>
+          {/* <Link to="/"> */}
+          {/* <Button
+              variant="ghost"
+              color={"gray"}
+              _hover={{
+                // background: "white",
+                color: "teal.500",
+              }}
+            >
+              Kategoriler
+            </Button> */}
+          <Menu>
+            <MenuButton
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              color={"gray"}
+            >
+              Kategoriler
+            </MenuButton>
+            <MenuList>
+              <MenuItem>3D Yazıcılar</MenuItem>
+              <MenuItem>Filamentler</MenuItem>
+              <MenuItem>Multikopterler</MenuItem>
+              <MenuItem>RC Arabalar</MenuItem>
+            </MenuList>
+          </Menu>
+          {/* </Link> */}
+
+          {!loggedIn && (
+            <>
+              <Link to="/signin">
+                <Button colorScheme="pink" my={1}>
+                  Login
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button colorScheme="pink" my={1}>
+                  Register
+                </Button>
+              </Link>
+            </>
+          )}
+          {loggedIn && (
+            <>
+              {items.length > 0 && (
+                <Link to={"/basket"}>
+                  <Button colorScheme={"pink"} variant={"outline"}>
+                    Basket ({items.length})
+                  </Button>
+                </Link>
+              )}
+
+              {user?.role === "admin" && (
+                <Link to="/admin">
+                  <Button colorScheme="pink" variant="ghost" my={1}>
+                    Admin
+                  </Button>
+                </Link>
+              )}
+
+              <Link to="/profile">
+                <Button colorScheme="orange" my={1}>
+                  Profile
+                </Button>
+              </Link>
+            </>
+          )}
+        </Box>
+      );
+    }
+  };
+  return (
+    <div className={styles.navContainer}>
+      <Box
+        as="section"
+        pb={{
+          base: "4",
+          md: "3",
+        }}
+        // as="nav"
+        bg="bg-surface"
+        boxShadow={useColorModeValue("md", "sm-dark")}
+      >
+        <Box className={styles.nav}>
           <HStack spacing="10" justify="space-between">
-            <Link to="/">
-              <Box width={"75px"}>
-                <Image
-                  // boxSize="70px"
-                  width={"75px"}
-                  height="50px"
-                  borderRadius="8px"
-                  objectFit="cover"
-                  src={ECommerce}
-                  alt="eCommerce"
-                />
+            <Link to={"/"}>
+              <Box
+                display={"flex"}
+                justifyContent="space-between"
+                alignItems={"center"}
+                fontSize="3xl"
+                color={"pink"}
+              >
+                <Image src={Logo} boxSize="50px" objectFit="cover" />
+                <Text>eCommerce</Text>
               </Box>
             </Link>
             {isDesktop ? (
               <Flex justify="space-between" flex="1">
-                <ButtonGroup variant="link" spacing="8">
-                  {["Ana Sayfa", "Pricing", "Resources", "Support"].map(
-                    (item) => (
-                      <Button key={item}>{item}</Button>
-                    )
-                  )}
-                </ButtonGroup>
-                <HStack spacing="3">
-                  <Flex>
-                    <Button variant="ghost">Sign in</Button>
-                    <Button variant="pink" colorScheme="pink">
-                      Sign up
+                <Box>
+                  <Link to="/">
+                    <Button
+                      variant="ghost"
+                      color={"gray"}
+                      _hover={{
+                        // background: "white",
+                        color: "teal.500",
+                      }}
+                    >
+                      Anasayfa
                     </Button>
-                  </Flex>
+                  </Link>
+                  <Link to="/product">
+                    <Button
+                      variant="ghost"
+                      color={"gray"}
+                      _hover={{
+                        // background: "white",
+                        color: "teal.500",
+                      }}
+                    >
+                      Ürünler
+                    </Button>
+                  </Link>
+                  {/* <Link to="/"> */}
+                  <Menu>
+                    <MenuButton
+                      as={Button}
+                      rightIcon={<ChevronDownIcon />}
+                      color={"gray"}
+                    >
+                      Kategoriler
+                    </MenuButton>
+                    <MenuList>
+                      <MenuItem>3D Yazıcılar</MenuItem>
+                      <MenuItem>Filamentler</MenuItem>
+                      <MenuItem>Multikopterler</MenuItem>
+                      <MenuItem>RC Arabalar</MenuItem>
+                    </MenuList>
+                  </Menu>
+                  {/* </Link> */}
+                </Box>
+                <HStack spacing="3">
+                  {!loggedIn && (
+                    <>
+                      <Link to="/signin">
+                        <Button colorScheme="pink">Login</Button>
+                      </Link>
+                      <Link to="/signup">
+                        <Button colorScheme="pink">Register</Button>
+                      </Link>
+                    </>
+                  )}
+                  {loggedIn && (
+                    <>
+                      {items.length > 0 && (
+                        <Link to={"/basket"}>
+                          <Button colorScheme={"pink"} variant={"outline"}>
+                            Basket ({items.length})
+                          </Button>
+                        </Link>
+                      )}
+
+                      {user?.role === "admin" && (
+                        <Link to="/admin">
+                          <Button colorScheme="pink" variant="ghost">
+                            Admin
+                          </Button>
+                        </Link>
+                      )}
+
+                      <Link to="/profile">
+                        <Button colorScheme="orange">Profile</Button>
+                      </Link>
+                    </>
+                  )}
                 </HStack>
               </Flex>
             ) : (
@@ -83,12 +259,16 @@ function Navbar() {
                 variant="ghost"
                 icon={<FiMenu fontSize="1.25rem" />}
                 aria-label="Open Menu"
+                onClick={() =>
+                  isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
+                }
               />
             )}
           </HStack>
-        </Container>
+          {handleOpenMenu()}
+        </Box>
       </Box>
-    </Box>
+    </div>
   );
 }
 
