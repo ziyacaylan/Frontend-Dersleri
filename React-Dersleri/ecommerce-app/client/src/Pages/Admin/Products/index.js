@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import { fetchProductList, deleteProduct } from "../../../api";
 import { Table, Popconfirm } from "antd";
-import { Text, Button, Flex } from "@chakra-ui/react";
+import { Text, Button, Flex, Box } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
 function Products() {
@@ -76,7 +76,7 @@ function Products() {
   if (isError) return <div>Error {error.message}</div>;
 
   return (
-    <div>
+    <Box>
       <Flex justifyContent="space-between" alignItems="center">
         <Text fontSize="2xl" p={5}>
           Products
@@ -87,7 +87,7 @@ function Products() {
       </Flex>
 
       <Table dataSource={data} columns={columns} rowKey="_id" />
-    </div>
+    </Box>
   );
 }
 

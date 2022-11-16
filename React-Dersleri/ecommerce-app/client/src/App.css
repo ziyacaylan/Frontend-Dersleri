@@ -1,4 +1,6 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 .Routes {
   /* margin: 1.5rem; */
+  width: 100%;
+  min-height: 75vh;
 }

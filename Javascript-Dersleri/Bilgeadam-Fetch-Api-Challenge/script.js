@@ -12,13 +12,12 @@ const createImage = function (imgPath) {
     const imageFile = document.createElement("img");
     imageFile.src = imgPath;
 
+    imageFile.onerror = () => reject("Bir sorun var, acaba nedir_?");
+
     imageFile.onload = () => {
       resolve(imageFile);
     };
 
-    imageFile.onerror = () => {
-      reject("Bir sorun var, acaba nedir_?");
-    };
     imageFile.setAttribute("class", "images");
   });
 };
@@ -39,8 +38,6 @@ const createImage = function (imgPath) {
 wait(1)
   .then(() => {
     createImage("./img/img-1.jpg").then((data, rej) => {
-      console.log(data);
-      console.log("rej buu:", rej);
       container.append(data);
     });
     return wait(1);
@@ -69,14 +66,38 @@ wait(1)
 
 //********************** */ Challenge 2*********************************
 
-// const loadNPause = async function (seconds) {
-//   return new Promise(function (resolve) {
-//     setTimeout(resolve, seconds * 1000);
-//   });
+// const loadNPause = async function (imgPath) {
+//   try {
+//     const wait = function (seconds) {
+//       return new Promise(function (resolve, reject) {
+//         setTimeout(() => {
+//           const imageFile = document.createElement("img");
+//           imageFile.src = imgPath;
+
+//           if (img.complete) {
+//             console.log(true);
+//           } else {
+//             img.onload = () => {
+//               resolve(imageFile);
+//             };
+
+//             img.onerror = () => {
+//               const err = new Error(`Bu resim yüklenemedi mağlesef...!`);
+//               reject(err);
+//             };
+//           }
+//           imageFile.setAttribute("class", "images");
+//         }, seconds * 1000);
+//       });
+//     };
+//   } catch (error) {
+//     const err = new Error(`Sanırım bir sorun var...! Error: ${error}`);
+//     reject(err);
+//   }
 // };
 
-// function loadAll(imgArr){
-//     imgArr.map(image=>{
-//         await loadNPause
-//     })
-// }
+// const imgArr = ["./img/img-1.jpg", "./img/img-2.jpg", "./img/img-3.jpg"];
+// const loadAll = (imgArr) =>
+//   imgArr.map((img) => {
+//     loadNPause(img).then((data) => container.append(data));
+//   });

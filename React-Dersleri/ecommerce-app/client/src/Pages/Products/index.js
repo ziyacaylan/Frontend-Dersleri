@@ -30,7 +30,7 @@ function Products() {
   if (status === "error") return "An error has occurred: " + error.message;
   //console.log(data.pages);
   return (
-    <div>
+    <Box mx={"20"} my="10">
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         {data.pages.map((group, i) => (
           <React.Fragment key={i}>
@@ -56,7 +56,7 @@ function Products() {
         </Button>
       </Flex>
       <div>{isFetching && !isFetchingNextPage ? "Fetching..." : null}</div>
-    </div>
+    </Box>
   );
 }
 

@@ -4,14 +4,15 @@ import { Box, Text, Grid, Button, Image } from "@chakra-ui/react";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "./styles.module.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Home() {
   return (
-    <div className={styles.container}>
-      <Box className={styles.homePageCarouselBox}>
+    <Box className={styles.container}>
+      <div className={styles.homePageCarouselBox}>
         <Carousel
           autoPlay="true"
-          emulateTouch="true"
+          // emulateTouch="true"
           infiniteLoop="true"
           showArrows="true"
           className={styles.homePageCarousel}
@@ -80,7 +81,7 @@ function Home() {
             <p className="legend">Legend 3</p>
           </div>
         </Carousel>
-      </Box>
+      </div>
       {/* section 2 start */}
       <Grid
         templateColumns="repeat(3, 1fr)"
@@ -109,7 +110,7 @@ function Home() {
           className={styles.grow}
         />
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-          <Text fontSize="2xl" textAlign="center">
+          <Box fontSize="2xl" textAlign="center">
             <Box>EN ÇOK </Box>
             <Box m={2}>SATANLAR</Box>
             <Box m={2}>BİZDE</Box>
@@ -121,7 +122,7 @@ function Home() {
             >
               İncele
             </Button>
-          </Text>
+          </Box>
         </Box>
       </Grid>
       {/* section 2 end */}
@@ -143,7 +144,7 @@ function Home() {
           className={styles.grow}
         />
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-          <Text fontSize="2xl" textAlign="center">
+          <Box fontSize="2xl" textAlign="center">
             <Box>EN İYİ</Box>
             <Box m={2}>FİLAMENTLER</Box>
             <Box m={2}>BİZDE</Box>
@@ -155,7 +156,7 @@ function Home() {
             >
               İncele
             </Button>
-          </Text>
+          </Box>
         </Box>
         <Image
           src="https://media.istockphoto.com/id/1363103747/tr/foto%C4%9Fraf/set-of-rolls-of-colored-plastic-for-3d-pen.jpg?s=1024x1024&w=is&k=20&c=pcjCv8KwYjWEe3HqUVUKGV-ph4fC-gJk9CNVkJVrwpo="
@@ -177,7 +178,7 @@ function Home() {
         paddingTop="10px"
       >
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-          <Text fontSize="2xl" textAlign="center">
+          <Box fontSize="2xl" textAlign="center">
             <Box>EN KALİTELİ</Box>
             <Box m={2}>BASKI HİZMETLERİ</Box>
             <Box m={2}>BİZDE</Box>
@@ -189,7 +190,7 @@ function Home() {
             >
               İncele
             </Button>
-          </Text>
+          </Box>
         </Box>
         <Image
           src="https://img.freepik.com/premium-photo/prototype-model-helicopter-printed-3d-printer-closeup_507658-5633.jpg?w=1060"
@@ -208,9 +209,9 @@ function Home() {
       {/* section 3 end */}
 
       {/* section 4 start */}
-      <Grid templateColumns="repeat(2, 1fr)" gap={6} mt="20">
+      <Grid templateColumns="repeat(2, 1fr)" gap={6} mt="20" mb={"10"}>
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-          <Text fontSize="lg">
+          <Box fontSize="lg">
             3d baskı hayalinizdeki tasarımları elinizde tutabileceğiniz gerçek
             nesnelere dönüştüren baskı çeşidi. Tasarımınızı dilerseniz kendiniz
             çizip bize ulaştırın ya da hayalinizdekini biz çizelim. 3D baskı
@@ -222,7 +223,7 @@ function Home() {
             birlikte, baskı teknolojilerinin gelişmesiyle 3D baskı alınabiliyor.
             Bu sayede, sanal ortamdaki özel formatta hazırlanmış herhangi bir
             resmin, heykel gibi belli oranda birebir kopyası elde edilir.
-          </Text>
+          </Box>
         </Box>
         <Box>
           <iframe
@@ -231,12 +232,12 @@ function Home() {
             height="400"
             title="İstanbul"
             loading="lazy"
-            borderRadius="8px"
+            // borderRadius="8px"
           ></iframe>
         </Box>
       </Grid>
       {/* section 4 end */}
-    </div>
+    </Box>
   );
 }
 
