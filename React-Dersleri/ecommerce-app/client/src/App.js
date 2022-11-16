@@ -14,6 +14,7 @@ import Basket from "./Pages/Basket";
 import Admin from "./Pages/Admin";
 
 import Error404 from "./Pages/Error404";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
