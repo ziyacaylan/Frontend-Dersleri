@@ -27,6 +27,8 @@ function Card({ item }) {
       >
         <Link to={`/product/${item._id}`}>
           <Image
+            boxSize="150px"
+            objectFit="cover"
             src={item.photos[0]}
             alt="product"
             loading="lazy"

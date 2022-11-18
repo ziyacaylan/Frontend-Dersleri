@@ -11,13 +11,16 @@
 }
 .images {
   border-radius: 25px;
-  width: 500px;
-  height: auto;
+  width: 70rem;
+  height: 20rem;
   object-fit: cover;
-  margin: 20px;
+  margin: 4rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   /* transition: all 0.8s; */
 }
 .parallel {
+  width: 40rem;
+  margin: 2rem;
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 }
