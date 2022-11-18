@@ -94,8 +94,8 @@ function Home() {
         paddingTop="10px"
       >
         <Image
-          src="https://img.freepik.com/free-photo/printing-victorian-house_1048-1588.jpg?w=900&t=st=1668451213~exp=1668451813~hmac=e1642d6e3685e01fcb70a6e03e1dc2ef5d44bdb6b0bf32fb68df4b679b5ea2f1"
-          alt="homeImage"
+          src="https://cdn.nikoneurope.com/imported/images/web/EU/products/digital-cameras/mirrorless/z7/z7-top-view--original.png"
+          alt="Nikon Z6"
           boxSize="450px"
           objectFit="cover"
           p={"2"}
@@ -138,7 +138,7 @@ function Home() {
         paddingTop="10px"
       >
         <Image
-          src="https://img.freepik.com/premium-photo/coil-with-plastic-printing-3d-printer_457211-2078.jpg?w=1060"
+          src="https://stormsend1.djicdn.com/tpc/uploads/carousel/image/a5153d90455fd8d2bce24e8b4fbb6a47@ultra.jpg"
           alt="homeImage"
           p={2}
           className={styles.grow}
@@ -146,7 +146,7 @@ function Home() {
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Box fontSize="2xl" textAlign="center">
             <Box>EN İYİ</Box>
-            <Box m={2}>FİLAMENTLER</Box>
+            <Box m={2}>FİYATLAR</Box>
             <Box m={2}>BİZDE</Box>
             <Button
               m={2}
@@ -159,7 +159,7 @@ function Home() {
           </Box>
         </Box>
         <Image
-          src="https://media.istockphoto.com/id/1363103747/tr/foto%C4%9Fraf/set-of-rolls-of-colored-plastic-for-3d-pen.jpg?s=1024x1024&w=is&k=20&c=pcjCv8KwYjWEe3HqUVUKGV-ph4fC-gJk9CNVkJVrwpo="
+          src="https://stormsend1.djicdn.com/tpc/uploads/sku/compare_cover/766a64cd6f5e7163641d350c631bdfd5@retina_small.png"
           alt="homeImage"
           p={2}
           className={styles.grow}
@@ -180,7 +180,7 @@ function Home() {
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Box fontSize="2xl" textAlign="center">
             <Box>EN KALİTELİ</Box>
-            <Box m={2}>BASKI HİZMETLERİ</Box>
+            <Box m={2}>TEKNOLOJİLER</Box>
             <Box m={2}>BİZDE</Box>
             <Button
               m={2}

@@ -15,7 +15,7 @@
 .grow {
   transition: 1s ease;
   cursor: pointer;
-  margin: 0 auto; /*yatay olarak ortaladım*/
+  margin: auto auto; /*yatay olarak ortaladım*/
 }
 .grow:hover {
   -webkit-transform: scale(1.2);

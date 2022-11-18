@@ -12,6 +12,7 @@ import {
   Input,
   Textarea,
   Button,
+  Select,
 } from "@chakra-ui/react";
 
 import validationSchema from "./validation";
@@ -46,6 +47,7 @@ function NewProduct() {
       <Formik
         initialValues={{
           title: "",
+          category: "",
           description: "",
           price: "",
           photos: [],
@@ -78,6 +80,36 @@ function NewProduct() {
                     />
                     {touched.title && errors.title && (
                       <Text color="red">{errors.title}</Text>
+                    )}
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel>Category</FormLabel>
+                    {/* <Input
+                      name="category"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      disabled={isSubmitting}
+                      value={values.category}
+                      isInvalid={touched.category && errors.category}
+                    /> */}
+                    <Select
+                      placeholder="Bir Gategori seçiniz"
+                      name="category"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      disabled={isSubmitting}
+                      value={values.category}
+                      isInvalid={touched.category && errors.category}
+                    >
+                      <option value="Fotoğraf Makinesi">
+                        Fotoğraf Makinesi
+                      </option>
+                      <option value="Multikopter">Multikopter</option>
+                      <option value="3d Yazıcılar">3d Yazıcılar</option>
+                      <option value="Filamentler">Filamentler</option>
+                    </Select>
+                    {touched.category && errors.category && (
+                      <Text color="red">{errors.category}</Text>
                     )}
                   </FormControl>
                   <FormControl mt="4">

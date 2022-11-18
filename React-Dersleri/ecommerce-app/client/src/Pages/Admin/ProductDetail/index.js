@@ -12,6 +12,7 @@ import {
   Input,
   Textarea,
   Button,
+  Select,
 } from "@chakra-ui/react";
 
 import validationSchema from "./validation";
@@ -49,11 +50,14 @@ function ProductDetail() {
     }
   };
   return (
-    <div>
-      <Text fontSize="2xl">Edit</Text>
+    <Box m={"30"}>
+      <Text fontSize="2xl" borderBottom={"1px"} borderColor="Menu">
+        Edit
+      </Text>
       <Formik
         initialValues={{
           title: data.title,
+          category: data.category,
           description: data.description,
           price: data.price,
           photos: data.photos,
@@ -86,6 +90,28 @@ function ProductDetail() {
                     />
                     {touched.title && errors.title && (
                       <Text color="red">{errors.title}</Text>
+                    )}
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel>Category</FormLabel>
+                    <Select
+                      placeholder="Bir Gategori seçiniz"
+                      name="category"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      disabled={isSubmitting}
+                      value={values.category}
+                      isInvalid={touched.category && errors.category}
+                    >
+                      <option value="Fotoğraf Makinesi">
+                        Fotoğraf Makinesi
+                      </option>
+                      <option value="Multikopter">Multikopter</option>
+                      <option value="3d Yazıcılar">3d Yazıcılar</option>
+                      <option value="Filamentler">Filamentler</option>
+                    </Select>
+                    {touched.category && errors.category && (
+                      <Text color="red">{errors.category}</Text>
                     )}
                   </FormControl>
                   <FormControl mt="4">
@@ -168,7 +194,7 @@ function ProductDetail() {
           </>
         )}
       </Formik>
-    </div>
+    </Box>
   );
 }
 

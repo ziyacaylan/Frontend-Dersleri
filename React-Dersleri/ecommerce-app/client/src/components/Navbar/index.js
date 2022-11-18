@@ -210,10 +210,10 @@ function Navbar() {
                       Kategoriler
                     </MenuButton>
                     <MenuList>
+                      <MenuItem>Fotoğraf Makineleri</MenuItem>
+                      <MenuItem>Multikopterler</MenuItem>
                       <MenuItem>3D Yazıcılar</MenuItem>
                       <MenuItem>Filamentler</MenuItem>
-                      <MenuItem>Multikopterler</MenuItem>
-                      <MenuItem>RC Arabalar</MenuItem>
                     </MenuList>
                   </Menu>
                   {/* </Link> */}

@@ -2,6 +2,7 @@ import * as yup from "yup";
 
 const editSchema = yup.object().shape({
   title: yup.string().required("Zorunlu Alan..."),
+  category: yup.string().required("Zorunlu Alan..."),
   description: yup
     .string()
     .required("Zorunlu alan...")

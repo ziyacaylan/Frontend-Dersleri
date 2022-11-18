@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
@@ -6,6 +6,9 @@ const ProductSchema = new Schema({
   title: {
     type: String,
     required: true,
+  },
+  category: {
+    type: String,
   },
   description: {
     type: String,
@@ -21,6 +24,6 @@ const ProductSchema = new Schema({
   },
 });
 
-const User = mongoose.model('product', ProductSchema);
+const User = mongoose.model("product", ProductSchema);
 
 export default User;

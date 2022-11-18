@@ -29,6 +29,11 @@ function Products() {
         key: "title",
       },
       {
+        title: "Category",
+        dataIndex: "category",
+        key: "category",
+      },
+      {
         title: "Price",
         dataIndex: "price",
         key: "price",
@@ -76,7 +81,7 @@ function Products() {
   if (isError) return <div>Error {error.message}</div>;
 
   return (
-    <Box>
+    <Box m={"30"}>
       <Flex justifyContent="space-between" alignItems="center">
         <Text fontSize="2xl" p={5}>
           Products
