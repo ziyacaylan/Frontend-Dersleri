@@ -4,5 +4,8 @@
 
 ---
 
-Live :
+## Live : https://ziyac-redux-counter-app.netlify.app/
+
+---
+
 <img src="./src/assets/img/counter-app.jpg">
