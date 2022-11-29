@@ -1,0 +1,35 @@
+.footerContainer {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #282727;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.footerContainer p {
+  color: #fff;
+  padding-top: 5px;
+}
+.social {
+  display: flex;
+  justify-content: center;
+}
+.btnSocial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #019553;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 36px;
+  transition: all 0.3s ease;
+}
+.btnSocial:hover {
+  background-color: #33b57b;
+  font-size: 30px;
+}

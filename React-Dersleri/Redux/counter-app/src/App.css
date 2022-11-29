@@ -1,8 +1,12 @@
 .App {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 130px);
   text-align: center;
   background-color: #323232;
+}
+.main-container {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +15,7 @@
   background-color: #707070;
   border-radius: 50px;
   padding: 20px;
+  margin: 0 auto;
 }
 h1 {
   font-size: 50px;

@@ -8,4 +8,5 @@
 
 ---
 
-<img src="./src/assets/img/counter-app.jpg">
+<img src="./src/assets/img/counter-app.jpg" width="600px">
+<img src="./src/assets/img/counter-app-1.jpg" width="600px">
