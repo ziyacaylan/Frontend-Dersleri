@@ -7,7 +7,7 @@ import {
 } from "../redux/counter/counterSlice";
 
 function Counter() {
-  const [amount, setAmount] = useState(3);
+  const [amount, setAmount] = useState(0);
   const countValue = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
   //console.log(countValue);
