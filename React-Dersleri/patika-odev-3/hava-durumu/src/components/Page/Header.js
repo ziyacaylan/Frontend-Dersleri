@@ -1,4 +1,5 @@
 import React from "react";
+import "../../style/header.css";
 import SettingsBtn from "../IconComponent/SettingsBtn";
 import Logo from "../../my-logo.png";
 import locationGif from "../../assets/icons/location.gif";
