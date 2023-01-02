@@ -45,3 +45,16 @@ export const removeTodoAsync = createAsyncThunk(
     return id;
   }
 );
+
+//clear todo list
+export const clearCompletedTodoListAsync = createAsyncThunk(
+  "todos/clearCompletedTodoListAsync",
+  async (completed) => {
+    const response = await axios.put(
+      `${process.env.REACT_APP_API_BASE_ENDPOINT}/todos`,
+      completed
+    );
+    console.log(response.data);
+    return response.data;
+  }
+);

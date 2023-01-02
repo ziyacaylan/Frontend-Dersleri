@@ -45,7 +45,17 @@ app.get("/todos", (req, res) => res.send(todos));
 app.post("/todos", (req, res) => {
   const todo = { title: req.body.title, id: nanoid(), completed: false };
   todos.push(todo);
+  console.log(todo);
   return res.send(todo);
+});
+
+//clearCompleted
+app.put("/todos", (req, res) => {
+  const itemCompleted = req.body.clearCompleted;
+  //console.log(itemCompleted);
+  const items = todos.filter((item) => item.completed === false);
+  todos = items;
+  return res.send(items);
 });
 
 app.patch("/todos/:id", (req, res) => {

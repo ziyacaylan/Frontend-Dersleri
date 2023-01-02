@@ -4,6 +4,7 @@ import {
   addTodoAsync,
   toggleTodoAsync,
   removeTodoAsync,
+  clearCompletedTodoListAsync,
 } from "./services";
 
 export const todosSlice = createSlice({
@@ -52,10 +53,10 @@ export const todosSlice = createSlice({
     changeActiveFilter: (state, action) => {
       state.activeFilter = action.payload;
     },
-    clearCompleted: (state) => {
-      const filtered = state.items.filter((item) => item.completed === false);
-      state.items = filtered;
-    },
+    // clearCompleted: (state) => {
+    //   const filtered = state.items.filter((item) => item.completed === false);
+    //   state.items = filtered;
+    // },
   },
   extraReducers: (builder) => {
     // get todos
@@ -96,6 +97,12 @@ export const todosSlice = createSlice({
       const id = action.payload;
       const filtered = state.items.filter((item) => item.id !== id);
       state.items = filtered;
+    });
+
+    // clear Completed TodoList
+    builder.addCase(clearCompletedTodoListAsync.fulfilled, (state, action) => {
+      console.log(action.payload);
+      state.items = action.payload;
     });
   },
 });
