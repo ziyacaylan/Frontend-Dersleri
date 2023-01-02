@@ -1,50 +1,10 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-export const getTodosAsync = createAsyncThunk(
-  "todos/getTodosAsync",
-  async () => {
-    // const response = await fetch("http://localhost:7000/todos111");
-    // return await response.json();
-    const response = await axios(
-      `${process.env.REACT_APP_API_BASE_ENDPOINT}/todos`
-    );
-    return response.data;
-  }
-);
-
-// add todo
-export const addTodoAsync = createAsyncThunk(
-  "todos/addTodoAsync",
-  async (data) => {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_BASE_ENDPOINT}/todos`,
-      data
-    );
-    return response.data;
-  }
-);
-
-export const toggleTodoAsync = createAsyncThunk(
-  "todos/toggleTodoAsync",
-  async ({ id, data }) => {
-    const response = await axios.patch(
-      `${process.env.REACT_APP_API_BASE_ENDPOINT}/todos/${id}`,
-      data
-    );
-    return response.data;
-  }
-);
-
-export const removeTodoAsync = createAsyncThunk(
-  "todos/removeTodoAsync",
-  async (id) => {
-    const response = await axios.delete(
-      `${process.env.REACT_APP_API_BASE_ENDPOINT}/todos/${id}`
-    );
-    return id;
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  getTodosAsync,
+  addTodoAsync,
+  toggleTodoAsync,
+  removeTodoAsync,
+} from "./services";
 
 export const todosSlice = createSlice({
   name: "todos",
@@ -52,9 +12,13 @@ export const todosSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    activeFilter: "all",
-    addNewTodoIsLoading: false,
-    addNewTodoError: null,
+    activeFilter: localStorage.getItem("activeFilter")
+      ? localStorage.getItem("activeFilter")
+      : "all",
+    addNewTodo: {
+      isLoading: false,
+      error: false,
+    },
   },
   reducers: {
     // addNewTodo: {
@@ -108,20 +72,20 @@ export const todosSlice = createSlice({
     });
     // add todo
     builder.addCase(addTodoAsync.pending, (state, action) => {
-      state.addNewTodoIsLoading = true;
+      state.addNewTodo.isLoading = true;
     });
     builder.addCase(addTodoAsync.fulfilled, (state, action) => {
       state.items.push(action.payload);
-      state.addNewTodoIsLoading = false;
+      state.addNewTodo.isLoading = false;
     });
     builder.addCase(addTodoAsync.rejected, (state, action) => {
-      state.addNewTodoIsLoading = false;
-      state.addNewTodoError = action.error.message;
+      state.addNewTodo.isLoading = false;
+      state.addNewTodo.error = action.error.message;
     });
 
     // toggle todo
     builder.addCase(toggleTodoAsync.fulfilled, (state, action) => {
-      console.log(action.payload);
+      //console.log(action.payload);
       const { id, completed } = action.payload;
       const item = state.items.find((item) => item.id === id);
       item.completed = completed;

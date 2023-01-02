@@ -4,15 +4,17 @@ import Loading from "./Loading";
 import Error from "./Error";
 
 import {
+  getTodosAsync,
+  toggleTodoAsync,
+  removeTodoAsync,
+} from "../redux/todos/services";
+import {
   // toggle,
   // destroy,
   // selectedTodos,
   selectFilteredTodos,
-  getTodosAsync,
-  toggleTodoAsync,
-  removeTodoAsync,
 } from "../redux/todos/todosSlice";
-// let filtered = [];
+
 function TodoList() {
   const dispatch = useDispatch();
   // const items = useSelector((state) => state.todos.items);
