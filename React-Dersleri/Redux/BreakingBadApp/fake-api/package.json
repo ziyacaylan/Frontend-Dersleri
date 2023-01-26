@@ -1,0 +1,15 @@
+{
+  "name": "fake-api",
+  "version": "1.0.0",
+  "description": "breaking bad fake api with json-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ziyacaylan <ziyacaylan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.1",
+    "nodemon": "^2.0.20"
+  }
+}
