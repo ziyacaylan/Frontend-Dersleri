@@ -821,462 +821,577 @@
   ],
   "quotes": [
     {
+      "id": 1,
       "quote": "I'm sorry, what were you asking me? Oh, yes, that stupid plastic container I asked you to buy. You see, hydrofluoric acid won't eat through plastic; it will however dissolve metal, rock, glass, ceramic. So there's that",
       "author": "Walter White"
     },
     {
+      "id": 2,
       "quote": "Alright, I've got the talking pillow now... Okay?",
       "author": "Walter White"
     },
     {
+      "id": 3,
       "quote": "We tried to poison you. We tried to poison you because you are an insane, degenerate piece of filth and you deserve to die.",
       "author": "Walter White"
     },
     {
+      "id": 4,
       "quote": "Alright, tell you what. Both of you pull it out your butts right now, or I go grab a flashlight and some pliers and go exploring.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 5,
       "quote": "I do not believe fear to be an effective motivator. I want investment. For now, I'm simply interested in time frame",
       "author": "Gustavo Fring"
     },
     {
+      "id": 6,
       "quote": "When you have children, you always have family. They will always be your priority, your responsibility. And a man, a man provides. And he does it even when he's not appreciated or respected or even loved. He simply bears up and he does it. Because he's a man.",
       "author": "Gustavo Fring"
     },
     {
+      "id": 7,
       "quote": "Hey, tell your douchebag brother-in-law to head towards the light",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 8,
       "quote": "Did you know that there's an acceptable level of rat turds that can go into candy bars? It's the government, jack. Even government doesn't care that much about quality. You know what is okay to put in hot dogs? Huh? Pig lips and *beep* But I say, hey, have at it bitches 'cause I love hot dogs.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 9,
       "quote": "The one that says if I can't kill you, you'll sure as *beep* wish you were dead.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 10,
       "quote": "You won, Walter. You got the job. Do yourself a favor and learn to take yes for an answer.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 11,
       "quote": "The thing is, if you just do stuff and nothing happens, what's it all mean? What's the point? Oh right, this whole thing is about self-acceptance.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 12,
       "quote": "You are a time bomb, tick-tick-ticking. And I have no intention of being around for the boom.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 13,
       "quote": "Don't drink and drive but if you do, call me.",
       "author": "Saul Goodman"
     },
     {
+      "id": 14,
       "quote": "I am not in danger, Skyler. I AM the danger!",
       "author": "Walter White"
     },
     {
+      "id": 15,
       "quote": "A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!",
       "author": "Walter White"
     },
     {
+      "id": 16,
       "quote": "If that’s true, if you don’t know who I am, then maybe your best course… would be to tread lightly.",
       "author": "Walter White"
     },
     {
+      "id": 17,
       "quote": "Someone has to protect this family from the man who protects this family.",
       "author": "Skyler White"
     },
     {
+      "id": 18,
       "quote": "Smoking marijuana, eating cheetos, and masturbating do not constitute plans in my book.",
       "author": "Walter White"
     },
     {
+      "id": 19,
       "quote": "Stay out of my territory.",
       "author": "Walter White"
     },
     {
+      "id": 20,
       "quote": "Because I say so.",
       "author": "Walter White"
     },
     {
+      "id": 21,
       "quote": "I'm not in the meth business. I'm in the empire business.",
       "author": "Walter White"
     },
     {
+      "id": 22,
       "quote": "You all know exactly who I am. Say my name.",
       "author": "Walter White"
     },
     {
+      "id": 23,
       "quote": "I watched Jane die. I was there. And I watched her die.",
       "author": "Walter White"
     },
     {
+      "id": 24,
       "quote": "I did it for me. I liked it. I was good at it. And... I was really... I was alive.",
       "author": "Walter White"
     },
     {
+      "id": 25,
       "quote": "\"Cap'n Cook?\" That's not you? Like I said, no one is looking for you.",
       "author": "Walter White"
     },
     {
+      "id": 26,
       "quote": "Do you know how much I make a year? I mean, even if I told you, you wouldn't believe it.",
       "author": "Walter White"
     },
     {
+      "id": 27,
       "quote": "Jesus! Just grow some fucking balls!",
       "author": "Walter White"
     },
     {
+      "id": 28,
       "quote": "F*ck you! And your eyebrows!",
       "author": "Walter White"
     },
     {
+      "id": 29,
       "quote": "Send him to Belize? I'll send YOU to Belize.",
       "author": "Walter White"
     },
     {
+      "id": 30,
       "quote": "We're done when I say we're done.",
       "author": "Walter White"
     },
     {
+      "id": 31,
       "quote": "Sitting around, smoking marijuana, eating Cheetos and masturbating do not constitute \"plans\".",
       "author": "Walter White"
     },
     {
+      "id": 32,
       "quote": "I did it for me. I liked it. I was good at it. And I was really... I was alive.",
       "author": "Walter White"
     },
     {
+      "id": 33,
       "quote": "Bitch!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 34,
       "quote": "So you do have a plan? Yeah, Mr. White! Yeah, science!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 35,
       "quote": "I'm a criminal, yo.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 36,
       "quote": "Yeah, bitch! Magnets!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 37,
       "quote": "You're my free pass... bitch!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 38,
       "quote": "Fire in the hole, bitch!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 39,
       "quote": "Did you just bring a bomb into a hospital?",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 40,
       "quote": "Seriously? \"Hello Kitty\"?",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 41,
       "quote": "Speak into the mic, bitch.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 42,
       "quote": "Better call Saul!",
       "author": "Saul Goodman"
     },
     {
+      "id": 43,
       "quote": "You do seem to have a little “shit creek” action going… You know, FYI, you can buy a paddle.",
       "author": "Saul Goodman"
     },
     {
+      "id": 44,
       "quote": "If I ever get anal polyps, I'll know what to name them.",
       "author": "Saul Goodman"
     },
     {
+      "id": 45,
       "quote": "You two suck at peddling meth.",
       "author": "Saul Goodman"
     },
     {
+      "id": 46,
       "quote": "Clearly, his taste in women is the same as his taste in lawyers.",
       "author": "Saul Goodman"
     },
     {
+      "id": 47,
       "quote": "Congratulations, you’ve just left your family a second-hand Subaru.",
       "author": "Saul Goodman"
     },
     {
+      "id": 48,
       "quote": "I’m not saying it’s not bad. It’s bad. But it could be worse.",
       "author": "Saul Goodman"
     },
     {
+      "id": 49,
       "quote": "I hide in plain sight, same as you.",
       "author": "Gustavo Fring"
     },
     {
+      "id": 50,
       "quote": "May his death satisfy you.",
       "author": "Gustavo Fring"
     },
     {
+      "id": 51,
       "quote": "I will kill your wife, I will kill your son, I will kill your infant daughter.",
       "author": "Gustavo Fring"
     },
     {
+      "id": 52,
       "quote": "Everyone sounds like Meryl Streep with a gun to their head.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 53,
       "quote": "You know how they say 'it's been a pleasure'? Well... it hasn't.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 54,
       "quote": "Just because you shot Jesse James doesn't mean you are Jesse James.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 55,
       "quote": "No more half-measures, Walter.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 56,
       "quote": "Shut the f*ck up and let me die in peace.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 57,
       "quote": "Keys, scumbag. It's the universal symbol for keys.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 58,
       "quote": "I will put you under the jail.",
       "author": "Hank Schrader"
     },
     {
+      "id": 59,
       "quote": "My name is ASAC Schrader, and you can go f*ck yourself.",
       "author": "Hank Schrader"
     },
     {
+      "id": 60,
       "quote": "They're minerals, Marie! Jesus!",
       "author": "Hank Schrader"
     },
     {
+      "id": 61,
       "quote": "Since when do vegans eat fried chicken?",
       "author": "Hank Schrader"
     },
     {
+      "id": 62,
       "quote": "You're the smartest guy I ever met, and you're too stupid to see he made up his mind 10 minutes ago.",
       "author": "Hank Schrader"
     },
     {
+      "id": 63,
       "quote": "All I can do is wait... for the cancer to come back.",
       "author": "Skyler White"
     },
     {
+      "id": 64,
       "quote": "Put me on your magical boat, man, and sail me down your chocolaty river of meth!",
       "author": "Badger"
     },
     {
+      "id": 65,
       "quote": "Buzz buzz buzz",
       "author": "The fly"
     },
     {
+      "id": 66,
       "quote": "The Universe is Random. Not Inevitable. It's simple Chaos.",
       "author": "Walter White"
     },
     {
+      "id": 67,
       "quote": "Sometimes it just feels better not to talk. At All. About Anything. To Anyone.",
       "author": "Walter White"
     },
     {
+      "id": 68,
       "quote": "Name one thing in this world that is non negotiable.",
       "author": "Walter White"
     },
     {
+      "id": 69,
       "quote": "You are not the guy. You're not capable of being the guy. I had a guy but now I don't. You are not the guy.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 70,
       "quote": "If you don’t know who I am, then maybe your best course would be to tread lightly.",
       "author": "Walter White"
     },
     {
+      "id": 71,
       "quote": "Walter Jr., you're my big man. There are going to be some things that you'll come to learn about me in the next few days. But just know that no matter how it may look, I only had you in my heart. Goodbye!",
       "author": "Walter White"
     },
     {
+      "id": 72,
       "quote": "What I came to realise is that fear, that's the worst of it. That's the real enemy. So, get up, get out in the real world and you kick that bastard as hard you can right in the teeth.",
       "author": "Walter White"
     },
     {
+      "id": 73,
       "quote": "You need to stop focusing on the darkness behind you. The past is the past. Nothing can change what we’ve done.",
       "author": "Walter White"
     },
     {
+      "id": 74,
       "quote": "This is my own private domicile and I will not be harassed... bitch!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 75,
       "quote": "You don’t want a criminal lawyer. You want a criminal lawyer.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 76,
       "quote": "So roll me further bitch!",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 77,
       "quote": "I Won.",
       "author": "Walter White"
     },
     {
+      "id": 78,
       "quote": "You're never too old for balloons.",
       "author": "Mike Ehrmantraut"
     },
     {
+      "id": 79,
       "quote": "I have spent my whole life scared frightened of things that could happen, might happen, might not happen.",
       "author": "Walter White"
     },
     {
+      "id": 80,
       "quote": "Now, hey, remember, not all learning comes out of books.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 81,
       "quote": "Then why don't you just fucking die, already?",
       "author": "Walter White Jr"
     },
     {
+      "id": 82,
       "quote": "He handles the businesses, and I handle him.",
       "author": "Walter White"
     },
     {
+      "id": 83,
       "quote": "Shit!",
       "author": "Walter White"
     },
     {
+      "id": 84,
       "quote": "You little bastard.",
       "author": "Walter White"
     },
     {
+      "id": 85,
       "quote": "Stop acting like such a baby.",
       "author": "Walter White"
     },
     {
+      "id": 86,
       "quote": "Is that your fly-sabre?",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 87,
       "quote": "Don't bullshit a bullshitter.",
       "author": "Walter White"
     },
     {
+      "id": 88,
       "quote": "Some people are immune to good advice.",
       "author": "Walter White"
     },
     {
+      "id": 89,
       "quote": "Well, technically, chemistry is the study of matter. But I prefer to see it as the study of change.",
       "author": "Walter White"
     },
     {
+      "id": 90,
       "quote": "Find what you love and let it kill you.",
       "author": "Walter White"
     },
     {
+      "id": 91,
       "quote": "Let's see, how shouild i put this? I'm in, you're out.",
       "author": "Walter White"
     },
     {
+      "id": 92,
       "quote": "Never give up control. Live life on your own terms.",
       "author": "Walter White"
     },
     {
+      "id": 92,
       "quote": "Fear is the real enemy.",
       "author": "Walter White"
     },
     {
+      "id": 93,
       "quote": "All bad things must come to an end.",
       "author": "Walter White"
     },
     {
+      "id": 94,
       "quote": "Jesse, you asked me if I was in the meth business or the money business.. Neither. I'm in the empire business.",
       "author": "Walter White"
     },
     {
+      "id": 94,
       "quote": "Sometimes the forbidden fruit tastes the sweetest.",
       "author": "Hank Schrader"
     },
     {
+      "id": 95,
       "quote": "Free food always tastes good. Free drinks even better.",
       "author": "Hank Schrader"
     },
     {
+      "id": 96,
       "quote": "My friends, I promise you that together, we will prosper.",
       "author": "Gus Fring"
     },
     {
+      "id": 97,
       "quote": "Now look buddy, the last thing I want to do is get you in hot water, but some meth monkey had a feeding frenzy in here.",
       "author": "Hank Schrader"
     },
     {
+      "id": 98,
       "quote": "Finding myself awake at three in the morning. But you know what? Ever since my diagnosis, I sleep just fine.",
       "author": "Walter White"
     },
     {
+      "id": 99,
       "quote": "I told you, Skyler, I warned you for a solid year: you cross me, and there will be consequences.",
       "author": "Walter White"
     },
     {
+      "id": 100,
       "quote": "I want my kids back. I want my life back. Please tell me – How much is enough? How big does this pile have to be?",
       "author": "Skyler White"
     },
     {
+      "id": 101,
       "quote": "I want my kids back. I want my life back. Please tell me – How much is enough? How big does this pile have to be?",
       "author": "Skyler White"
     },
     {
+      "id": 102,
       "quote": "It’s easy money. Until we catch you.",
       "author": "Hank Schrader"
     },
     {
+      "id": 103,
       "quote": "I once told a woman I was Kevin Costner and it worked because I believed it.",
       "author": "Saul Goodman"
     },
     {
+      "id": 104,
       "quote": "Scientists love lasers.",
       "author": "Saul Goodman"
     },
     {
+      "id": 105,
       "quote": "If you’re committed enough, you can make any story work.",
       "author": "Saul Goodman"
     },
     {
+      "id": 106,
       "quote": "Did I say you could open your mouth? And, hands off the car!",
       "author": "Hank Schrader"
     },
     {
+      "id": 107,
       "quote": "If you believe that there’s a hell, we’re pretty much already going there.",
       "author": "Walter White"
     },
     {
+      "id": 108,
       "quote": "You add plus a douchebag to a minus douchebag and you get, Like, Zero Douchebags.",
       "author": "Jesse Pinkman"
     },
     {
+      "id": 109,
       "quote": "A guy that clean has to be dirty.",
       "author": "Hank Schrader"
     },
     {
+      "id": 110,
       "quote": "There is gold in the streets just waiting for someone to come and scoop it up.",
       "author": "Walter White"
     },
     {
+      "id": 111,
       "quote": "The fun’s over. From here on out, I’m Mr. Low Profile. Just another douche bag with a job and three pairs of Dockers. If I’m lucky, month from now, best-case scenario, I’m managing a Cinnabon in Omaha.",
       "author": "Saul Goodman"
     },
     {
+      "id": 112,
       "quote": "I am speaking to my family now. Skyler, you are the love of my life. I hope you know that.",
       "author": "Walter White"
     },
     {
+      "id": 113,
       "quote": "I could have saved her",
       "author": "Walter White"
     }
