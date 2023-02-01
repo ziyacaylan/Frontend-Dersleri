@@ -1,0 +1,19 @@
+nav {
+  background-color: antiquewhite;
+}
+nav ul {
+  margin: 0 0 10px 0;
+  display: flex;
+  padding: 10px;
+  list-style-type: none;
+}
+
+nav ul li {
+  padding: 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: all ease 0.5s;
+}
+nav ul li:hover {
+  color: #8c2020;
+}

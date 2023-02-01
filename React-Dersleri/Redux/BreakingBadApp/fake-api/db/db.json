@@ -1,816 +1,1284 @@
-[
-  {
-    "char_id": 1,
-    "name": "Walter White",
-    "birthday": "09-07-1958",
-    "occupation": ["High School Chemistry Teacher", "Meth King Pin"],
-    "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
-    "status": "Presumed dead",
-    "nickname": "Heisenberg",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Bryan Cranston",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 2,
-    "name": "Jesse Pinkman",
-    "birthday": "09-24-1984",
-    "occupation": ["Meth Dealer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441",
-    "status": "Alive",
-    "nickname": "Cap n' Cook",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Aaron Paul",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 3,
-    "name": "Skyler White",
-    "birthday": "08-11-1970",
-    "occupation": [
-      "House wife",
-      "Book Keeper",
-      "Car Wash Manager",
-      "Taxi Dispatcher"
-    ],
-    "img": "https://web.archive.org/web/20220811172853/https://s-i.huffpost.com/gen/1317262/images/o-ANNA-GUNN-facebook.jpg",
-    "status": "Alive",
-    "nickname": "Sky",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Anna Gunn",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 4,
-    "name": "Walter White Jr.",
-    "birthday": "07-08-1993",
-    "occupation": ["Teenager"],
-    "img": "https://web.archive.org/web/20220811172853/https://media1.popsugar-assets.com/files/thumbor/WeLUSvbAMS_GL4iELYAUzu7Bpv0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/01/12/910/n/1922283/fb758e62b5daf3c9_TCDBRBA_EC011/i/RJ-Mitte-Walter-White-Jr.jpg",
-    "status": "Alive",
-    "nickname": "Flynn",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "RJ Mitte",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 5,
-    "name": "Henry Schrader",
-    "birthday": "Unknown",
-    "occupation": ["DEA Agent"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b7/HankS5.jpg/revision/latest/scale-to-width-down/700?cb=20120620014136",
-    "status": "Deceased",
-    "nickname": "Hank",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Dean Norris",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 6,
-    "name": "Marie Schrader",
-    "birthday": "Unknown",
-    "occupation": ["Housewife", "Clepto"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/10/Season_2_-_Marie.jpg/revision/latest?cb=20120617211645",
-    "status": "Alive",
-    "nickname": "Marie",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Betsy Brandt",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 7,
-    "name": "Mike Ehrmantraut",
-    "birthday": "Unknown",
-    "occupation": ["Hitman", "Private Investigator", "Ex-Cop"],
-    "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_mike-ehrmantraut-lg.jpg",
-    "status": "Deceased",
-    "nickname": "Mike",
-    "appearance": [2, 3, 4, 5],
-    "portrayed": "Jonathan Banks",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4, 5]
-  },
-  {
-    "char_id": 8,
-    "name": "Saul Goodman",
-    "birthday": "Unknown",
-    "occupation": ["Lawyer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/16/Saul_Goodman.jpg/revision/latest?cb=20120704065846",
-    "status": "Alive",
-    "nickname": "Jimmy McGill",
-    "appearance": [2, 3, 4, 5],
-    "portrayed": "Bob Odenkirk",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4, 5]
-  },
-  {
-    "char_id": 9,
-    "name": "Gustavo Fring",
-    "birthday": "Unknown",
-    "occupation": ["Los-Pollos co-Founder", "Philanthropist", "Cartel Leader"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/1f/BCS_S4_Gustavo_Fring.jpg/revision/latest?cb=20180824195925",
-    "status": "Deceased",
-    "nickname": "Gus",
-    "appearance": [2, 3, 4],
-    "portrayed": "Giancarlo Esposito",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [3, 4, 5]
-  },
-  {
-    "char_id": 10,
-    "name": "Hector Salamanca",
-    "birthday": "Unknown",
-    "occupation": ["Former Senior Cartel Leader"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b4/Hector_BCS.jpg/revision/latest?cb=20170810091606",
-    "status": "Deceased",
-    "nickname": "Don Hector",
-    "appearance": [1, 2, 3, 4],
-    "portrayed": "Mark Margolis",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [2, 3, 4, 5]
-  },
-  {
-    "char_id": 11,
-    "name": "Domingo Molina",
-    "birthday": "Unknown",
-    "occupation": ["Meth Distributor"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/e/e7/Krazy8.png/revision/latest?cb=20130208041554",
-    "status": "Deceased",
-    "nickname": "Krazy-8",
-    "appearance": [1],
-    "portrayed": "Maximino Arciniega",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 12,
-    "name": "Tuco Salamanca",
-    "birthday": "Unknown",
-    "occupation": ["Meth Distributor"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/a/a7/Tuco_BCS.jpg/revision/latest?cb=20170810082445",
-    "status": "Deceased",
-    "nickname": "Tuco",
-    "appearance": [1, 2],
-    "portrayed": "Raymond Cruz",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [1, 2]
-  },
-  {
-    "char_id": 13,
-    "name": "Marco & Leonel Salamanca",
-    "birthday": "Unknown",
-    "occupation": ["Cartel Hitman"],
-    "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_the-cousins-lg.jpg",
-    "status": "Deceased",
-    "nickname": "The Cousins",
-    "appearance": [3],
-    "portrayed": "Luis & Daniel Moncada",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 14,
-    "name": "Lydia Rodarte-Quayle",
-    "birthday": "Unknown",
-    "occupation": ["Executive at Madrigal"],
-    "img": "https://web.archive.org/web/20220811172853/https://media1.popsugar-assets.com/files/thumbor/wERDST0TUb-iHCSb2r5ZpsvaZLo/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2013/07/17/675/n/1922283/fae2f583f04bb80f_Laura-Fraser-is-back-as-Lydia-Rodarte-Quayle_gallery_primary/i/Laura-Fraser-Lydia-Rodarte-Quayle.jpg",
-    "status": "Deceased",
-    "nickname": "Lydia",
-    "appearance": [5],
-    "portrayed": "Laura Fraser",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 15,
-    "name": "Todd Alquist",
-    "birthday": "Unknown",
-    "occupation": ["Lab Assistant", "Enforcer", "Meth Cook"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/9/95/Todd_brba5b.png/revision/latest?cb=20130717134303",
-    "status": "Deceased",
-    "nickname": "Ricky Hitler",
-    "appearance": [5],
-    "portrayed": "Jesse Plemons",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 16,
-    "name": "Jane Margolis",
-    "birthday": "Unknown",
-    "occupation": ["Tattoo Artist", "Landlord"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b4/Jane.jpg/revision/latest?cb=20090621233653",
-    "status": "Deceased",
-    "nickname": "Apology Girl",
-    "appearance": [2],
-    "portrayed": "Krysten Ritter",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 17,
-    "name": "Skinny Pete",
-    "birthday": "Unknown",
-    "occupation": ["Low-level meth distributer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breaking-bad-tv/images/c/ce/Sp.png/revision/latest?cb=20121016143623",
-    "status": "Alive",
-    "nickname": "Skinny",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Charles Baker",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 18,
-    "name": "Brandon Mayhew",
-    "birthday": "Unknown",
-    "occupation": ["Low-level meth distributer"],
-    "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_badger-lg.jpg",
-    "status": "Alive",
-    "nickname": "Badger",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Matt L. Jones",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 19,
-    "name": "Huell Babineaux",
-    "birthday": "Unknown",
-    "occupation": ["Bodyguard"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/c1/4x11_-_Huell.png/revision/latest?cb=20130913100459&path-prefix=es",
-    "status": "Alive",
-    "nickname": "Huell",
-    "appearance": [4, 5],
-    "portrayed": "Lavell Crawford",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 20,
-    "name": "Steven Gomez",
-    "birthday": "Unknown",
-    "occupation": ["DEA Agent"],
-    "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_steven-gomez-lg.jpg",
-    "status": "Deceased",
-    "nickname": "Gomie",
-    "appearance": [1, 2, 3, 4, 5],
-    "portrayed": "Steven Michael Quezada",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 21,
-    "name": "Theodore Beneke",
-    "birthday": "Unknown",
-    "occupation": ["Former President Beneke Fabricators"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/bd/Cast_bb_700x1000_todd-beneke-lg.jpg/revision/latest?cb=20170723165057",
-    "status": "Alive",
-    "nickname": "Ted",
-    "appearance": [2, 3, 4, 5],
-    "portrayed": "Christopher Cousins",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 22,
-    "name": "Gale Boetticher",
-    "birthday": "Unknown",
-    "occupation": ["Chemist", "Meth manufacturer"],
-    "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_gale-boetticher-lg.jpg",
-    "status": "Deceased",
-    "nickname": "GB",
-    "appearance": [3],
-    "portrayed": "David Costabile",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 23,
-    "name": "Andrea Cantillo",
-    "birthday": "Unknown",
-    "occupation": ["Unknown"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/51/Andrea_-_To%27hajilee.png/revision/latest?cb=20131025094457",
-    "status": "Deceased",
-    "nickname": "Andrea",
-    "appearance": [3, 4, 5],
-    "portrayed": "Emily Rios",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 24,
-    "name": "Brock Cantillo",
-    "birthday": "Unknown",
-    "occupation": ["Kid"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/9/97/Brock.png/revision/latest?cb=20170725193144",
-    "status": "Alive",
-    "nickname": "Brock",
-    "appearance": [3, 4, 5],
-    "portrayed": "Ian Posada",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 25,
-    "name": "Carmen Molina",
-    "birthday": "Unknown",
-    "occupation": ["High School Principal"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/d/de/Carmen.JPG/revision/latest?cb=20100410125233",
-    "status": "Alive",
-    "nickname": "Carmen",
-    "appearance": [1, 2, 3, 5],
-    "portrayed": "Carmen Serano",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 26,
-    "name": "Gretchen Schwartz",
-    "birthday": "Unknown",
-    "occupation": ["Co-owner Gray Matter"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/5e/Gretchen_Schwartz.png/revision/latest?cb=20131005103735&path-prefix=es",
-    "status": "Alive",
-    "nickname": "Gretchen",
-    "appearance": [1, 2, 5],
-    "portrayed": "Jessica Hecht",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 27,
-    "name": "Elliot Schwartz",
-    "birthday": "Unknown",
-    "occupation": ["Co-Founder Gray Matter"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/8a/Elliott_Schwartz.png/revision/latest?cb=20131005103743&path-prefix=es",
-    "status": "Alive",
-    "nickname": "Elliot",
-    "appearance": [1, 5],
-    "portrayed": "Adam Godley",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 28,
-    "name": "Gonzo",
-    "birthday": "Unknown",
-    "occupation": ["Tuco's Bodyguard"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/d/d6/Gonzo.JPG/revision/latest?cb=20100415212944",
-    "status": "Deceased",
-    "nickname": "Gonzo",
-    "appearance": [1, 2],
-    "portrayed": "Jesus, Payan, Jr.",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 29,
-    "name": "Christian Ortgea",
-    "birthday": "Unknown",
-    "occupation": ["Low-level meth distributor"],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1540314304/c8acek3pimb0hb4efrvf.jpg",
-    "status": "Deceased",
-    "nickname": "Combo",
-    "appearance": [1, 2, 3],
-    "portrayed": "Rodney Rush",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 30,
-    "name": "Mrs. Pinkman",
-    "birthday": "Unknown",
-    "occupation": ["unknown"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754",
-    "status": "Alive",
-    "nickname": "Jesse's mom",
-    "appearance": [1, 2, 3],
-    "portrayed": "Tess Harper",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 31,
-    "name": "Adam Pinkman",
-    "birthday": "Unknown",
-    "occupation": ["unknown"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/c9/AdamPinkman.png/revision/latest?cb=20141117180836&path-prefix=es",
-    "status": "Alive",
-    "nickname": "Jesse's dad",
-    "appearance": [1, 2, 3],
-    "portrayed": "Michael Bofshever",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 32,
-    "name": "Jake Pinkman",
-    "birthday": "Unknown",
-    "occupation": ["Kid", "Jesse's little brother"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/a/a4/Jake.jpg/revision/latest?cb=20121214201656&path-prefix=de",
-    "status": "Alive",
-    "nickname": "Jake",
-    "appearance": [1],
-    "portrayed": "Ben Petry",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 33,
-    "name": "No-Doze",
-    "birthday": "Unknown",
-    "occupation": ["Juarez Cartel Lieutenant"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/ca/No_Doze_2.png/revision/latest?cb=20131014073210",
-    "status": "Deceased",
-    "nickname": "No-Doze",
-    "appearance": [1, 2],
-    "portrayed": "Cesar Garcia",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 34,
-    "name": "Emilio Koyama",
-    "birthday": "Unknown",
-    "occupation": ["Low-level meth distributor"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/trbreakingbad/images/9/9c/Emilio.jpeg/revision/latest?cb=20161029192022",
-    "status": "Deceased",
-    "nickname": "Emilio",
-    "appearance": [1],
-    "portrayed": "John Koyama",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 35,
-    "name": "Dr. Delcavoli",
-    "birthday": "Unknown",
-    "occupation": ["Physician"],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1540314509/lj5qlbe6xvmmpxnspz6y.jpg",
-    "status": "Alive",
-    "nickname": "Dr. Delcavoli",
-    "appearance": [1, 2],
-    "portrayed": "David House",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 36,
-    "name": "Wendy S.",
-    "birthday": "Unknown",
-    "occupation": ["Prostitute"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/cc/Wendy.jpg/revision/latest?cb=20170721162715",
-    "status": "Alive",
-    "nickname": "Wendy",
-    "appearance": [1, 2, 3],
-    "portrayed": "Julie Minesci",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 37,
-    "name": "Bogdan Wolynetz",
-    "birthday": "Unknown",
-    "occupation": ["Former owner of A1A Car Wash"],
-    "img": "https://web.archive.org/web/20220811172853/https://i.pinimg.com/originals/d5/c0/34/d5c0345ae70fbdbaa33b7537d685da54.jpg",
-    "status": "Alive",
-    "nickname": "Bogdan",
-    "appearance": [1, 3, 4],
-    "portrayed": "Marius Stan",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 38,
-    "name": "Ken",
-    "birthday": "Unknown",
-    "occupation": ["Stock Broker"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/8c/Ken.png/revision/latest?cb=20170721163649",
-    "status": "Alive",
-    "nickname": "Ken Wins",
-    "appearance": [1],
-    "portrayed": "Kyle Bornheimer",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 39,
-    "name": "Holly White",
-    "birthday": "Unknown",
-    "occupation": ["Infant"],
-    "img": "https://web.archive.org/web/20220811172853/https://static.wikia.nocookie.net/breakingbad/images/0/08/Tumblr_lqddc79K9S1qc5omm.png/revision/latest?cb=20111012055605",
-    "status": "Alive",
-    "nickname": "Holly",
-    "appearance": [2, 3, 4, 5],
-    "portrayed": "Unknown",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 40,
-    "name": "George Merkert",
-    "birthday": "Unknown",
-    "occupation": ["Former Head of Albuquerque DEA"],
-    "img": "https://web.archive.org/web/20220811172853/https://m.media-amazon.com/images/M/MV5BMTkwMTkxNjUzM15BMl5BanBnXkFtZTgwMTg5MTczMTE@._V1_UY317_CR175,0,214,317_AL_.jpg",
-    "status": "Alive",
-    "nickname": "ASAC Merkert",
-    "appearance": [2, 3, 4, 5],
-    "portrayed": "Michael Shamus Wiles",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 41,
-    "name": "Donald Margolis",
-    "birthday": "Unknown",
-    "occupation": ["Air-Traffic Controller", "Landlord"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/12/Donald_Margolis.png/revision/latest?cb=20120802212034",
-    "status": "Unknown",
-    "nickname": "Jane's dad",
-    "appearance": [2, 3],
-    "portrayed": "John de Lancie",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 42,
-    "name": "Clovis",
-    "birthday": "Unknown",
-    "occupation": ["Mechanic"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/0/0f/Clovis.JPG/revision/latest?cb=20100415221013",
-    "status": "Alive",
-    "nickname": "Clovis",
-    "appearance": [2, 3],
-    "portrayed": "Tom Kiesche",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 43,
-    "name": "SAC Ramey",
-    "birthday": "Unknown",
-    "occupation": ["DEA agent"],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539360786/o7thsjdorobfbetqaefj.jpg",
-    "status": "Alive",
-    "nickname": "SAC Ramey",
-    "appearance": [2, 4, 5],
-    "portrayed": "Todd Terry",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 44,
-    "name": "Victor",
-    "birthday": "Unknown",
-    "occupation": ["Henchman of Gustavo Fring"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/4/48/Victor2.png/revision/latest?cb=20131009225027",
-    "status": "Deceased",
-    "nickname": "Victor",
-    "appearance": [2, 3, 4],
-    "portrayed": "Jeremiah Bitsui",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 45,
-    "name": "Tomás Cantillo",
-    "birthday": "Unknown",
-    "occupation": ["Kid", "Gang member for a rival dealer in ABQ"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/e/ec/Tomas.png/revision/latest?cb=20130131043014",
-    "status": "Deceased",
-    "nickname": "Andrea's brother",
-    "appearance": [2, 3],
-    "portrayed": "Angelo Martinez",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 46,
-    "name": "Francesca Liddy",
-    "birthday": "Unknown",
-    "occupation": [
-      "Department of Motor Vehicles",
-      "Secretary for Saul Goodman Associates"
-    ],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539362182/o9mstjonfn6dsdi3uij6.jpg",
-    "status": "Alive",
-    "nickname": "Honey Tits",
-    "appearance": [2, 3, 4, 5],
-    "portrayed": "Tina Parker",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [3, 4]
-  },
-  {
-    "char_id": 47,
-    "name": "Cynthia",
-    "birthday": "Unknown",
-    "occupation": ["Los Pollos Hermanos Manager"],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539362375/z63youp272k5mbqbuqj9.jpg",
-    "status": "Alive",
-    "nickname": "Cynthia",
-    "appearance": [2, 3, 4],
-    "portrayed": "Ashley Kajiki",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 48,
-    "name": "Tortuga",
-    "birthday": "Unknown",
-    "occupation": ["Juarez Cartel member", "DEA informant"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/58/BBWA_Tortuga.jpg/revision/latest?cb=20131101172007",
-    "status": "Deceased",
-    "nickname": "Tortuga",
-    "appearance": [2, 3],
-    "portrayed": "Danny Trejo",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 49,
-    "name": "Tim Roberts",
-    "birthday": "Unknown",
-    "occupation": ["Detective for the APD"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/8d/2x02_-_Tim_Roberts.jpg/revision/latest?cb=20110927053954",
-    "status": "Alive",
-    "nickname": "Detective Roberts",
-    "appearance": [2, 4],
-    "portrayed": "Nigel Gibbs",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 50,
-    "name": "Juan Bolsa",
-    "birthday": "Unknown",
-    "occupation": ["Mexican drug cartel boss"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/3/38/Bolsa.png/revision/latest?cb=20180825204033",
-    "status": "Deceased",
-    "nickname": "Don Juan",
-    "appearance": [3, 4],
-    "portrayed": "Javier Grajeda",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 51,
-    "name": "Group Leader",
-    "birthday": "Unknown",
-    "occupation": ["Drug & Alcohol Rehabilitation Counselor"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/81/Group_Leader_Brown_Shirt_-_Kafkaesque.png/revision/latest?cb=20131025095333",
-    "status": "Alive",
-    "nickname": "Counselor",
-    "appearance": [3, 4],
-    "portrayed": "Jere Burns",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 52,
-    "name": "Kaylee Ehrmantraut",
-    "birthday": "Unknown",
-    "occupation": ["Kid"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/cc/Kaylee.png/revision/latest?cb=20170810082843",
-    "status": "Alive",
-    "nickname": "Mike's Granddaughter",
-    "appearance": [3, 5],
-    "portrayed": "Kaija Rose Bales",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 53,
-    "name": "Pamela",
-    "birthday": "Unknown",
-    "occupation": ["Attorney"],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539373707/bbb6muek0tcmbc3g2sog.jpg",
-    "status": "Alive",
-    "nickname": "Skyler's attorney",
-    "appearance": [3],
-    "portrayed": "Julie Dretzin",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 54,
-    "name": "Duane Chow",
-    "birthday": "Unknown",
-    "occupation": ["Owner of Golden Moth Chemical"],
-    "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539373871/ssk1t4hvo9tmhvdt5hcn.jpg",
-    "status": "Deceased",
-    "nickname": "Chow",
-    "appearance": [3, 5],
-    "portrayed": "James Ning",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 55,
-    "name": "Stacey Ehrmantraut",
-    "birthday": "Unknown",
-    "occupation": ["Mother"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b3/StaceyEhrmantraut.png/revision/latest?cb=20150310150049",
-    "status": "Alive",
-    "nickname": "Mike's daugter-in-law",
-    "appearance": [3],
-    "portrayed": "Kerry Condon",
-    "category": "Breaking Bad, Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4, 5]
-  },
-  {
-    "char_id": 56,
-    "name": "Officer Saxton",
-    "birthday": "Unknown",
-    "occupation": ["APD Officer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/f/f3/Officer_Saxton_-_I.F.T..png/revision/latest?cb=20131025090606",
-    "status": "Alive",
-    "nickname": "Saxton",
-    "appearance": [3],
-    "portrayed": "Stoney Westmoreland",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 57,
-    "name": "Jack Welker",
-    "birthday": "Unknown",
-    "occupation": ["Criminal Gang Leader"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/ce/Jack5x13.png/revision/latest?cb=20130912225922",
-    "status": "Deceased",
-    "nickname": "Uncle Jack",
-    "appearance": [5],
-    "portrayed": "Michael Bowen",
-    "category": "Breaking Bad",
-    "better_call_saul_appearance": []
-  },
-  {
-    "char_id": 112,
-    "name": "Kimberly Wexler",
-    "birthday": "Unknown",
-    "occupation": ["Lawyer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/f/f7/BCS_S4_Kim_Wexler.jpg/revision/latest?cb=20180824195845",
-    "status": "Alive",
-    "nickname": "Kim",
-    "appearance": [],
-    "portrayed": "Rhea Seehorn",
-    "category": "Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4, 5]
-  },
-  {
-    "char_id": 113,
-    "name": "Howard Hamlin",
-    "birthday": "Unknown",
-    "occupation": ["Lawyer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/57/BCS_S4_Howard_Hamlin.jpg/revision/latest?cb=20180824195855",
-    "status": "Alive",
-    "nickname": "Howard",
-    "appearance": [],
-    "portrayed": "Patrick Fabian",
-    "category": "Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4, 5]
-  },
-  {
-    "char_id": 114,
-    "name": "Charles McGill",
-    "birthday": "Unknown",
-    "occupation": ["Lawyer"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/3/3e/BCS_S3_ChuckMcGill.jpg/revision/latest?cb=20170327185308",
-    "status": "Deceased",
-    "nickname": "Chuck",
-    "appearance": [],
-    "portrayed": "Michael McKean",
-    "category": "Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4]
-  },
-  {
-    "char_id": 115,
-    "name": "Ignacio Varga",
-    "birthday": "Unknown",
-    "occupation": ["Crimal Gang Lieutenant"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b1/BCS_S4_Nacho_Varga.jpg/revision/latest?cb=20180824195910",
-    "status": "Alive",
-    "nickname": "Nacho",
-    "appearance": [],
-    "portrayed": "Michael Mano",
-    "category": "Better Call Saul",
-    "better_call_saul_appearance": [1, 2, 3, 4, 5]
-  },
-  {
-    "char_id": 116,
-    "name": "Eduardo Salamanca",
-    "birthday": "Unknown",
-    "occupation": ["Cartel Member"],
-    "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/85/LaloProfileBCS.png/revision/latest?cb=20180925050152",
-    "status": "Alive",
-    "nickname": "Lalo",
-    "appearance": [],
-    "portrayed": "Tony Dalton",
-    "category": "Better Call Saul",
-    "better_call_saul_appearance": [4, 5]
-  }
-]
+{
+  "characters": [
+    {
+      "char_id": 1,
+      "name": "Walter White",
+      "birthday": "09-07-1958",
+      "occupation": ["High School Chemistry Teacher", "Meth King Pin"],
+      "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
+      "status": "Presumed dead",
+      "nickname": "Heisenberg",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Bryan Cranston",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 2,
+      "name": "Jesse Pinkman",
+      "birthday": "09-24-1984",
+      "occupation": ["Meth Dealer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441",
+      "status": "Alive",
+      "nickname": "Cap n' Cook",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Aaron Paul",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 3,
+      "name": "Skyler White",
+      "birthday": "08-11-1970",
+      "occupation": [
+        "House wife",
+        "Book Keeper",
+        "Car Wash Manager",
+        "Taxi Dispatcher"
+      ],
+      "img": "https://web.archive.org/web/20220811172853/https://s-i.huffpost.com/gen/1317262/images/o-ANNA-GUNN-facebook.jpg",
+      "status": "Alive",
+      "nickname": "Sky",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Anna Gunn",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 4,
+      "name": "Walter White Jr.",
+      "birthday": "07-08-1993",
+      "occupation": ["Teenager"],
+      "img": "https://web.archive.org/web/20220811172853/https://media1.popsugar-assets.com/files/thumbor/WeLUSvbAMS_GL4iELYAUzu7Bpv0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/01/12/910/n/1922283/fb758e62b5daf3c9_TCDBRBA_EC011/i/RJ-Mitte-Walter-White-Jr.jpg",
+      "status": "Alive",
+      "nickname": "Flynn",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "RJ Mitte",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 5,
+      "name": "Henry Schrader",
+      "birthday": "Unknown",
+      "occupation": ["DEA Agent"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b7/HankS5.jpg/revision/latest/scale-to-width-down/700?cb=20120620014136",
+      "status": "Deceased",
+      "nickname": "Hank",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Dean Norris",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 6,
+      "name": "Marie Schrader",
+      "birthday": "Unknown",
+      "occupation": ["Housewife", "Clepto"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/10/Season_2_-_Marie.jpg/revision/latest?cb=20120617211645",
+      "status": "Alive",
+      "nickname": "Marie",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Betsy Brandt",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 7,
+      "name": "Mike Ehrmantraut",
+      "birthday": "Unknown",
+      "occupation": ["Hitman", "Private Investigator", "Ex-Cop"],
+      "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_mike-ehrmantraut-lg.jpg",
+      "status": "Deceased",
+      "nickname": "Mike",
+      "appearance": [2, 3, 4, 5],
+      "portrayed": "Jonathan Banks",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4, 5]
+    },
+    {
+      "char_id": 8,
+      "name": "Saul Goodman",
+      "birthday": "Unknown",
+      "occupation": ["Lawyer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/16/Saul_Goodman.jpg/revision/latest?cb=20120704065846",
+      "status": "Alive",
+      "nickname": "Jimmy McGill",
+      "appearance": [2, 3, 4, 5],
+      "portrayed": "Bob Odenkirk",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4, 5]
+    },
+    {
+      "char_id": 9,
+      "name": "Gustavo Fring",
+      "birthday": "Unknown",
+      "occupation": [
+        "Los-Pollos co-Founder",
+        "Philanthropist",
+        "Cartel Leader"
+      ],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/1f/BCS_S4_Gustavo_Fring.jpg/revision/latest?cb=20180824195925",
+      "status": "Deceased",
+      "nickname": "Gus",
+      "appearance": [2, 3, 4],
+      "portrayed": "Giancarlo Esposito",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [3, 4, 5]
+    },
+    {
+      "char_id": 10,
+      "name": "Hector Salamanca",
+      "birthday": "Unknown",
+      "occupation": ["Former Senior Cartel Leader"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b4/Hector_BCS.jpg/revision/latest?cb=20170810091606",
+      "status": "Deceased",
+      "nickname": "Don Hector",
+      "appearance": [1, 2, 3, 4],
+      "portrayed": "Mark Margolis",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [2, 3, 4, 5]
+    },
+    {
+      "char_id": 11,
+      "name": "Domingo Molina",
+      "birthday": "Unknown",
+      "occupation": ["Meth Distributor"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/e/e7/Krazy8.png/revision/latest?cb=20130208041554",
+      "status": "Deceased",
+      "nickname": "Krazy-8",
+      "appearance": [1],
+      "portrayed": "Maximino Arciniega",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 12,
+      "name": "Tuco Salamanca",
+      "birthday": "Unknown",
+      "occupation": ["Meth Distributor"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/a/a7/Tuco_BCS.jpg/revision/latest?cb=20170810082445",
+      "status": "Deceased",
+      "nickname": "Tuco",
+      "appearance": [1, 2],
+      "portrayed": "Raymond Cruz",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [1, 2]
+    },
+    {
+      "char_id": 13,
+      "name": "Marco & Leonel Salamanca",
+      "birthday": "Unknown",
+      "occupation": ["Cartel Hitman"],
+      "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_the-cousins-lg.jpg",
+      "status": "Deceased",
+      "nickname": "The Cousins",
+      "appearance": [3],
+      "portrayed": "Luis & Daniel Moncada",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 14,
+      "name": "Lydia Rodarte-Quayle",
+      "birthday": "Unknown",
+      "occupation": ["Executive at Madrigal"],
+      "img": "https://web.archive.org/web/20220811172853/https://static.wikia.nocookie.net/breakingbad/images/7/78/Lydia_S5b.jpg/revision/latest?cb=20130717044258",
+      "status": "Deceased",
+      "nickname": "Lydia",
+      "appearance": [5],
+      "portrayed": "Laura Fraser",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 15,
+      "name": "Todd Alquist",
+      "birthday": "Unknown",
+      "occupation": ["Lab Assistant", "Enforcer", "Meth Cook"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/9/95/Todd_brba5b.png/revision/latest?cb=20130717134303",
+      "status": "Deceased",
+      "nickname": "Ricky Hitler",
+      "appearance": [5],
+      "portrayed": "Jesse Plemons",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 16,
+      "name": "Jane Margolis",
+      "birthday": "Unknown",
+      "occupation": ["Tattoo Artist", "Landlord"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b4/Jane.jpg/revision/latest?cb=20090621233653",
+      "status": "Deceased",
+      "nickname": "Apology Girl",
+      "appearance": [2],
+      "portrayed": "Krysten Ritter",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 17,
+      "name": "Skinny Pete",
+      "birthday": "Unknown",
+      "occupation": ["Low-level meth distributer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breaking-bad-tv/images/c/ce/Sp.png/revision/latest?cb=20121016143623",
+      "status": "Alive",
+      "nickname": "Skinny",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Charles Baker",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 18,
+      "name": "Brandon Mayhew",
+      "birthday": "Unknown",
+      "occupation": ["Low-level meth distributer"],
+      "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_badger-lg.jpg",
+      "status": "Alive",
+      "nickname": "Badger",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Matt L. Jones",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 19,
+      "name": "Huell Babineaux",
+      "birthday": "Unknown",
+      "occupation": ["Bodyguard"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/c1/4x11_-_Huell.png/revision/latest?cb=20130913100459&path-prefix=es",
+      "status": "Alive",
+      "nickname": "Huell",
+      "appearance": [4, 5],
+      "portrayed": "Lavell Crawford",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 20,
+      "name": "Steven Gomez",
+      "birthday": "Unknown",
+      "occupation": ["DEA Agent"],
+      "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_steven-gomez-lg.jpg",
+      "status": "Deceased",
+      "nickname": "Gomie",
+      "appearance": [1, 2, 3, 4, 5],
+      "portrayed": "Steven Michael Quezada",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 21,
+      "name": "Theodore Beneke",
+      "birthday": "Unknown",
+      "occupation": ["Former President Beneke Fabricators"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/bd/Cast_bb_700x1000_todd-beneke-lg.jpg/revision/latest?cb=20170723165057",
+      "status": "Alive",
+      "nickname": "Ted",
+      "appearance": [2, 3, 4, 5],
+      "portrayed": "Christopher Cousins",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 22,
+      "name": "Gale Boetticher",
+      "birthday": "Unknown",
+      "occupation": ["Chemist", "Meth manufacturer"],
+      "img": "https://web.archive.org/web/20220811172853/https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_gale-boetticher-lg.jpg",
+      "status": "Deceased",
+      "nickname": "GB",
+      "appearance": [3],
+      "portrayed": "David Costabile",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 23,
+      "name": "Andrea Cantillo",
+      "birthday": "Unknown",
+      "occupation": ["Unknown"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/51/Andrea_-_To%27hajilee.png/revision/latest?cb=20131025094457",
+      "status": "Deceased",
+      "nickname": "Andrea",
+      "appearance": [3, 4, 5],
+      "portrayed": "Emily Rios",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 24,
+      "name": "Brock Cantillo",
+      "birthday": "Unknown",
+      "occupation": ["Kid"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/9/97/Brock.png/revision/latest?cb=20170725193144",
+      "status": "Alive",
+      "nickname": "Brock",
+      "appearance": [3, 4, 5],
+      "portrayed": "Ian Posada",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 25,
+      "name": "Carmen Molina",
+      "birthday": "Unknown",
+      "occupation": ["High School Principal"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/d/de/Carmen.JPG/revision/latest?cb=20100410125233",
+      "status": "Alive",
+      "nickname": "Carmen",
+      "appearance": [1, 2, 3, 5],
+      "portrayed": "Carmen Serano",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 26,
+      "name": "Gretchen Schwartz",
+      "birthday": "Unknown",
+      "occupation": ["Co-owner Gray Matter"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/5e/Gretchen_Schwartz.png/revision/latest?cb=20131005103735&path-prefix=es",
+      "status": "Alive",
+      "nickname": "Gretchen",
+      "appearance": [1, 2, 5],
+      "portrayed": "Jessica Hecht",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 27,
+      "name": "Elliot Schwartz",
+      "birthday": "Unknown",
+      "occupation": ["Co-Founder Gray Matter"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/8a/Elliott_Schwartz.png/revision/latest?cb=20131005103743&path-prefix=es",
+      "status": "Alive",
+      "nickname": "Elliot",
+      "appearance": [1, 5],
+      "portrayed": "Adam Godley",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 28,
+      "name": "Gonzo",
+      "birthday": "Unknown",
+      "occupation": ["Tuco's Bodyguard"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/d/d6/Gonzo.JPG/revision/latest?cb=20100415212944",
+      "status": "Deceased",
+      "nickname": "Gonzo",
+      "appearance": [1, 2],
+      "portrayed": "Jesus, Payan, Jr.",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 29,
+      "name": "Christian Ortgea",
+      "birthday": "Unknown",
+      "occupation": ["Low-level meth distributor"],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1540314304/c8acek3pimb0hb4efrvf.jpg",
+      "status": "Deceased",
+      "nickname": "Combo",
+      "appearance": [1, 2, 3],
+      "portrayed": "Rodney Rush",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 30,
+      "name": "Mrs. Pinkman",
+      "birthday": "Unknown",
+      "occupation": ["unknown"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754",
+      "status": "Alive",
+      "nickname": "Jesse's mom",
+      "appearance": [1, 2, 3],
+      "portrayed": "Tess Harper",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 31,
+      "name": "Adam Pinkman",
+      "birthday": "Unknown",
+      "occupation": ["unknown"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/c9/AdamPinkman.png/revision/latest?cb=20141117180836&path-prefix=es",
+      "status": "Alive",
+      "nickname": "Jesse's dad",
+      "appearance": [1, 2, 3],
+      "portrayed": "Michael Bofshever",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 32,
+      "name": "Jake Pinkman",
+      "birthday": "Unknown",
+      "occupation": ["Kid", "Jesse's little brother"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/a/a4/Jake.jpg/revision/latest?cb=20121214201656&path-prefix=de",
+      "status": "Alive",
+      "nickname": "Jake",
+      "appearance": [1],
+      "portrayed": "Ben Petry",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 33,
+      "name": "No-Doze",
+      "birthday": "Unknown",
+      "occupation": ["Juarez Cartel Lieutenant"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/ca/No_Doze_2.png/revision/latest?cb=20131014073210",
+      "status": "Deceased",
+      "nickname": "No-Doze",
+      "appearance": [1, 2],
+      "portrayed": "Cesar Garcia",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 34,
+      "name": "Emilio Koyama",
+      "birthday": "Unknown",
+      "occupation": ["Low-level meth distributor"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/trbreakingbad/images/9/9c/Emilio.jpeg/revision/latest?cb=20161029192022",
+      "status": "Deceased",
+      "nickname": "Emilio",
+      "appearance": [1],
+      "portrayed": "John Koyama",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 35,
+      "name": "Dr. Delcavoli",
+      "birthday": "Unknown",
+      "occupation": ["Physician"],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1540314509/lj5qlbe6xvmmpxnspz6y.jpg",
+      "status": "Alive",
+      "nickname": "Dr. Delcavoli",
+      "appearance": [1, 2],
+      "portrayed": "David House",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 36,
+      "name": "Wendy S.",
+      "birthday": "Unknown",
+      "occupation": ["Prostitute"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/cc/Wendy.jpg/revision/latest?cb=20170721162715",
+      "status": "Alive",
+      "nickname": "Wendy",
+      "appearance": [1, 2, 3],
+      "portrayed": "Julie Minesci",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 37,
+      "name": "Bogdan Wolynetz",
+      "birthday": "Unknown",
+      "occupation": ["Former owner of A1A Car Wash"],
+      "img": "https://web.archive.org/web/20220811172853/https://i.pinimg.com/originals/d5/c0/34/d5c0345ae70fbdbaa33b7537d685da54.jpg",
+      "status": "Alive",
+      "nickname": "Bogdan",
+      "appearance": [1, 3, 4],
+      "portrayed": "Marius Stan",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 38,
+      "name": "Ken",
+      "birthday": "Unknown",
+      "occupation": ["Stock Broker"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/8c/Ken.png/revision/latest?cb=20170721163649",
+      "status": "Alive",
+      "nickname": "Ken Wins",
+      "appearance": [1],
+      "portrayed": "Kyle Bornheimer",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 39,
+      "name": "Holly White",
+      "birthday": "Unknown",
+      "occupation": ["Infant"],
+      "img": "https://web.archive.org/web/20220811172853/https://static.wikia.nocookie.net/breakingbad/images/0/08/Tumblr_lqddc79K9S1qc5omm.png/revision/latest?cb=20111012055605",
+      "status": "Alive",
+      "nickname": "Holly",
+      "appearance": [2, 3, 4, 5],
+      "portrayed": "Unknown",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 40,
+      "name": "George Merkert",
+      "birthday": "Unknown",
+      "occupation": ["Former Head of Albuquerque DEA"],
+      "img": "https://web.archive.org/web/20220811172853/https://m.media-amazon.com/images/M/MV5BMTkwMTkxNjUzM15BMl5BanBnXkFtZTgwMTg5MTczMTE@._V1_UY317_CR175,0,214,317_AL_.jpg",
+      "status": "Alive",
+      "nickname": "ASAC Merkert",
+      "appearance": [2, 3, 4, 5],
+      "portrayed": "Michael Shamus Wiles",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 41,
+      "name": "Donald Margolis",
+      "birthday": "Unknown",
+      "occupation": ["Air-Traffic Controller", "Landlord"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/1/12/Donald_Margolis.png/revision/latest?cb=20120802212034",
+      "status": "Unknown",
+      "nickname": "Jane's dad",
+      "appearance": [2, 3],
+      "portrayed": "John de Lancie",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 42,
+      "name": "Clovis",
+      "birthday": "Unknown",
+      "occupation": ["Mechanic"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/0/0f/Clovis.JPG/revision/latest?cb=20100415221013",
+      "status": "Alive",
+      "nickname": "Clovis",
+      "appearance": [2, 3],
+      "portrayed": "Tom Kiesche",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 43,
+      "name": "SAC Ramey",
+      "birthday": "Unknown",
+      "occupation": ["DEA agent"],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539360786/o7thsjdorobfbetqaefj.jpg",
+      "status": "Alive",
+      "nickname": "SAC Ramey",
+      "appearance": [2, 4, 5],
+      "portrayed": "Todd Terry",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 44,
+      "name": "Victor",
+      "birthday": "Unknown",
+      "occupation": ["Henchman of Gustavo Fring"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/4/48/Victor2.png/revision/latest?cb=20131009225027",
+      "status": "Deceased",
+      "nickname": "Victor",
+      "appearance": [2, 3, 4],
+      "portrayed": "Jeremiah Bitsui",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 45,
+      "name": "Tomás Cantillo",
+      "birthday": "Unknown",
+      "occupation": ["Kid", "Gang member for a rival dealer in ABQ"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/e/ec/Tomas.png/revision/latest?cb=20130131043014",
+      "status": "Deceased",
+      "nickname": "Andrea's brother",
+      "appearance": [2, 3],
+      "portrayed": "Angelo Martinez",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 46,
+      "name": "Francesca Liddy",
+      "birthday": "Unknown",
+      "occupation": [
+        "Department of Motor Vehicles",
+        "Secretary for Saul Goodman Associates"
+      ],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539362182/o9mstjonfn6dsdi3uij6.jpg",
+      "status": "Alive",
+      "nickname": "Honey Tits",
+      "appearance": [2, 3, 4, 5],
+      "portrayed": "Tina Parker",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [3, 4]
+    },
+    {
+      "char_id": 47,
+      "name": "Cynthia",
+      "birthday": "Unknown",
+      "occupation": ["Los Pollos Hermanos Manager"],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539362375/z63youp272k5mbqbuqj9.jpg",
+      "status": "Alive",
+      "nickname": "Cynthia",
+      "appearance": [2, 3, 4],
+      "portrayed": "Ashley Kajiki",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 48,
+      "name": "Tortuga",
+      "birthday": "Unknown",
+      "occupation": ["Juarez Cartel member", "DEA informant"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/58/BBWA_Tortuga.jpg/revision/latest?cb=20131101172007",
+      "status": "Deceased",
+      "nickname": "Tortuga",
+      "appearance": [2, 3],
+      "portrayed": "Danny Trejo",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 49,
+      "name": "Tim Roberts",
+      "birthday": "Unknown",
+      "occupation": ["Detective for the APD"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/8d/2x02_-_Tim_Roberts.jpg/revision/latest?cb=20110927053954",
+      "status": "Alive",
+      "nickname": "Detective Roberts",
+      "appearance": [2, 4],
+      "portrayed": "Nigel Gibbs",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 50,
+      "name": "Juan Bolsa",
+      "birthday": "Unknown",
+      "occupation": ["Mexican drug cartel boss"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/3/38/Bolsa.png/revision/latest?cb=20180825204033",
+      "status": "Deceased",
+      "nickname": "Don Juan",
+      "appearance": [3, 4],
+      "portrayed": "Javier Grajeda",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 51,
+      "name": "Group Leader",
+      "birthday": "Unknown",
+      "occupation": ["Drug & Alcohol Rehabilitation Counselor"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/81/Group_Leader_Brown_Shirt_-_Kafkaesque.png/revision/latest?cb=20131025095333",
+      "status": "Alive",
+      "nickname": "Counselor",
+      "appearance": [3, 4],
+      "portrayed": "Jere Burns",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 52,
+      "name": "Kaylee Ehrmantraut",
+      "birthday": "Unknown",
+      "occupation": ["Kid"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/cc/Kaylee.png/revision/latest?cb=20170810082843",
+      "status": "Alive",
+      "nickname": "Mike's Granddaughter",
+      "appearance": [3, 5],
+      "portrayed": "Kaija Rose Bales",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 53,
+      "name": "Pamela",
+      "birthday": "Unknown",
+      "occupation": ["Attorney"],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539373707/bbb6muek0tcmbc3g2sog.jpg",
+      "status": "Alive",
+      "nickname": "Skyler's attorney",
+      "appearance": [3],
+      "portrayed": "Julie Dretzin",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 54,
+      "name": "Duane Chow",
+      "birthday": "Unknown",
+      "occupation": ["Owner of Golden Moth Chemical"],
+      "img": "https://web.archive.org/web/20220811172853/https://res.cloudinary.com/dwvrok1le/image/upload/v1539373871/ssk1t4hvo9tmhvdt5hcn.jpg",
+      "status": "Deceased",
+      "nickname": "Chow",
+      "appearance": [3, 5],
+      "portrayed": "James Ning",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 55,
+      "name": "Stacey Ehrmantraut",
+      "birthday": "Unknown",
+      "occupation": ["Mother"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b3/StaceyEhrmantraut.png/revision/latest?cb=20150310150049",
+      "status": "Alive",
+      "nickname": "Mike's daugter-in-law",
+      "appearance": [3],
+      "portrayed": "Kerry Condon",
+      "category": "Breaking Bad, Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4, 5]
+    },
+    {
+      "char_id": 56,
+      "name": "Officer Saxton",
+      "birthday": "Unknown",
+      "occupation": ["APD Officer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/f/f3/Officer_Saxton_-_I.F.T..png/revision/latest?cb=20131025090606",
+      "status": "Alive",
+      "nickname": "Saxton",
+      "appearance": [3],
+      "portrayed": "Stoney Westmoreland",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 57,
+      "name": "Jack Welker",
+      "birthday": "Unknown",
+      "occupation": ["Criminal Gang Leader"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/c/ce/Jack5x13.png/revision/latest?cb=20130912225922",
+      "status": "Deceased",
+      "nickname": "Uncle Jack",
+      "appearance": [5],
+      "portrayed": "Michael Bowen",
+      "category": "Breaking Bad",
+      "better_call_saul_appearance": []
+    },
+    {
+      "char_id": 112,
+      "name": "Kimberly Wexler",
+      "birthday": "Unknown",
+      "occupation": ["Lawyer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/f/f7/BCS_S4_Kim_Wexler.jpg/revision/latest?cb=20180824195845",
+      "status": "Alive",
+      "nickname": "Kim",
+      "appearance": [],
+      "portrayed": "Rhea Seehorn",
+      "category": "Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4, 5]
+    },
+    {
+      "char_id": 113,
+      "name": "Howard Hamlin",
+      "birthday": "Unknown",
+      "occupation": ["Lawyer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/5/57/BCS_S4_Howard_Hamlin.jpg/revision/latest?cb=20180824195855",
+      "status": "Alive",
+      "nickname": "Howard",
+      "appearance": [],
+      "portrayed": "Patrick Fabian",
+      "category": "Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4, 5]
+    },
+    {
+      "char_id": 114,
+      "name": "Charles McGill",
+      "birthday": "Unknown",
+      "occupation": ["Lawyer"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/3/3e/BCS_S3_ChuckMcGill.jpg/revision/latest?cb=20170327185308",
+      "status": "Deceased",
+      "nickname": "Chuck",
+      "appearance": [],
+      "portrayed": "Michael McKean",
+      "category": "Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4]
+    },
+    {
+      "char_id": 115,
+      "name": "Ignacio Varga",
+      "birthday": "Unknown",
+      "occupation": ["Crimal Gang Lieutenant"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/b/b1/BCS_S4_Nacho_Varga.jpg/revision/latest?cb=20180824195910",
+      "status": "Alive",
+      "nickname": "Nacho",
+      "appearance": [],
+      "portrayed": "Michael Mano",
+      "category": "Better Call Saul",
+      "better_call_saul_appearance": [1, 2, 3, 4, 5]
+    },
+    {
+      "char_id": 116,
+      "name": "Eduardo Salamanca",
+      "birthday": "Unknown",
+      "occupation": ["Cartel Member"],
+      "img": "https://web.archive.org/web/20220811172853/https://vignette.wikia.nocookie.net/breakingbad/images/8/85/LaloProfileBCS.png/revision/latest?cb=20180925050152",
+      "status": "Alive",
+      "nickname": "Lalo",
+      "appearance": [],
+      "portrayed": "Tony Dalton",
+      "category": "Better Call Saul",
+      "better_call_saul_appearance": [4, 5]
+    }
+  ],
+  "quotes": [
+    {
+      "quote": "I'm sorry, what were you asking me? Oh, yes, that stupid plastic container I asked you to buy. You see, hydrofluoric acid won't eat through plastic; it will however dissolve metal, rock, glass, ceramic. So there's that",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Alright, I've got the talking pillow now... Okay?",
+      "author": "Walter White"
+    },
+    {
+      "quote": "We tried to poison you. We tried to poison you because you are an insane, degenerate piece of filth and you deserve to die.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Alright, tell you what. Both of you pull it out your butts right now, or I go grab a flashlight and some pliers and go exploring.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "I do not believe fear to be an effective motivator. I want investment. For now, I'm simply interested in time frame",
+      "author": "Gustavo Fring"
+    },
+    {
+      "quote": "When you have children, you always have family. They will always be your priority, your responsibility. And a man, a man provides. And he does it even when he's not appreciated or respected or even loved. He simply bears up and he does it. Because he's a man.",
+      "author": "Gustavo Fring"
+    },
+    {
+      "quote": "Hey, tell your douchebag brother-in-law to head towards the light",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Did you know that there's an acceptable level of rat turds that can go into candy bars? It's the government, jack. Even government doesn't care that much about quality. You know what is okay to put in hot dogs? Huh? Pig lips and *beep* But I say, hey, have at it bitches 'cause I love hot dogs.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "The one that says if I can't kill you, you'll sure as *beep* wish you were dead.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "You won, Walter. You got the job. Do yourself a favor and learn to take yes for an answer.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "The thing is, if you just do stuff and nothing happens, what's it all mean? What's the point? Oh right, this whole thing is about self-acceptance.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "You are a time bomb, tick-tick-ticking. And I have no intention of being around for the boom.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "Don't drink and drive but if you do, call me.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "I am not in danger, Skyler. I AM the danger!",
+      "author": "Walter White"
+    },
+    {
+      "quote": "A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!",
+      "author": "Walter White"
+    },
+    {
+      "quote": "If that’s true, if you don’t know who I am, then maybe your best course… would be to tread lightly.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Someone has to protect this family from the man who protects this family.",
+      "author": "Skyler White"
+    },
+    {
+      "quote": "Smoking marijuana, eating cheetos, and masturbating do not constitute plans in my book.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Stay out of my territory.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Because I say so.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I'm not in the meth business. I'm in the empire business.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "You all know exactly who I am. Say my name.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I watched Jane die. I was there. And I watched her die.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I did it for me. I liked it. I was good at it. And... I was really... I was alive.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "\"Cap'n Cook?\" That's not you? Like I said, no one is looking for you.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Do you know how much I make a year? I mean, even if I told you, you wouldn't believe it.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Jesus! Just grow some fucking balls!",
+      "author": "Walter White"
+    },
+    {
+      "quote": "F*ck you! And your eyebrows!",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Send him to Belize? I'll send YOU to Belize.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "We're done when I say we're done.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Sitting around, smoking marijuana, eating Cheetos and masturbating do not constitute \"plans\".",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I did it for me. I liked it. I was good at it. And I was really... I was alive.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Bitch!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "So you do have a plan? Yeah, Mr. White! Yeah, science!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "I'm a criminal, yo.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Yeah, bitch! Magnets!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "You're my free pass... bitch!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Fire in the hole, bitch!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Did you just bring a bomb into a hospital?",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Seriously? \"Hello Kitty\"?",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Speak into the mic, bitch.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Better call Saul!",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "You do seem to have a little “shit creek” action going… You know, FYI, you can buy a paddle.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "If I ever get anal polyps, I'll know what to name them.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "You two suck at peddling meth.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "Clearly, his taste in women is the same as his taste in lawyers.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "Congratulations, you’ve just left your family a second-hand Subaru.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "I’m not saying it’s not bad. It’s bad. But it could be worse.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "I hide in plain sight, same as you.",
+      "author": "Gustavo Fring"
+    },
+    {
+      "quote": "May his death satisfy you.",
+      "author": "Gustavo Fring"
+    },
+    {
+      "quote": "I will kill your wife, I will kill your son, I will kill your infant daughter.",
+      "author": "Gustavo Fring"
+    },
+    {
+      "quote": "Everyone sounds like Meryl Streep with a gun to their head.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "You know how they say 'it's been a pleasure'? Well... it hasn't.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "Just because you shot Jesse James doesn't mean you are Jesse James.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "No more half-measures, Walter.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "Shut the f*ck up and let me die in peace.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "Keys, scumbag. It's the universal symbol for keys.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "I will put you under the jail.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "My name is ASAC Schrader, and you can go f*ck yourself.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "They're minerals, Marie! Jesus!",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "Since when do vegans eat fried chicken?",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "You're the smartest guy I ever met, and you're too stupid to see he made up his mind 10 minutes ago.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "All I can do is wait... for the cancer to come back.",
+      "author": "Skyler White"
+    },
+    {
+      "quote": "Put me on your magical boat, man, and sail me down your chocolaty river of meth!",
+      "author": "Badger"
+    },
+    {
+      "quote": "Buzz buzz buzz",
+      "author": "The fly"
+    },
+    {
+      "quote": "The Universe is Random. Not Inevitable. It's simple Chaos.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Sometimes it just feels better not to talk. At All. About Anything. To Anyone.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Name one thing in this world that is non negotiable.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "You are not the guy. You're not capable of being the guy. I had a guy but now I don't. You are not the guy.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "If you don’t know who I am, then maybe your best course would be to tread lightly.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Walter Jr., you're my big man. There are going to be some things that you'll come to learn about me in the next few days. But just know that no matter how it may look, I only had you in my heart. Goodbye!",
+      "author": "Walter White"
+    },
+    {
+      "quote": "What I came to realise is that fear, that's the worst of it. That's the real enemy. So, get up, get out in the real world and you kick that bastard as hard you can right in the teeth.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "You need to stop focusing on the darkness behind you. The past is the past. Nothing can change what we’ve done.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "This is my own private domicile and I will not be harassed... bitch!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "You don’t want a criminal lawyer. You want a criminal lawyer.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "So roll me further bitch!",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "I Won.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "You're never too old for balloons.",
+      "author": "Mike Ehrmantraut"
+    },
+    {
+      "quote": "I have spent my whole life scared frightened of things that could happen, might happen, might not happen.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Now, hey, remember, not all learning comes out of books.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Then why don't you just fucking die, already?",
+      "author": "Walter White Jr"
+    },
+    {
+      "quote": "He handles the businesses, and I handle him.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Shit!",
+      "author": "Walter White"
+    },
+    {
+      "quote": "You little bastard.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Stop acting like such a baby.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Is that your fly-sabre?",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "Don't bullshit a bullshitter.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Some people are immune to good advice.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Well, technically, chemistry is the study of matter. But I prefer to see it as the study of change.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Find what you love and let it kill you.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Let's see, how shouild i put this? I'm in, you're out.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Never give up control. Live life on your own terms.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Fear is the real enemy.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "All bad things must come to an end.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Jesse, you asked me if I was in the meth business or the money business.. Neither. I'm in the empire business.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "Sometimes the forbidden fruit tastes the sweetest.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "Free food always tastes good. Free drinks even better.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "My friends, I promise you that together, we will prosper.",
+      "author": "Gus Fring"
+    },
+    {
+      "quote": "Now look buddy, the last thing I want to do is get you in hot water, but some meth monkey had a feeding frenzy in here.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "Finding myself awake at three in the morning. But you know what? Ever since my diagnosis, I sleep just fine.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I told you, Skyler, I warned you for a solid year: you cross me, and there will be consequences.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I want my kids back. I want my life back. Please tell me – How much is enough? How big does this pile have to be?",
+      "author": "Skyler White"
+    },
+    {
+      "quote": "I want my kids back. I want my life back. Please tell me – How much is enough? How big does this pile have to be?",
+      "author": "Skyler White"
+    },
+    {
+      "quote": "It’s easy money. Until we catch you.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "I once told a woman I was Kevin Costner and it worked because I believed it.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "Scientists love lasers.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "If you’re committed enough, you can make any story work.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "Did I say you could open your mouth? And, hands off the car!",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "If you believe that there’s a hell, we’re pretty much already going there.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "You add plus a douchebag to a minus douchebag and you get, Like, Zero Douchebags.",
+      "author": "Jesse Pinkman"
+    },
+    {
+      "quote": "A guy that clean has to be dirty.",
+      "author": "Hank Schrader"
+    },
+    {
+      "quote": "There is gold in the streets just waiting for someone to come and scoop it up.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "The fun’s over. From here on out, I’m Mr. Low Profile. Just another douche bag with a job and three pairs of Dockers. If I’m lucky, month from now, best-case scenario, I’m managing a Cinnabon in Omaha.",
+      "author": "Saul Goodman"
+    },
+    {
+      "quote": "I am speaking to my family now. Skyler, you are the love of my life. I hope you know that.",
+      "author": "Walter White"
+    },
+    {
+      "quote": "I could have saved her",
+      "author": "Walter White"
+    }
+  ]
+}
