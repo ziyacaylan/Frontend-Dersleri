@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 function Header() {
   const currentMoney = useSelector((state) => state.products.currentMoney);
 
+  //console.log(currentMoney);
   return (
     <>
       <div className="flex flex-col items-center justify-center bg-white w-full mb-4 ">
