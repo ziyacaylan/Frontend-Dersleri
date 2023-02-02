@@ -4,7 +4,7 @@ import Form from "../form";
 function Contacts() {
   return (
     <div>
-      <h1 className="text-xl">Contacts</h1>
+      <h1 className="font-bold text-3xl text-center">Contacts</h1>
       <Form />
     </div>
   );
