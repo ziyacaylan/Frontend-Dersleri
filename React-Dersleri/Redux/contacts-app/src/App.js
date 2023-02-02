@@ -1,13 +1,20 @@
 import "./App.css";
-import Contacts from "./components/contact";
-import List from "./components/list";
+import { Routes, Route } from "react-router-dom";
+
+import Layout from "./pages/layout";
+import Home from "./pages/Home";
+import Edit from "./components/edit";
 
 function App() {
   return (
-    <div className="container mx-auto border-2 border-grey-custom rounded-[20px] bg-violet-200 p-4 mt-4">
-      <Contacts />
-      <List />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/edit/:id" element={<Edit />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

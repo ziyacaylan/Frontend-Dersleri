@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { addContact } from "../../redux/contactSlice";
+import { addContact } from "../../../redux/contactSlice";
 
 function Form() {
   const [name, setName] = useState("");
@@ -41,7 +41,7 @@ function Form() {
           onChange={(e) => setNumber(e.target.value)}
           required
         />
-        <button className="w-full p-2 my-4 bg-violet-light rounded-xl text-xl text-white">
+        <button className="w-full p-2 my-4 bg-violet-light rounded-xl text-xl text-white uppercase">
           Submit
         </button>
       </form>
