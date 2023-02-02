@@ -21,4 +21,4 @@
 
 ---
 
-![screenshot](/src/assets/Screenshot.jpg)
+![screenshot](./src/assets/Screenshot.jpg)
