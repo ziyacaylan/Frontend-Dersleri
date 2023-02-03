@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body,
+  html {
+    @apply bg-purple-200;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-gemunu uppercase;
+  }
+  h2 {
+    @apply text-2xl tracking-wider;
+  }
+  /* a {
+    @apply font-gemunu;
+  } */
+}
