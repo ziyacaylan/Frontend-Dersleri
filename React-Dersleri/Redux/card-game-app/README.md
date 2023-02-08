@@ -15,46 +15,48 @@
 
 ## Project Skeleton
 
-|----README.md  
-├── public  
-│ ├── favicon.ico  
-│ ├── favicon.png  
-│ ├── index.html  
-│ ├── logo192.png  
-│ ├── manifest.json  
-│ └── robots.txt  
-├── src  
-│ ├── assets  
-│ │ ├── pokemon.png  
-│ │ ├── Screen Shot 1.png  
-│ │ ├── Screen Shot 2.png  
-│ │ └── Screen Shot 3.png  
-│ ├── components  
-│ │ ├── Card  
-│ │ │ └── index.js  
-│ │ ├── Confetti  
-│ │ │ └── index.js  
-│ │ ├── Content  
-│ │ │ └── index.js  
-│ │ ├── Footer  
-│ │ │ └── index.js  
-│ │ └── SHeader  
-│ │ └── index.js  
-│ ├── data  
-│ │ └── data.js  
-│ ├── redux  
-│ │ ├── CardsSlice  
-│ │ │ └── index.js  
-│ │ └── store.js  
-│ ├── App.css  
-│ ├── App.js  
-│ ├── index.css  
-│ └── index.js  
-├── components  
-├── .gitignore  
-├── package-lock.json  
-├── package.json  
+```
+|----README.md
+├── public
+│ ├── favicon.ico
+│ ├── favicon.png
+│ ├── index.html
+│ ├── logo192.png
+│ ├── manifest.json
+│ └── robots.txt
+├── src
+│ ├── assets
+│ │ ├── pokemon.png
+│ │ ├── Screen Shot 1.png
+│ │ ├── Screen Shot 2.png
+│ │ └── Screen Shot 3.png
+│ ├── components
+│ │ ├── Card
+│ │ │ └── index.js
+│ │ ├── Confetti
+│ │ │ └── index.js
+│ │ ├── Content
+│ │ │ └── index.js
+│ │ ├── Footer
+│ │ │ └── index.js
+│ │ └── SHeader
+│ │ └── index.js
+│ ├── data
+│ │ └── data.js
+│ ├── redux
+│ │ ├── CardsSlice
+│ │ │ └── index.js
+│ │ └── store.js
+│ ├── App.css
+│ ├── App.js
+│ ├── index.css
+│ └── index.js
+├── components
+├── .gitignore
+├── package-lock.json
+├── package.json
 └── tailwind.config.js
+```
 
 ## Author
 
