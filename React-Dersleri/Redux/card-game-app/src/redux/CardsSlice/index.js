@@ -30,6 +30,7 @@ export const CardsSlice = createSlice({
       state.cards = [];
       state.activeCards = [];
       state.score = 200;
+      state.status = "";
       state.total = {
         opened: 0,
         closed: 24,

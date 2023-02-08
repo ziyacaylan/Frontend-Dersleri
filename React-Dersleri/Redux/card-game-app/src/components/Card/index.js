@@ -11,12 +11,12 @@ import {
 
 const Card = ({ pokemon }) => {
   const [open, setOpen] = useState(false);
-  const { activeCards, cards } = useSelector((state) => state.cards);
+  const { activeCards, cards, total } = useSelector((state) => state.cards);
 
   const dispatch = useDispatch();
 
   const toggleHandle = () => {
-    setOpen(true);
+    total.closed > 0 && setOpen(true);
     //console.log(open);
   };
 
