@@ -11,6 +11,7 @@
 - reduxjs/toolkit
 - createAsyncThunk
 - axios
+- tailwind.ui
 
 ---
 
