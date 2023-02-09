@@ -9,8 +9,15 @@ export const markdownSlice = createSlice({
     textHelp: help,
     isShowingHelp: false,
   },
-  reducers: {},
+  reducers: {
+    setMarkdownText: (state, action) => {
+      state.markdownText = action.payload;
+    },
+    showHelpText: (state, action) => {
+      state.isShowingHelp = !state.isShowingHelp;
+    },
+  },
 });
 
-export const {} = markdownSlice.actions;
+export const { setMarkdownText, showHelpText } = markdownSlice.actions;
 export default markdownSlice.reducer;

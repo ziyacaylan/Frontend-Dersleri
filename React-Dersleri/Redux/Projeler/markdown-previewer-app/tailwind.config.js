@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         gemunu: ["Gemunu Libre"],
+        spaceMono: ["Space Mono", "monospace"],
       },
     },
     colors: {
@@ -26,7 +27,10 @@ module.exports = {
       pink: colors.pink,
       fuchsia: colors.fuchsia,
       linkedin: "#0072b1",
+      backgroundYellow: "#FFCD38",
+      paperYellow: "#FFDE67",
+      boxYellow: "#FFEEB4",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };
