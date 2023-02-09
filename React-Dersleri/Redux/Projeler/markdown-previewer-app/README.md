@@ -1,6 +1,6 @@
 # Redux-TextGeneratorApp
 
-## DEMO : https://ziyac-textgenerator-app.netlify.app/
+## DEMO : https://ziyac-markdown-maker-app.netlify.app/
 
 ---
 
