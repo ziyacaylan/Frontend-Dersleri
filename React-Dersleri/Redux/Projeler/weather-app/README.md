@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Redux-TextGeneratorApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## DEMO : https://weather-app-ziyac.netlify.app/
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Technology stack
 
-### `npm start`
+- React.js
+- Redux store
+- reduxjs/toolkit
+- createAsyncThunk
+- axios
+- tailwind.ui
+- momentjs
+- react-hot-toast
+- react-icons
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Skeleton
 
-### `npm test`
+```
+|----README.md
+├── public
+│ ├── favicon.ico
+│ ├── index.html
+│ ├── logo192.png
+│ ├── manifest.json
+│ ├── weather_logo.png
+│ ├── weather.ico
+│ └── robots.txt
+├── src
+│ ├── assets
+│ │ ├── screenShot.png
+│ ├── components
+│ │ ├── Form
+│ │ │ └── index.js
+│ │ ├── TextContainer
+│ │ │ └── index.js
+│ │ ├── Footer
+│ │ │ └── index.js
+│ │ └── Header
+│ │ └── index.js
+│ ├── redux
+│ │ ├── textSlice
+│ │ │ └── index.js
+│ │ └── store.js
+│ ├── App.css
+│ ├── App.js
+│ ├── index.css
+│ └── index.js
+├── postcss.config.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── tailwind.config.js
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Author
 
-### `npm run build`
+- Author - [Ziya ÇAYLAN]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contact
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+<a href="https://codesandbox.io/u/ziyacaylan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codesandbox.svg" alt="ziyacaylan" height="30" width="40" /></a>
+<a href="https://codepen.io/ziya-c" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="ziyacaylan" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/ziya-caylan/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ziyacaylan" height="30" width="40" /></a>
+<a href="https://medium.com/@ziyacaylan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="ziyacaylan" height="30" width="40" /></a>
+</p>
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![screenshot](./src/assets/other/screen-light.png)
+![screenshot](./src/assets/other/screen-dark.png)
