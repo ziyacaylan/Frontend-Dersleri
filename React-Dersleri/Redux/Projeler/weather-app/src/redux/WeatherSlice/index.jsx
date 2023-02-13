@@ -13,7 +13,6 @@ export const WeatherSlice = createSlice({
     cityData: {},
     cityName: "",
     coord: {},
-    timezone: "",
     theme: localStorage.getItem("theme")
       ? localStorage.getItem("theme")
       : "light",
@@ -57,9 +56,9 @@ export const WeatherSlice = createSlice({
       state.fetchDataStatus = "loading";
     });
     builder.addCase(fetchWeatherData.fulfilled, (state, action) => {
-      const { list, city } = action.payload;
+      const { newList, city } = action.payload;
       state.cityData = city;
-      state.dailyData = list;
+      state.dailyData = newList;
       // state.timezone = timezone;
       state.fetchDataStatus = "successed";
     });

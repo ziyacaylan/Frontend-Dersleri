@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 
 import { useSelector } from "react-redux";
-import { GiWindpump } from "react-icons/gi";
 import { RiWindyFill } from "react-icons/ri";
 import { RiTempHotLine } from "react-icons/ri";
 
@@ -51,11 +50,11 @@ function Aside() {
         <div className="w-full h-auto my-12">
           <div className="flex items-center justify-start font-bold text-xl text-black dark:text-white">
             <RiTempHotLine className="text-blue-500 text-2xl" />
-            <p className="ml-4">{`Feels Like      :${currentData.main.feels_like}°`}</p>
+            <p className="ml-4">{`Hissedilen      :${currentData.main.feels_like}°`}</p>
           </div>
           <div className="flex items-center justify-start font-bold text-xl text-black dark:text-white my-4">
             <RiWindyFill className="text-blue-500 text-2xl" />
-            <p className="ml-4">{`Wind Speed ${currentData.wind.speed}`}</p>
+            <p className="ml-4">{`Rüzgar Hızı ${currentData.wind.speed}`}</p>
           </div>
         </div>
         <div className=" w-full  h-auto relative drop-shadow-lg mr-3 ">
@@ -68,7 +67,7 @@ function Aside() {
           <img
             src={image}
             alt="random_photo"
-            className="h-30 w-full  object-cover rounded-2xl opacity-90"
+            className=" w-full h-[175px]  object-cover rounded-2xl opacity-90"
           />
         </div>
       </div>

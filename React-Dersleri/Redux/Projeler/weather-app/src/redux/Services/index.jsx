@@ -29,9 +29,22 @@ export const fetchWeatherData = createAsyncThunk(
       data: { list },
       data: { city },
     } = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.REACT_APP_API_KEY}&lang=tr&units=metric`
     );
-    // console.log("current", current);
-    return { list, city };
+
+    const newList = [];
+
+    list.forEach((item) => {
+      const daily = list.splice(
+        0,
+        list.filter(
+          (eleman) =>
+            eleman.dt_txt.split("").slice(0, 10).join("") ===
+            item.dt_txt.split("").slice(0, 10).join("")
+        ).length
+      );
+      newList.push(daily);
+    });
+    return { newList, city };
   }
 );

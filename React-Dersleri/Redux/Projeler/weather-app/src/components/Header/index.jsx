@@ -28,7 +28,12 @@ function Header() {
   return (
     <div className="w-full h-auto sm:h-20 py-5 bg-headerBlue dark:bg-darkHeader dark:text-white flex flex-col sm:flex-row items-center justify-between">
       <div className="w-100 flex items-center justify-center">
-        <img src={Logo} alt="logo" className="w-[64px] ml-5" />
+        <img
+          src={Logo}
+          alt="logo"
+          className="w-[64px] ml-5 hover:cursor-pointer"
+          onClick={() => window.location.reload()}
+        />
       </div>
       <div className=" bg-white p-1 rounded-xl dark:bg-darkInput my-5">
         <Search />
