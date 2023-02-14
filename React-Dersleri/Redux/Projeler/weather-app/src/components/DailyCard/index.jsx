@@ -50,7 +50,7 @@ function DailyCard({ weather }) {
           daily[0].main.temp_max
         )}°`}</span>
       </div>
-      <span>{daily[0].weather[0].description}</span>
+      <span className="mb-3">{daily[0].weather[0].description}</span>
     </div>
   );
 }
