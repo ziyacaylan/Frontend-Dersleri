@@ -54,7 +54,10 @@ function Aside() {
           </div>
           <div className="flex items-center justify-start font-bold text-xl text-black dark:text-white my-4">
             <RiWindyFill className="text-blue-500 text-2xl" />
-            <p className="ml-4">{`Rüzgar Hızı ${currentData.wind.speed}`}</p>
+            <div>
+              <span className="ml-4">{`Rüzgar Hızı ${currentData.wind.speed}`}</span>
+              <span className="ml-1 font-normal">(km/sa)</span>
+            </div>
           </div>
         </div>
         <div className=" w-full  h-auto relative drop-shadow-lg mr-3 ">
