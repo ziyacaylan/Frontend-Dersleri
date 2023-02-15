@@ -16,7 +16,7 @@ function Main() {
 
   if (Object.keys(dailyData).length === 0) return;
   // console.log(currentData);
-  // console.log(dailyData);
+  console.log(dailyData);
   return (
     <div className="w-full col-span-3 md:row-span-1 bg-gray-100 dark:bg-darkMain">
       {/* Timeline Week */}
@@ -36,60 +36,82 @@ function Main() {
         <div className="w-full flex flex-col items-center justify-center">
           {/* üst satır */}
           <div className="w-full flex flex-wrap items-center justify-center">
-            <div className="min-w-[250px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
+            <div className="min-w-[250px] h-[176px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
               <div className="flex flex-col items-center justify-center">
                 <span className="text-2xl my-3">Nem</span>
                 <WiHumidity className="text-5xl text-blue-500" />
-                <span className="my-3">{`${currentData.main.humidity} %`}</span>
+                <div className="flex items-start justify-center">
+                  <span className="my-3 text-5xl">{`${currentData.main.humidity}`}</span>{" "}
+                  <span className="my-3 text-xl"> %</span>
+                </div>
               </div>
             </div>
-            <div className="min-w-[250px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
+            <div className="min-w-[250px] h-[176px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
               <span className="text-2xl my-3">Basınç</span>
               <FaStopwatch className="text-5xl text-blue-500" />
-              <span className="my-3">{`${currentData.main.pressure} hPa`}</span>
+              <div className="flex items-start justify-center">
+                <span className="my-3 text-5xl font-bold">{`${currentData.main.pressure}`}</span>
+                <span className="my-3 text-xl">hPa</span>
+              </div>
             </div>
-            <div className="min-w-[250px] shadow-xl rounded-xl  m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
+            <div className="min-w-[250px] h-[176px] shadow-xl rounded-xl  m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
               <div className="w-full h-full flex flex-row">
-                <div className="w-1/2 h-[150px] flex flex-col items-center justify-center">
+                <div className="w-1/2 h-full flex flex-col items-center justify-center">
                   <TbTemperatureMinus className="text-5xl text-blue-500" />
-                  <span className="font-bold py-2 text-xl">{`- ${Math.round(
-                    currentData.main.temp_min
-                  )}°`}</span>
+                  <div className="flex items-center justify-center">
+                    <span className="font-bold py-2 text-4xl">{`- ${Math.round(
+                      currentData.main.temp_min
+                    )}`}</span>
+                    <span className="text-4xl">°</span>
+                  </div>
                 </div>
-                <div className="w-1/2 h-[150px] bg-blue-500 rounded-r-xl flex flex-col items-center justify-center">
+                <div className="w-1/2 h-full bg-blue-500 rounded-r-xl flex flex-col items-center justify-center">
                   <TbTemperaturePlus className="text-5xl text-red-600" />
-                  <span className="font-bold text-white py-2 text-xl">{`- ${Math.round(
-                    currentData.main.temp_max
-                  )}°`}</span>
+                  <div className="flex items-center justify-center text-white">
+                    <span className="font-bold py-2 text-4xl">{`- ${Math.round(
+                      currentData.main.temp_max
+                    )}`}</span>
+                    <span className="text-4xl">°</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           {/* alt satır */}
           <div className="w-full flex flex-wrap items-center justify-center">
-            <div className="min-w-[250px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
+            <div className="min-w-[250px] h-[176px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
               <div className="flex flex-col items-center justify-center">
                 <span className="text-2xl my-3">Bulutluluk</span>
                 <WiCloudy className="text-5xl text-blue-500" />
-                <span className="my-3 font-bold text-2xl">{`${currentData.main.humidity} %`}</span>
+                <div className="flex items-start justify-center">
+                  <span className="my-3 font-bold text-5xl">
+                    {currentData.clouds.all}
+                  </span>
+                  <span className="my-3 text-2xl">%</span>
+                </div>
               </div>
             </div>
-            <div className="min-w-[250px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
+            <div className="min-w-[250px] h-[176px] shadow-xl rounded-xl px-2 m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
               <span className="text-2xl my-3">Görünürlük</span>
               <MdOutlineVisibility className="text-5xl text-blue-500" />
-              <span className="my-3 font-bold text-2xl">{`${currentData.main.pressure} km`}</span>
+              <div className="flex items-start justify-center">
+                <span className="my-3 font-bold text-5xl">
+                  {currentData.visibility}
+                </span>
+                <span className="my-3 text-2xl">km</span>
+              </div>
             </div>
-            <div className="min-w-[250px] shadow-xl rounded-xl  m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
+            <div className="min-w-[250px] h-[176px] shadow-xl rounded-xl  m-4 flex flex-col items-center justify-center bg-white dark:bg-darkAside dark:text-white">
               <div className="w-full h-full flex flex-row">
-                <div className="w-1/2 h-[150px] flex flex-col items-center justify-center">
+                <div className="w-1/2 h-full flex flex-col items-center justify-center">
                   <WiSunrise className="text-5xl text-blue-500" />
-                  <span className="font-bold text-slate-600 py-2 text-xl">
+                  <span className="font-bold text-slate-600 py-2 text-4xl">
                     {moment.unix(currentData.sys.sunrise).utc().format("LT")}
                   </span>
                 </div>
-                <div className="w-1/2 h-[150px] bg-blue-500 rounded-r-xl flex flex-col items-center justify-center">
+                <div className="w-1/2 h-full bg-blue-500 rounded-r-xl flex flex-col items-center justify-center">
                   <WiSunset className="text-5xl text-red-600" />
-                  <span className="font-bold py-2 text-xl text-white">
+                  <span className="font-bold py-2 text-4xl text-white">
                     {moment.unix(currentData.sys.sunset).utc().format("LT")}
                   </span>
                 </div>
