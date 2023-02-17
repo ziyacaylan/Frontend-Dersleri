@@ -16,7 +16,7 @@ function Main() {
 
   if (Object.keys(dailyData).length === 0) return;
   // console.log(currentData);
-  console.log(dailyData);
+  //console.log(dailyData);
   return (
     <div className="w-full col-span-3 md:row-span-1 bg-gray-100 dark:bg-darkMain">
       {/* Timeline Week */}
