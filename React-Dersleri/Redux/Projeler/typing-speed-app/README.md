@@ -1,6 +1,6 @@
 # Redux-TextGeneratorApp
 
-## DEMO : https://weather-app-ziyac.netlify.app/
+## DEMO : https://ziyac-typing-speed-app.netlify.app/
 
 ---
 
