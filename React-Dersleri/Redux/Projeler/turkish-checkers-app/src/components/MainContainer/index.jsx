@@ -12,7 +12,7 @@ import {
 } from "../../redux/GameSlice";
 
 function MainContainer() {
-  const { user1, user2, gameStatus, showModal } = useSelector(
+  const { user1, user2, gameStatus, showModal, player } = useSelector(
     (state) => state.game
   );
   const dispatch = useDispatch();
@@ -42,9 +42,17 @@ function MainContainer() {
         {gameStatus ? "Reset Game" : "Start Game"}
       </button>
       <div className="flex items-center justify-start">
-        <ScoreBoard userData={user1} />
+        <ScoreBoard
+          userData={user1}
+          player={player}
+          totalStones={user1.totalStones}
+        />
         <Board />
-        <ScoreBoard userData={user2} />
+        <ScoreBoard
+          userData={user2}
+          player={player}
+          totalStones={user2.totalStones}
+        />
       </div>
     </div>
   );

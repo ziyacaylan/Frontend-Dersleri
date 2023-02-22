@@ -26,10 +26,12 @@ function Stone({ stoneData }) {
       dispatch(selectedUserStone(stoneData));
     }
   };
+
+  //console.log(stoneData);
   return (
     <div
       className={`w-[70px] h-[70px] ${
-        stoneData.color === "black" ? "bg-zinc-800" : "bg-zinc-300"
+        stoneData.color === "black" ? "bg-zinc-800" : "bg-zinc-400"
       } shadow-md rounded-full flex items-center justify-center`}
       onClick={handleClick}
     >
@@ -39,7 +41,23 @@ function Stone({ stoneData }) {
           "bg-red-700 shadow-xl shadow-blue-600 border-[1px] border-blue-600"
         }`}
       >
-        {select && <FaCheckCircle className="text-xl text-yellow-100" />}
+        {select && !stoneData.isChekers ? (
+          <FaCheckCircle className="text-xl text-yellow-100" />
+        ) : (
+          stoneData.isChekers && (
+            <div
+              className={` rounded-full flex items-center justify-center border-[2px] border-blue-500 ${
+                select ? "w-10 h-10 bg-sky-300 shadow-xl" : "w-8 h-8 bg-red-500"
+              }`}
+            >
+              <GiQueenCrown
+                className={`${
+                  select ? "text-5xl" : "text-xl"
+                } text-yellow-200 `}
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   );
