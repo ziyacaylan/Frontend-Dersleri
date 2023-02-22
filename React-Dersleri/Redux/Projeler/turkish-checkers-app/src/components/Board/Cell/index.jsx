@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import toast from "react-hot-toast";
 
 import Stone from "../../Stone";
 import { moveSelectedUserStone } from "../../../redux/GameSlice";
 
 function Cell({ cellData }) {
-  const { moveUp, moveLeft, moveRight, multiRivalStones, selectedStone } =
+  const { moveUp, moveLeft, moveRight, multiCoordinates, selectedStone } =
     useSelector((state) => state.game);
   const dispatch = useDispatch();
   const [bgMoveUp, setBgMoveUp] = useState("");
   const [bgMoveLeft, setBgMoveLeft] = useState("");
   const [bgMoveRight, setBgMoveRight] = useState("");
 
-  const { moveUps, moveLefts, moveRights } = multiRivalStones;
+  const { moveUps, moveLefts, moveRights } = multiCoordinates;
 
   const handleClick = (cellData) => {
     // seçilen taşın pX ve pY
@@ -31,60 +32,17 @@ function Cell({ cellData }) {
     ) {
       //console.log("--->sağa gidecek(right)");
       dispatch(moveSelectedUserStone(cellData));
-    } else if (multiRivalStones) {
-      const clickedStoneUp = moveUps.find(
-        (item) =>
-          item.positionX === cellData.positionX &&
-          item.positionY === cellData.positionY
-      );
-      const clickedStoneLeft = moveLefts.find(
-        (item) =>
-          item.positionX === cellData.positionX &&
-          item.positionY === cellData.positionY
-      );
-      const clickedStoneRight = moveRights.find(
-        (item) =>
-          item.positionX === cellData.positionX &&
-          item.positionY === cellData.positionY
-      );
+    } else if (multiCoordinates) {
+      dispatch(moveSelectedUserStone(cellData));
 
-      const availableStoneUpPlus = {
-        positionX: selectedStone.positionX,
-        positionY: selectedStone.positionY + 2,
-      };
-      const availableStoneUpMinus = {
-        positionX: selectedStone.positionX - 2,
-        positionY: selectedStone.positionY,
-      };
-      const availableStoneLeft = {
-        positionX: selectedStone.positionX - 2,
-        positionY: selectedStone.positionY,
-      };
-      const availableStoneRight = {
-        positionX: selectedStone.positionX + 2,
-        positionY: selectedStone.positionY + 2,
-      };
-      if (
-        (cellData.positionX === availableStoneUpPlus.positionX &&
-          cellData.positionY === availableStoneUpPlus.positionY) ||
-        (cellData.positionX === availableStoneUpMinus.positionX &&
-          cellData.positionY === availableStoneUpMinus.positionY) ||
-        (cellData.positionX === availableStoneLeft.positionX &&
-          cellData.positionY === availableStoneLeft.positionY) ||
-        (cellData.positionX === availableStoneRight.positionX &&
-          cellData.positionY === availableStoneRight.positionY)
-      ) {
-        clickedStoneUp && dispatch(moveSelectedUserStone(cellData));
-        clickedStoneLeft && dispatch(moveSelectedUserStone(cellData));
-        clickedStoneRight && dispatch(moveSelectedUserStone(cellData));
-      } else {
-        console.log("GİTMİYORUM BİYERE");
-      }
+      dispatch(moveSelectedUserStone(cellData));
+
+      dispatch(moveSelectedUserStone(cellData));
     }
   };
 
   useEffect(() => {
-    if (multiRivalStones && selectedStone.isChekers) {
+    if (multiCoordinates && selectedStone.isChekers) {
       const mUp = moveUps?.find(
         (cell) =>
           cell.positionX === cellData.positionX &&
@@ -103,7 +61,7 @@ function Cell({ cellData }) {
         : setBgMoveUp("bg-slate-500");
     }
 
-    if (multiRivalStones && selectedStone.isChekers) {
+    if (multiCoordinates && selectedStone.isChekers) {
       const mLeft = moveLefts.find(
         (cell) =>
           cell.positionX === cellData.positionX &&
@@ -122,7 +80,7 @@ function Cell({ cellData }) {
         : setBgMoveLeft("bg-slate-500");
     }
 
-    if (multiRivalStones && selectedStone.isChekers) {
+    if (multiCoordinates && selectedStone.isChekers) {
       const mRight = moveRights.find(
         (cell) =>
           cell.positionX === cellData.positionX &&
@@ -149,7 +107,7 @@ function Cell({ cellData }) {
     moveRight,
     moveRights,
     moveUps,
-    multiRivalStones,
+    multiCoordinates,
     selectedStone,
   ]);
   //console.log("seçili taş :", selectedStone);
@@ -170,7 +128,7 @@ function Cell({ cellData }) {
           ? "bg-green-600"
           : "bg-slate-500" && bgMoveUp
       } ${bgMoveLeft} ${bgMoveRight}`}
-      onClick={() => handleClick(cellData)}
+      onClick={() => selectedStone && handleClick(cellData)}
     >
       <span>{cellData.positionX}</span>
       <span>-</span>
@@ -181,18 +139,3 @@ function Cell({ cellData }) {
 }
 
 export default Cell;
-
-/*
-${cellData.color === "black" ? "bg-slate-500" : "bg-stone-300"}
- cellData.positionX === moveUp.pX && cellData.positionY === moveUp.pY
-          ? "bg-green-600"
-          : "bg-slate-500" &&
-            cellData.positionX === moveLeft.pX &&
-            cellData.positionY === moveLeft.pY
-          ? "bg-green-600"
-          : "bg-slate-500" &&
-            cellData.positionX === moveRight.pX &&
-            cellData.positionY === moveRight.pY
-          ? "bg-green-600"
-          : "bg-slate-500"
-*/

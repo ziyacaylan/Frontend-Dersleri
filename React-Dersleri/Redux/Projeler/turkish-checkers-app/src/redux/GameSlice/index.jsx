@@ -83,164 +83,197 @@ const moveStone = (stoneData, board) => {
     // white için gidilecekleri hesapla
     if (stoneData.isChekers) {
       // beyaz dama
-      let multiRivalStones = { moveUps: [], moveLefts: [], moveRights: [] };
+      let multiAvailableCoordinates = {
+        moveUps: [],
+        moveLefts: [],
+        moveRights: [],
+      };
+      let multiAvailableRivalStones = {
+        moveUpRivalStones: [],
+        moveLeftRivalStones: [],
+        moveRightStones: [],
+      };
 
       //**************************** Burada Up hesaplanacak ****************************************** */
       // Up
       // sıfıra çek
       for (let i = stoneData.positionY - 1; i >= 0; i--) {
+        const firstRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "black"
+        );
+        const secondRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i - 1 &&
+            item.stoneData.color === "black"
+        );
         const availableCell = board.filter(
           (stone) =>
             stone.positionY === i &&
             stone.positionX === stoneData.positionX &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findWhiteStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY === i &&
-              cell.stoneData.color === "white"
-          );
-          //console.log(findWhiteStone);
+        const secondAvailableCell = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i - 1 &&
+            item.isEmpty
+        );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY - 1 === i - 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "black") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionX === stoneData.positionX &&
-                cell.positionY === i - 1
-            );
+        const myStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "white"
+        );
 
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveUps.push(nextAvailable);
-          }
-
-          findWhiteStone && !findWhiteStone.isEmpty && (i = -1);
-        } else {
-          multiRivalStones.moveUps.push(...availableCell);
+        if ((firstRivalStone && secondRivalStone) || myStone) {
+          i = -1;
         }
+        firstRivalStone &&
+          !secondRivalStone &&
+          secondAvailableCell &&
+          multiAvailableRivalStones.moveUpRivalStones.push(firstRivalStone);
+        multiAvailableCoordinates.moveUps.push(...availableCell);
       }
       // 7ye çek
       for (let i = stoneData.positionY + 1; i <= 7; i++) {
+        const firstRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "black"
+        );
+        const secondRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i + 1 &&
+            item.stoneData.color === "black"
+        );
         const availableCell = board.filter(
           (stone) =>
             stone.positionY === i &&
             stone.positionX === stoneData.positionX &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findWhiteStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY === i &&
-              cell.stoneData.color === "white"
-          );
+        const secondAvailableCell = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i + 1 &&
+            item.isEmpty
+        );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY + 1 === i + 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "black") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionX === stoneData.positionX &&
-                cell.positionY === i + 1
-            );
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveUps.push(nextAvailable);
-          }
+        const myStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "white"
+        );
 
-          findWhiteStone && !findWhiteStone.isEmpty && (i = 8);
-        } else {
-          multiRivalStones.moveUps.push(...availableCell);
+        if ((firstRivalStone && secondRivalStone) || myStone) {
+          i = 8;
         }
+        firstRivalStone &&
+          !secondRivalStone &&
+          secondAvailableCell &&
+          multiAvailableRivalStones.moveUpRivalStones.push(firstRivalStone);
+        multiAvailableCoordinates.moveUps.push(...availableCell);
       }
       //**************************** Burada Left hesaplanacak ****************************************** */
       // sıfıra çek
       for (let i = stoneData.positionX - 1; i >= 0; i--) {
-        const availableCell = board.filter(
+        const firstRivalStoneLeft = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "black"
+        );
+        const secondRivalStoneLeft = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i - 1 &&
+            item.stoneData.color === "black"
+        );
+        const availableCellLeft = board.filter(
           (stone) =>
             stone.positionX === i &&
             stone.positionY === stoneData.positionY &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findWhiteStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX === i &&
-              cell.stoneData.color === "white"
-          );
+        const secondAvailableCellLeft = board.find(
+          (item) =>
+            item.positionX === i - 1 &&
+            item.positionY === stoneData.positionY &&
+            item.isEmpty
+        );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX - 1 === i - 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "black") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionY === stoneData.positionY &&
-                cell.positionX === i - 1
-            );
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveLefts.push(nextAvailable);
-          }
+        const myStoneLeft = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "white"
+        );
 
-          findWhiteStone && !findWhiteStone.isEmpty && (i = -1);
-        } else {
-          multiRivalStones.moveLefts.push(...availableCell);
+        if ((firstRivalStoneLeft && secondRivalStoneLeft) || myStoneLeft) {
+          i = -1;
         }
+        firstRivalStoneLeft &&
+          !secondRivalStoneLeft &&
+          secondAvailableCellLeft &&
+          multiAvailableRivalStones.moveLeftRivalStones.push(
+            firstRivalStoneLeft
+          );
+        multiAvailableCoordinates.moveLefts.push(...availableCellLeft);
       }
       //**************************** Burada Right hesaplanacak ****************************************** */
       // 7ye çek
       for (let i = stoneData.positionX + 1; i <= 7; i++) {
-        const availableCell = board.filter(
+        const firstRivalStoneRight = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "black"
+        );
+        const secondRivalStoneRight = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i + 1 &&
+            item.stoneData.color === "black"
+        );
+        const availableCellRight = board.filter(
           (stone) =>
             stone.positionX === i &&
             stone.positionY === stoneData.positionY &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findWhiteStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX === i &&
-              cell.stoneData.color === "white"
-          );
+        const secondAvailableCellRight = board.find(
+          (item) =>
+            item.positionX === i + 1 &&
+            item.positionY === stoneData.positionY &&
+            item.isEmpty
+        );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX + 1 === i + 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "black") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionY === stoneData.positionY &&
-                cell.positionX === i + 1
-            );
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveRights.push(nextAvailable);
-          }
+        const myStoneRight = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "white"
+        );
 
-          findWhiteStone && !findWhiteStone.isEmpty && (i = 8);
-        } else {
-          multiRivalStones.moveRights.push(...availableCell);
+        if ((firstRivalStoneRight && secondRivalStoneRight) || myStoneRight) {
+          i = 8;
         }
+        firstRivalStoneRight &&
+          !secondRivalStoneRight &&
+          secondAvailableCellRight &&
+          multiAvailableRivalStones.moveRightStones.push(firstRivalStoneRight);
+        multiAvailableCoordinates.moveRights.push(...availableCellRight);
       }
       //console.log(multiRivalStones);
-      return multiRivalStones;
+      return { multiAvailableCoordinates, multiAvailableRivalStones };
     } else {
       let moveUp = {
         suitable: true,
@@ -377,164 +410,151 @@ const moveStone = (stoneData, board) => {
       return [moveUp, moveLeft, moveRight, rivalStones];
     }
   } else if (stoneData.color === "black") {
-    let multiRivalStones = { moveUps: [], moveLefts: [], moveRights: [] };
+    let multiAvailableCoordinates = {
+      moveUps: [],
+      moveLefts: [],
+      moveRights: [],
+    };
     // black için gidilecekleri hesapla
     if (stoneData.isChekers) {
       //**************************** Burada Up hesaplanacak ****************************************** */
       // Up
       // sıfıra çek
       for (let i = stoneData.positionY - 1; i >= 0; i--) {
+        const firstRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "white"
+        );
+        const secondRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i - 1 &&
+            item.stoneData.color === "white"
+        );
         const availableCell = board.filter(
           (stone) =>
             stone.positionY === i &&
             stone.positionX === stoneData.positionX &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findBlackStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY === i &&
-              cell.stoneData.color === "black"
-          );
-          console.log(findBlackStone);
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY - 1 === i - 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "white") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionX === stoneData.positionX &&
-                cell.positionY === i - 1
-            );
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveUps.push(nextAvailable);
-          }
+        const myStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "black"
+        );
 
-          findBlackStone && !findBlackStone.isEmpty && (i = -1);
-        } else {
-          multiRivalStones.moveUps.push(...availableCell);
+        if ((firstRivalStone && secondRivalStone) || myStone) {
+          i = -1;
         }
+        multiAvailableCoordinates.moveUps.push(...availableCell);
       }
       // 7ye çek
       for (let i = stoneData.positionY + 1; i <= 7; i++) {
+        const firstRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "white"
+        );
+        const secondRivalStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i + 1 &&
+            item.stoneData.color === "white"
+        );
         const availableCell = board.filter(
           (stone) =>
             stone.positionY === i &&
             stone.positionX === stoneData.positionX &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findBlackStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY === i &&
-              cell.stoneData.color === "black"
-          );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionX === stoneData.positionX &&
-              cell.positionY + 1 === i + 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "white") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionX === stoneData.positionX &&
-                cell.positionY === i + 1
-            );
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveUps.push(nextAvailable);
-          }
+        const myStone = board.find(
+          (item) =>
+            item.positionX === stoneData.positionX &&
+            item.positionY === i &&
+            item.stoneData.color === "black"
+        );
 
-          findBlackStone && !findBlackStone?.isEmpty && (i = 8);
-        } else {
-          multiRivalStones.moveUps.push(...availableCell);
+        if ((firstRivalStone && secondRivalStone) || myStone) {
+          i = 8;
         }
+        multiAvailableCoordinates.moveUps.push(...availableCell);
       }
       //**************************** Burada Left hesaplanacak ****************************************** */
       // sıfıra çek
       for (let i = stoneData.positionX - 1; i >= 0; i--) {
-        const availableCell = board.filter(
+        const firstRivalStoneLeft = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "white"
+        );
+        const secondRivalStoneLeft = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i - 1 &&
+            item.stoneData.color === "white"
+        );
+        const availableCellLeft = board.filter(
           (stone) =>
             stone.positionX === i &&
             stone.positionY === stoneData.positionY &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findBlackStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX === i &&
-              cell.stoneData.color === "black"
-          );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX - 1 === i - 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "white") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionY === stoneData.positionY &&
-                cell.positionX === i - 1
-            );
-            //bura boş ise son boş u gönder
-            nextAvailable && multiRivalStones.moveLefts.push(nextAvailable);
-          }
+        const myStoneLeft = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "black"
+        );
 
-          findBlackStone && !findBlackStone.isEmpty && (i = -1);
-        } else {
-          multiRivalStones.moveLefts.push(...availableCell);
+        if ((firstRivalStoneLeft && secondRivalStoneLeft) || myStoneLeft) {
+          i = -1;
         }
+        multiAvailableCoordinates.moveUps.push(...availableCellLeft);
       }
       //**************************** Burada Right hesaplanacak ****************************************** */
       // 7ye çek
       for (let i = stoneData.positionX + 1; i <= 7; i++) {
-        const availableCell = board.filter(
+        const firstRivalStoneRight = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "white"
+        );
+        const secondRivalStoneRight = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i + 1 &&
+            item.stoneData.color === "white"
+        );
+        const availableCellRight = board.filter(
           (stone) =>
             stone.positionX === i &&
             stone.positionY === stoneData.positionY &&
             stone.isEmpty
         );
-        if (availableCell.length === 0) {
-          const findWhiteStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX === i &&
-              cell.stoneData.color === "black"
-          );
 
-          const findRivalStone = board.find(
-            (cell) =>
-              cell.positionY === stoneData.positionY &&
-              cell.positionX + 1 === i + 1
-          );
-          //ilk taş rakibin ise bir soraki uygunmu bak
-          if (findRivalStone.stoneData.color === "white") {
-            const nextAvailable = board.find(
-              (cell) =>
-                cell.positionY === stoneData.positionY &&
-                cell.positionX === i + 1
-            );
-            //bura boş ise son boş u gönder
-            multiRivalStones.moveRights.push(nextAvailable);
-          }
+        const myStoneRight = board.find(
+          (item) =>
+            item.positionY === stoneData.positionY &&
+            item.positionX === i &&
+            item.stoneData.color === "black"
+        );
 
-          !findWhiteStone.isEmpty && (i = 8);
-        } else {
-          multiRivalStones.moveRights.push(...availableCell);
+        if ((firstRivalStoneRight && secondRivalStoneRight) || myStoneRight) {
+          i = 8;
         }
+        multiAvailableCoordinates.moveUps.push(...availableCellRight);
       }
-      console.log(multiRivalStones);
-      return multiRivalStones;
+      console.log(multiAvailableCoordinates);
+      return multiAvailableCoordinates;
     } else {
       let moveUp = {
         suitable: true,
@@ -686,103 +706,301 @@ const setMoveStone = (
   moveUp,
   moveLeft,
   moveRight,
-  multiRivalStones = false
+  multiRivalStones = false,
+  multiCoordinates = false
 ) => {
   const newBoard = JSON.parse(JSON.stringify([...board]));
   const newStone = { ...selectedStone };
   newStone.positionX = cellData.positionX;
   newStone.positionY = cellData.positionY;
 
-  console.log("Şimti Başlıyor Taşıma--->>", multiRivalStones);
-  console.log("Şimti Başlıyor Taşıma--->>", selectedStone);
-  console.log("Şimti Başlıyor Taşıma--->> rakip :", rivalStones);
-  console.log("Şimti Başlıyor Taşıma--->> cellData :", cellData);
-
   // burada rivalStonesUp varsa if e sok ve findCurrentStone u bul
   const pasiveRivalStone = { status: false };
 
-  // ileri
-  if (
-    rivalStones &&
-    moveUp.pX === cellData.positionX &&
-    moveUp.pY === cellData.positionY
-  ) {
-    const findRivalStone = newBoard.find(
-      (stone) =>
-        stone.positionX === rivalStones.rivalStoneUp.positionX &&
-        stone.positionY === rivalStones.rivalStoneUp.positionY
+  if (multiRivalStones) {
+    //burada dama taş alır
+    const { moveUps, moveLefts, moveRights } = multiCoordinates;
+    const { moveUpRivalStones, moveLeftRivalStones, moveRightRivalStones } =
+      multiRivalStones;
+
+    const isMoveUp = moveUps.find(
+      (item) =>
+        item.positionX === cellData.positionX &&
+        item.positionY === cellData.positionY
     );
-    if (findRivalStone) {
-      findRivalStone.isEmpty = true;
-      findRivalStone.stoneData.isActive = false;
-      pasiveRivalStone.status = true;
-      pasiveRivalStone.data = findRivalStone.stoneData;
-      findRivalStone.stoneData = {};
-    }
-  }
-  // sol
-  if (
-    rivalStones &&
-    moveLeft.pX === cellData.positionX &&
-    moveLeft.pY === cellData.positionY
-  ) {
-    const findRivalStoneLeft = newBoard.find(
-      (stone) =>
-        stone.positionX === rivalStones.rivalStoneLeft.positionX &&
-        stone.positionY === rivalStones.rivalStoneLeft.positionY
+    const isMoveLeft = moveLefts.find(
+      (item) =>
+        item.positionX === cellData.positionX &&
+        item.positionY === cellData.positionY
     );
-    if (findRivalStoneLeft) {
-      findRivalStoneLeft.isEmpty = true;
-      findRivalStoneLeft.stoneData.isActive = false;
-      pasiveRivalStone.status = true;
-      pasiveRivalStone.data = findRivalStoneLeft.stoneData;
-      findRivalStoneLeft.stoneData = {};
-    }
-  }
-  //sağ
-  if (
-    rivalStones &&
-    moveRight.pX === cellData.positionX &&
-    moveRight.pY === cellData.positionY
-  ) {
-    const findRivalStoneRight = newBoard.find(
-      (stone) =>
-        stone.positionX === rivalStones.rivalStoneRight.positionX &&
-        stone.positionY === rivalStones.rivalStoneRight.positionY
+    const isMoveRight = moveRights.find(
+      (item) =>
+        item.positionX === cellData.positionX &&
+        item.positionY === cellData.positionY
     );
 
-    if (findRivalStoneRight) {
-      findRivalStoneRight.isEmpty = true;
-      findRivalStoneRight.stoneData.isActive = false;
-      pasiveRivalStone.status = true;
-      pasiveRivalStone.data = findRivalStoneRight.stoneData;
-      findRivalStoneRight.stoneData = {};
+    if (isMoveUp) {
+      if (moveUpRivalStones?.length > 0) {
+        const firstRivalStone = moveUpRivalStones[0];
+
+        if (
+          firstRivalStone.positionX === newStone.positionX &&
+          firstRivalStone.positionY - 1 === newStone.positionY
+        ) {
+          const findClickedCell = newBoard.find(
+            (item) =>
+              item.positionX === cellData.positionX &&
+              item.positionY === cellData.positionY
+          );
+          const findCurrentStone = newBoard.find(
+            (item) =>
+              item.positionX === selectedStone.positionX &&
+              item.positionY === selectedStone.positionY
+          );
+          const findRivalStone = newBoard.find(
+            (item) =>
+              item.positionX === firstRivalStone.positionX &&
+              item.positionY === firstRivalStone.positionY
+          );
+          findClickedCell.isEmpty = false;
+          findClickedCell.stoneData = newStone;
+          //mevcutu boşalt
+          findCurrentStone.isEmpty = true;
+          findCurrentStone.stoneData = {};
+          pasiveRivalStone.status = true;
+          pasiveRivalStone.data = firstRivalStone;
+
+          findRivalStone.isEmpty = true;
+          findRivalStone.stoneData = {};
+
+          return { newBoard, pasiveRivalStone };
+        } else if (
+          firstRivalStone.positionX === newStone.positionX &&
+          firstRivalStone.positionY + 1 === newStone.positionY
+        ) {
+          console.log(
+            "burası yeniden yazılacak up ve down diye datayi ikiye ayıracağız...."
+          );
+        }
+      } else {
+        const findClickedCell = newBoard.find(
+          (item) =>
+            item.positionX === cellData.positionX &&
+            item.positionY === cellData.positionY
+        );
+        const findCurrentStone = newBoard.find(
+          (item) =>
+            item.positionX === selectedStone.positionX &&
+            item.positionY === selectedStone.positionY
+        );
+
+        findClickedCell.isEmpty = false;
+        findClickedCell.stoneData = newStone;
+        //mevcutu boşalt
+        findCurrentStone.isEmpty = true;
+        findCurrentStone.stoneData = {};
+
+        return { newBoard, pasiveRivalStone };
+      }
+    } else if (isMoveLeft) {
+      if (moveLeftRivalStones?.length > 0) {
+        const firstRivalStone = moveLeftRivalStones[0];
+
+        if (
+          firstRivalStone.positionX - 1 === newStone.positionX &&
+          firstRivalStone.positionY === newStone.positionY
+        ) {
+          const findClickedCell = newBoard.find(
+            (item) =>
+              item.positionX === cellData.positionX &&
+              item.positionY === cellData.positionY
+          );
+          const findCurrentStone = newBoard.find(
+            (item) =>
+              item.positionX === selectedStone.positionX &&
+              item.positionY === selectedStone.positionY
+          );
+          const findRivalStone = newBoard.find(
+            (item) =>
+              item.positionX === firstRivalStone.positionX &&
+              item.positionY === firstRivalStone.positionY
+          );
+          findClickedCell.isEmpty = false;
+          findClickedCell.stoneData = newStone;
+          //mevcutu boşalt
+          findCurrentStone.isEmpty = true;
+          findCurrentStone.stoneData = {};
+          pasiveRivalStone.status = true;
+          pasiveRivalStone.data = firstRivalStone;
+
+          findRivalStone.isEmpty = true;
+          findRivalStone.stoneData = {};
+
+          return { newBoard, pasiveRivalStone };
+        }
+      } else {
+        const findClickedCell = newBoard.find(
+          (item) =>
+            item.positionX === cellData.positionX &&
+            item.positionY === cellData.positionY
+        );
+        const findCurrentStone = newBoard.find(
+          (item) =>
+            item.positionX === selectedStone.positionX &&
+            item.positionY === selectedStone.positionY
+        );
+
+        findClickedCell.isEmpty = false;
+        findClickedCell.stoneData = newStone;
+        //mevcutu boşalt
+        findCurrentStone.isEmpty = true;
+        findCurrentStone.stoneData = {};
+
+        return { newBoard, pasiveRivalStone };
+      }
+    } else if (isMoveRight) {
+      const firstRivalStone = moveRightRivalStones[0];
+
+      if (
+        firstRivalStone.positionY === newStone.positionY &&
+        firstRivalStone.positionX + 1 === newStone.positionX
+      ) {
+        const findClickedCell = newBoard.find(
+          (item) =>
+            item.positionX === cellData.positionX &&
+            item.positionY === cellData.positionY
+        );
+        const findCurrentStone = newBoard.find(
+          (item) =>
+            item.positionX === selectedStone.positionX &&
+            item.positionY === selectedStone.positionY
+        );
+        const findRivalStone = newBoard.find(
+          (item) =>
+            item.positionX === firstRivalStone.positionX &&
+            item.positionY === firstRivalStone.positionY
+        );
+        findClickedCell.isEmpty = false;
+        findClickedCell.stoneData = newStone;
+        //mevcutu boşalt
+        findCurrentStone.isEmpty = true;
+        findCurrentStone.stoneData = {};
+        pasiveRivalStone.status = true;
+        pasiveRivalStone.data = firstRivalStone;
+
+        findRivalStone.isEmpty = true;
+        findRivalStone.stoneData = {};
+
+        return { newBoard, pasiveRivalStone };
+      }
+      if (moveRightRivalStones?.length > 0) {
+        const firstRivalStone = moveRightRivalStones[0];
+      } else {
+        const findClickedCell = newBoard.find(
+          (item) =>
+            item.positionX === cellData.positionX &&
+            item.positionY === cellData.positionY
+        );
+        const findCurrentStone = newBoard.find(
+          (item) =>
+            item.positionX === selectedStone.positionX &&
+            item.positionY === selectedStone.positionY
+        );
+
+        findClickedCell.isEmpty = false;
+        findClickedCell.stoneData = newStone;
+        //mevcutu boşalt
+        findCurrentStone.isEmpty = true;
+        findCurrentStone.stoneData = {};
+
+        return { newBoard, pasiveRivalStone };
+      }
     }
-  }
-  const findCurrentStone = newBoard.find(
-    (stone) =>
-      selectedStone.positionX === stone.positionX &&
-      selectedStone.positionY === stone.positionY
-  );
-  findCurrentStone.isEmpty = true;
-  findCurrentStone.stoneData = {};
+  } else {
+    // burada normal taşlar alınır
+    // ileri
+    if (
+      rivalStones &&
+      moveUp.pX === cellData.positionX &&
+      moveUp.pY === cellData.positionY
+    ) {
+      const findRivalStone = newBoard.find(
+        (stone) =>
+          stone.positionX === rivalStones.rivalStoneUp.positionX &&
+          stone.positionY === rivalStones.rivalStoneUp.positionY
+      );
+      if (findRivalStone) {
+        findRivalStone.isEmpty = true;
+        findRivalStone.stoneData.isActive = false;
+        pasiveRivalStone.status = true;
+        pasiveRivalStone.data = findRivalStone.stoneData;
+        findRivalStone.stoneData = {};
+      }
+    }
+    // sol
+    if (
+      rivalStones &&
+      moveLeft.pX === cellData.positionX &&
+      moveLeft.pY === cellData.positionY
+    ) {
+      const findRivalStoneLeft = newBoard.find(
+        (stone) =>
+          stone.positionX === rivalStones.rivalStoneLeft.positionX &&
+          stone.positionY === rivalStones.rivalStoneLeft.positionY
+      );
+      if (findRivalStoneLeft) {
+        findRivalStoneLeft.isEmpty = true;
+        findRivalStoneLeft.stoneData.isActive = false;
+        pasiveRivalStone.status = true;
+        pasiveRivalStone.data = findRivalStoneLeft.stoneData;
+        findRivalStoneLeft.stoneData = {};
+      }
+    }
+    //sağ
+    if (
+      rivalStones &&
+      moveRight.pX === cellData.positionX &&
+      moveRight.pY === cellData.positionY
+    ) {
+      const findRivalStoneRight = newBoard.find(
+        (stone) =>
+          stone.positionX === rivalStones.rivalStoneRight.positionX &&
+          stone.positionY === rivalStones.rivalStoneRight.positionY
+      );
 
-  //console.log("newStone", newStone);
+      if (findRivalStoneRight) {
+        findRivalStoneRight.isEmpty = true;
+        findRivalStoneRight.stoneData.isActive = false;
+        pasiveRivalStone.status = true;
+        pasiveRivalStone.data = findRivalStoneRight.stoneData;
+        findRivalStoneRight.stoneData = {};
+      }
+    }
+    const findCurrentStone = newBoard.find(
+      (stone) =>
+        selectedStone.positionX === stone.positionX &&
+        selectedStone.positionY === stone.positionY
+    );
+    findCurrentStone.isEmpty = true;
+    findCurrentStone.stoneData = {};
 
-  const findCell = newBoard.find(
-    (stone) =>
-      stone.positionX === cellData.positionX &&
-      stone.positionY === cellData.positionY
-  );
-  //burada cheekers mı kontrol et
-  if (newStone.color === "white" && newStone.positionY === 7) {
-    newStone.isChekers = true;
+    //console.log("newStone", newStone);
+
+    const findCell = newBoard.find(
+      (stone) =>
+        stone.positionX === cellData.positionX &&
+        stone.positionY === cellData.positionY
+    );
+    //burada cheekers mı kontrol et
+    if (newStone.color === "white" && newStone.positionY === 7) {
+      newStone.isChekers = true;
+    }
+    if (newStone.color === "black" && newStone.positionY === 0) {
+      newStone.isChekers = true;
+    }
+    findCell.isEmpty = false;
+    findCell.stoneData = newStone;
   }
-  if (newStone.color === "black" && newStone.positionY === 0) {
-    newStone.isChekers = true;
-  }
-  findCell.isEmpty = false;
-  findCell.stoneData = newStone;
 
   return { newBoard, pasiveRivalStone };
 };
@@ -835,6 +1053,7 @@ export const GameSlice = createSlice({
     selectedStone: "",
     rivalStones: "",
     multiRivalStones: "",
+    multiCoordinates: "",
     whiteStones: "",
     blackStones: "",
     moveUp: "",
@@ -857,12 +1076,12 @@ export const GameSlice = createSlice({
     selectedUserStone: (state, actions) => {
       state.selectedStone = actions.payload;
       if (state.selectedStone.isChekers) {
-        const multiRivalStones = moveStone(
-          actions.payload,
-          current(state.board)
-        );
+        const { multiAvailableCoordinates, multiAvailableRivalStones } =
+          moveStone(actions.payload, current(state.board));
+        //  multiAvailableCoordinates, multiAvailableRivalStones
 
-        state.multiRivalStones = multiRivalStones;
+        state.multiCoordinates = multiAvailableCoordinates;
+        state.multiRivalStones = multiAvailableRivalStones;
       } else {
         const positions = moveStone(actions.payload, current(state.board));
         //console.log("Rakip taşlar bunlar", positions[3]);
@@ -890,37 +1109,46 @@ export const GameSlice = createSlice({
       state.rivalStones = "";
     },
     moveSelectedUserStone: (state, actions) => {
-      console.log("actions.payload", actions.payload);
-      const { newBoard, pasiveRivalStone } = setMoveStone(
-        actions.payload,
-        current(state.board),
-        current(state.selectedStone),
-        state.rivalStones && current(state.rivalStones),
-        state.moveUp && current(state.moveUp),
-        state.moveLeft && current(state.moveLeft),
-        state.moveRight && current(state.moveRight),
-        state.multiRivalStones && current(state.multiRivalStones)
-      );
-      console.log("pasiveRivalStone---->>>>", pasiveRivalStone);
-      if (pasiveRivalStone.status) {
-        const userColor = pasiveRivalStone.data.color;
-        if (userColor === "white") {
-          state.user1.totalStones = state.user1.totalStones - 1;
-        } else {
-          state.user2.totalStones = state.user2.totalStones - 1;
-        }
-      }
-      state.board = newBoard;
-      state.selectedStone = "";
-      state.moveUp = "";
-      state.moveLeft = "";
-      state.moveRight = "";
-      state.rivalStones = "";
+      const clickedCell = actions.payload;
+      let moveResult = {};
 
-      if (!pasiveRivalStone.status && state.player === "white") {
-        state.player = "black";
-      } else if (!pasiveRivalStone.status && state.player === "black") {
-        state.player = "white";
+      if (state.selectedStone) {
+        moveResult = setMoveStone(
+          clickedCell,
+          current(state.board),
+          current(state.selectedStone),
+          state.rivalStones && current(state.rivalStones),
+          state.moveUp && current(state.moveUp),
+          state.moveLeft && current(state.moveLeft),
+          state.moveRight && current(state.moveRight),
+          state.multiRivalStones && current(state.multiRivalStones),
+          state.multiCoordinates && current(state.multiCoordinates)
+        );
+        const { newBoard, pasiveRivalStone } = moveResult;
+        //console.log("pasiveRivalStone-->", pasiveRivalStone);
+        if (pasiveRivalStone?.status) {
+          const userColor = pasiveRivalStone.data.color;
+          if (userColor === "white") {
+            state.user1.totalStones = state.user1.totalStones - 1;
+          } else {
+            state.user2.totalStones = state.user2.totalStones - 1;
+          }
+        }
+
+        state.board = newBoard;
+        state.selectedStone = "";
+        state.moveUp = "";
+        state.moveLeft = "";
+        state.moveRight = "";
+        state.rivalStones = "";
+        state.multiCoordinates = "";
+        state.multiRivalStones = "";
+
+        if (!pasiveRivalStone?.status && state.player === "white") {
+          state.player = "black";
+        } else if (!pasiveRivalStone?.status && state.player === "black") {
+          state.player = "white";
+        }
       }
     },
     startGame: (state, actions) => {
@@ -958,6 +1186,7 @@ export const GameSlice = createSlice({
       state.moveRight = "";
       state.selectedStone = "";
       state.rivalStones = "";
+      state.multiCoordinates = "";
       state.multiRivalStones = "";
     },
   },
