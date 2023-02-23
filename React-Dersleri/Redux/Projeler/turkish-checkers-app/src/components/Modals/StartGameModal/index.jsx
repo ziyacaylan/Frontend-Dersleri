@@ -10,9 +10,14 @@ function StartGameModal() {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    if (!userName1 && !userName2)
-      return toast.error("User Names are requared...!");
-    dispatch(startGame({ user1: userName1, user2: userName2 }));
+    console.log(userName1, userName2);
+
+    if (!userName1 || !userName2) {
+      toast.error("User Names are requared...!");
+    }
+    userName1 &&
+      userName2 &&
+      dispatch(startGame({ user1: userName1, user2: userName2 }));
   };
   return (
     <div className="absolute inset-x-0 shadow-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[250px] bg-slate-100 rounded-md z-50 ">

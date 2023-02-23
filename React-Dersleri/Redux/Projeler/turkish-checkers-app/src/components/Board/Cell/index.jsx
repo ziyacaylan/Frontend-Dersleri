@@ -33,11 +33,29 @@ function Cell({ cellData }) {
       //console.log("--->sağa gidecek(right)");
       dispatch(moveSelectedUserStone(cellData));
     } else if (multiCoordinates) {
-      dispatch(moveSelectedUserStone(cellData));
-
-      dispatch(moveSelectedUserStone(cellData));
-
-      dispatch(moveSelectedUserStone(cellData));
+      // tıklanan hücre multiCoordinates içerisinde mi
+      const isMoveUp = moveUps.filter(
+        (item) =>
+          item.positionY === cellData.positionY &&
+          item.positionX === cellData.positionX
+      );
+      const isMoveLeft = moveLefts.filter(
+        (item) =>
+          item.positionY === cellData.positionY &&
+          item.positionX === cellData.positionX
+      );
+      const isMoveRight = moveRights.filter(
+        (item) =>
+          item.positionY === cellData.positionY &&
+          item.positionX === cellData.positionX
+      );
+      if (
+        isMoveUp.length > 0 ||
+        isMoveLeft.length > 0 ||
+        isMoveRight.length > 0
+      ) {
+        dispatch(moveSelectedUserStone(cellData));
+      }
     }
   };
 
@@ -130,9 +148,6 @@ function Cell({ cellData }) {
       } ${bgMoveLeft} ${bgMoveRight}`}
       onClick={() => selectedStone && handleClick(cellData)}
     >
-      <span>{cellData.positionX}</span>
-      <span>-</span>
-      <span>{cellData.positionY}</span>
       {!cellData.isEmpty && <Stone stoneData={cellData.stoneData} />}
     </div>
   );

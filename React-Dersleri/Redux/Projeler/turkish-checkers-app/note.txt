@@ -1,0 +1,335 @@
+// black için gidilecekleri hesapla
+    // if (stoneData.isChekers) {
+    //   let multiAvailableCoordinates = {
+    //     moveUps: [],
+    //     moveLefts: [],
+    //     moveRights: [],
+    //   };
+    //   let multiAvailableRivalStones = {
+    //     moveUpRivalStones: [],
+    //     moveLeftRivalStones: [],
+    //     moveRightRivalStones: [],
+    //   };
+
+    //**************************** Burada Up hesaplanacak ****************************************** */
+    // Up
+    // sıfıra çek
+    for (let i = stoneData.positionY - 1; i >= 0; i--) {
+      const firstRivalStone = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i &&
+          item.stoneData.color === "white"
+      );
+      const secondRivalStone = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i - 1 &&
+          item.stoneData.color === "white"
+      );
+      const availableCell = board.filter(
+        (stone) =>
+          stone.positionY === i &&
+          stone.positionX === stoneData.positionX &&
+          stone.isEmpty
+      );
+      const secondAvailableCell = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i - 1 &&
+          item.isEmpty
+      );
+
+      const myStone = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i &&
+          item.stoneData.color === "black"
+      );
+
+      if ((firstRivalStone && secondRivalStone) || myStone) {
+        i = -1;
+      }
+      firstRivalStone &&
+        !secondRivalStone &&
+        secondAvailableCell &&
+        multiAvailableRivalStones.moveUpRivalStones.push(firstRivalStone);
+      multiAvailableCoordinates.moveUps.push(...availableCell);
+    }
+    // 7ye çek
+    for (let i = stoneData.positionY + 1; i <= 7; i++) {
+      const firstRivalStone = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i &&
+          item.stoneData.color === "white"
+      );
+      const secondRivalStone = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i + 1 &&
+          item.stoneData.color === "white"
+      );
+      const availableCell = board.filter(
+        (stone) =>
+          stone.positionY === i &&
+          stone.positionX === stoneData.positionX &&
+          stone.isEmpty
+      );
+      const secondAvailableCell = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i + 1 &&
+          item.isEmpty
+      );
+
+      const myStone = board.find(
+        (item) =>
+          item.positionX === stoneData.positionX &&
+          item.positionY === i &&
+          item.stoneData.color === "black"
+      );
+
+      if ((firstRivalStone && secondRivalStone) || myStone) {
+        i = 8;
+      }
+      firstRivalStone &&
+        !secondRivalStone &&
+        secondAvailableCell &&
+        multiAvailableRivalStones.moveUpRivalStones.push(firstRivalStone);
+      multiAvailableCoordinates.moveUps.push(...availableCell);
+    }
+    //**************************** Burada Left hesaplanacak ****************************************** */
+    // sıfıra çek
+    for (let i = stoneData.positionX - 1; i >= 0; i--) {
+      const firstRivalStoneLeft = board.find(
+        (item) =>
+          item.positionY === stoneData.positionY &&
+          item.positionX === i &&
+          item.stoneData.color === "white"
+      );
+      const secondRivalStoneLeft = board.find(
+        (item) =>
+          item.positionY === stoneData.positionY &&
+          item.positionX === i - 1 &&
+          item.stoneData.color === "white"
+      );
+      const availableCellLeft = board.filter(
+        (stone) =>
+          stone.positionX === i &&
+          stone.positionY === stoneData.positionY &&
+          stone.isEmpty
+      );
+      const secondAvailableCellLeft = board.find(
+        (item) =>
+          item.positionX === i - 1 &&
+          item.positionY === stoneData.positionY &&
+          item.isEmpty
+      );
+
+      const myStoneLeft = board.find(
+        (item) =>
+          item.positionY === stoneData.positionY &&
+          item.positionX === i &&
+          item.stoneData.color === "black"
+      );
+
+      if ((firstRivalStoneLeft && secondRivalStoneLeft) || myStoneLeft) {
+        i = -1;
+      }
+      firstRivalStoneLeft &&
+        !secondRivalStoneLeft &&
+        secondAvailableCellLeft &&
+        multiAvailableRivalStones.moveLeftRivalStones.push(firstRivalStoneLeft);
+      multiAvailableCoordinates.moveLefts.push(...availableCellLeft);
+    }
+    //**************************** Burada Right hesaplanacak ****************************************** */
+    // 7ye çek
+    for (let i = stoneData.positionX + 1; i <= 7; i++) {
+      const firstRivalStoneRight = board.find(
+        (item) =>
+          item.positionY === stoneData.positionY &&
+          item.positionX === i &&
+          item.stoneData.color === "white"
+      );
+      const secondRivalStoneRight = board.find(
+        (item) =>
+          item.positionY === stoneData.positionY &&
+          item.positionX === i + 1 &&
+          item.stoneData.color === "white"
+      );
+      const availableCellRight = board.filter(
+        (stone) =>
+          stone.positionX === i &&
+          stone.positionY === stoneData.positionY &&
+          stone.isEmpty
+      );
+      const secondAvailableCellRight = board.find(
+        (item) =>
+          item.positionX === i + 1 &&
+          item.positionY === stoneData.positionY &&
+          item.isEmpty
+      );
+
+      const myStoneRight = board.find(
+        (item) =>
+          item.positionY === stoneData.positionY &&
+          item.positionX === i &&
+          item.stoneData.color === "black"
+      );
+
+      if ((firstRivalStoneRight && secondRivalStoneRight) || myStoneRight) {
+        i = 8;
+      }
+      firstRivalStoneRight &&
+        !secondRivalStoneRight &&
+        secondAvailableCellRight &&
+        multiAvailableRivalStones.moveRightRivalStones.push(
+          firstRivalStoneRight
+        );
+      multiAvailableCoordinates.moveRights.push(...availableCellRight);
+    }
+    //console.log(multiRivalStones);
+    return { multiAvailableCoordinates, multiAvailableRivalStones };
+    // //**************************** Burada Up hesaplanacak ****************************************** */
+    // // Up
+    // // sıfıra çek
+    // for (let i = stoneData.positionY - 1; i >= 0; i--) {
+    //   const firstRivalStone = board.find(
+    //     (item) =>
+    //       item.positionX === stoneData.positionX &&
+    //       item.positionY === i &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const secondRivalStone = board.find(
+    //     (item) =>
+    //       item.positionX === stoneData.positionX &&
+    //       item.positionY === i - 1 &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const availableCell = board.filter(
+    //     (stone) =>
+    //       stone.positionY === i &&
+    //       stone.positionX === stoneData.positionX &&
+    //       stone.isEmpty
+    //   );
+
+    //   const myStone = board.find(
+    //     (item) =>
+    //       item.positionX === stoneData.positionX &&
+    //       item.positionY === i &&
+    //       item.stoneData.color === "black"
+    //   );
+
+    //   if ((firstRivalStone && secondRivalStone) || myStone) {
+    //     i = -1;
+    //   }
+    //   multiAvailableCoordinates.moveUps.push(...availableCell);
+    // }
+    // // 7ye çek
+    // for (let i = stoneData.positionY + 1; i <= 7; i++) {
+    //   const firstRivalStone = board.find(
+    //     (item) =>
+    //       item.positionX === stoneData.positionX &&
+    //       item.positionY === i &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const secondRivalStone = board.find(
+    //     (item) =>
+    //       item.positionX === stoneData.positionX &&
+    //       item.positionY === i + 1 &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const availableCell = board.filter(
+    //     (stone) =>
+    //       stone.positionY === i &&
+    //       stone.positionX === stoneData.positionX &&
+    //       stone.isEmpty
+    //   );
+
+    //   const myStone = board.find(
+    //     (item) =>
+    //       item.positionX === stoneData.positionX &&
+    //       item.positionY === i &&
+    //       item.stoneData.color === "black"
+    //   );
+
+    //   if ((firstRivalStone && secondRivalStone) || myStone) {
+    //     i = 8;
+    //   }
+    //   multiAvailableCoordinates.moveUps.push(...availableCell);
+    // }
+    // //**************************** Burada Left hesaplanacak ****************************************** */
+    // // sıfıra çek
+    // for (let i = stoneData.positionX - 1; i >= 0; i--) {
+    //   const firstRivalStoneLeft = board.find(
+    //     (item) =>
+    //       item.positionY === stoneData.positionY &&
+    //       item.positionX === i &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const secondRivalStoneLeft = board.find(
+    //     (item) =>
+    //       item.positionY === stoneData.positionY &&
+    //       item.positionX === i - 1 &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const availableCellLeft = board.filter(
+    //     (stone) =>
+    //       stone.positionX === i &&
+    //       stone.positionY === stoneData.positionY &&
+    //       stone.isEmpty
+    //   );
+
+    //   const myStoneLeft = board.find(
+    //     (item) =>
+    //       item.positionY === stoneData.positionY &&
+    //       item.positionX === i &&
+    //       item.stoneData.color === "black"
+    //   );
+
+    //   if ((firstRivalStoneLeft && secondRivalStoneLeft) || myStoneLeft) {
+    //     i = -1;
+    //   }
+    //   multiAvailableCoordinates.moveLefts.push(...availableCellLeft);
+    // }
+    // //**************************** Burada Right hesaplanacak ****************************************** */
+    // // 7ye çek
+    // for (let i = stoneData.positionX + 1; i <= 7; i++) {
+    //   const firstRivalStoneRight = board.find(
+    //     (item) =>
+    //       item.positionY === stoneData.positionY &&
+    //       item.positionX === i &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const secondRivalStoneRight = board.find(
+    //     (item) =>
+    //       item.positionY === stoneData.positionY &&
+    //       item.positionX === i + 1 &&
+    //       item.stoneData.color === "white"
+    //   );
+    //   const availableCellRight = board.filter(
+    //     (stone) =>
+    //       stone.positionX === i &&
+    //       stone.positionY === stoneData.positionY &&
+    //       stone.isEmpty
+    //   );
+
+    //   const myStoneRight = board.find(
+    //     (item) =>
+    //       item.positionY === stoneData.positionY &&
+    //       item.positionX === i &&
+    //       item.stoneData.color === "black"
+    //   );
+
+    //   if ((firstRivalStoneRight && secondRivalStoneRight) || myStoneRight) {
+    //     i = 8;
+    //   }
+    //   console.log("availableCellRight", availableCellRight);
+    //   multiAvailableCoordinates.moveRights.push(...availableCellRight);
+    // }
+    // console.log(
+    //   "^##################################",
+    //   multiAvailableCoordinates
+    // );
+    // return { multiAvailableCoordinates, multiAvailableRivalStones };
