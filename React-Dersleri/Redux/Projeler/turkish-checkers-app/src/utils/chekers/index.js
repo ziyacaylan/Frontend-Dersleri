@@ -3,33 +3,18 @@ import { nanoid } from "@reduxjs/toolkit";
 export const configureBoard = () => {
   const gameBoard = [];
   for (let i = 0; i <= 7; i++) {
-    // y eksenini oluştur
     for (let j = 0; j <= 7; j++) {
-      // her birim x ekseni için y eksenini düzenle.
-      (i + j) % 2 === 0
-        ? gameBoard.push({
-            id: nanoid(),
-            positionX: i,
-            positionY: j,
-            color: "white",
-            isEmpty: true,
-            isPlayable: false,
-            stoneData: {},
-          })
-        : gameBoard.push({
-            id: nanoid(),
-            positionX: i,
-            positionY: j,
-            color: "black",
-            isEmpty: true,
-            isPlayable: false,
-            stoneData: {},
-          });
+      gameBoard.push({
+        id: nanoid(),
+        positionX: i,
+        positionY: j,
+        color: (i + j) % 2 === 0 ? "white" : "black",
+        isEmpty: true,
+        isPlayable: false,
+        stoneData: {},
+      });
     }
-    // gameBoard.push(rowCell);
-    // rowCell = [];
   }
-  // console.log(gameBoard);
   return gameBoard;
 };
 export const setTheBackStones = () => {
@@ -1007,12 +992,12 @@ export const setMoveStone = (
             findCurrentStone.isEmpty = true;
             findCurrentStone.stoneData = {};
 
-            findFirstRivalStoneCell.isEmpty = true;
-            findFirstRivalStoneCell.stoneData = {};
-
             pasiveRivalStone.status = true;
             pasiveRivalStone.isDone = true;
             pasiveRivalStone.data = findFirstRivalStoneCell.stoneData;
+
+            findFirstRivalStoneCell.isEmpty = true;
+            findFirstRivalStoneCell.stoneData = {};
           }
 
           return { newBoard, pasiveRivalStone };

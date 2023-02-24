@@ -134,6 +134,11 @@ export const GameSlice = createSlice({
           }
         }
 
+        if (state.user1.totalStones === 0 || state.user2.totalStones === 0) {
+          state.gameStatus = "gameover";
+          state.showModal = true;
+        }
+
         state.board = newBoard;
         state.selectedStone = "";
         state.moveUp = "";

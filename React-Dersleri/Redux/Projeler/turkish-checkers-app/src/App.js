@@ -5,6 +5,8 @@ import { Toaster } from "react-hot-toast";
 
 import { useSelector } from "react-redux";
 import WarningModal from "./components/Modals/WarningModal";
+import GameOver from "./components/Modals/GameOver";
+import Confetti from "./components/Modals/Confetti";
 
 function App() {
   const { gameStatus, showModal } = useSelector((state) => state.game);
@@ -17,8 +19,10 @@ function App() {
       }`}
     >
       <Toaster />
+      <Confetti />
       {gameStatus === "start" && <StartGameModal />}
       {gameStatus === "playing" && showModal && <WarningModal />}
+      {gameStatus === "gameover" && showModal && <GameOver />}
       <MainContainer />
     </div>
   );

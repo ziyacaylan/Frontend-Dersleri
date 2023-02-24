@@ -1,6 +1,6 @@
 # Redux-Turkish-Checkers-App
 
-## DEMO :
+## DEMO : [ziyac-checkers-game-app](https://ziyac-checkers-game-app.netlify.app/)
 
 ---
 
@@ -35,26 +35,39 @@
 │ │ ├── screenshot-2.png
 │ │ ├── screenshot-3.png
 │ │ ├── screenshot-4.png
-│ │ └── screenshot-5.png
+│ │ ├── screenshot-5.png
+│ │ ├── screenshot-6.png
+│ │ ├── screenshot-7.png
+│ │ └── screenshot-8.png
 │ ├── components
-│ │ ├── InputSection
-│ │ │ ├── CircleTimer
+│ │ ├── Board
+│ │ │ ├── Cell
 │ │ │ │ └── index.jsx
-│ │ │ ├── ResultModal
+│ │ │ ├── Row
+│ │ │ │ └── index.jsx
+│ │ │ └── index.jsx
+│ │ ├── MainContainer
+│ │ │ └── index.jsx
+│ │ ├── Modals
+│ │ │ ├── Confetti
+│ │ │ │ └── index.jsx
+│ │ │ ├── GameOver
 │ │ │ │  └── index.jsx
+│ │ │ ├── StartGameModal
+│ │ │ │  └── index.jsx
+│ │ │ └──WarningModal
+│ │ │    └── index.jsx
+│ │ ├── ScoreBoard
 │ │ │ └── index.jsx
-│ │ ├── Main
+│ │ ├── Stone
 │ │ │ └── index.jsx
-│ │ ├── WordsSection
-│ │ │ └── index.jsx
-│ │ └── Header
-│ │ └── index.jsx
-│ ├── Mock
-│ │ └── wordData.json
 │ ├── redux
-│ │ ├── wordSlice
+│ │ ├── GameSlice
 │ │ │ └── index.js
 │ │ └── store.js
+│ ├── utils
+│ │ └──  chekers
+│ │   └── index.js
 │ ├── App.js
 │ ├── index.css
 │ └── index.js
@@ -81,8 +94,11 @@
 
 ---
 
-![Screenshot](/src/assets/screenshot_1.png)
-![Screenshot](/src/assets/screenshot_2.png)
-![Screenshot](/src/assets/screenshot_3.png)
-![Screenshot](/src/assets/screenshot_4.png)
-![Screenshot](/src/assets/screenshot_5.png)
+![Screenshot](./src/assets/screenshot_1.png)
+![Screenshot](./src/assets/screenshot_2.png)
+![Screenshot](./src/assets/screenshot_3.png)
+![Screenshot](./src/assets/screenshot_4.png)
+![Screenshot](./src/assets/screenshot_5.png)
+![Screenshot](./src/assets/screenshot_6.png)
+![Screenshot](./src/assets/screenshot_7.png)
+![Screenshot](./src/assets/screenshot_8.png)

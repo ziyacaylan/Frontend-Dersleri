@@ -6,6 +6,11 @@ module.exports = {
       fontFamily: {
         robotoMono: ["Roboto Mono", "monospace"],
       },
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        linkedin: "#0072b1",
+      },
     },
   },
   plugins: [],
